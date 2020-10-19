@@ -1,4 +1,5 @@
 require('addon_game_mode')
+require("libraries/status_resistance")
 
 
 
