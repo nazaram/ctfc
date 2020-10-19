@@ -1,0 +1,988 @@
+"DOTAHeroes"
+{
+  "clockwerk"
+  {
+    "AbilityLayout"     "4"
+    "override_hero"     "npc_dota_hero_rattletrap"
+    "SoundSet"          "0" 
+    "Ability1"        "Armour_Up"
+    "Ability2"        "shredder_chain"
+    "Ability3"        "rattletrap_power_cogs" 
+    "Ability4"        "rattletrap_rocket_flare"
+    "Ability5"        "torrent_datadriven"
+    "Ability6"        "rattletrap_hookshot_datadriven"
+
+
+    
+    "ArmorPhysical"       "0"                 // Physical protection.
+    "MagicalResistance"       "0"                 // Magical protection (percentage).
+
+    "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+    "AttackDamageMin"     "20"                   // Damage range min.
+    "AttackDamageMax"     "30"                   // Damage range max.
+    "AttackRange"                   "100"
+
+    //"AttributePrimary"      "DOTA_ATTRIBUTE_STRENGTH"
+
+    "AttributeBaseStrength"   "0"                   // Base strength
+    "AttributeStrengthGain"   "0"                   // Strength bonus per level.
+    "AttributeBaseIntelligence" "0"                   // Base intelligence
+    "AttributeIntelligenceGain" "0"                   // Intelligence bonus per level.
+    "AttributeBaseAgility"    "0"                   // Base agility
+    "AttributeAgilityGain"    "0"                   // Agility bonus per level.
+
+    "BountyXP"          "500"                 // Experience earn.
+    "BountyGoldMin"       "500"                   // Gold earned min.
+    "BountyGoldMax"       "1000"                   // Gold earned max.
+
+    //"BoundsHullName"      "DOTA_HULL_SIZE_HERO"
+    //"RingRadius"        "70"
+
+    "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"
+    "MovementSpeed"       "405"                 // Speed.
+    "MovementTurnRate"      "1.0"                 // Turning rate.
+
+    "StatusHealth"        "200"                 // Base health.
+    "StatusHealthRegen"     "5.0"                 // Health regeneration rate.
+
+    "StatusMana"        "700"                   // Base mana.
+    "StatusManaRegen"     "10.0"                 // Mana regeneration rate.
+
+    "VisionDaytimeRange"    "800"                  // Range of vision at night time.
+    "VisionDaytimeRange"    "500"    
+  }
+
+"BountyHunter"
+  {
+    "AbilityLayout"     "4"
+    "override_hero"     "npc_dota_hero_bounty_hunter"
+    "SoundSet"          "0" 
+    "Ability1"        "Armour_Up"
+    "Ability2"        "shredder_chain"
+    "Ability3"        "ctf_shadowwalk" 
+    "Ability4"        "bounty_hunter_jinada"
+    "Ability5"        "torrent_datadriven"
+    "Ability6"        "bounty_hunter_track"
+
+    "ArmorPhysical"       "0"                 // Physical protection.
+    "MagicalResistance"       "0"                 // Magical protection (percentage).
+
+    "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+    "AttackDamageMin"     "20"                   // Damage range min.
+    "AttackDamageMax"     "30"                   // Damage range max.
+    "AttackRange"                   "100"
+
+
+    //"AttributePrimary"      "DOTA_ATTRIBUTE_STRENGTH"
+    "AttributeBaseStrength"   "0"                   // Base strength
+    "AttributeStrengthGain"   "0"                   // Strength bonus per level.
+    "AttributeBaseIntelligence" "0"                   // Base intelligence
+    "AttributeIntelligenceGain" "0"                   // Intelligence bonus per level.
+    "AttributeBaseAgility"    "0"                   // Base agility
+    "AttributeAgilityGain"    "0"                   // Agility bonus per level.
+
+    "BountyXP"          "500"                 // Experience earn.
+    "BountyGoldMin"       "500"                   // Gold earned min.
+    "BountyGoldMax"       "1000"                   // Gold earned max.
+
+    //"BoundsHullName"      "DOTA_HULL_SIZE_HERO"
+    //"RingRadius"        "70"
+
+    "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"
+    "MovementSpeed"       "405"                 // Speed.
+    "MovementTurnRate"      "1.0"                 // Turning rate.
+
+    "StatusHealth"        "200"                 // Base health.
+    "StatusHealthRegen"     "5.0"                 // Health regeneration rate.
+
+    "StatusMana"        "700"                   // Base mana.
+    "StatusManaRegen"     "10.0"                 // Mana regeneration rate.
+
+    "VisionDaytimeRange"    "800"                  // Range of vision at night time.
+    "VisionDaytimeRange"    "500"     
+  
+  }
+
+"Pudge"
+  {
+    "AbilityLayout"     "4"
+    "override_hero"     "npc_dota_hero_pudge"
+    "SoundSet"          "0" 
+    "Ability1"        "Armour_Up"
+    "Ability2"        "shredder_chain"
+    "Ability3"        "pudge_meat_hook" 
+    "Ability4"        "creature_self_haste"
+    "Ability5"        "torrent_datadriven"
+    "Ability6"        "pudge_dismember"
+
+    "ArmorPhysical"       "0"                 // Physical protection.
+    "MagicalResistance"       "0"                 // Magical protection (percentage).
+
+    "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+    "AttackDamageMin"     "20"                   // Damage range min.
+    "AttackDamageMax"     "30"                   // Damage range max.
+    "AttackRange"                   "100"
+
+
+    //"AttributePrimary"      "DOTA_ATTRIBUTE_STRENGTH"
+    "AttributeBaseStrength"   "0"                   // Base strength
+    "AttributeStrengthGain"   "0"                   // Strength bonus per level.
+    "AttributeBaseIntelligence" "0"                   // Base intelligence
+    "AttributeIntelligenceGain" "0"                   // Intelligence bonus per level.
+    "AttributeBaseAgility"    "0"                   // Base agility
+    "AttributeAgilityGain"    "0"                   // Agility bonus per level.
+
+    "BountyXP"          "500"                 // Experience earn.
+    "BountyGoldMin"       "500"                   // Gold earned min.
+    "BountyGoldMax"       "1000"                   // Gold earned max.
+
+    //"BoundsHullName"      "DOTA_HULL_SIZE_HERO"
+    //"RingRadius"        "70"
+
+    "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"
+    "MovementSpeed"       "405"                 // Speed.
+    "MovementTurnRate"      "1.0"                 // Turning rate.
+
+    "StatusHealth"        "200"                 // Base health.
+    "StatusHealthRegen"     "5.0"                 // Health regeneration rate.
+
+    "StatusMana"        "700"                   // Base mana.
+    "StatusManaRegen"     "10.0"                 // Mana regeneration rate.
+
+    "VisionDaytimeRange"    "800"                  // Range of vision at night time.
+    "VisionDaytimeRange"    "500"         
+
+    }
+
+"Void_Spirit"
+  {
+    "AbilityLayout"     "4"
+    "override_hero"     "npc_dota_hero_void_spirit"
+    "SoundSet"          "0" 
+    "Ability1"        "Armour_Up"
+    "Ability2"        "shredder_chain"
+    "Ability3"        "void_spirit_dissimilate" 
+    "Ability4"        "void_spirit_astral_step"
+    "Ability5"        "torrent_datadriven"
+    "Ability6"        "void_spirit_aether_remnant"
+
+    "ArmorPhysical"       "0"                 // Physical protection.
+    "MagicalResistance"       "0"                 // Magical protection (percentage).
+
+    "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+    "AttackDamageMin"     "20"                   // Damage range min.
+    "AttackDamageMax"     "30"                   // Damage range max.
+    "AttackRange"                   "100"
+
+
+    //"AttributePrimary"      "DOTA_ATTRIBUTE_STRENGTH"
+    "AttributeBaseStrength"   "0"                   // Base strength
+    "AttributeStrengthGain"   "0"                   // Strength bonus per level.
+    "AttributeBaseIntelligence" "0"                   // Base intelligence
+    "AttributeIntelligenceGain" "0"                   // Intelligence bonus per level.
+    "AttributeBaseAgility"    "0"                   // Base agility
+    "AttributeAgilityGain"    "0"                   // Agility bonus per level.
+
+    "BountyXP"          "500"                 // Experience earn.
+    "BountyGoldMin"       "500"                   // Gold earned min.
+    "BountyGoldMax"       "1000"                   // Gold earned max.
+
+    //"BoundsHullName"      "DOTA_HULL_SIZE_HERO"
+    //"RingRadius"        "70"
+
+    "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"
+    "MovementSpeed"       "405"                 // Speed.
+    "MovementTurnRate"      "1.0"                 // Turning rate.
+
+    "StatusHealth"        "200"                 // Base health.
+    "StatusHealthRegen"     "5.0"                 // Health regeneration rate.
+
+    "StatusMana"        "700"                   // Base mana.
+    "StatusManaRegen"     "10.0"                 // Mana regeneration rate.
+
+    "VisionDaytimeRange"    "800"                  // Range of vision at night time.
+    "VisionDaytimeRange"    "500"      
+    }
+
+"Techies"
+  {
+    "AbilityLayout"     "4"
+    "override_hero"     "npc_dota_hero_techies"
+    "SoundSet"          "0" 
+    "Ability1"        "Armour_Up"
+    "Ability2"        "shredder_chain"
+    "Ability3"        "snapfire_firesnap_cookie" 
+    "Ability4"        "creature_self_haste"
+    "Ability5"        "torrent_datadriven"
+    "Ability6"        "techies_stasis_trap"
+
+    "ArmorPhysical"       "0"                 // Physical protection.
+    "MagicalResistance"       "0"                 // Magical protection (percentage).
+
+    "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+    "AttackDamageMin"     "20"                   // Damage range min.
+    "AttackDamageMax"     "30"                   // Damage range max.
+    "AttackRange"                   "100"
+
+
+    //"AttributePrimary"      "DOTA_ATTRIBUTE_STRENGTH"
+    "AttributeBaseStrength"   "0"                   // Base strength
+    "AttributeStrengthGain"   "0"                   // Strength bonus per level.
+    "AttributeBaseIntelligence" "0"                   // Base intelligence
+    "AttributeIntelligenceGain" "0"                   // Intelligence bonus per level.
+    "AttributeBaseAgility"    "0"                   // Base agility
+    "AttributeAgilityGain"    "0"                   // Agility bonus per level.
+
+    "BountyXP"          "500"                 // Experience earn.
+    "BountyGoldMin"       "500"                   // Gold earned min.
+    "BountyGoldMax"       "1000"                   // Gold earned max.
+
+    //"BoundsHullName"      "DOTA_HULL_SIZE_HERO"
+    //"RingRadius"        "70"
+
+    "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"
+    "MovementSpeed"       "405"                 // Speed.
+    "MovementTurnRate"      "1.0"                 // Turning rate.
+
+    "StatusHealth"        "200"                 // Base health.
+    "StatusHealthRegen"     "5.0"                 // Health regeneration rate.
+
+    "StatusMana"        "700"                   // Base mana.
+    "StatusManaRegen"     "10.0"                 // Mana regeneration rate.
+
+    "VisionDaytimeRange"    "800"                  // Range of vision at night time.
+    "VisionDaytimeRange"    "500"      
+     
+
+    }
+
+"spirit_Breaker"
+  {
+    "AbilityLayout"     "4"
+    "override_hero"     "npc_dota_hero_spirit_breaker"
+    "SoundSet"          "0" 
+    "Ability1"        "Armour_Up"
+    "Ability2"        "shredder_chain"
+    "Ability3"        "spirit_breaker_charge_of_darkness" 
+    "Ability4"        "spirit_breaker_bulldoze"
+    "Ability5"        "torrent_datadriven"
+    "Ability6"        "nyx_assassin_spiked_carapace"
+
+     "ArmorPhysical"       "0"                 // Physical protection.
+    "MagicalResistance"       "0"                 // Magical protection (percentage).
+
+    "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+    "AttackDamageMin"     "20"                   // Damage range min.
+    "AttackDamageMax"     "30"                   // Damage range max.
+    "AttackRange"                   "100"
+
+
+    //"AttributePrimary"      "DOTA_ATTRIBUTE_STRENGTH"
+    "AttributeBaseStrength"   "0"                   // Base strength
+    "AttributeStrengthGain"   "0"                   // Strength bonus per level.
+    "AttributeBaseIntelligence" "0"                   // Base intelligence
+    "AttributeIntelligenceGain" "0"                   // Intelligence bonus per level.
+    "AttributeBaseAgility"    "0"                   // Base agility
+    "AttributeAgilityGain"    "0"                   // Agility bonus per level.
+
+    "BountyXP"          "500"                 // Experience earn.
+    "BountyGoldMin"       "500"                   // Gold earned min.
+    "BountyGoldMax"       "1000"                   // Gold earned max.
+
+    //"BoundsHullName"      "DOTA_HULL_SIZE_HERO"
+    //"RingRadius"        "70"
+
+    "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"
+    "MovementSpeed"       "405"                 // Speed.
+    "MovementTurnRate"      "1.0"                 // Turning rate.
+
+    "StatusHealth"        "200"                 // Base health.
+    "StatusHealthRegen"     "5.0"                 // Health regeneration rate.
+
+    "StatusMana"        "700"                   // Base mana.
+    "StatusManaRegen"     "10.0"                 // Mana regeneration rate.
+
+    "VisionDaytimeRange"    "800"                  // Range of vision at night time.
+    "VisionDaytimeRange"    "500"       
+
+    }
+
+"kunkka"
+  {
+    "AbilityLayout"     "4"
+    "override_hero"     "npc_dota_hero_kunkka"
+    "SoundSet"          "0" 
+    "Ability1"        "Armour_Up"
+    "Ability2"        "shredder_chain"
+    "Ability3"        "kunkka_torrent" 
+    "Ability4"        "kunkka_tidebringer"
+    "Ability5"        "torrent_datadriven"
+    "Ability6"        "kunkka_wars_ghost_ship"
+
+    "ArmorPhysical"       "0"                 // Physical protection.
+    "MagicalResistance"       "0"                 // Magical protection (percentage).
+
+    "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+    "AttackDamageMin"     "20"                   // Damage range min.
+    "AttackDamageMax"     "30"                   // Damage range max.
+    "AttackRange"                   "100"
+
+
+    //"AttributePrimary"      "DOTA_ATTRIBUTE_STRENGTH"
+    "AttributeBaseStrength"   "0"                   // Base strength
+    "AttributeStrengthGain"   "0"                   // Strength bonus per level.
+    "AttributeBaseIntelligence" "0"                   // Base intelligence
+    "AttributeIntelligenceGain" "0"                   // Intelligence bonus per level.
+    "AttributeBaseAgility"    "0"                   // Base agility
+    "AttributeAgilityGain"    "0"                   // Agility bonus per level.
+
+    "BountyXP"          "500"                 // Experience earn.
+    "BountyGoldMin"       "500"                   // Gold earned min.
+    "BountyGoldMax"       "1000"                   // Gold earned max.
+
+    //"BoundsHullName"      "DOTA_HULL_SIZE_HERO"
+    //"RingRadius"        "70"
+
+    "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"
+    "MovementSpeed"       "405"                 // Speed.
+    "MovementTurnRate"      "1.0"                 // Turning rate.
+
+    "StatusHealth"        "200"                 // Base health.
+    "StatusHealthRegen"     "5.0"                 // Health regeneration rate.
+
+    "StatusMana"        "700"                   // Base mana.
+    "StatusManaRegen"     "10.0"                 // Mana regeneration rate.
+
+    "VisionDaytimeRange"    "800"                  // Range of vision at night time.
+    "VisionDaytimeRange"    "500"       
+
+    }
+  
+  "tusk"
+  {
+    "AbilityLayout"     "4"
+    "override_hero"     "npc_dota_hero_tusk"
+    "SoundSet"          "0" 
+    "Ability1"        "Armour_Up"
+    "Ability2"        "shredder_chain"
+    "Ability3"        "tusk_snowball" 
+    "Ability4"        "tusk_frozen_sigil"
+
+    "Ability5"        "torrent_datadriven"
+    "Ability6"        "tusk_ice_shards"
+    "Ability7"        "tusk_launch_snowball"
+    
+    "ArmorPhysical"       "0"                 // Physical protection.
+    "MagicalResistance"       "0"                 // Magical protection (percentage).
+
+    "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+    "AttackDamageMin"     "20"                   // Damage range min.
+    "AttackDamageMax"     "30"                   // Damage range max.
+    "AttackRange"                   "100"
+
+
+    //"AttributePrimary"      "DOTA_ATTRIBUTE_STRENGTH"
+    "AttributeBaseStrength"   "0"                   // Base strength
+    "AttributeStrengthGain"   "0"                   // Strength bonus per level.
+    "AttributeBaseIntelligence" "0"                   // Base intelligence
+    "AttributeIntelligenceGain" "0"                   // Intelligence bonus per level.
+    "AttributeBaseAgility"    "0"                   // Base agility
+    "AttributeAgilityGain"    "0"                   // Agility bonus per level.
+
+    "BountyXP"          "500"                 // Experience earn.
+    "BountyGoldMin"       "500"                   // Gold earned min.
+    "BountyGoldMax"       "1000"                   // Gold earned max.
+
+    //"BoundsHullName"      "DOTA_HULL_SIZE_HERO"
+    //"RingRadius"        "70"
+
+    "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"
+    "MovementSpeed"       "405"                 // Speed.
+    "MovementTurnRate"      "1.0"                 // Turning rate.
+
+    "StatusHealth"        "200"                 // Base health.
+    "StatusHealthRegen"     "5.0"                 // Health regeneration rate.
+
+    "StatusMana"        "700"                   // Base mana.
+    "StatusManaRegen"     "10.0"                 // Mana regeneration rate.
+
+    "VisionDaytimeRange"    "800"                  // Range of vision at night time.
+    "VisionDaytimeRange"    "500"    
+  }
+
+  "puck"
+  {
+    "AbilityLayout"     "4"
+    "override_hero"     "npc_dota_hero_puck"
+    "SoundSet"          "0" 
+    "Ability1"        "Armour_Up"
+    "Ability2"        "shredder_chain"
+    "Ability3"        "puck_illusory_orb" 
+    "Ability4"        "puck_ethereal_jaunt"
+    "Ability5"        "torrent_datadriven"
+    "Ability6"        "puck_waning_rift"
+
+
+    
+    "ArmorPhysical"       "0"                 // Physical protection.
+    "MagicalResistance"       "0"                 // Magical protection (percentage).
+
+    "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+    "AttackDamageMin"     "20"                   // Damage range min.
+    "AttackDamageMax"     "30"                   // Damage range max.
+    "AttackRange"                   "100"
+
+
+    //"AttributePrimary"      "DOTA_ATTRIBUTE_STRENGTH"
+    "AttributeBaseStrength"   "0"                   // Base strength
+    "AttributeStrengthGain"   "0"                   // Strength bonus per level.
+    "AttributeBaseIntelligence" "0"                   // Base intelligence
+    "AttributeIntelligenceGain" "0"                   // Intelligence bonus per level.
+    "AttributeBaseAgility"    "0"                   // Base agility
+    "AttributeAgilityGain"    "0"                   // Agility bonus per level.
+
+    "BountyXP"          "500"                 // Experience earn.
+    "BountyGoldMin"       "500"                   // Gold earned min.
+    "BountyGoldMax"       "1000"                   // Gold earned max.
+
+    //"BoundsHullName"      "DOTA_HULL_SIZE_HERO"
+    //"RingRadius"        "70"
+
+    "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"
+    "MovementSpeed"       "405"                 // Speed.
+    "MovementTurnRate"      "1.0"                 // Turning rate.
+
+    "StatusHealth"        "200"                 // Base health.
+    "StatusHealthRegen"     "5.0"                 // Health regeneration rate.
+
+    "StatusMana"        "700"                   // Base mana.
+    "StatusManaRegen"     "10.0"                 // Mana regeneration rate.
+
+    "VisionDaytimeRange"    "800"                  // Range of vision at night time.
+    "VisionDaytimeRange"    "500"    
+  }
+  
+
+  "vengefulspirit"
+  {
+    "AbilityLayout"     "4"
+    "override_hero"     "npc_dota_hero_vengefulspirit"
+    "SoundSet"          "0" 
+    "Ability1"        "Armour_Up"
+    "Ability2"        "shredder_chain"
+    "Ability3"        "vengefulspirit_wave_of_terror" 
+    "Ability4"        "vengefulspirit_magic_missile"
+    "Ability5"        "torrent_datadriven"
+    "Ability6"        "vengefulspirit_nether_swap"
+
+
+    
+    "ArmorPhysical"       "0"                 // Physical protection.
+    "MagicalResistance"       "0"                 // Magical protection (percentage).
+
+    "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+    "AttackDamageMin"     "20"                   // Damage range min.
+    "AttackDamageMax"     "30"                   // Damage range max.
+    "AttackRange"                   "100"
+
+
+    //"AttributePrimary"      "DOTA_ATTRIBUTE_STRENGTH"
+    "AttributeBaseStrength"   "0"                   // Base strength
+    "AttributeStrengthGain"   "0"                   // Strength bonus per level.
+    "AttributeBaseIntelligence" "0"                   // Base intelligence
+    "AttributeIntelligenceGain" "0"                   // Intelligence bonus per level.
+    "AttributeBaseAgility"    "0"                   // Base agility
+    "AttributeAgilityGain"    "0"                   // Agility bonus per level.
+
+    "BountyXP"          "500"                 // Experience earn.
+    "BountyGoldMin"       "500"                   // Gold earned min.
+    "BountyGoldMax"       "1000"                   // Gold earned max.
+
+    //"BoundsHullName"      "DOTA_HULL_SIZE_HERO"
+    //"RingRadius"        "70"
+
+    "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"
+    "MovementSpeed"       "405"                 // Speed.
+    "MovementTurnRate"      "1.0"                 // Turning rate.
+
+    "StatusHealth"        "200"                 // Base health.
+    "StatusHealthRegen"     "5.0"                 // Health regeneration rate.
+
+    "StatusMana"        "700"                   // Base mana.
+    "StatusManaRegen"     "10.0"                 // Mana regeneration rate.
+
+    "VisionDaytimeRange"    "800"                  // Range of vision at night time.
+    "VisionDaytimeRange"    "500"    
+  }
+
+"tiny"
+  {
+    "AbilityLayout"     "4"
+    "override_hero"     "npc_dota_hero_tiny"
+    "SoundSet"          "0" 
+    "Ability1"        "Armour_Up"
+    "Ability2"        "shredder_chain"
+    "Ability3"        "ctf_toss" 
+    "Ability4"        "tiny_grow"
+    "Ability5"        "torrent_datadriven"
+    "Ability6"        "tiny_avalanche"
+
+
+    
+    "ArmorPhysical"       "0"                 // Physical protection.
+    "MagicalResistance"       "0"                 // Magical protection (percentage).
+
+    "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+    "AttackDamageMin"     "20"                   // Damage range min.
+    "AttackDamageMax"     "30"                   // Damage range max.
+    "AttackRange"                   "100"
+
+
+    //"AttributePrimary"      "DOTA_ATTRIBUTE_STRENGTH"
+    "AttributeBaseStrength"   "0"                   // Base strength
+    "AttributeStrengthGain"   "0"                   // Strength bonus per level.
+    "AttributeBaseIntelligence" "0"                   // Base intelligence
+    "AttributeIntelligenceGain" "0"                   // Intelligence bonus per level.
+    "AttributeBaseAgility"    "0"                   // Base agility
+    "AttributeAgilityGain"    "0"                   // Agility bonus per level.
+
+    "BountyXP"          "500"                 // Experience earn.
+    "BountyGoldMin"       "500"                   // Gold earned min.
+    "BountyGoldMax"       "1000"                   // Gold earned max.
+
+    //"BoundsHullName"      "DOTA_HULL_SIZE_HERO"
+    //"RingRadius"        "70"
+
+    "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"
+    "MovementSpeed"       "405"                 // Speed.
+    "MovementTurnRate"      "1.0"                 // Turning rate.
+
+    "StatusHealth"        "200"                 // Base health.
+    "StatusHealthRegen"     "5.0"                 // Health regeneration rate.
+
+    "StatusMana"        "700"                   // Base mana.
+    "StatusManaRegen"     "10.0"                 // Mana regeneration rate.
+
+    "VisionDaytimeRange"    "800"                  // Range of vision at night time.
+    "VisionDaytimeRange"    "500"    
+  }
+
+"batrider"
+  {
+    "AbilityLayout"     "4"
+    "override_hero"     "npc_dota_hero_batrider"
+    "SoundSet"          "0" 
+    "Ability1"        "Armour_Up"
+    "Ability2"        "shredder_chain"
+    "Ability3"        "batrider_flamebreak" 
+    "Ability4"        "ctf_waveform"
+    "Ability5"        "torrent_datadriven"
+    "Ability6"        "dark_seer_vacuum"
+
+
+    
+    "ArmorPhysical"       "0"                 // Physical protection.
+    "MagicalResistance"       "0"                 // Magical protection (percentage).
+
+    "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+    "AttackDamageMin"     "20"                   // Damage range min.
+    "AttackDamageMax"     "30"                   // Damage range max.
+    "AttackRange"                   "100"
+
+
+    //"AttributePrimary"      "DOTA_ATTRIBUTE_STRENGTH"
+    "AttributeBaseStrength"   "0"                   // Base strength
+    "AttributeStrengthGain"   "0"                   // Strength bonus per level.
+    "AttributeBaseIntelligence" "0"                   // Base intelligence
+    "AttributeIntelligenceGain" "0"                   // Intelligence bonus per level.
+    "AttributeBaseAgility"    "0"                   // Base agility
+    "AttributeAgilityGain"    "0"                   // Agility bonus per level.
+
+    "BountyXP"          "500"                 // Experience earn.
+    "BountyGoldMin"       "500"                   // Gold earned min.
+    "BountyGoldMax"       "1000"                   // Gold earned max.
+
+    //"BoundsHullName"      "DOTA_HULL_SIZE_HERO"
+    //"RingRadius"        "70"
+
+    "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"
+    "MovementSpeed"       "405"                 // Speed.
+    "MovementTurnRate"      "1.0"                 // Turning rate.
+
+    "StatusHealth"        "200"                 // Base health.
+    "StatusHealthRegen"     "5.0"                 // Health regeneration rate.
+
+    "StatusMana"        "700"                   // Base mana.
+    "StatusManaRegen"     "10.0"                 // Mana regeneration rate.
+
+    "VisionDaytimeRange"    "800"                  // Range of vision at night time.
+    "VisionDaytimeRange"    "500"    
+  }
+
+"windrunner"
+  {
+    "AbilityLayout"     "4"
+    "override_hero"     "npc_dota_hero_windrunner"
+    "SoundSet"          "0" 
+    "Ability1"        "Armour_Up"
+    "Ability2"        "shredder_chain"
+    "Ability3"        "windrunner_shackleshot" 
+    "Ability4"        "windrunner_powershot"
+    "Ability5"        "torrent_datadriven"
+    "Ability6"        "windrunner_windrun"
+
+
+    
+    "ArmorPhysical"       "0"                 // Physical protection.
+    "MagicalResistance"       "0"                 // Magical protection (percentage).
+
+    "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+    "AttackDamageMin"     "20"                   // Damage range min.
+    "AttackDamageMax"     "30"                   // Damage range max.
+    "AttackRange"                   "100"
+
+
+    //"AttributePrimary"      "DOTA_ATTRIBUTE_STRENGTH"
+    "AttributeBaseStrength"   "0"                   // Base strength
+    "AttributeStrengthGain"   "0"                   // Strength bonus per level.
+    "AttributeBaseIntelligence" "0"                   // Base intelligence
+    "AttributeIntelligenceGain" "0"                   // Intelligence bonus per level.
+    "AttributeBaseAgility"    "0"                   // Base agility
+    "AttributeAgilityGain"    "0"                   // Agility bonus per level.
+
+    "BountyXP"          "500"                 // Experience earn.
+    "BountyGoldMin"       "500"                   // Gold earned min.
+    "BountyGoldMax"       "1000"                   // Gold earned max.
+
+    //"BoundsHullName"      "DOTA_HULL_SIZE_HERO"
+    //"RingRadius"        "70"
+
+    "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"
+    "MovementSpeed"       "405"                 // Speed.
+    "MovementTurnRate"      "1.0"                 // Turning rate.
+
+    "StatusHealth"        "200"                 // Base health.
+    "StatusHealthRegen"     "5.0"                 // Health regeneration rate.
+
+    "StatusMana"        "700"                   // Base mana.
+    "StatusManaRegen"     "10.0"                 // Mana regeneration rate.
+
+    "VisionDaytimeRange"    "800"                  // Range of vision at night time.
+    "VisionDaytimeRange"    "500"    
+  }
+
+    "mirana"
+  {
+    "AbilityLayout"     "4"
+    "override_hero"     "npc_dota_hero_mirana"
+    "SoundSet"          "0" 
+    "Ability1"        "Armour_Up"
+    "Ability2"        "shredder_chain"
+    "Ability3"        "mirana_arrow" 
+    "Ability4"        "mirana_invis"
+    "Ability5"        "torrent_datadriven"
+    "Ability6"        "mirana_leap_two"
+
+    
+    "ArmorPhysical"       "0"                 // Physical protection.
+    "MagicalResistance"       "0"                 // Magical protection (percentage).
+
+    "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+    "AttackDamageMin"     "20"                   // Damage range min.
+    "AttackDamageMax"     "30"                   // Damage range max.
+    "AttackRange"                   "100"
+
+
+    //"AttributePrimary"      "DOTA_ATTRIBUTE_STRENGTH"
+    "AttributeBaseStrength"   "0"                   // Base strength
+    "AttributeStrengthGain"   "0"                   // Strength bonus per level.
+    "AttributeBaseIntelligence" "0"                   // Base intelligence
+    "AttributeIntelligenceGain" "0"                   // Intelligence bonus per level.
+    "AttributeBaseAgility"    "0"                   // Base agility
+    "AttributeAgilityGain"    "0"                   // Agility bonus per level.
+
+    "BountyXP"          "500"                 // Experience earn.
+    "BountyGoldMin"       "500"                   // Gold earned min.
+    "BountyGoldMax"       "1000"                   // Gold earned max.
+
+    //"BoundsHullName"      "DOTA_HULL_SIZE_HERO"
+    //"RingRadius"        "70"
+
+    "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"
+    "MovementSpeed"       "405"                 // Speed.
+    "MovementTurnRate"      "1.0"                 // Turning rate.
+
+    "StatusHealth"        "200"                 // Base health.
+    "StatusHealthRegen"     "5.0"                 // Health regeneration rate.
+
+    "StatusMana"        "700"                   // Base mana.
+    "StatusManaRegen"     "10.0"                 // Mana regeneration rate.
+
+    "VisionDaytimeRange"    "800"                  // Range of vision at night time.
+    "VisionDaytimeRange"    "500"    
+  }
+  
+    "earthshaker"
+  {
+    "AbilityLayout"     "4"
+    "override_hero"     "npc_dota_hero_earthshaker"
+    "SoundSet"          "0" 
+    "Ability1"        "Armour_Up"
+    "Ability2"        "shredder_chain"
+    "Ability3"        "earthshaker_fissure" 
+    "Ability4"        "earthshaker_aftershock"
+    "Ability5"        "torrent_datadriven"
+    "Ability6"        "mirana_leap"
+
+
+    
+    "ArmorPhysical"       "0"                 // Physical protection.
+    "MagicalResistance"       "0"                 // Magical protection (percentage).
+
+    "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+    "AttackDamageMin"     "20"                   // Damage range min.
+    "AttackDamageMax"     "30"                   // Damage range max.
+    "AttackRange"                   "100"
+
+
+    //"AttributePrimary"      "DOTA_ATTRIBUTE_STRENGTH"
+    "AttributeBaseStrength"   "0"                   // Base strength
+    "AttributeStrengthGain"   "0"                   // Strength bonus per level.
+    "AttributeBaseIntelligence" "0"                   // Base intelligence
+    "AttributeIntelligenceGain" "0"                   // Intelligence bonus per level.
+    "AttributeBaseAgility"    "0"                   // Base agility
+    "AttributeAgilityGain"    "0"                   // Agility bonus per level.
+
+    "BountyXP"          "500"                 // Experience earn.
+    "BountyGoldMin"       "500"                   // Gold earned min.
+    "BountyGoldMax"       "1000"                   // Gold earned max.
+
+    //"BoundsHullName"      "DOTA_HULL_SIZE_HERO"
+    //"RingRadius"        "70"
+
+    "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"
+    "MovementSpeed"       "405"                 // Speed.
+    "MovementTurnRate"      "1.0"                 // Turning rate.
+
+    "StatusHealth"        "200"                 // Base health.
+    "StatusHealthRegen"     "5.0"                 // Health regeneration rate.
+
+    "StatusMana"        "700"                   // Base mana.
+    "StatusManaRegen"     "10.0"                 // Mana regeneration rate.
+
+    "VisionDaytimeRange"    "800"                  // Range of vision at night time.
+    "VisionDaytimeRange"    "500"    
+  }
+
+    "disruptor"
+  {
+    "AbilityLayout"     "4"
+    "override_hero"     "npc_dota_hero_disruptor"
+    "SoundSet"          "0" 
+    "Ability1"        "Armour_Up"
+    "Ability2"        "shredder_chain"
+    "Ability3"        "disruptor_kinetic_field" 
+    "Ability4"        "disruptor_static_storm"
+    "Ability5"        "torrent_datadriven"
+    "Ability6"        "disruptor_glimpse"
+
+
+    
+    "ArmorPhysical"       "0"                 // Physical protection.
+    "MagicalResistance"       "0"                 // Magical protection (percentage).
+
+    "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+    "AttackDamageMin"     "20"                   // Damage range min.
+    "AttackDamageMax"     "30"                   // Damage range max.
+    "AttackRange"                   "100"
+
+
+    //"AttributePrimary"      "DOTA_ATTRIBUTE_STRENGTH"
+    "AttributeBaseStrength"   "0"                   // Base strength
+    "AttributeStrengthGain"   "0"                   // Strength bonus per level.
+    "AttributeBaseIntelligence" "0"                   // Base intelligence
+    "AttributeIntelligenceGain" "0"                   // Intelligence bonus per level.
+    "AttributeBaseAgility"    "0"                   // Base agility
+    "AttributeAgilityGain"    "0"                   // Agility bonus per level.
+
+    "BountyXP"          "500"                 // Experience earn.
+    "BountyGoldMin"       "500"                   // Gold earned min.
+    "BountyGoldMax"       "1000"                   // Gold earned max.
+
+    //"BoundsHullName"      "DOTA_HULL_SIZE_HERO"
+    //"RingRadius"        "70"
+
+    "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"
+    "MovementSpeed"       "405"                 // Speed.
+    "MovementTurnRate"      "1.0"                 // Turning rate.
+
+    "StatusHealth"        "200"                 // Base health.
+    "StatusHealthRegen"     "5.0"                 // Health regeneration rate.
+
+    "StatusMana"        "700"                   // Base mana.
+    "StatusManaRegen"     "10.0"                 // Mana regeneration rate.
+
+    "VisionDaytimeRange"    "800"                  // Range of vision at night time.
+    "VisionDaytimeRange"    "500"    
+  }
+
+    "magnataur"
+  {
+    "AbilityLayout"     "4"
+    "override_hero"     "npc_dota_hero_magnataur"
+    "SoundSet"          "0" 
+    "Ability1"        "Armour_Up"
+    "Ability2"        "shredder_chain"
+    "Ability3"        "holdout_friendly_skewer" 
+    "Ability4"        "inferno_dragon_wave"
+    "Ability5"        "torrent_datadriven"
+    "Ability6"        "magnataur_skewer"
+
+
+    
+    "ArmorPhysical"       "0"                 // Physical protection.
+    "MagicalResistance"       "0"                 // Magical protection (percentage).
+
+    "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+    "AttackDamageMin"     "20"                   // Damage range min.
+    "AttackDamageMax"     "30"                   // Damage range max.
+    "AttackRange"                   "100"
+
+
+    //"AttributePrimary"      "DOTA_ATTRIBUTE_STRENGTH"
+    "AttributeBaseStrength"   "0"                   // Base strength
+    "AttributeStrengthGain"   "0"                   // Strength bonus per level.
+    "AttributeBaseIntelligence" "0"                   // Base intelligence
+    "AttributeIntelligenceGain" "0"                   // Intelligence bonus per level.
+    "AttributeBaseAgility"    "0"                   // Base agility
+    "AttributeAgilityGain"    "0"                   // Agility bonus per level.
+
+    "BountyXP"          "500"                 // Experience earn.
+    "BountyGoldMin"       "500"                   // Gold earned min.
+    "BountyGoldMax"       "1000"                   // Gold earned max.
+
+    //"BoundsHullName"      "DOTA_HULL_SIZE_HERO"
+    //"RingRadius"        "70"
+
+    "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"
+    "MovementSpeed"       "405"                 // Speed.
+    "MovementTurnRate"      "1.0"                 // Turning rate.
+
+    "StatusHealth"        "200"                 // Base health.
+    "StatusHealthRegen"     "5.0"                 // Health regeneration rate.
+
+    "StatusMana"        "700"                   // Base mana.
+    "StatusManaRegen"     "10.0"                 // Mana regeneration rate.
+
+    "VisionDaytimeRange"    "800"                  // Range of vision at night time.
+    "VisionDaytimeRange"    "500"    
+  }
+
+
+
+    "wisp"
+  {
+    "AbilityLayout"     "4"
+    "override_hero"     "npc_dota_hero_wisp"
+    "SoundSet"          "0" 
+    "Ability1"        "Armour_Up"
+    "Ability2"        "shredder_chain"
+    "Ability3"        "wisp_tether" 
+    "Ability4"        "wisp_tether_break"
+    "Ability5"        "torrent_datadriven"
+    "Ability6"        "wisp_spirits"
+
+
+    
+    "ArmorPhysical"       "0"                 // Physical protection.
+    "MagicalResistance"       "0"                 // Magical protection (percentage).
+
+    "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+    "AttackDamageMin"     "20"                   // Damage range min.
+    "AttackDamageMax"     "30"                   // Damage range max.
+    "AttackRange"                   "100"
+
+
+    //"AttributePrimary"      "DOTA_ATTRIBUTE_STRENGTH"
+    "AttributeBaseStrength"   "0"                   // Base strength
+    "AttributeStrengthGain"   "0"                   // Strength bonus per level.
+    "AttributeBaseIntelligence" "0"                   // Base intelligence
+    "AttributeIntelligenceGain" "0"                   // Intelligence bonus per level.
+    "AttributeBaseAgility"    "0"                   // Base agility
+    "AttributeAgilityGain"    "0"                   // Agility bonus per level.
+
+    "BountyXP"          "500"                 // Experience earn.
+    "BountyGoldMin"       "500"                   // Gold earned min.
+    "BountyGoldMax"       "1000"                   // Gold earned max.
+
+    //"BoundsHullName"      "DOTA_HULL_SIZE_HERO"
+    //"RingRadius"        "70"
+
+    "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"
+    "MovementSpeed"       "405"                 // Speed.
+    "MovementTurnRate"      "1.0"                 // Turning rate.
+
+    "StatusHealth"        "200"                 // Base health.
+    "StatusHealthRegen"     "5.0"                 // Health regeneration rate.
+
+    "StatusMana"        "700"                   // Base mana.
+    "StatusManaRegen"     "10.0"                 // Mana regeneration rate.
+
+    "VisionDaytimeRange"    "800"                  // Range of vision at night time.
+    "VisionDaytimeRange"    "500"    
+  }
+
+    "natures_prophet"
+  {
+    "AbilityLayout"     "4"
+    "override_hero"     "npc_dota_hero_furion"
+    "SoundSet"          "0" 
+    "Ability1"        "Armour_Up"
+    "Ability2"        "shredder_chain"
+    "Ability3"        "tree_teleportation" 
+    "Ability4"        "tree_teleportation"
+    "Ability5"        "torrent_datadriven"
+    "Ability6"        "tree_teleportation"
+
+
+    
+    "ArmorPhysical"       "0"                 // Physical protection.
+    "MagicalResistance"       "0"                 // Magical protection (percentage).
+
+    "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+    "AttackDamageMin"     "20"                   // Damage range min.
+    "AttackDamageMax"     "30"                   // Damage range max.
+    "AttackRange"                   "100"
+
+
+    //"AttributePrimary"      "DOTA_ATTRIBUTE_STRENGTH"
+    "AttributeBaseStrength"   "0"                   // Base strength
+    "AttributeStrengthGain"   "0"                   // Strength bonus per level.
+    "AttributeBaseIntelligence" "0"                   // Base intelligence
+    "AttributeIntelligenceGain" "0"                   // Intelligence bonus per level.
+    "AttributeBaseAgility"    "0"                   // Base agility
+    "AttributeAgilityGain"    "0"                   // Agility bonus per level.
+
+    "BountyXP"          "500"                 // Experience earn.
+    "BountyGoldMin"       "500"                   // Gold earned min.
+    "BountyGoldMax"       "1000"                   // Gold earned max.
+
+    //"BoundsHullName"      "DOTA_HULL_SIZE_HERO"
+    //"RingRadius"        "70"
+
+    "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"
+    "MovementSpeed"       "405"                 // Speed.
+    "MovementTurnRate"      "1.0"                 // Turning rate.
+
+    "StatusHealth"        "200"                 // Base health.
+    "StatusHealthRegen"     "5.0"                 // Health regeneration rate.
+
+    "StatusMana"        "700"                   // Base mana.
+    "StatusManaRegen"     "10.0"                 // Mana regeneration rate.
+
+    "VisionDaytimeRange"    "800"                  // Range of vision at night time.
+    "VisionDaytimeRange"    "500"    
+  }
+
+
+}

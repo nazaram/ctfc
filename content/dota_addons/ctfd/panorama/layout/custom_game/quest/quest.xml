@@ -1,0 +1,24 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/custom_game/quest/quest.css" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/scripts/custom_game/quest/quest.js" />
+	</scripts>
+
+	<Panel hittest="false" class="CustomHudRoot">
+		<Panel hittest="false" id="TopBarScoreboard">
+			<Panel hittest="false" id="RadiantContainer">
+				<Panel hittest="false" id="RadiantHeroes" />
+				<Label hittest="false" id="GoodFlag" text="Bad Flag Not Captured" html="true" />
+			</Panel>
+			<Panel hittest="false" id="TimeContainer">
+				<Label hittest="false" id="time_spacer" text="        " html="true" />
+			</Panel>
+			<Panel hittest="false" id="DireContainer">
+				<Label hittest="false" id="BadFlag" text="Good Flag Not Captured" html="true" />
+				<Panel hittest="false" id="DireHeroes" />
+			</Panel>
+	    </Panel>
+    </Panel>
+</root>

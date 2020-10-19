@@ -1,0 +1,69 @@
+.CustomHudRoot
+{
+    width: 100%;
+    height: 100%;
+    flow-children: right;
+}
+
+#TopBarScoreboard
+{
+    flow-children: right;
+    horizontal-align: left;
+    margin-top: 20px;
+    visibility: visible;
+}
+
+#RadiantContainer
+{
+    flow-children: left;
+    horizontal-align: left;
+    margin-top: 0px;
+    margin-left: 1300px;
+    visibility: visible;
+}
+
+#GoodFlag
+{
+    opacity: 1;
+    margin-top: 0px;
+    horizontal-align: left;
+    vertical-align: middle;
+    font-weight: bold;
+    font-size: 20px;
+    min-width: 40px;
+    color: white;
+	text-shadow: 2px 2px 2px #1E211E;
+	color: gradient( linear, 0% 0%, 0% 100%, from( #C71212 ), color-stop( 0.25, #C71212 ), color-stop( 0.5, #AE1515 ), color-stop( 0.75, #B03535 ), to( #9a6717 ) );
+    visibility: visible;
+}
+
+#DireContainer
+{
+    flow-children: left;
+    horizontal-align: left;
+    margin-top: 0px;
+    margin-left: -1275px;
+    visibility: visible;
+}
+
+
+#BadFlag
+{
+    opacity: 1;
+    margin-top: 0px;
+    margin-left: -21px;
+    horizontal-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+    font-size: 20px;
+    min-width: 40px;
+    color: white;
+	text-shadow: 2px 2px 2px #1E211E;
+	color: gradient( linear, 0% 0%, 0% 100%, from( #2CA11A ), color-stop( 0.25, #2CA11A ), color-stop( 0.5, #2CA11A ), color-stop( 0.75, #418A36 ), to( #0F5F02 ) );
+    visibility: visible;
+}
+
+#time_spacer
+{
+
+}

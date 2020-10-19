@@ -1,0 +1,8 @@
+ctf
+{
+	material materials/overviews/ctf.vmat
+	pos_x -4921
+	pos_y 8117
+	scale 10.173
+}
+

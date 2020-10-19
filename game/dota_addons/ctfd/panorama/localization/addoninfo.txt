@@ -1,0 +1,12 @@
+"AddonInfo"
+{
+	"addontitle"					"Capture The Flag"
+	"addon_game_name"				"Capture The Flag"
+    
+    "maps"							"Capture The Flag"
+	"IsPlayable" "1"
+	"capture_the_flag"
+	{
+		"MaxPlayers"		"10"
+	}
+}
