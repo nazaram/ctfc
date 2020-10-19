@@ -401,7 +401,7 @@
     
     // Time   
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityCooldown"       "15"
+    "AbilityCooldown"       "15 13 10"
     
     // Cost
     //-------------------------------------------------------------------------------------------------------------
@@ -455,6 +455,11 @@
       {
         "var_type"      "FIELD_INTEGER"
         "extra_pull_buffer"     "30"
+      }
+       "10"
+      {
+        "var_type"      "FIELD_INTEGER"
+        "tooltip_cooldown"     "15 13 10"
       }
     }
     "AbilityCastAnimation"    "ACT_DOTA_CAST_ABILITY_2"
@@ -823,7 +828,7 @@
 
     // Time
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityCooldown"       "0.0"
+    "AbilityCooldown"       "14.0"
 
     // Damage.
     //-------------------------------------------------------------------------------------------------------------
@@ -831,7 +836,7 @@
 
     // Cost
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityManaCost"       "0"
+    "AbilityManaCost"       "100"
     // Special
     //-------------------------------------------------------------------------------------------------------------
     "AbilitySpecial"
@@ -1109,7 +1114,7 @@
 
     // Casting
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityCastPoint"        "0.6"
+    "AbilityCastPoint"        "0.7"
     "AbilityCastRange"        "0"
     
     // Time   
@@ -1130,7 +1135,7 @@
       "01"
       {
         "var_type"      "FIELD_INTEGER"
-        "radius"      "250"
+        "radius"      "100"
       }
       "02"
       { 
@@ -3665,10 +3670,13 @@
   //=================================================================================================================
   // Ability: Mirana Leap
   //=================================================================================================================
-  "mirana_leap"
+  "earthshaker_leap"
   {
     // General
     //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"             		"mirana_leap"
+    "AbilityTextureName"			"mirana_leap"
+    "MaxLevel" 						"1"
     "ID"          "5050"                            // unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
     "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
     "SpellDispellableType"      "SPELL_DISPELLABLE_YES"
@@ -3678,11 +3686,11 @@
     
     // Time   
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityCooldown"       "0"
+    "AbilityCooldown"       "3"
 
     // Cost
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityManaCost"       "5"
+    "AbilityManaCost"       "50"
 
     // Special
     //-------------------------------------------------------------------------------------------------------------
@@ -3691,17 +3699,17 @@
       "01"
       {
         "var_type"        "FIELD_INTEGER"
-        "leap_distance"     "200"
+        "leap_distance"     "250"
       }
       "02"
       {
         "var_type"        "FIELD_FLOAT"
-        "leap_speed"      "300.0"
+        "leap_speed"      "250.0"
       }
       "03"
       {
         "var_type"        "FIELD_FLOAT"
-        "leap_acceleration"   "300.0"
+        "leap_acceleration"   "350.0"
       }
       "04"
       {
@@ -3717,18 +3725,10 @@
       "06"
       {
         "var_type"        "FIELD_FLOAT"
-        "leap_bonus_duration" "2.5"
+        "leap_bonus_duration" "1"
       }
-      "07"
-      {
-        "var_type"        "FIELD_INTEGER"
-        "max_charges"     "4"
-      }
-      "08"
-      {
-        "var_type"        "FIELD_INTEGER"
-        "charge_restore_time" "5"
-      }
+    
+
     }
     "AbilityCastAnimation"    "ACT_DOTA_CAST_ABILITY_3"
   }
@@ -3837,7 +3837,7 @@
 
     // Time   
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityCooldown"       "3.5"
+    "AbilityCooldown"       "3.5 3.25 3"
 
     // Damage.
     //-------------------------------------------------------------------------------------------------------------
@@ -4085,7 +4085,7 @@
     "01"
     {
       "var_type"        "FIELD_INTEGER"
-      "skewer_speed"          "600" "700" "800"
+      "skewer_speed"          "600"
     }
     "02"
     {
@@ -4115,7 +4115,7 @@
     "07"
     {
       "var_type"        "FIELD_INTEGER"
-      "range"         "1100" "1250" "1400"
+      "range"         "800" "950" "1100"
     }
     "08"
     {
@@ -4937,6 +4937,22 @@
       }
     }
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
 

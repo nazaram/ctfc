@@ -732,7 +732,7 @@
     "Ability3"        "earthshaker_fissure" 
     "Ability4"        "earthshaker_aftershock"
     "Ability5"        "torrent_datadriven"
-    "Ability6"        "mirana_leap"
+    "Ability6"        "earthshaker_leap"
 
 
     
