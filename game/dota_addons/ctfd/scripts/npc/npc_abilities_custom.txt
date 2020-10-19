@@ -3721,6 +3721,7 @@
     // Cost
     //-------------------------------------------------------------------------------------------------------------
     "AbilityManaCost"       "100"
+    "AnimationPlaybackRate"  "0.5"
 
     // Special
     //-------------------------------------------------------------------------------------------------------------
@@ -3729,22 +3730,22 @@
       "01"
       {
         "var_type"        "FIELD_INTEGER"
-        "leap_distance"     "800"
+        "leap_distance"     "700"
       }
       "02"
       {
         "var_type"        "FIELD_FLOAT"
-        "leap_speed"      "600.0"
+        "leap_speed"      "450.0"
       }
       "03"
       {
         "var_type"        "FIELD_FLOAT"
-        "leap_acceleration"   "-300.0"
+        "leap_acceleration"   "500.0"
       }
       "04"
       {
         "var_type"      "FIELD_INTEGER"
-        "leap_speedbonus" "1"
+        "leap_speedbonus" "5"
       }
       "05"
       {
