@@ -1,5 +1,9 @@
 #BASE "heroes/ctf_bounty_hunter.txt"
-// Dota Abilities Override File
+
+#BASE "units/npc_dota_custom_dummy_unit.txt"
+
+
+// Dota Abilities Custom File
 "DOTAAbilities"
 {
   "Version"   "1"
