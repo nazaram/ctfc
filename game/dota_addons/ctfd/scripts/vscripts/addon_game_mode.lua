@@ -4,7 +4,7 @@ require("libraries/physics")
 require("libraries/timers")
 require("libraries/status_resistance")
 
-LinkLuaModifier("modifier_status_resistance", "status_resistance.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_status_resistance", "libraries/status_resistance.lua", LUA_MODIFIER_MOTION_NONE)
 
 
 if CAddonTemplateGameMode == nil then
