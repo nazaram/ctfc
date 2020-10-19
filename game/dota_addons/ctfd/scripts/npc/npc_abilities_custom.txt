@@ -4293,7 +4293,7 @@
     "AbilityTextureName"      "omniknight_repel"
     "MaxLevel" "3"
 
-    "AbilityManaCost" "0"
+    "AbilityManaCost" "50"
 
     // Stats
     //-------------------------------------------------------------------------------------------------------------
