@@ -1,6 +1,8 @@
+#BASE "heroes/bounty_hunter_ctf.txt"
+
 "DOTAHeroes"
 {
-  "clockwerk"
+"clockwerk"
   {
     "AbilityLayout"     "4"
     "override_hero"     "npc_dota_hero_rattletrap"
@@ -62,7 +64,7 @@
     "Ability3"        "ctf_shadowwalk" 
     "Ability4"        "bounty_hunter_jinada"
     "Ability5"        "torrent_datadriven"
-    "Ability6"        "bounty_hunter_track"
+    "Ability6"        "bounty_hunter_twin_shuriken_toss"
 
     "ArmorPhysical"       "0"                 // Physical protection.
     "MagicalResistance"       "0"                 // Magical protection (percentage).
