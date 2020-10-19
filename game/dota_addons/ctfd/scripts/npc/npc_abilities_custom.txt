@@ -363,9 +363,18 @@
       "03"
       {
         "var_type"          "FIELD_INTEGER"
-        "move_speed_bonus_pct"    "5 10 15"
+        "move_speed_bonus_pct"    "10"
       }
-      
+      "04"
+      {
+        "var_type"          "FIELD_INTEGER"
+        "tooltip_cooldown"       ".7 .9 1.1"
+      }
+      "05"
+      {
+        "var_type"          "FIELD_INTEGER"
+        "tooltip_move_speed_bonus_pct"    "10"
+      }
     }
   
    }
@@ -481,7 +490,7 @@
     "AbilityCastPoint"        "0.0"
 
     // Time
-    "AbilityCooldown"       "9"
+    "AbilityCooldown"       "13 11 9"
 
     // Cost
     "AbilityManaCost"       "100"
@@ -527,7 +536,11 @@
         "var_type"          "FIELD_INTEGER"
         "toss_damage"       "0"
       }
-
+      "08"
+      {
+        "var_type"          "FIELD_INTEGER"
+        "tooltip_cooldown"       "13 11 9"
+      }
     }
   }
 
@@ -573,6 +586,13 @@
         "avalanche_damage"      "0"
         "LinkedSpecialBonus"    "special_bonus_unique_tiny"
       }
+    "08"
+      {
+        "var_type"          "FIELD_INTEGER"
+        "tooltip_radius"      "325"
+      }
+
+
     }
     "AbilityCastAnimation"    "ACT_DOTA_CAST_ABILITY_1"
   }
@@ -1244,7 +1264,7 @@
       "02"
       {
         "var_type"        "FIELD_INTEGER"
-        "gold_steal"      "300"
+        "gold_steal"      "150"
         "LinkedSpecialBonus"    "special_bonus_unique_bounty_hunter"
       }
     }
@@ -2078,7 +2098,7 @@
     
     // Time   
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityCooldown"       "9"
+    "AbilityCooldown"       "12"
 
   
     // Cost
@@ -2457,6 +2477,24 @@
         "var_type"            "FIELD_FLOAT"
         "charge_restore_time"     "5"
       }         
+      "08"
+      {
+         "var_type"            "FIELD_FLOAT"
+        "tooltip_range"     "1200" "1500" "2500"
+      }
+          "09"
+      {
+         "var_type"            "FIELD_FLOAT"
+        "tooltip_speed"     "1100"
+      }
+        "10"
+      {
+         "var_type"            "FIELD_FLOAT"
+        "tooltip_cooldown"      "6" "5" "4"
+      }
+
+
+
     }
   }
 
@@ -4248,7 +4286,7 @@
     "BaseClass"           "ability_datadriven"
     "ID"              "2187"  //Valve's version of this item uses the ID "187".
     "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-    "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_BOTH"
+    "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
     "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
     "AbilityUnitTargetFlags"    "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
     "Model"             "models/props_gameplay/red_box.vmdl" 
