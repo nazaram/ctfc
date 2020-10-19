@@ -1,7 +1,8 @@
 -- Generated from template
 
-require('status_resistance')
-require('timers')
+require("libraries/physics")
+require("librareis/timers")
+require("libraries/status_resistance")
 
 LinkLuaModifier("modifier_status_resistance", "status_resistance.lua", LUA_MODIFIER_MOTION_NONE)
 
