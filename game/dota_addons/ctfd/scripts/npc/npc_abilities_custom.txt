@@ -714,6 +714,12 @@
         "var_type"          "FIELD_INTEGER"
         "pull_distance"   "150"
       }
+      "08"
+      {
+        "var_type"          "FIELD_INTEGER"
+        "tooltip_range"   "880"
+      }
+
     }
     "AbilityCastAnimation"    "ACT_DOTA_CAST_ABILITY_1"
   }
@@ -1870,7 +1876,7 @@
       "01"
       {
         "var_type"                                        "FIELD_FLOAT"
-        "reflect_duration"                                "1"
+        "reflect_duration"                                "0.5"
       }
       "02"
       {
@@ -2651,7 +2657,7 @@
 
     // Time   
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityCooldown"       "11 9 7"
+    "AbilityCooldown"       "11 10 9"
 
 
     // Cost
@@ -2712,7 +2718,7 @@
       "10"
       {
         "var_type"          "FIELD_INTEGER"
-        "snowball_grab_radius"    "2050"
+        "snowball_grab_radius"    "1800"
       }
     }
     "AbilityCastAnimation"    "ACT_DOTA_CAST_ABILITY_2"
@@ -2754,7 +2760,7 @@
 
     // Casting
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityCastRange"        "1000 1100 1200"
+    "AbilityCastRange"        "950 1300 1500"
 
     // Time   
     //-------------------------------------------------------------------------------------------------------------
@@ -2780,7 +2786,7 @@
       "02"
       {
         "var_type"          "FIELD_INTEGER"
-        "max_distance"        "800 1200 1400"
+        "max_distance"        "950 1300 1500"
         "LinkedSpecialBonus"    "special_bonus_unique_puck"
         "LinkedSpecialBonusOperation" "SPECIAL_BONUS_PERCENTAGE_ADD"
       }
@@ -2880,12 +2886,12 @@
 
     // Casting
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityCastRange"        "3400"
+    "AbilityCastRange"        "2300 2800 3400"
     "AbilityCastPoint"        "0.3"
 
     // Time   
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityCooldown"       "9 7 5"
+    "AbilityCooldown"       "9 8 7"
     "AbilityDuration"       "3"
 
     // Damage.
@@ -2903,12 +2909,12 @@
       "01"
       {
         "var_type"      "FIELD_FLOAT"
-        "wave_speed"    "2000.0 3000.0 4000.0"
+        "wave_speed"    "3000.0"
       }
       "02"
       {
         "var_type"      "FIELD_INTEGER"
-        "wave_width"    "200 300 400"
+        "wave_width"    "300"
       }
       "03"
       {
@@ -2919,14 +2925,18 @@
       "04"
       {
         "var_type"      "FIELD_FLOAT"
-        "vision_aoe"    "500 600 700"
+        "vision_aoe"    "600"
       }
       "05"
       {
         "var_type"      "FIELD_FLOAT"
-        "vision_duration" "6 7 8"
+        "vision_duration" "4 4.5 5"
       }
-      
+    "06"
+      {
+        "var_type"      "FIELD_FLOAT"
+        "tooltip_range" "2300 2800 3400"
+      }
     }
     "AbilityCastAnimation"    "ACT_DOTA_CAST_ABILITY_2"
   }
@@ -3694,7 +3704,7 @@
       "06"
       {
         "var_type"        "FIELD_FLOAT"
-        "leap_bonus_duration" "1"
+        "leap_bonus_duration" "1.1"
       }
     
 
@@ -3815,7 +3825,7 @@
 
     // Cost
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityManaCost"       "10"   
+    "AbilityManaCost"       "30"   
 
     // Special
     //-------------------------------------------------------------------------------------------------------------
@@ -3962,7 +3972,7 @@
   "MaxLevel"                                      "1"
   "AbilityType"         "DOTA_ABILITY_TYPE_ULTIMATE"
   "AbilityCooldown"       "9.0"
-  "AbilityCastRange"        "300"
+  "AbilityCastRange"        "500"
 
 
     "AbilitySpecial"
