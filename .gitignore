@@ -1,13 +1,26 @@
-*
-!content
-!game
+# blacklist all files/folders in same directory as the .gitignore file
+/*
 
+# whitelist some files & folders
+!.gitignore
+!README.md
+
+!.git/
+!.gitattributes
+
+# ignore all files named .DS_Store or ending with .log
+**/.DS_Store
+**.log
+
+# whitelist threevthree folders
+!content/
 content/*
-!content/dota_addons
+!content/dota_addons/
 content/dota_addons/*
-!content/dota_addons/ctfd
+!content/dota_addons/ctfd/
 
+!game/
 game/*
-!game/dota_addons
+!game/dota_addons/
 game/dota_addons/*
-!game/dota_addons/ctfd
+!game/dota_addons/ctfd/
