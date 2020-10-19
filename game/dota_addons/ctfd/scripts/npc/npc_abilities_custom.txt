@@ -1194,7 +1194,7 @@
     "05"
     { 
       "var_type"      "FIELD_INTEGER"
-      "tooltip_range"   "5000"
+      "tooltip_range"   "2000"
     }
     "06"
     {
