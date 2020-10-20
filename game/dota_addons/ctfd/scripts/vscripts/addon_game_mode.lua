@@ -112,12 +112,18 @@ _G.BadinPrison = 0
 
 function Precache( context )
 	--[[
-		Precache things we know we'll use.  Possible file types include (but not limited to):
+		  Precache things we know we'll use.  Possible file types include (but not limited to):
 			PrecacheResource( "model", "*.vmdl", context )
 			PrecacheResource( "soundfile", "*.vsndevts", context )
 			PrecacheResource( "particle", "*.vpcf", context )
 			PrecacheResource( "particle_folder", "particles/folder", context )
 	]]
+
+-- Precache particles
+--=====================================================================================================================================
+PrecacheResource("particle", "particles/econ/items/kunkka/divine_anchor/hero_kunkka_dafx_skills/kunkka_spell_torrent_bubbles_fxset.vpcf", context)
+PrecacheResource("particle", "particles/econ/items/kunkka/divine_anchor/hero_kunkka_dafx_skills/kunkka_spell_torrent_splash_fxset.vpcf", context)
+
 end
 
 XP_PER_LEVEL_TABLE = {

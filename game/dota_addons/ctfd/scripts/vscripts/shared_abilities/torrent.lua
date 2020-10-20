@@ -34,9 +34,19 @@ end
 	Emit sound at location
 ]]
 function torrent_emit_sound( keys )
-	local dummy = CreateUnitByName( "npc_dummy_unit", keys.target_points[1], false, keys.caster, keys.caster, keys.caster:GetTeamNumber() )
+	local ability = keys.ability
+	local dummy = CreateUnitByName( "npc_dota_custom_dummy_unit", keys.target_points[1], false, keys.caster, keys.caster, keys.caster:GetTeamNumber() )
 	EmitSoundOn( "Ability.Torrent", dummy )
 	dummy:ForceKill( true )
+	local particle_torrent2 = "particles/econ/items/kunkka/divine_anchor/hero_kunkka_dafx_skills/kunkka_spell_torrent_splash_fxset.vpcf"
+	local fx = ParticleManager:CreateParticle(particle_torrent2, PATTACH_ABSORIGIN, target)
+	local duration = ability:GetLevelSpecialValueFor("stun_duration", ability:GetLevel() - 1)
+
+	Timers:CreateTimer(duration, function()
+			ParticleManager:DestroyParticle(fx, false)
+			return nil
+		end
+		)
 end
 
 --[[
