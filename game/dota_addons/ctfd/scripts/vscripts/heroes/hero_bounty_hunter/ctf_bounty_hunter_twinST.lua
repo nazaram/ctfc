@@ -12,38 +12,51 @@ function LaunchStars( keys )
 
 	local target_points 	= keys.target_points[1] --target point prime
 	local direction 		= (target_points - caster_location):Normalized()
+	local direction_alpha	= direction + 
 
 	ability.star_speed		= ability:GetLevelSpecialValueFor("star_speed", ability_level - 1)
 
-	local dummy_unit		= CreateUnitByName("npc_dota_custom_dummy_unit", caster_location, true, caster, caster, caster:GetTeamNumber())
+	local dummy_unit_alpha	= CreateUnitByName("npc_dota_custom_dummy_unit", caster_location, true, caster, caster, caster:GetTeamNumber())
+	local dummy_unit_beta	= CreateUnitByName("npc_dota_custom_dummy_unit", caster_location, true, caster, caster, caster:GetTeamNumber())
 
-	--dummy_unit:SetAbilityPoints(1)
-	dummy_unit:FindAbilityByName("dummy_passive"):SetLevel(1)
+	--dummy_unit_alpha:SetAbilityPoints(1)
+	dummy_unit_alpha:FindAbilityByName("dummy_passive"):SetLevel(1)
 
-	local particle 			= ParticleManager:CreateParticle(particle_name, PATTACH_CUSTOMORIGIN_FOLLOW, dummy_unit)
+	local particle_alpha	= ParticleManager:CreateParticle(particle_name, PATTACH_CUSTOMORIGIN_FOLLOW, dummy_unit_alpha)
 
-	Physics:Unit(dummy_unit)
+	Physics:Unit(dummy_unit_alpha)
 
-	dummy_unit:PreventDI(true)
-	dummy_unit:SetAutoUnstuck(false)
-	dummy_unit:SetNavCollisionType(PHYSICS_NAV_NOTHING)
-	dummy_unit:FollowNavMesh(false)
-	dummy_unit:SetPhysicsVelocityMax(ability.star_speed)
-	dummy_unit:SetPhysicsVelocity(ability.star_speed * direction)
-	dummy_unit:SetPhysicsFriction(0)
-	dummy_unit:Hibernate(false)
-	dummy_unit:SetGroundBehavior(PHYSICS_GROUND_LOCK)
+	dummy_unit_alpha:PreventDI(true)
+	dummy_unit_alpha:SetAutoUnstuck(false)
+	dummy_unit_alpha:SetNavCollisionType(PHYSICS_NAV_NOTHING)
+	dummy_unit_alpha:FollowNavMesh(false)
+	dummy_unit_alpha:SetPhysicsVelocityMax(ability.star_speed)
+	dummy_unit_alpha:SetPhysicsVelocity(ability.star_speed * direction)
+	dummy_unit_alpha:SetPhysicsFriction(0)
+	dummy_unit_alpha:Hibernate(false)
+	dummy_unit_alpha:SetGroundBehavior(PHYSICS_GROUND_LOCK)
 
+	Timers:CreateTimer(3, 
+		function()
+			-- print("Hi Aram") Debug
+			dummy_unit_alpha:RemoveSelf()
+			ParticleManager:ReleaseParticleIndex(particle_alpha)
+		end
+		)
 
-	dummy_unit:OnPhysicsFrame(
-		function(dummy_unit)
-			dummy_unit:SetForwardVector((dummy_unit:GetPhysicsVelocity()):Normalized() * 0.1 * ability.star_speed)
+	local dummyx = dummy_unit_alpha:GetPhysicsVelocity():Normalized().x
+	local dummyy = dummy_unit_alpha:GetPhysicsVelocity():Normalized().y
+	local dummyz = dummy_unit_alpha:GetPhysicsVelocity():Normalized().z
 
-			local distance = (caster_location - dummy_unit:GetAbsOrigin()):Length2D()
+	dummy_unit_alpha:OnPhysicsFrame(
+		function(dummy_unit_alpha)
+			dummy_unit_alpha:SetForwardVector(Vector(dummyx, dummyy, dummyz) * 0.1 * ability.star_speed)
+
+			local distance = (caster_location - dummy_unit_alpha:GetAbsOrigin()):Length2D()
 			
 			if distance > max_distance then
-				dummy_unit:RemoveSelf()
-				ParticleManager:ReleaseParticleIndex(particle)
+				dummy_unit_alpha:RemoveSelf()
+				ParticleManager:ReleaseParticleIndex(particle_alpha)
 				return nil
 			end
 		end

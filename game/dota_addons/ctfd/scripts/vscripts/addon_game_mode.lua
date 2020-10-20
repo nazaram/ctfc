@@ -3,6 +3,8 @@
 require("libraries/physics")
 require("libraries/timers")
 require("libraries/status_resistance")
+require("shared_abilities/torrent")
+require("shared_abilities/solar_crest_hvh")
 
 LinkLuaModifier("modifier_status_resistance", "libraries/status_resistance.lua", LUA_MODIFIER_MOTION_NONE)
 
