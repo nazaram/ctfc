@@ -934,17 +934,124 @@
     "VisionDaytimeRange"    "500"    
   }
 
+
+  "void"
+  {
+    "AbilityLayout"     "4"
+    "override_hero"     "npc_dota_hero_faceless_void"
+    "SoundSet"          "0" 
+    "Ability1"        "Armour_Up"
+    "Ability2"        "shredder_chain"
+    "Ability3"        "faceless_void_time_dilation" 
+    "Ability4"        "faceless_void_chronosphere"
+    "Ability5"        "torrent_datadriven"
+    "Ability6"        "faceless_void_time_walk"
+
+
+    
+    "ArmorPhysical"       "0"                 // Physical protection.
+    "MagicalResistance"       "0"                 // Magical protection (percentage).
+
+    "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+    "AttackDamageMin"     "20"                   // Damage range min.
+    "AttackDamageMax"     "30"                   // Damage range max.
+    "AttackRange"                   "100"
+
+
+    //"AttributePrimary"      "DOTA_ATTRIBUTE_STRENGTH"
+    "AttributeBaseStrength"   "0"                   // Base strength
+    "AttributeStrengthGain"   "0"                   // Strength bonus per level.
+    "AttributeBaseIntelligence" "0"                   // Base intelligence
+    "AttributeIntelligenceGain" "0"                   // Intelligence bonus per level.
+    "AttributeBaseAgility"    "0"                   // Base agility
+    "AttributeAgilityGain"    "0"                   // Agility bonus per level.
+
+    "BountyXP"          "500"                 // Experience earn.
+    "BountyGoldMin"       "500"                   // Gold earned min.
+    "BountyGoldMax"       "1000"                   // Gold earned max.
+
+    //"BoundsHullName"      "DOTA_HULL_SIZE_HERO"
+    //"RingRadius"        "70"
+
+    "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"
+    "MovementSpeed"       "405"                 // Speed.
+    "MovementTurnRate"      "1.0"                 // Turning rate.
+
+    "StatusHealth"        "200"                 // Base health.
+    "StatusHealthRegen"     "5.0"                 // Health regeneration rate.
+
+    "StatusMana"        "700"                   // Base mana.
+    "StatusManaRegen"     "10.0"                 // Mana regeneration rate.
+
+    "VisionDaytimeRange"    "800"                  // Range of vision at night time.
+    "VisionDaytimeRange"    "500"    
+  }
+
+  "slark"
+  {
+    "AbilityLayout"     "4"
+    "override_hero"     "npc_dota_hero_slark"
+    "SoundSet"          "0" 
+    "Ability1"        "Armour_Up"
+    "Ability2"        "shredder_chain"
+    "Ability3"        "slark_pounce" 
+    "Ability4"        "slark_shadow_dance"
+    "Ability5"        "torrent_datadriven"
+    "Ability6"        "slark_dark_pact"
+
+
+    
+    "ArmorPhysical"       "0"                 // Physical protection.
+    "MagicalResistance"       "0"                 // Magical protection (percentage).
+
+    "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+    "AttackDamageMin"     "20"                   // Damage range min.
+    "AttackDamageMax"     "30"                   // Damage range max.
+    "AttackRange"                   "100"
+
+
+    //"AttributePrimary"      "DOTA_ATTRIBUTE_STRENGTH"
+    "AttributeBaseStrength"   "0"                   // Base strength
+    "AttributeStrengthGain"   "0"                   // Strength bonus per level.
+    "AttributeBaseIntelligence" "0"                   // Base intelligence
+    "AttributeIntelligenceGain" "0"                   // Intelligence bonus per level.
+    "AttributeBaseAgility"    "0"                   // Base agility
+    "AttributeAgilityGain"    "0"                   // Agility bonus per level.
+
+    "BountyXP"          "500"                 // Experience earn.
+    "BountyGoldMin"       "500"                   // Gold earned min.
+    "BountyGoldMax"       "1000"                   // Gold earned max.
+
+    //"BoundsHullName"      "DOTA_HULL_SIZE_HERO"
+    //"RingRadius"        "70"
+
+    "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"
+    "MovementSpeed"       "405"                 // Speed.
+    "MovementTurnRate"      "1.0"                 // Turning rate.
+
+    "StatusHealth"        "200"                 // Base health.
+    "StatusHealthRegen"     "5.0"                 // Health regeneration rate.
+
+    "StatusMana"        "700"                   // Base mana.
+    "StatusManaRegen"     "10.0"                 // Mana regeneration rate.
+
+    "VisionDaytimeRange"    "800"                  // Range of vision at night time.
+    "VisionDaytimeRange"    "500"    
+  }
+
+
+
     "natures_prophet"
   {
     "AbilityLayout"     "4"
     "override_hero"     "npc_dota_hero_furion"
     "SoundSet"          "0" 
-    "Ability1"        "Armour_Up"
-    "Ability2"        "shredder_chain"
-    "Ability3"        "tree_teleportation" 
-    "Ability4"        "tree_teleportation"
+    "Ability1"        "faceless_dash"
+    "Ability2"        "skill_lordofdeath_boss_dive"
+    "Ability3"        "skill_lordofdeath_boss_dive" 
+    "Ability4"        "skill_lordofdeath_boss_dive"
     "Ability5"        "torrent_datadriven"
-    "Ability6"        "tree_teleportation"
+    "Ability6"        "skill_lordofdeath_boss_dive"
 
 
     
