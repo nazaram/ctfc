@@ -65,10 +65,10 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1500"
-		"AbilityCastPoint"				"0.7"
+		"AbilityCastPoint"				"0.5"
 
-		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
-		"AnimationPlaybackRate"			"0.6"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"AnimationPlaybackRate"			"0.7"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------

@@ -1,5 +1,9 @@
 ctf_bounty_hunter_twinST = class({})
 
+function DOT (a, b)
+	return (a[1] * b[1]) + (a[2] * b[2]) + (a[3] * a[3])
+end
+
 function LaunchStars( keys )
 	local caster 			= keys.caster
 	local caster_location 	= caster:GetAbsOrigin()
@@ -20,17 +24,24 @@ function LaunchStars( keys )
 
 	local theta				= 15 * math.pi / 180 -- 15 degrees in radians
 
-	local direction_alpha	= Vector(direction.x * math.cos(theta), direction.y * math.sin(theta), direction.z)
-	local alpha_point		= direction_alpha:Normalized() * max_distance
+	local unit_zero_vector	= Vector(math.cos(0), math.sin(0)):Normalized()
+	-- Target Point Alpha: 
+	local direction_alpha	= Vector(direction:Length2D() * math.cos(theta), direction:Length2D() * math.sin(theta), direction.z)
+	local alpha_point		= (direction:Normalized() + direction_alpha:Normalized()) * direction:Length2D()
 
-	local direction_beta	= Vector(direction.x * math.cos(-1 * theta), direction.y * math.sin(-1 * theta), direction.z)
-	local beta_point		= direction_beta:Normalized() * max_distance
+	local direction_beta	= Vector(direction:Length2D() * math.cos(-1 * theta), direction:Length2D() * math.sin(-1 * theta), direction.z)
+	local beta_point		= (direction:Normalized() + direction_beta:Normalized()) * direction:Length2D()
 
-	local dotA = direction_alpha:Normalized() * direction:Normalized() * math.cos(theta)
-	local dotB = direction_beta:Normalized() * direction:Normalized() * math.cos(-1 * theta)
 
-	print("Alpha dot direction = ", dotA)
-	print("Beta dot direction = ", dotB)
+	local answer			= math.acos(DOT(caster:GetForwardVector(), unit_zero_vector) / caster:GetForwardVector():Normalized() * unit_zero_vector)
+
+	print(math.deg(answer))
+
+	-- local dotA = direction_alpha:Normalized() * direction:Normalized() * math.cos(theta)
+	-- local dotB = direction_beta:Normalized() * direction:Normalized() * math.cos(-1 * theta)
+
+	-- print("Alpha dot direction = ", dotA)
+	-- print("Beta dot direction = ", dotB)
 
 	-- dummy_unit_alpha:SetAbilityPoints(1)
 	-- dummy_unit_alpha:FindAbilityByName("dummy_passive"):SetLevel(1)
@@ -87,7 +98,7 @@ function LaunchStars( keys )
 
 	dummy_unit_alpha:OnPhysicsFrame(
 		function(dummy_unit_alpha)
-			dummy_unit_alpha:SetForwardVector(Vector(dummyax, dummyay, dummyaz) * 0.3 * ability.star_speed)
+			dummy_unit_alpha:SetForwardVector(Vector(dummyax, dummyay, dummyaz) * ability.star_speed * (direction:Length2D() / max_distance))
 
 			local distance_alpha = (caster_location - dummy_unit_alpha:GetAbsOrigin()):Length2D()
 			
@@ -101,7 +112,7 @@ function LaunchStars( keys )
 
 	dummy_unit_beta:OnPhysicsFrame(
 		function(dummy_unit_beta)
-			dummy_unit_beta:SetForwardVector(Vector(dummybx, dummyby, dummybz) * 0.3 * ability.star_speed)
+			dummy_unit_beta:SetForwardVector(Vector(dummybx, dummyby, dummybz) * ability.star_speed * (direction:Length2D() / max_distance))
 
 			local distance_beta = (caster_location - dummy_unit_beta:GetAbsOrigin()):Length2D()
 
