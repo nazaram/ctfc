@@ -5,6 +5,7 @@ require("libraries/timers")
 require("libraries/status_resistance")
 require("shared_abilities/torrent")
 require("shared_abilities/solar_crest_hvh")
+require("libraries/animations")
 
 LinkLuaModifier("modifier_status_resistance", "libraries/status_resistance.lua", LUA_MODIFIER_MOTION_NONE)
 
@@ -599,6 +600,16 @@ local innateAbilityName16 = "tusk_frozen_sigil"
 local innateAbilityName17 = "ctf_waveform"
   if entity:IsRealHero() and entity:HasAbility(innateAbilityName17) then
     entity:FindAbilityByName(innateAbilityName17):SetLevel(1)
+  end
+
+local innateAbilityName18 = "faceless_void_chronosphere"
+  if entity:IsRealHero() and entity:HasAbility(innateAbilityName18) then
+    entity:FindAbilityByName(innateAbilityName18):SetLevel(1)
+  end
+
+  local innateAbilityName19 = "slark_shadow_dance"
+  if entity:IsRealHero() and entity:HasAbility(innateAbilityName19) then
+    entity:FindAbilityByName(innateAbilityName19):SetLevel(1)
   end
 
 end

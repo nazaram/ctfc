@@ -19,12 +19,15 @@
   "npc_dota_hero_mirana" "1"
   "npc_dota_hero_vengefulspirit" "1"
   "npc_dota_hero_tusk" "1"
- 
+  "npc_dota_hero_faceless_void" "1"
+  "npc_dota_hero_slark" "0"
+
+
 
   "npc_dota_hero_batrider" "0"
   "npc_dota_hero_pudge" "0"
   "npc_dota_hero_techies" "0"
-  "npc_dota_hero_furion" "1"
+  "npc_dota_hero_furion" "0"
 
 
   "npc_dota_hero_night_stalker" "0"
@@ -63,7 +66,6 @@
   "npc_dota_hero_doom_bringer" "0"
   "npc_dota_hero_drow_ranger" "0"
   "npc_dota_hero_enchantress" "0"
-  "npc_dota_hero_faceless_void" "0"
   "npc_dota_hero_leshrac" "0"
   "npc_dota_hero_lich" "0"
   "npc_dota_hero_life_stealer" "0"
@@ -122,7 +124,6 @@
   "npc_dota_hero_visage" "0"
   "npc_dota_hero_meepo" "0"
   "npc_dota_hero_centaur" "0"
-  "npc_dota_hero_slark" "0"
   "npc_dota_hero_shredder" "0"
   "npc_dota_hero_medusa" "0"
   "npc_dota_hero_troll_warlord" "0"
