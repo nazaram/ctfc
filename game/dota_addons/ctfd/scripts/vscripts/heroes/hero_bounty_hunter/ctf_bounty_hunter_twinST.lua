@@ -26,7 +26,11 @@ function LaunchStars( keys )
 	local direction_beta	= Vector(direction.x * math.cos(-1 * theta), direction.y * math.sin(-1 * theta), direction.z)
 	local beta_point		= direction_beta:Normalized() * max_distance
 
+	local dotA = direction_alpha:Normalized() * direction:Normalized() * math.cos(theta)
+	local dotB = direction_beta:Normalized() * direction:Normalized() * math.cos(-1 * theta)
 
+	print("Alpha dot direction = ", dotA)
+	print("Beta dot direction = ", dotB)
 
 	-- dummy_unit_alpha:SetAbilityPoints(1)
 	-- dummy_unit_alpha:FindAbilityByName("dummy_passive"):SetLevel(1)
@@ -41,7 +45,7 @@ function LaunchStars( keys )
 	Physics:Unit(dummy_unit_beta)
 
 	dummy_unit_alpha:PreventDI(true)
-	dummy_unit_alpha:SetAutoUnstuck(false)
+	dummy_unit_alpha:SetAutoUnstuck(true)
 	dummy_unit_alpha:SetNavCollisionType(PHYSICS_NAV_NOTHING)
 	dummy_unit_alpha:FollowNavMesh(false)
 	dummy_unit_alpha:SetPhysicsVelocityMax(ability.star_speed)
@@ -51,7 +55,7 @@ function LaunchStars( keys )
 	dummy_unit_alpha:SetGroundBehavior(PHYSICS_GROUND_LOCK)
 
 	dummy_unit_beta:PreventDI(true)
-	dummy_unit_beta:SetAutoUnstuck(false)
+	dummy_unit_beta:SetAutoUnstuck(true)
 	dummy_unit_beta:SetNavCollisionType(PHYSICS_NAV_NOTHING)
 	dummy_unit_beta:FollowNavMesh(false)
 	dummy_unit_beta:SetPhysicsVelocityMax(ability.star_speed)
