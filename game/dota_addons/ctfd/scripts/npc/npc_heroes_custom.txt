@@ -113,7 +113,7 @@
     "Ability1"        "Armour_Up"
     "Ability2"        "shredder_chain"
     "Ability3"        "pudge_meat_hook" 
-    "Ability4"        "creature_self_haste"
+    "Ability4"        "pudge_meat_hook"
     "Ability5"        "torrent_datadriven"
     "Ability6"        "pudge_dismember"
 
