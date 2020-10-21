@@ -1,0 +1,74 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Pudge Innate: Lil Stinky
+	//=================================================================================================================
+	"pudge_lil_stinky"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGONORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityTextureName"			"pudge_rot"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+
+		"MaxLevel"						"1"
+
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"particle"  				"particles/units/heroes/hero_pudge/pudge_rot.vpcf"
+			"particle"					"particles/units/heroes/hero_pudge/pudge_rot_body_decay_2.vpcf"
+			"partilce"					"particles/units/heroes/hero_pudge/pudge_rot_body_spores.vpcf"
+			"particle"  				"particles/econ/items/pudge/pudge_tassles_of_black_death/dcpudge_rot_flies.vpcf"
+		}
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"15"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"200"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"movespeed_slow"		"-20"
+			}
+
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"2"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/ctf_pudge_lil_stinky.lua"
+				"Function"		"SlowHeroes"
+			}
+
+		}
+	}
+}
