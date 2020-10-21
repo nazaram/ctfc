@@ -997,7 +997,7 @@
     "Ability3"        "slark_pounce" 
     "Ability4"        "slark_shadow_dance"
     "Ability5"        "torrent_datadriven"
-    "Ability6"        "slark_dark_pact"
+    "Ability6"        "slark_dark_pact_lua"
 
 
     
@@ -1030,7 +1030,7 @@
     "MovementTurnRate"      "1.0"                 // Turning rate.
 
     "StatusHealth"        "200"                 // Base health.
-    "StatusHealthRegen"     "5.0"                 // Health regeneration rate.
+    "StatusHealthRegen"     "100.0"                 // Health regeneration rate.
 
     "StatusMana"        "700"                   // Base mana.
     "StatusManaRegen"     "10.0"                 // Mana regeneration rate.

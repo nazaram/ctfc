@@ -5081,51 +5081,87 @@
 
 
 
-  "slark_dark_pact"
+  //=================================================================================================================
+  // Slark: Dark Pact (Lua version)
+  //=================================================================================================================
+  "slark_dark_pact_lua"
   {
-    // General
+    // Ability Technical Aspect
+    // base script folder : scripts/vscripts
+    // base texture folder  : resource/flash3/images/spellicons
     //-------------------------------------------------------------------------------------------------------------
-    "ID"              "5494"                            // unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-    "AbilityUnitDamageType"     "DAMAGE_TYPE_MAGICAL" 
-    "SpellImmunityType"       "SPELL_IMMUNITY_ENEMIES_NO"
+    "BaseClass"           "ability_lua"
+    "AbilityTextureName"  "slark_dark_pact"
+    "ScriptFile"          "lua_abilities/slark_dark_pact_lua/slark_dark_pact_lua"
     "FightRecapLevel"       "1"
-    "AbilitySound"          "Hero_Slark.DarkPact.Cast"
+    "MaxLevel"            "1"
     "AbilityType"         "DOTA_ABILITY_TYPE_ULTIMATE"
-    "MaxLevel"                                      "1"
+    "RequiredLevel" "6"
 
-
-    // Casting
+    "precache"
+    {
+      "soundfile" "soundevents/game_sounds_heroes/game_sounds_slark.vsndevts"
+      "particle"  "particles/units/heroes/hero_slark/slark_dark_pact_start.vpcf"
+      "particle"  "particles/units/heroes/hero_slark/slark_dark_pact_pulses.vpcf"
+    }
+    
+    // Ability General
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityCastAnimation"      "ACT_INVALID"
-    "AbilityCastPoint"        "0.001"
-    "AbilityCastRange"        "325"
+    "AbilityType"         "DOTA_ABILITY_TYPE_BASIC"
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    "AbilityUnitDamageType"     "DAMAGE_TYPE_MAGICAL"
+    "SpellImmunityType"       "SPELL_IMMUNITY_ENEMIES_NO"
 
-    // Time   
+    // Ability Casting
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCastRange"        "1"
+    "AbilityCastPoint"        "0.001"
+
+    // Ability Resource
     //-------------------------------------------------------------------------------------------------------------
     "AbilityCooldown"       "9"
+    "AbilityManaCost"       "100"
 
-    // Cost
+    // Damage
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityManaCost"       "100"  
-    "AbilityDamage"         "0"
-    
+
     // Special
     //-------------------------------------------------------------------------------------------------------------
     "AbilitySpecial"
     {
+      "01"
+      {
+        "var_type"        "FIELD_FLOAT"
+        "delay"         "1.5"
+      }
+      "02"
+      {
+        "var_type"        "FIELD_FLOAT"
+        "pulse_duration"    "1.0"
+      }
       "03"
       {
         "var_type"        "FIELD_INTEGER"
-        "radius"        "225"
+        "radius"        "1"
       } 
-         "03"
+      "04"
       {
         "var_type"        "FIELD_INTEGER"
-        "damage"        "0"
+        "total_damage"      "0"
+      }
+      "05"
+      {
+        "var_type"        "FIELD_INTEGER"
+        "total_pulses"      "10"
       } 
+      "06"
+      {
+        "var_type"        "FIELD_FLOAT"
+        "pulse_interval"    "0.1"
+      }
     }
   }
+
 
   //=================================================================================================================
   // Slark: Pounce
@@ -5158,12 +5194,12 @@
       "01"
       {
         "var_type"        "FIELD_INTEGER"
-        "pounce_distance"   "400 550 700"
+        "pounce_distance"   "350 500 650"
       }
       "02"
       {
         "var_type"        "FIELD_FLOAT"
-        "pounce_speed"      "800"
+        "pounce_speed"      "700"
       }
       "03"
       {
@@ -5209,7 +5245,7 @@
 
     // Time   
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityCooldown"       "14"
+    "AbilityCooldown"       "8"
     
     // Cost
     //-------------------------------------------------------------------------------------------------------------
@@ -5223,7 +5259,7 @@
       "01"
       {
         "var_type"          "FIELD_FLOAT"
-        "duration"          "1.2"
+        "duration"          "0.4"
         "LinkedSpecialBonus"  "special_bonus_unique_slark_3"
       }
       "02"
