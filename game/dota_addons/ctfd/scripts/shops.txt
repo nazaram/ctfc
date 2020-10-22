@@ -2,6 +2,7 @@
 {
 	//"consumables"
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 //	{
 	//	"item"		"item_branches"
 	//	"item"		"item_clarity"
@@ -11,6 +12,8 @@
 	//	"item"		"item_tango"			
 //	}
 =======
+=======
+>>>>>>> Stashed changes
 	//{
 		//"item"		"item_branches"
 		//"item"		"item_clarity"
@@ -19,6 +22,9 @@
 		//"item"		"item_ward_sentry"
 		//"item"		"item_tango"			
 	//}
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 
