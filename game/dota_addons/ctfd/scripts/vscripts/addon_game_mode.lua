@@ -201,6 +201,7 @@ function CAddonTemplateGameMode:InitGameMode()
   ListenToGameEvent("entity_killed", Dynamic_Wrap(CAddonTemplateGameMode, "OnEntityKilled"), self)
   ListenToGameEvent("PickupRune", Dynamic_Wrap(CAddonTemplateGameMode, "PickupRune"), self)
   ListenToGameEvent("dota_player_pick_hero", OnHeroPicked, nil)
+  ListenToGameEvent("dota_player_killed_hero",OnHeroKilled, nil)
   ListenToGameEvent( "dota_item_picked_up", Dynamic_Wrap(CAddonTemplateGameMode, "OnItemPickUp"), self )
 	ListenToGameEvent('dota_ability_channel_finished', Dynamic_Wrap(GameMode, 'OnAbilityChannelFinished'), self)
   --ListenToGameEvent('OnGameInProgress', Dynamic_Wrap(GameMode, 'OnGameInProgress'), self)
@@ -297,6 +298,8 @@ end
        hero:AddItem(tree)
     end
  end
+
+
 
 
 function CAddonTemplateGameMode:OnItemPickUp(keys)

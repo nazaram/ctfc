@@ -27,7 +27,7 @@
 
   "npc_dota_hero_batrider" "0"
   "npc_dota_hero_techies" "0"
-  "npc_dota_hero_furion" "0"
+  "npc_dota_hero_furion" "1"
 
 
   "npc_dota_hero_night_stalker" "0"

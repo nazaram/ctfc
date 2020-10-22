@@ -3,7 +3,7 @@ modifier_bakedanuki_tomfoolery_hidden = class({})
 --------------------------------------------------------------------------------
 -- Classifications
 function modifier_bakedanuki_tomfoolery_hidden:IsHidden()
-	return true
+	return false
 end
 
 function modifier_bakedanuki_tomfoolery_hidden:IsPurgable()

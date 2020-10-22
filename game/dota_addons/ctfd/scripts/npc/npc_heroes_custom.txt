@@ -1046,12 +1046,12 @@
     "AbilityLayout"     "4"
     "override_hero"     "npc_dota_hero_furion"
     "SoundSet"          "0" 
-    "Ability1"        "faceless_dash"
-    "Ability2"        "skill_lordofdeath_boss_dive"
-    "Ability3"        "skill_lordofdeath_boss_dive" 
-    "Ability4"        "skill_lordofdeath_boss_dive"
+    "Ability1"        "bakedanuki_tomfoolery_blink"
+    "Ability2"        "bakedanuki_tomfoolery_end"
+    "Ability3"        "bakedanuki_tomfoolery_summon" 
+    "Ability4"        "bakedanuki_tomfoolery_end"
     "Ability5"        "torrent_datadriven"
-    "Ability6"        "skill_lordofdeath_boss_dive"
+    "Ability6"        "bakedanuki_tomfoolery_end"
 
 
     
