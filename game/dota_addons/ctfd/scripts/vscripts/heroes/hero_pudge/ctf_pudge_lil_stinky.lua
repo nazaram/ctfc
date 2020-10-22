@@ -11,20 +11,21 @@ function SlowHeroes ( keys )
 	ability.level 				= ability:GetLevel()
 	local radius 				= ability:GetLevelSpecialValueFor("radius", ability.level - 1)
 	local slow 					= ability:GetLevelSpecialValueFor("movespeed_slow", ability.level - 1)
+	local plant_range			= ability:GetLevelSpecialValueFor("plant_range", ability.level - 1)
 	gslow 						= slow
 	local duration 				= ability:GetLevelSpecialValueFor("duration", ability.level - 1)
+	local particle_name1 		= "particles/units/heroes/hero_pudge/pudge_rot.vpcf"
+	
 
-	local particle_name1 = "particles/econ/items/pudge/pudge_tassles_of_black_death/dcpudge_rot_flies.vpcf"
-	local particle_name2 = "particles/units/heroes/hero_pudge/pudge_rot.vpcf"
-	local particle_name3 = "particles/units/heroes/hero_pudge/pudge_rot_body_decay_2.vpcf"
-
-	local dummy = CreateUnitByName("npc_dota_custom_dummy_unit", caster_location, false, caster, caster, caster:GetTeamNumber())
+	local target 				= - plant_range * caster:GetForwardVector()
+	local target_location		= caster_location + target
+	
+	local dummy = CreateUnitByName("npc_dota_custom_dummy_unit", target_location, false, caster, caster, caster:GetTeamNumber())
 
 	local particle1 = ParticleManager:CreateParticle(particle_name1, PATTACH_ABSORIGIN, dummy)
-	local particle2 = ParticleManager:CreateParticle(particle_name2, PATTACH_ABSORIGIN, dummy)
-	local particle3 = ParticleManager:CreateParticle(particle_name3, PATTACH_ABSORIGIN, dummy)
 
-	dummy:AddNewModifier(dummy, ability, "MODIFIER_STATE_NO_UNIT_COLLISION", {duration = duration})
+	ParticleManager:SetParticleControl(particle1, 0, dummy:GetAbsOrigin())
+	ParticleManager:SetParticleControl(particle1, 1, Vector(radius, 0, 0))
 
 	local units = FindUnitsInRadius(
 		caster:GetTeam(), 
@@ -36,8 +37,6 @@ function SlowHeroes ( keys )
 		DOTA_UNIT_TARGET_FLAG_NONE,
 		FIND_ANY_ORDER,
 		true)
-
-	print("help")
 
 	for _, unit in ipairs(units) do
 
@@ -54,8 +53,6 @@ function SlowHeroes ( keys )
 				dummy:RemoveSelf()
 
 				ParticleManager:ReleaseParticleIndex(particle1)
-				ParticleManager:ReleaseParticleIndex(particle2)
-				ParticleManager:ReleaseParticleIndex(particle3)
 			end
 		)
 end

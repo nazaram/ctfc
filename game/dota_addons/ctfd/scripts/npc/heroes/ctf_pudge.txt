@@ -89,9 +89,6 @@
 		"precache"
 		{
 			"particle"  				"particles/units/heroes/hero_pudge/pudge_rot.vpcf"
-			"particle"					"particles/units/heroes/hero_pudge/pudge_rot_body_decay_2.vpcf"
-			"particle"					"particles/units/heroes/hero_pudge/pudge_rot_body_spores.vpcf"
-			"particle"  				"particles/econ/items/pudge/pudge_tassles_of_black_death/dcpudge_rot_flies.vpcf"
 		}
 
 		// Casting
@@ -133,6 +130,12 @@
 				"var_type"				"FIELD_FLOAT"
 				"linger_duration"		"0.3"
 			}
+
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"plant_range"			"50"
+			}
 		}
 
 		"OnSpellStart"
@@ -141,13 +144,7 @@
 			{
 				"ScriptFile"				"heroes/hero_pudge/ctf_pudge_lil_stinky"
 				"Function"					"SlowHeroes"
-				"Target"
-				{
-					"Center"  	"CASTER"
-					"Radius" 	"%radius"
-					"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-					"Types" 	"DOTA_UNIT_TARGET_HERO"
-				}
+				"Target"					"CASTER"
 			}
 		}		
 	}

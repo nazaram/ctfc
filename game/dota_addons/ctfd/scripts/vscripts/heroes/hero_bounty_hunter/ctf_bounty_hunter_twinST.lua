@@ -26,34 +26,23 @@ function LaunchStars( keys )
 	local dummy_unit_alpha	= CreateUnitByName("npc_dota_custom_dummy_unit", dummy_unit_prime:GetAbsOrigin(), true, caster, caster, caster:GetTeamNumber())
 	local dummy_unit_beta	= CreateUnitByName("npc_dota_custom_dummy_unit", dummy_unit_prime:GetAbsOrigin(), true, caster, caster, caster:GetTeamNumber())
 
-	local theta				= 45 * math.pi / 180 -- 15 degrees in radians
+	local theta				= 30 -- degrees in radians
 	local unit_zero_vector	= Vector(caster_location.x + math.cos(0), caster_location.y + math.sin(0), caster_location.z):Normalized() - caster_location:Normalized() -- NORTH
 
-	-- dot product between vectors direction and unit_zero_vector in radians
-	-- local angle_prime		= math.acos(DOT(caster:GetForwardVector():Normalized(), unit_zero_vector) / (caster:GetForwardVector():Normalized():Length2D() * unit_zero_vector:Length2D())) 
-
 	-- Target Point Alpha: 
-	local target_alpha 		= Vector(target_prime.x + direction_prime.x * math.cos(theta), target_prime.y + direction_prime.y * math.sin(theta))
+	--Rotate one global point around another global point
+	local target_alpha		= RotatePosition(caster_location, QAngle(0, theta, 0), target_prime)
 	local direction_alpha	= (target_alpha - caster_location):Normalized()
-	-- local angle_alpha		= math.acos(DOT(direction_alpha:Normalized(), unit_zero_vector) / (direction_alpha:Normalized():Length2D()))
-
+	
 	-- Target Point Beta:
-	local target_beta		= Vector(target_prime.x + direction_prime.x * math.cos(theta), target_prime.y + direction_prime.y * math.sin(theta))
+	local target_beta		= RotatePosition(caster_location, QAngle(0, -theta, 0), target_prime)
 	local direction_beta	= (target_beta - caster_location):Normalized()
-	-- local angle_beta		= math.acos(DOT(direction_beta:Normalized(), unit_zero_vector) / (direction_beta:Normalized():Length2D()))
+	
 
+	local particle_alpha	= ParticleManager:CreateParticle(particle_name, PATTACH_ABSORIGIN, dummy_unit_alpha)
+	local particle_beta		= ParticleManager:CreateParticle(particle_name, PATTACH_ABSORIGIN, dummy_unit_beta)
 
-	print("Target Alpha.X: ", target_alpha.x)
-	print("Target Alpha.y: ", target_alpha.y)
-	print("Target Alpha.z: ", target_alpha.z)
-
-	print("Target Beta.X: ", target_beta.x)
-	print("Target Beta.y: ", target_beta.y)
-	print("Target Beta.z: ", target_beta.z)
-
-	local particle_alpha	= ParticleManager:CreateParticle(particle_name, PATTACH_CUSTOMORIGIN_FOLLOW, dummy_unit_alpha)
-	local particle_beta		= ParticleManager:CreateParticle(particle_name, PATTACH_CUSTOMORIGIN_FOLLOW, dummy_unit_beta)
-
+	
 	Physics:Unit(dummy_unit_prime)
 	Physics:Unit(dummy_unit_alpha)
 	Physics:Unit(dummy_unit_beta)
@@ -117,14 +106,15 @@ function LaunchStars( keys )
 
 	dummy_unit_prime:OnPhysicsFrame(
 		function(dummy_unit_prime)
-			dummy_unit_prime:SetForwardVector(Vector(dummypx, dummypy, dummpz) * ability.star_speed * (direction_prime:Length2D() / max_distance))
+			dummy_unit_prime:SetForwardVector(Vector(dummypx, dummypy, dummpz) * ability.star_speed )
 		end
 	)
 
 	dummy_unit_alpha:OnPhysicsFrame(
 		function(dummy_unit_alpha)
-			dummy_unit_alpha:SetForwardVector(Vector(dummyax, dummyay, dummyaz) * ability.star_speed * (direction_alpha:Length2D() / max_distance))
-			--ParticleManager:SetParticleControl(particle_alpha, 1, dummy_unit_alpha:GetForwardVector())
+			dummy_unit_alpha:SetForwardVector(Vector(dummyax, dummyay, dummyaz) * ability.star_speed )
+			ParticleManager:SetParticleControl(particle_alpha, 1, dummy_unit_alpha:GetAbsOrigin())
+	
 
 			local distance_alpha = (caster_location - dummy_unit_alpha:GetAbsOrigin()):Length2D()
 			
@@ -138,7 +128,8 @@ function LaunchStars( keys )
 
 	dummy_unit_beta:OnPhysicsFrame(
 		function(dummy_unit_beta)
-			dummy_unit_beta:SetForwardVector(Vector(dummybx, dummyby, dummybz) * ability.star_speed * (direction_beta:Length2D() / max_distance))
+			dummy_unit_beta:SetForwardVector(Vector(dummybx, dummyby, dummybz) * ability.star_speed )
+			ParticleManager:SetParticleControl(particle_beta, 1, dummy_unit_beta:GetAbsOrigin())
 
 			local distance_beta = (caster_location - dummy_unit_beta:GetAbsOrigin()):Length2D()
 
