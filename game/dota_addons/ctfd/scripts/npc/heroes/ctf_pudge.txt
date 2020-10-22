@@ -89,6 +89,7 @@
 		"precache"
 		{
 			"particle"  				"particles/units/heroes/hero_pudge/pudge_rot.vpcf"
+      "praticle"          "particles/econ/items/pudge/pudge_tassles_of_black_death/pudge_rot_recipient_d_dc.vpcf"
 		}
 
 		// Casting
@@ -109,32 +110,32 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"250"
+				"var_type"				  "FIELD_INTEGER"
+				"radius"				    "250"
 			}
 
 			"02"
 			{
-				"var_type"				"FIELD_INTEGER"
+				"var_type"				  "FIELD_INTEGER"
 				"movespeed_slow"		"-20"
 			}
 
 			"03"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"2"
+				"var_type"				  "FIELD_INTEGER"
+				"duration"				  "2"
 			}
 
 			"04"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"linger_duration"		"0.3"
+				"var_type"				  "FIELD_FLOAT"
+				"linger_duration"		"0.5"
 			}
 
 			"05"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"plant_range"			"50"
+				"var_type"				  "FIELD_INTEGER"
+				"plant_range"			  "100"
 			}
 		}
 
@@ -144,7 +145,7 @@
 			{
 				"ScriptFile"				"heroes/hero_pudge/ctf_pudge_lil_stinky"
 				"Function"					"SlowHeroes"
-				"Target"					"CASTER"
+				"Target"					  "CASTER"
 			}
 		}		
 	}
