@@ -267,11 +267,13 @@ function CAddonTemplateGameMode:XpThink()
 end
 
 
+function CAddonTemplateGameMode:GetRecommendedItemsDisabled(  ) end
 
 
  function OnHeroPicked (event)
     _G.startflag = _G.startflag + 1
     local hero = EntIndexToHScript(event.heroindex)
+    
     if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
       _G.GoodPlayers = _G.GoodPlayers + 1
     end
@@ -614,6 +616,13 @@ local innateAbilityName18 = "faceless_void_chronosphere"
   if entity:IsRealHero() and entity:HasAbility(innateAbilityName19) then
     entity:FindAbilityByName(innateAbilityName19):SetLevel(1)
   end
+
+  local innateAbilityName20 = "pudge_lil_stinky"
+  if entity:IsRealHero() and entity:HasAbility(innateAbilityName20) then
+    entity:FindAbilityByName(innateAbilityName20):SetLevel(1)
+  end
+
+
 
 end
 
