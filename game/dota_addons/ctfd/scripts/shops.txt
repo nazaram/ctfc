@@ -1,14 +1,14 @@
 "dota_shops"
 {
-	"consumables"
-	{
-		"item"		"item_branches"
-		"item"		"item_clarity"
-		"item"		"item_dust"
-		"item"		"item_ward_observer"
-		"item"		"item_ward_sentry"
-		"item"		"item_tango"			
-	}
+	//"consumables"
+//	{
+	//	"item"		"item_branches"
+	//	"item"		"item_clarity"
+	//	"item"		"item_dust"
+	//	"item"		"item_ward_observer"
+	//	"item"		"item_ward_sentry"
+	//	"item"		"item_tango"			
+//	}
 
 
 

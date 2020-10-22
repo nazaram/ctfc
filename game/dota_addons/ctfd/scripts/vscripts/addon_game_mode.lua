@@ -615,6 +615,13 @@ local innateAbilityName18 = "faceless_void_chronosphere"
     entity:FindAbilityByName(innateAbilityName19):SetLevel(1)
   end
 
+  local innateAbilityName20 = "pudge_lil_stinky"
+  if entity:IsRealHero() and entity:HasAbility(innateAbilityName20) then
+    entity:FindAbilityByName(innateAbilityName20):SetLevel(1)
+  end
+
+
+
 end
 
 
