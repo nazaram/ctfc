@@ -267,11 +267,13 @@ function CAddonTemplateGameMode:XpThink()
 end
 
 
+function CAddonTemplateGameMode:GetRecommendedItemsDisabled(  ) end
 
 
  function OnHeroPicked (event)
     _G.startflag = _G.startflag + 1
     local hero = EntIndexToHScript(event.heroindex)
+    
     if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
       _G.GoodPlayers = _G.GoodPlayers + 1
     end
