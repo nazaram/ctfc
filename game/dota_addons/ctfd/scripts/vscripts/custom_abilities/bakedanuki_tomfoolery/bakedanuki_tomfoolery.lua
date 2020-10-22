@@ -180,6 +180,16 @@ function tomfoolery:CreateIllusion( this, caster, location, incoming, outgoing, 
 		caster:GetTeamNumber() -- iTeamNumber
 	)
 
+    if caster:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
+      _G.GoodPlayers = _G.GoodPlayers - 1
+    end
+
+    if caster:GetTeamNumber() == DOTA_TEAM_BADGUYS then
+      _G.BadPlayers =   _G.BadPlayers - 1
+    end
+  
+
+
 	-- set facing
 	illusion:SetForwardVector( caster:GetForwardVector() )
 
