@@ -1,18 +1,19 @@
 "dota_shops"
 {
-	"consumables"
-	{
-		"item"		"item_branches"
-		"item"		"item_clarity"
-		"item"		"item_dust"
-		"item"		"item_ward_observer"
-		"item"		"item_ward_sentry"
-		"item"		"item_tango"			
-	}
+	//"consumables"
+
+//	{
+	//	"item"		"item_branches"
+	//	"item"		"item_clarity"
+	//	"item"		"item_dust"
+	//	"item"		"item_ward_observer"
+	//	"item"		"item_ward_sentry"
+	//	"item"		"item_tango"			
+//	}
 
 
 
-	"attributes"
+	"Basics"
 	{
 		"item"      "item_gloves"
 	}
@@ -72,7 +73,7 @@
 		//"item"		"item_pers"
 		//"item"		"item_recipe_refresher"
 		"item"      "item_refresher"
-		"item"		"item_shadow_amulet"
+		//"item"		"item_shadow_amulet"
 		"item"      "item_blinkI"
 		"item"		"item_blinkII"
 		"item"		"item_blinkIII"

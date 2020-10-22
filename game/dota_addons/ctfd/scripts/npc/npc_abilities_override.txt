@@ -14,8 +14,10 @@
 
   "item_gloves"
   {
-    "ItemCost"            "200"
+    "ItemCost"            "400"
   }
+
+
 
   "item_boots"
   {

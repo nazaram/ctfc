@@ -25,5 +25,6 @@ function RefreshScore(score_obj)
 
 (function()
 {
+	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_SHOP_SUGGESTEDITEMS, false )
 	GameEvents.Subscribe( "refresh_score", RefreshScore );
 })();

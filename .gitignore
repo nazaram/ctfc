@@ -24,3 +24,7 @@ game/*
 !game/dota_addons/
 game/dota_addons/*
 !game/dota_addons/ctfd/
+*.bin
+*.cfg
+*.soc
+*.tmp
