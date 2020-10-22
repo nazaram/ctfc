@@ -1,6 +1,6 @@
 //NPC Custom Units File
 
-#base "units/npc_dota_custom_dummy_unit.txt"
+#BASE "units/npc_dota_custom_dummy_unit.txt"
 
 "DOTAUnits"
 {
@@ -18,7 +18,6 @@
         // Abilities
         //----------------------------------------------------------------
         "AbilityLayout"             "4"
-        //"Ability1"                "dummy_unit_ability"
         "Ability1"                  "dummy_passive"
         
         // Protection
