@@ -1,35 +1,43 @@
-ctf_pudge_lil_stinky.lua = class({})
+LinkLuaModifier( "modifier_lil_stinky_slow", "heroes/hero_pudge/ctf_pudge_lil_stinky.lua", LUA_MODIFIER_MOTION_NONE )
 
-LinkLuaModifer( "modifier_lil_stinky_slow", "heroes/ctf_pudge_lil_stinky.lua", LUA_MODIFIER_MOTION_NONE )
+ctf_pudge_lil_stinky = class({})
 
-local caster 				= keys.caster
-local caster_location		= caster:GetAbsOrigin()
-local ability 				= keys.ability
-ability.level 				= ability:GetLevel()
-local radius 				= ability:GetLevelSpecialValueFor("radius", ability.level - 1)
-local slow 					= ability:GetLevelSpecialValueFor("movespeed_slow", ability.level - 1)
-local duration 				= ability:GetLevelSpecialValueFor("duration", ability.level - 1)
-
-local particle_name1 = "particles/econ/items/pudge/pudge_tassles_of_black_death/dcpudge_rot_flies.vpcf"
-local particle_name2 = "particles/units/heroes/hero_pudge/pudge_rot.vpcf"
-local particle_name3 = "particles/units/heroes/hero_pudge/pudge_rot_body_decay_2.vpcf"
+local gslow = 0
 
 function SlowHeroes ( keys )
-	local dummy = CreateUnitByName("npc_dota_custom_dummy_unit", caster_location, true, caster, caster:GetTeamNumber())
+	local caster 				= keys.caster
+	local caster_location		= caster:GetAbsOrigin()
+	local ability 				= keys.ability
+	ability.level 				= ability:GetLevel()
+	local radius 				= ability:GetLevelSpecialValueFor("radius", ability.level - 1)
+	local slow 					= ability:GetLevelSpecialValueFor("movespeed_slow", ability.level - 1)
+	gslow 						= slow
+	local duration 				= ability:GetLevelSpecialValueFor("duration", ability.level - 1)
+
+	local particle_name1 = "particles/econ/items/pudge/pudge_tassles_of_black_death/dcpudge_rot_flies.vpcf"
+	local particle_name2 = "particles/units/heroes/hero_pudge/pudge_rot.vpcf"
+	local particle_name3 = "particles/units/heroes/hero_pudge/pudge_rot_body_decay_2.vpcf"
+
+	local dummy = CreateUnitByName("npc_dota_custom_dummy_unit", caster_location, false, caster, caster, caster:GetTeamNumber())
+
+	local particle1 = ParticleManager:CreateParticle(particle_name1, PATTACH_ABSORIGIN, dummy)
+	local particle2 = ParticleManager:CreateParticle(particle_name2, PATTACH_ABSORIGIN, dummy)
+	local particle3 = ParticleManager:CreateParticle(particle_name3, PATTACH_ABSORIGIN, dummy)
+
+	dummy:AddNewModifier(dummy, ability, "MODIFIER_STATE_NO_UNIT_COLLISION", {duration = duration})
+
 	local units = FindUnitsInRadius(
 		caster:GetTeam(), 
 		caster_location, 
-		nil, 
+		nil,
+		radius, 
 		DOTA_UNIT_TARGET_TEAM_ENEMY,
 		DOTA_UNIT_TARGET_HERO, 
 		DOTA_UNIT_TARGET_FLAG_NONE,
 		FIND_ANY_ORDER,
 		true)
 
-	local particle1 = ParticleManager:CreateParticle(particle_name1, PATTACH_WORLDORIGIN, caster)
-	local particle2 = ParticleManager:CreateParticle(particle_name2, PATTACH_WORLDORIGIN, caster)
-	local particle3 = ParticleManager:CreateParticle(particle_name3, PATTACH_WORLDORIGIN, caster)
-
+	print("help")
 
 	for _, unit in ipairs(units) do
 
@@ -43,16 +51,13 @@ function SlowHeroes ( keys )
 	-- After duration seconds destory dummy rot unit
 	Timers:CreateTimer(duration,
 			function()
-				dummy:RemoveSElf()
+				dummy:RemoveSelf()
 
-				ParticleManager:DestroyParticle(particle1)
-				ParticleManager:DestroyParticle(particle2)
-				ParticleManager:DestroyParticle(particle3)
+				ParticleManager:ReleaseParticleIndex(particle1)
+				ParticleManager:ReleaseParticleIndex(particle2)
+				ParticleManager:ReleaseParticleIndex(particle3)
 			end
 		)
-
-
-
 end
 
 modifier_lil_stinky_slow = class({})
@@ -89,5 +94,5 @@ function modifier_lil_stinky_slow:DeclareFunctions()
 end
 
 function modifier_lil_stinky_slow:GetModifierMoveSpeedBonus_Percentage()
-	return slow
+	return gslow
 end
