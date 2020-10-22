@@ -1,6 +1,6 @@
 LinkLuaModifier( "modifier_lil_stinky_slow", "heroes/hero_pudge/ctf_pudge_lil_stinky.lua", LUA_MODIFIER_MOTION_NONE )
 
-local gslow = 0
+gslow = -40
 
 ctf_pudge_lil_stinky = class({})
 
@@ -10,7 +10,7 @@ function OnSpellStart ( keys )
 	local ability 				= keys.ability
 
 	ability.level 				= ability:GetLevel()
-	gslow 						= ability:GetLevelSpecialValueFor("movespeed_slow", ability.level - 1)
+	gslow 						= - ability:GetLevelSpecialValueFor("movespeed_slow", ability.level - 1)
 	print("gslow = ", gslow)
 
 	local radius 				= ability:GetLevelSpecialValueFor("radius", ability.level - 1)
@@ -24,8 +24,6 @@ function OnSpellStart ( keys )
 	
 	local dummy = CreateUnitByName("npc_dota_custom_dummy_unit", target_location, false, caster, caster, caster:GetTeamNumber())
 	local particle1 = ParticleManager:CreateParticle(particle_name1, PATTACH_ABSORIGIN, dummy)
-
-	local thinker = CreateModifierThinker(caster, ability, "lil_stinky_thinky", {}, target_location, caster:GetTeamNumber(), false)
 
 	ParticleManager:SetParticleControl(particle1, 0, dummy:GetAbsOrigin())
 	ParticleManager:SetParticleControl(particle1, 1, Vector(radius, 0, 0))
@@ -70,17 +68,6 @@ function OnSpellStart ( keys )
 	end
 end
 
--- lil_stinky_thinky = class({})
-
--- function lil_stinky_thinky:OnCreated(event)
--- 	local thinker = self:GetParent()
--- 	local ability = self:GetAbilty()
-
--- 	print("Thinker = ", thinker)
--- end
-
-
-
 modifier_lil_stinky_slow = class({})
 
 function modifier_lil_stinky_slow:IsHidden()
@@ -111,6 +98,7 @@ function modifier_lil_stinky_slow:DeclareFunctions()
 	local funcs = {
 		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE
 	}
+
 	return funcs
 end
 
