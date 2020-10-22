@@ -4,70 +4,80 @@ local gslow = 0
 
 ctf_pudge_lil_stinky = class({})
 
-function SlowHeroes ( keys )
+function OnSpellStart ( keys )
 	local caster 				= keys.caster
 	local caster_location		= caster:GetAbsOrigin()
 	local ability 				= keys.ability
 
 	ability.level 				= ability:GetLevel()
 	gslow 						= ability:GetLevelSpecialValueFor("movespeed_slow", ability.level - 1)
+	print("gslow = ", gslow)
 
 	local radius 				= ability:GetLevelSpecialValueFor("radius", ability.level - 1)
 	local plant_range			= ability:GetLevelSpecialValueFor("plant_range", ability.level - 1)
 	local duration 				= ability:GetLevelSpecialValueFor("duration", ability.level - 1)
 	local linger_duration		= ability:GetLevelSpecialValueFor("linger_duration", ability.level - 1)
 	local particle_name1 		= "particles/units/heroes/hero_pudge/pudge_rot.vpcf"
+	
 	local target 				= - plant_range * caster:GetForwardVector()
 	local target_location		= caster_location + target
 	
 	local dummy = CreateUnitByName("npc_dota_custom_dummy_unit", target_location, false, caster, caster, caster:GetTeamNumber())
 	local particle1 = ParticleManager:CreateParticle(particle_name1, PATTACH_ABSORIGIN, dummy)
 
+	local thinker = CreateModifierThinker(caster, ability, "lil_stinky_thinky", {}, target_location, caster:GetTeamNumber(), false)
+
 	ParticleManager:SetParticleControl(particle1, 0, dummy:GetAbsOrigin())
 	ParticleManager:SetParticleControl(particle1, 1, Vector(radius, 0, 0))
 
 
+	if dummy ~= nil then
 
-	-- dummy:OnIntervalThink()
+		Timers:CreateTimer(
+			function()
+				local units = FindUnitsInRadius(
+				caster:GetTeam(), 
+				caster_location, 
+				nil,
+				radius, 
+				DOTA_UNIT_TARGET_TEAM_ENEMY,
+				DOTA_UNIT_TARGET_HERO, 
+				DOTA_UNIT_TARGET_FLAG_NONE,
+				FIND_ANY_ORDER,
+				true)
 
-	local units = FindUnitsInRadius(
-		caster:GetTeam(), 
-		caster_location, 
-		nil,
-		radius, 
-		DOTA_UNIT_TARGET_TEAM_ENEMY,
-		DOTA_UNIT_TARGET_HERO, 
-		DOTA_UNIT_TARGET_FLAG_NONE,
-		FIND_ANY_ORDER,
-		true)
+				for _, unit in ipairs(units) do
+					if ((unit:GetAbsOrigin() - dummy:GetAbsOrigin()):Length2D()) < radius then
+						unit:AddNewModifier(caster, ability, "modifier_lil_stinky_slow", {duration = linger_duration})
 
-	for _, unit in ipairs(units) do
+					else
+						unit:RemoveModifierByName("modifier_lil_stinky_slow")
+					
+					end
+				end
 
-		if ((unit:GetAbsOrigin() - dummy:GetAbsOrigin()):Length2D()) < radius then
-			unit:AddNewModifier(caster, ability, "modifier_lil_stinky_slow", {duration = linger_duration})
-		else
-			unit:RemoveModifierByName("modifier_lil_stinky_slow")
-		end
-	end
-
-	-- After duration seconds destory dummy rot unit
-	Timers:CreateTimer(duration,
+				return 0.25
+			end
+		)
+		-- After duration seconds destory dummy rot unit
+		Timers:CreateTimer(duration,
 			function()
 				dummy:RemoveSelf()
 
 				ParticleManager:ReleaseParticleIndex(particle1)
 			end
 		)
+	end
 end
 
-lil_cloud_thinker = class({})
+-- lil_stinky_thinky = class({})
 
-function lil_cloud_thinker:OnCreated(event)
-	local thinker = self:GetParent()
-	local ability = self:GetAbilty()
+-- function lil_stinky_thinky:OnCreated(event)
+-- 	local thinker = self:GetParent()
+-- 	local ability = self:GetAbilty()
 
-	print("Thinker = ", thinker)
-end
+-- 	print("Thinker = ", thinker)
+-- end
 
 
 
