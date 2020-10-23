@@ -36,8 +36,8 @@
     {
       "01"
       {
-        "var_type"        "FIELD_INTEGER"
-        "damage"      "0"
+        "var_type"                "FIELD_INTEGER"
+        "damage"                  "0"
         "LinkedSpecialBonus"      "special_bonus_unique_pudge_7"
       }
       "02"
@@ -75,14 +75,14 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVOIR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGONORE_PSEUDO_QUEUE"
-		"AbilityTextureName"			"pudge_rot"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"BaseClass"						         "ability_datadriven"
+		"AbilityBehavior"				       "DOTA_ABILITY_BEHAVOIR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"
+		"AbilityTextureName"			     "pudge_rot"
+		"AbilityUnitTargetTeam"			   "DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			   "DOTA_UNIT_TARGET_HERO"
+		"SpellImmunityType"				     "SPELL_IMMUNITY_ENEMIES_NO"
 
-		"MaxLevel"						"1"
+		"MaxLevel"						         "1"
 
 		// Precache
 		//-------------------------------------------------------------------------------------------------------------

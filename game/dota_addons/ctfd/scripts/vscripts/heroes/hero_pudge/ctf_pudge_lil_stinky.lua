@@ -1,5 +1,6 @@
 LinkLuaModifier( "modifier_lil_stinky_slow", "heroes/hero_pudge/ctf_pudge_lil_stinky.lua", LUA_MODIFIER_MOTION_NONE )
 
+--can't figure out how retrieve and refernce the move slow value so it just has to be a global variable here
 gslow = -40
 
 ctf_pudge_lil_stinky = class({})
@@ -10,8 +11,7 @@ function OnSpellStart ( keys )
 	local ability 				= keys.ability
 
 	ability.level 				= ability:GetLevel()
-	gslow 						= - ability:GetLevelSpecialValueFor("movespeed_slow", ability.level - 1)
-	print("gslow = ", gslow)
+	-- gslow 						= - ability:GetLevelSpecialValueFor("movespeed_slow", ability.level - 1)
 
 	local radius 				= ability:GetLevelSpecialValueFor("radius", ability.level - 1)
 	local plant_range			= ability:GetLevelSpecialValueFor("plant_range", ability.level - 1)

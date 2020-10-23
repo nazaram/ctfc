@@ -1,5 +1,7 @@
 #BASE "heroes/ctf_bounty_hunter.txt"
 #BASE "heroes/ctf_pudge.txt"
+#BASE "heroes/ctf_juggernaut.txt"
+#BASE "heroes/ctf_pheonix.txt"
 
 #BASE "units/npc_dota_custom_dummy_unit.txt"
 

@@ -34,6 +34,8 @@
   "npc_dota_hero_batrider"                      "0"
   "npc_dota_hero_furion"                        "0"
   "npc_dota_hero_techies"                       "0"
+  "npc_dota_hero_juggernaut"                    "1"
+  "npc_dota_hero_phoenix"                       "1"
 
 //====================================================================================
 // Theory Heroes
@@ -43,7 +45,7 @@
   "npc_dota_hero_earth_spirit"                  "0"
   "npc_dota_hero_night_stalker"                 "0"
   "npc_dota_hero_wisp"                          "0"
-  "npc_dota_hero_phoenix"                       "0"
+  
 
 //====================================================================================
 // In-Active Heroes
@@ -76,8 +78,7 @@
   "npc_dota_hero_gyrocopter"                    "0"
   "npc_dota_hero_huskar"                        "0"
   "npc_dota_hero_invoker"                       "0"
-  "npc_dota_hero_jakiro"                        "0"
-  "npc_dota_hero_juggernaut"                    "0"
+  "npc_dota_hero_jakiro"                        "0"  
   "npc_dota_hero_keeper_of_the_light"           "0"
   "npc_dota_hero_legion_commander"              "0"
   "npc_dota_hero_leshrac"                       "0"
