@@ -1,42 +1,52 @@
 "dota_shops"
 {
-	//"consumables"
+	
+	// LUMBERJACKING -------------------------------------------
+	"consumables" 
+	{			
+		"item"          "item_branches"
+		"item"			"item_quelling_blade"
+		"item"			"item_quelling_bladeII"
+		"item"			"item_quelling_bladeIII"
+		"item"		    "item_custom_ghostI"
+		"item"		    "item_custom_ghostII"
+		"item"		    "item_custom_ghostIII"
+		"item"		    "item_custom_ghostIV"
 
-//	{
-	//	"item"		"item_branches"
-	//	"item"		"item_clarity"
-	//	"item"		"item_dust"
-	//	"item"		"item_ward_observer"
-	//	"item"		"item_ward_sentry"
-	//	"item"		"item_tango"			
-//	}
+		"item"      	"item_refresher"
 
-
-
-	"Basics"
-	{
-		"item"      "item_gloves"
 	}
 
+	// ATTACK SPEED -------------------------------------------
 	"weapons_armor"
 	{
-		"item"      "item_boots" 
+		"item"      "item_custom_gloves"
+		"item" 		"item_custom_hyperstone"
+		"item"		"item_yash"
+		"item"		"item_MrFastAttack"
 
-
-		"item"		"item_quelling_blade"
-		"item"      "item_quelling_bladeII"
-	    "item"      "item_quelling_bladeIII"
-	    "item"		"item_force_staff"
 	}
 
-			
 	"misc"
 	{
-		"item"		"item_staff_of_wizardry"
-		"item"		"item_ring_of_regen"
-
+		"item"		"item_bootsI"
+		"item"		"item_bootsII"
+		"item"		"item_bootsIII"
+		"item"		"item_bootsIV"
+		"item"      "item_blinkI"
+		"item"		"item_blinkII"
+		"item"		"item_blinkIII"
+		"item"		"item_blinkIV"
+		"item"		"item_custom_force_staff"
 	}	
 	
+	//"secretshop"
+	//{
+
+	//}
+
+
+
 	// Level 1 - Green Recipes
 	"basics"
 	{
@@ -67,22 +77,5 @@
 	{
 	}
 	
-	"secretshop"
-	{							
-		"item"		"item_ghost"
-		//"item"		"item_pers"
-		//"item"		"item_recipe_refresher"
-		"item"      "item_refresher"
-		//"item"		"item_shadow_amulet"
-		"item"      "item_blinkI"
-		"item"		"item_blinkII"
-		"item"		"item_blinkIII"
-		"item"		"item_blinkIV"
-		"item"		"item_glimmer_cape"
-		"item"		"item_hyperstone"
-		"item"      "item_bootsII" 
-		"item"      "item_bootsIII" 
-		"item"      "item_bootsIV" 
-	}	
 
 }

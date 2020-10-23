@@ -1,8 +1,9 @@
 "AddonInfo"
 {
 	
-
-
+	"Language"		"English"
+	"Tokens"
+	{
 	"addontitle"					"Capture The Flag"
 	"addon_game_name"				"Capture The Flag"
     
@@ -13,10 +14,5 @@
 		"MaxPlayers"		"10"
 	}
 
-
-	
-	"DOTA_Subshop_attributes"                "For Memers and Dreamers"
-	"DOTA_Subshop_weapons_armor"            "For Those Who Think They Are The Carry"
-	"DOTA_Subshop_misc"            "For The Actual Carries"
-
+	}
 }

@@ -1,5 +1,962 @@
 "DOTAAbilities"
 {
+ 
+//=================================================================================================================
+//NORMAL ITEMS
+//====================================================================================================================
+
+//====================================================================================================================
+//ATTACK SPEED
+//====================================================================================================================
+  "item_custom_gloves"
+  {
+    "BaseClass"                 "item_gloves"
+    "AbilityTextureName"      "item_gloves"
+    "ItemCost"            "500"
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "bonus_attack_speed"                               "10"
+      }
+    }
+  }
+
+  "item_custom_hyperstone"
+  {
+    "BaseClass"                 "item_hyperstone"
+    "AbilityTextureName"      "item_hyperstone"
+    "ItemCost"            "2000"
+    "SecretShop" "0" 
+      "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "bonus_attack_speed"                               "25"
+      }
+    }
+  }
+
+  "item_yash"
+  {
+    "BaseClass"                "item_gloves"
+    "AbilityTextureName"      "item_yasha"
+    "ItemCost"            "1000"
+    "SecretShop" "0" 
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "bonus_attack_speed"                               "15"
+      }
+    }
+  }
+
+"item_recipe_MrFastAttack"
+  {
+      // General
+      //-------------------------------------------------------------------------------------------------------------
+      "ID" "1337"
+      "Model"             "models/props_gameplay/recipe.mdl"
+      "AbilityTextureName"      "item_recipe"
+      "BaseClass"                     "item_datadriven"
+    
+      // Item Info
+      //-------------------------------------------------------------------------------------------------------------
+      "ItemShopTags"            ""
+      "ItemQuality"             ""
+        "SecretShop" "1" 
+ 
+      // Recipe
+      //-------------------------------------------------------------------------------------------------------------
+      "ItemRecipe"          "1"
+      "ItemResult"          "item_MrFastAttack"
+      "ItemRequirements"
+      {
+        "01"            "item_custom_hyperstone;item_custom_hyperstone;item_custom_gloves;item_yash;item_yash"
+      }
+ 
+  
+  }
+
+  "item_MrFastAttack"
+  {
+    "BaseClass"                 "item_gloves"
+    "AbilityTextureName"      "custom/mrattack"
+    "ItemCost"            "0"
+      "AbilitySpecial"
+      {
+        "01"
+        {
+          "var_type"        "FIELD_INTEGER"
+          "bonus_attack_speed"      "100"
+        }
+
+       }
+  }
+
+//====================================================================================================================
+//BLINKS
+//====================================================================================================================
+  "item_blinkI"
+  {
+    "ID"                                                  "3879"                           // unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+    "BaseClass"               "item_blink"
+    "AbilityBehavior"                                     "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+    "AbilityCastRange"                                    "400"
+    "cast_range_tooltip"                                  "400"
+    "AbilityCastPoint"                                    "0.0"
+    "AbilityCastPoint"        "0.0"
+    "AbilityCooldown"         "30.0"
+    "ItemCost"                "1000"
+    "ItemShopTags"            "Secret Shop"
+    "ItemQuality"             "Secret Shop"
+    "SecretShop" "1" 
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "blink_range"                                     "400"
+      }
+      "02"
+      {
+        "var_type"                                        "FIELD_FLOAT"
+        "blink_damage_cooldown"                           "5"
+      }
+      "03"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "blink_range_clamp"                               "400"
+      }
+    }
+  }
+
+"item_blinkII"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+   
+    "BaseClass"               "item_blink"
+    "AbilityTextureName"      "custom/blink_two"
+    "AbilityCastRange"        "600"
+    "cast_range_tooltip"      "600"
+    "AbilityCastPoint"        "0.0"
+    "AbilityCooldown"         "28"
+    "ItemCost"                "2999"
+    "ItemShopTags"            "Secret Shop"
+    "ItemQuality"             "Secret Shop"
+    "SecretShop" "1" 
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+    "ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+  
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"        "FIELD_INTEGER"
+        "blink_range"     "600"
+      }
+      "02"
+      {
+        "var_type"        "FIELD_FLOAT"
+        "blink_damage_cooldown" "5"
+      }
+      "03"
+      {
+        "var_type"        "FIELD_INTEGER"
+        "blink_range_clamp" "600"
+      }
+    }
+  }
+
+
+ "item_blinkIII"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+   
+    "BaseClass"                 "item_blink"
+    "AbilityTextureName"      "custom/blink_three"
+    "AbilityCastRange"        "800"
+    "cast_range_tooltip"      "800"
+    "AbilityCastPoint"        "0.0"
+    "AbilityCooldown"         "25"
+    "SecretShop" "1" 
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+    "ItemCost"                "3999"
+    "ItemShopTags"            "Secret Shop"
+    "ItemQuality"             "Secret Shop"
+    "ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+        "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"        "FIELD_INTEGER"
+        "blink_range"     "800"
+      }
+      "02"
+      {
+        "var_type"        "FIELD_FLOAT"
+        "blink_damage_cooldown" "5"
+      }
+      "03"
+      {
+        "var_type"        "FIELD_INTEGER"
+        "blink_range_clamp" "800"
+      }
+    }
+  }
+
+ "item_blinkIV"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+   
+    "BaseClass"                 "item_blink"
+    "AbilityTextureName"      "custom/blink_four"
+    "AbilityCastRange"        "850"
+    "cast_range_tooltip"      "850"
+    "AbilityCastPoint"        "0.0"
+    "AbilityCooldown"         "20"
+        "SecretShop" "1" 
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+    "ItemCost"                "4999"
+    "ItemShopTags"            "Secret Shop"
+    "ItemQuality"             "Secret Shop"
+    "ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+        "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"        "FIELD_INTEGER"
+        "blink_range"     "850"
+      }
+      "02"
+      {
+        "var_type"        "FIELD_FLOAT"
+        "blink_damage_cooldown" "5"
+      }
+      "03"
+      {
+        "var_type"        "FIELD_INTEGER"
+        "blink_range_clamp" "850"
+      }
+    }
+  }
+
+
+"item_recipe_blinkII"
+  {
+      // General
+      //-------------------------------------------------------------------------------------------------------------
+      "Model"             "models/props_gameplay/recipe.mdl"
+      "AbilityTextureName"      "item_recipe"
+      "BaseClass"                     "item_datadriven"
+    
+      // Item Info
+      //-------------------------------------------------------------------------------------------------------------
+      "ItemCost"            "1000" 
+      "ItemShopTags"            "Secret Shop"
+      "ItemQuality"             "Secret Shop"
+      "SecretShop" "1" 
+      
+      // Recipe
+      //-------------------------------------------------------------------------------------------------------------
+      "ItemRecipe"          "1"
+      "ItemResult"          "item_blinkII"
+      "ItemRequirements"
+      {
+        "01"            "item_blinkI"
+      }
+    }
+
+"item_recipe_blinkIII"
+  {
+      // General
+      //-------------------------------------------------------------------------------------------------------------
+      "Model"             "models/props_gameplay/recipe.mdl"
+      "AbilityTextureName"      "item_recipe"
+      "BaseClass"                     "item_datadriven"
+    
+      // Item Info
+      //-------------------------------------------------------------------------------------------------------------
+      "ItemCost"            "2000" 
+      "ItemShopTags"            "Secret Shop"
+      "ItemQuality"             "Secret Shop"
+        "SecretShop" "1" 
+ 
+      // Recipe
+      //-------------------------------------------------------------------------------------------------------------
+      "ItemRecipe"          "1"
+      "ItemResult"          "item_blinkIII"
+      "ItemRequirements"
+      {
+        "01"            "item_blinkII"
+      }
+    }
+
+"item_recipe_blinkIV"
+  {
+      // General
+      //-------------------------------------------------------------------------------------------------------------
+      "ID"              "21451"           
+      "Model"             "models/props_gameplay/recipe.mdl"
+      "AbilityTextureName"      "item_recipe"
+      "BaseClass"                     "item_datadriven"
+    
+      // Item Info
+      //-------------------------------------------------------------------------------------------------------------
+      "ItemCost"            "2000" 
+      "ItemShopTags"            "Secret Shop"
+      "ItemQuality"             "Secret Shop"
+          "SecretShop" "1" 
+
+      // Recipe
+      //-------------------------------------------------------------------------------------------------------------
+      "ItemRecipe"          "1"
+      "ItemResult"          "item_blinkIV"
+      "ItemRequirements"
+      {
+        "01"            "item_blinkIII"
+      }
+  }
+
+  "item_bootsI"
+  {
+      "BaseClass"                 "item_boots"
+      "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+      "ItemCost"            "1000"
+      "AbilitySpecial"
+      {
+        "01"
+        {
+          "var_type"        "FIELD_INTEGER"
+          "bonus_movement_speed"      "15"
+        }
+
+       }
+  }
+
+  "item_bootsII"
+  {
+    "BaseClass"                 "item_boots"
+    "AbilityTextureName"      "custom/boots2"
+    "ItemCost"            "2000"
+    "SecretShop" "1" 
+      "AbilitySpecial"
+      {
+        "01"
+        {
+          "var_type"        "FIELD_INTEGER"
+          "bonus_movement_speed"      "20"
+        }
+
+       }
+  }
+
+  "item_bootsIII"
+  {
+    "BaseClass"                 "item_boots"
+    "AbilityTextureName"      "custom/boots3"
+    "ItemCost"            "3000"
+    "SecretShop" "1" 
+      "AbilitySpecial"
+      {
+        "01"
+        {
+          "var_type"        "FIELD_INTEGER"
+          "bonus_movement_speed"      "25"
+        }
+
+       }
+  }
+
+  "item_bootsIV"
+  {
+    "BaseClass"                 "item_boots"
+    "AbilityTextureName"      "custom/boots4"
+    "ItemCost"            "5000"
+    "SecretShop" "1" 
+      "AbilitySpecial"
+      {
+        "01"
+        {
+          "var_type"        "FIELD_INTEGER"
+          "bonus_movement_speed"      "30"
+        }
+
+       }
+  }
+
+"item_recipe_bootsII"
+  {
+      // General
+      //-------------------------------------------------------------------------------------------------------------
+      "Model"             "models/props_gameplay/recipe.mdl"
+      "AbilityTextureName"      "item_recipe"
+      "BaseClass"                     "item_datadriven"
+    
+      // Item Info
+      //-------------------------------------------------------------------------------------------------------------
+      "ItemCost"                "2000" 
+      "ItemShopTags"            "Secret Shop"
+      "ItemQuality"             "Secret Shop"
+        "SecretShop" "1" 
+ 
+      // Recipe
+      //-------------------------------------------------------------------------------------------------------------
+      "ItemRecipe"          "1"
+      "ItemResult"          "item_bootsII"
+      "ItemRequirements"
+      {
+        "01"            "item_bootsI"
+      }
+  
+  }
+
+"item_recipe_bootsIII"
+  {
+      // General
+      //-------------------------------------------------------------------------------------------------------------
+      "Model"             "models/props_gameplay/recipe.mdl"
+      "AbilityTextureName"      "item_recipe"
+      "BaseClass"                     "item_datadriven"
+    
+      // Item Info
+      //-------------------------------------------------------------------------------------------------------------
+      "ItemCost"                "2000" 
+      "ItemShopTags"            "Secret Shop"
+      "ItemQuality"             "Secret Shop"
+        "SecretShop" "1" 
+ 
+      // Recipe
+      //-------------------------------------------------------------------------------------------------------------
+      "ItemRecipe"          "1"
+      "ItemResult"          "item_bootsIII"
+      "ItemRequirements"
+      {
+        "01"            "item_bootsII"
+      }
+  
+  }
+
+"item_recipe_bootsIV"
+  {
+      // General
+      //-------------------------------------------------------------------------------------------------------------
+      "Model"             "models/props_gameplay/recipe.mdl"
+      "AbilityTextureName"      "item_recipe"
+      "BaseClass"                     "item_datadriven"
+    
+      // Item Info
+      //-------------------------------------------------------------------------------------------------------------
+      "ItemCost"                "2000" 
+      "ItemShopTags"            "Secret Shop"
+      "ItemQuality"             "Secret Shop"
+        "SecretShop" "1" 
+ 
+      // Recipe
+      //-------------------------------------------------------------------------------------------------------------
+      "ItemRecipe"          "1"
+      "ItemResult"          "item_bootsIV"
+      "ItemRequirements"
+      {
+        "01"            "item_bootsIII"
+      }
+  
+  }
+
+//====================================================================================================================
+//FORCE STAFF
+//====================================================================================================================
+
+"item_custom_force_staff"  
+ {
+  "BaseClass"                 "item_force_staff"
+    "ID"              "102"                           // unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+    "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_BOTH | DOTA_UNIT_TARGET_TEAM_CUSTOM"
+    "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_CUSTOM"
+    "FightRecapLevel"       "1"
+
+    // Stats
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCastRange"        "500"
+    "AbilityCastPoint"        "0.0"
+    "AbilityCooldown"       "9.0"
+    "AbilitySharedCooldown"     "force"
+
+    // Item Info
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityManaCost"       "50"
+    "ItemCost"            "1000"
+    "ItemShopTags"          "int;damage;attack_speed;hard_to_tag"
+    "ItemQuality"         "rare"
+    "ItemAliases"         "fs;force staff"
+    "ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+    "ShouldBeSuggested"       "1"
+    
+    // Special  
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"        "FIELD_INTEGER"
+        "bonus_intellect"   "0"
+      }
+      "02"
+      {
+        "var_type"        "FIELD_FLOAT"
+        "bonus_health_regen"  "0"
+      }
+      "03"
+      {
+        "var_type"        "FIELD_INTEGER"
+        "push_length"     "300"
+      }
+      "04"
+      {
+        "var_type"        "FIELD_INTEGER"
+        "enemy_cast_range"      "500"
+      }
+    }
+  }
+
+  "item_recipe_force_staff"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "ID"              "101"                           // unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+    "Model"             "models/props_gameplay/recipe.vmdl"
+    
+    // Item Info
+    //-------------------------------------------------------------------------------------------------------------
+    "ItemCost"            "997"  
+    "ItemShopTags"          ""
+    
+    // Recipe
+    //-------------------------------------------------------------------------------------------------------------
+    "ItemRecipe"          "1"
+    "ItemResult"          "item_custom_force_staff"
+    "ItemRequirements"
+    {
+      "01"            "item_branches"
+    }
+  }
+
+//==============================================================
+//LUMBERJACKING
+//==============================================================
+
+  "item_branches"     
+  {
+  "BaseClass"                 "item_branches"
+  "ItemCost"            "3"
+  "AbilityCastRange"        "3000"
+ // "ItemStackable" "1"
+ // "ItemPermanent" "1"
+ // "ItemInitialCharges" "1"
+ // "ItemRequiresCharges" "1"
+  }
+
+
+  "item_quelling_blade"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+    "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
+    "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_CUSTOM"
+
+    "AbilityCastRange"        "350"
+    "AbilityCastPoint"        "0.0"
+    "AbilityCooldown"       "1.5"
+
+
+    // Item Info
+    //-------------------------------------------------------------------------------------------------------------
+    "ItemCost"            "50"
+    "ItemShopTags"          "damage;health_regen;mana_regen;hard_to_tag"
+    "ItemQuality"         "epic"
+    "ItemAliases"         "qb;quelling blade"
+    "ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+    
+    // Special  
+    //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+    {
+      "1"
+      {
+        "var_type"        "FIELD_INTEGER"
+        "cast_range_tooltip"      "100"
+      }
+      "2"
+      {
+        "var_type"        "FIELD_INTEGER"
+        "cast_range_ward"     "450"
+      }
+    }
+  }
+
+  "item_quelling_bladeII"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"                 "item_quelling_blade"
+    "AbilityTextureName"      "custom/quelling_blade_two"
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+    "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
+    "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_CUSTOM"
+
+    "AbilityCastRange"        "650"
+    "AbilityCastPoint"        "0.0"
+    "AbilityCooldown"       "3.5"
+
+
+    // Item Info
+    //-------------------------------------------------------------------------------------------------------------
+    "ItemCost"            "200"
+    "ItemShopTags"          "damage;health_regen;mana_regen;hard_to_tag"
+    "ItemQuality"         "epic"
+    "ItemAliases"         "qb;quelling blade"
+    "ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+    
+    // Special  
+    //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+    {
+      "1"
+      {
+        "var_type"        "FIELD_INTEGER"
+        "cast_range_tooltip"      "650"
+      }
+      "2"
+      {
+        "var_type"        "FIELD_INTEGER"
+        "cast_range_ward"     "450"
+      }
+    }
+  }
+
+  "item_quelling_bladeIII"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"                 "item_quelling_blade"
+    "AbilityTextureName"      "custom/quelling_blade_three"
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+    "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
+    "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_CUSTOM"
+
+    "AbilityCastRange"        "400"
+    "AbilityCastPoint"        "0.0"
+    "AbilityCooldown"       "5.5"
+
+
+    // Item Info
+    //-------------------------------------------------------------------------------------------------------------
+    "ItemCost"            "600"
+    "ItemShopTags"          "damage;health_regen;mana_regen;hard_to_tag"
+    "ItemQuality"         "epic"
+    "ItemAliases"         "qb;quelling blade"
+    "ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+    
+    // Special  
+    //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+    {
+      "1"
+      {
+        "var_type"        "FIELD_INTEGER"
+        "cast_range_tooltip"      "800"
+      }
+      "2"
+      {
+        "var_type"        "FIELD_INTEGER"
+        "cast_range_ward"     "450"
+      }
+    }
+  }
+
+
+  //=================================================================================================================
+  // Ghost
+  //=================================================================================================================
+  "item_custom_ghostI"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    
+    "BaseClass"                 "item_ghost"
+    "AbilityTextureName"      "item_ghost"
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    "FightRecapLevel"       "1"
+    
+    // Stats
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCooldown"       "15.0"     
+    "AbilitySharedCooldown"     "ethereal"
+    "SpellDispellableType"      "SPELL_DISPELLABLE_YES"
+
+    // Item Info
+    //-------------------------------------------------------------------------------------------------------------
+    "ItemCost"            "1000"
+    "ItemShopTags"          "ghost"
+    "ItemQuality"         "component"
+    "ItemAliases"         "ghost scepter"
+    "ShouldBeSuggested"       "0"
+
+    // Special  
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"        "FIELD_INTEGER"
+        "bonus_all_stats"   "0"
+      }
+      "02"
+      {
+        "var_type"        "FIELD_FLOAT"
+        "duration"        "1.0"
+      }
+      "03"
+      {
+        "var_type"        "FIELD_INTEGER"
+        "extra_spell_damage_percent"  "0"
+      }
+    }
+  }
+
+  "item_custom_ghostII"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    
+    "BaseClass"                 "item_ghost"
+    "AbilityTextureName"      "item_ghost"
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"    
+    // Stats
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCooldown"       "9.0"     
+    "AbilitySharedCooldown"     "ethereal"
+    "SpellDispellableType"      "SPELL_DISPELLABLE_YES"
+
+    // Item Info
+    //-------------------------------------------------------------------------------------------------------------
+    "ItemCost"            "2000"
+    "ItemShopTags"          "int;agi;str;hard_to_tag"
+    "ItemQuality"         "component"
+    "ItemAliases"         "ghost scepter"
+    "ShouldBeSuggested"       "0"
+
+    // Special  
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"        "FIELD_INTEGER"
+        "bonus_all_stats"   "0"
+      }
+      "02"
+      {
+        "var_type"        "FIELD_FLOAT"
+        "duration"        "1.0"
+      }
+      "03"
+      {
+        "var_type"        "FIELD_INTEGER"
+        "extra_spell_damage_percent"  "0"
+      }
+    }
+  }
+
+    "item_custom_ghostIII"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    
+    "BaseClass"                 "item_ghost"
+    "AbilityTextureName"      "item_ghost"
+    "MaxLevel"             "7"
+    "ID"              "37"                        // unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    "FightRecapLevel"       "1"
+    
+    // Stats
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCooldown"       "7.0"     
+    "AbilitySharedCooldown"     "ethereal"
+    "SpellDispellableType"      "SPELL_DISPELLABLE_YES"
+
+    // Item Info
+    //-------------------------------------------------------------------------------------------------------------
+    "ItemCost"            "3000"
+    "ItemShopTags"          "int;agi;str;hard_to_tag"
+    "ItemQuality"         "component"
+    "ItemAliases"         "ghost scepter"
+    "ShouldBeSuggested"       "0"
+
+    // Special  
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"        "FIELD_INTEGER"
+        "bonus_all_stats"   "0"
+      }
+      "02"
+      {
+        "var_type"        "FIELD_FLOAT"
+        "duration"        "1.0"
+      }
+      "03"
+      {
+        "var_type"        "FIELD_INTEGER"
+        "extra_spell_damage_percent"  "0"
+      }
+    }
+  }
+
+    "item_custom_ghostIV"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    
+    "BaseClass"                 "item_ghost"
+    "AbilityTextureName"      "item_ghost"
+    "MaxLevel"             "7"
+    "ID"              "37"                        // unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    "FightRecapLevel"       "1"
+    
+    // Stats
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCooldown"       "4.0"     
+    "AbilitySharedCooldown"     "ethereal"
+    "SpellDispellableType"      "SPELL_DISPELLABLE_YES"
+
+    // Item Info
+    //-------------------------------------------------------------------------------------------------------------
+    "ItemCost"            "4000"
+    "ItemShopTags"          "int;agi;str;hard_to_tag"
+    "ItemQuality"         "component"
+    "ItemAliases"         "ghost scepter"
+    "ShouldBeSuggested"       "0"
+
+    // Special  
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"        "FIELD_INTEGER"
+        "bonus_all_stats"   "0"
+      }
+      "02"
+      {
+        "var_type"        "FIELD_FLOAT"
+        "duration"        "1.0"
+      }
+      "03"
+      {
+        "var_type"        "FIELD_INTEGER"
+        "extra_spell_damage_percent"  "0"
+      }
+    }
+  }
+
+
+
+
+
+"item_recipe_ghostII"
+  {
+      // General
+      //-------------------------------------------------------------------------------------------------------------
+      "Model"             "models/props_gameplay/recipe.mdl"
+      "AbilityTextureName"      "item_recipe"
+      "BaseClass"               "item_datadriven"
+    
+      // Item Info
+      //-------------------------------------------------------------------------------------------------------------
+      "ItemCost"                "2000" 
+      "ItemShopTags"            "Secret Shop"
+      "ItemQuality"             "Secret Shop"
+      "SecretShop"               "1" 
+ 
+      // Recipe
+      //-------------------------------------------------------------------------------------------------------------
+      "ItemRecipe"          "1"
+      "ItemResult"          "item_custom_ghostII"
+      "ItemRequirements"
+      {
+        "01"            "item_custom_ghostI"
+      }
+  
+  }
+
+"item_recipe_ghostIII"
+  {
+      // General
+      //-------------------------------------------------------------------------------------------------------------
+      "Model"             "models/props_gameplay/recipe.mdl"
+      "AbilityTextureName"      "item_recipe"
+      "BaseClass"                     "item_datadriven"
+    
+      // Item Info
+      //-------------------------------------------------------------------------------------------------------------
+      "ItemCost"                "1" 
+      "ItemShopTags"            "Secret Shop"
+      "ItemQuality"             "Secret Shop"
+        "SecretShop" "1" 
+ 
+      // Recipe
+      //-------------------------------------------------------------------------------------------------------------
+      "ItemRecipe"          "1"
+      "ItemResult"          "item_custom_ghostIII"
+      "ItemRequirements"
+      {
+        "01"            "item_custom_ghostII"
+      }
+  
+  }
+
+"item_recipe_ghostIV"
+  {
+      // General
+      //-------------------------------------------------------------------------------------------------------------
+      "Model"             "models/props_gameplay/recipe.mdl"
+      "AbilityTextureName"      "item_recipe"
+      "BaseClass"                     "item_datadriven"
+    
+      // Item Info
+      //-------------------------------------------------------------------------------------------------------------
+      "ItemCost"                "1" 
+      "ItemShopTags"            "Secret Shop"
+      "ItemQuality"             "Secret Shop"
+        "SecretShop" "1" 
+ 
+      // Recipe
+      //-------------------------------------------------------------------------------------------------------------
+      "ItemRecipe"          "1"
+      "ItemResult"          "item_custom_ghostIV"
+      "ItemRequirements"
+      {
+        "01"            "item_custom_ghostIII"
+      }
+  
+  }
+
+
+
   "item_containers_lua_pack"
   {
     // General
@@ -370,7 +1327,8 @@
 
     // Item Info
     //-------------------------------------------------------------------------------------------------------------
-    "ItemCost"                    "0"
+    "ItemPurchasable"    "0"
+    "ItemCost"                    "99999"
     "ItemShopTags"                "damage"
     "ItemQuality"                 "rare"
     "ItemAliases"                 "radiant flag"
@@ -446,7 +1404,8 @@
     "Model"             "models\props_teams\banner_dire_small.mdl"
 
     // Item Info
-    "ItemCost"          "0"
+   "ItemPurchasable"    "0"
+    "ItemCost"          "999999"
     "ItemShopTags"      "damage"
     "ItemQuality"       "artifact"
     "ItemAliases"       "dire flag"
@@ -534,389 +1493,6 @@
     }
   }
   
-  "item_blinkI"
-  {
-    "ID"                                                  "3879"                           // unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-    "BaseClass"               "item_blink"
-    "AbilityBehavior"                                     "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
-    "AbilityCastRange"                                    "400"
-    "cast_range_tooltip"                                  "400"
-    "AbilityCastPoint"                                    "0.0"
-    "AbilityCastPoint"        "0.0"
-    "AbilityCooldown"         "30.0"
-    "ItemCost"                "1000"
-    "ItemShopTags"            "Secret Shop"
-    "ItemQuality"             "Secret Shop"
-    "SecretShop" "1" 
-    "AbilitySpecial"
-    {
-      "01"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "blink_range"                                     "400"
-      }
-      "02"
-      {
-        "var_type"                                        "FIELD_FLOAT"
-        "blink_damage_cooldown"                           "5"
-      }
-      "03"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "blink_range_clamp"                               "400"
-      }
-    }
-  }
-
-"item_blinkII"
-  {
-    // General
-    //-------------------------------------------------------------------------------------------------------------
-   
-    "BaseClass"               "item_blink"
-    "AbilityTextureName"      "custom/blink_two"
-    "AbilityCastRange"        "600"
-    "cast_range_tooltip"      "600"
-    "AbilityCastPoint"        "0.0"
-    "AbilityCooldown"         "28"
-    "ItemCost"                "2999"
-    "ItemShopTags"            "Secret Shop"
-    "ItemQuality"             "Secret Shop"
-    "SecretShop" "1" 
-    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
-    "ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-  
-    "AbilitySpecial"
-    {
-      "01"
-      {
-        "var_type"        "FIELD_INTEGER"
-        "blink_range"     "600"
-      }
-      "02"
-      {
-        "var_type"        "FIELD_FLOAT"
-        "blink_damage_cooldown" "5"
-      }
-      "03"
-      {
-        "var_type"        "FIELD_INTEGER"
-        "blink_range_clamp" "600"
-      }
-    }
-  }
-
-
- "item_blinkIII"
-  {
-    // General
-    //-------------------------------------------------------------------------------------------------------------
-   
-    "BaseClass"                 "item_blink"
-    "AbilityTextureName"      "custom/blink_three"
-    "AbilityCastRange"        "800"
-    "cast_range_tooltip"      "800"
-    "AbilityCastPoint"        "0.0"
-    "AbilityCooldown"         "25"
-    "SecretShop" "1" 
-    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
-    "ItemCost"                "3999"
-    "ItemShopTags"            "Secret Shop"
-    "ItemQuality"             "Secret Shop"
-    "ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-        "AbilitySpecial"
-    {
-      "01"
-      {
-        "var_type"        "FIELD_INTEGER"
-        "blink_range"     "800"
-      }
-      "02"
-      {
-        "var_type"        "FIELD_FLOAT"
-        "blink_damage_cooldown" "5"
-      }
-      "03"
-      {
-        "var_type"        "FIELD_INTEGER"
-        "blink_range_clamp" "800"
-      }
-    }
-  }
-
- "item_blinkIV"
-  {
-    // General
-    //-------------------------------------------------------------------------------------------------------------
-   
-    "BaseClass"                 "item_blink"
-    "AbilityTextureName"      "custom/blink_four"
-    "AbilityCastRange"        "850"
-    "cast_range_tooltip"      "850"
-    "AbilityCastPoint"        "0.0"
-    "AbilityCooldown"         "20"
-        "SecretShop" "1" 
-    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
-    "ItemCost"                "4999"
-    "ItemShopTags"            "Secret Shop"
-    "ItemQuality"             "Secret Shop"
-    "ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-        "AbilitySpecial"
-    {
-      "01"
-      {
-        "var_type"        "FIELD_INTEGER"
-        "blink_range"     "850"
-      }
-      "02"
-      {
-        "var_type"        "FIELD_FLOAT"
-        "blink_damage_cooldown" "5"
-      }
-      "03"
-      {
-        "var_type"        "FIELD_INTEGER"
-        "blink_range_clamp" "850"
-      }
-    }
-  }
-
-
-
-
-
-"item_recipe_blinkII"
-  {
-      // General
-      //-------------------------------------------------------------------------------------------------------------
-      "Model"             "models/props_gameplay/recipe.mdl"
-      "AbilityTextureName"      "item_recipe"
-      "BaseClass"                     "item_datadriven"
-    
-      // Item Info
-      //-------------------------------------------------------------------------------------------------------------
-      "ItemCost"            "999" 
-      "ItemShopTags"            "Secret Shop"
-      "ItemQuality"             "Secret Shop"
-      "SecretShop" "1" 
-      
-      // Recipe
-      //-------------------------------------------------------------------------------------------------------------
-      "ItemRecipe"          "1"
-      "ItemResult"          "item_blinkII"
-      "ItemRequirements"
-      {
-        "01"            "item_blinkI"
-      }
-    }
-
-"item_recipe_blinkIII"
-  {
-      // General
-      //-------------------------------------------------------------------------------------------------------------
-      "Model"             "models/props_gameplay/recipe.mdl"
-      "AbilityTextureName"      "item_recipe"
-      "BaseClass"                     "item_datadriven"
-    
-      // Item Info
-      //-------------------------------------------------------------------------------------------------------------
-      "ItemCost"            "1999" 
-      "ItemShopTags"            "Secret Shop"
-      "ItemQuality"             "Secret Shop"
-        "SecretShop" "1" 
- 
-      // Recipe
-      //-------------------------------------------------------------------------------------------------------------
-      "ItemRecipe"          "1"
-      "ItemResult"          "item_blinkIII"
-      "ItemRequirements"
-      {
-        "01"            "item_blinkII"
-      }
-    }
-
-
-"item_recipe_blinkIV"
-  {
-      // General
-      //-------------------------------------------------------------------------------------------------------------
-      "ID"              "21451"           
-      "Model"             "models/props_gameplay/recipe.mdl"
-      "AbilityTextureName"      "item_recipe"
-      "BaseClass"                     "item_datadriven"
-    
-      // Item Info
-      //-------------------------------------------------------------------------------------------------------------
-      "ItemCost"            "3999" 
-      "ItemShopTags"            "Secret Shop"
-      "ItemQuality"             "Secret Shop"
-          "SecretShop" "1" 
-
-      // Recipe
-      //-------------------------------------------------------------------------------------------------------------
-      "ItemRecipe"          "1"
-      "ItemResult"          "item_blinkIV"
-      "ItemRequirements"
-      {
-        "01"            "item_blinkIII"
-      }
-    }
-
-  "item_branches"     
-  {
-  "BaseClass"                 "item_branches"
-  "ItemCost"            "3"
-  "AbilityCastRange"        "3000"
- // "ItemStackable" "1"
- // "ItemPermanent" "1"
- // "ItemInitialCharges" "1"
- // "ItemRequiresCharges" "1"
-  }
-
-  "item_boots"
-  {
-    "cast_range_tooltip"  "10"
-    "ItemCost"            "1000"
-      "AbilitySpecial"
-      {
-        "01"
-        {
-          "var_type"        "FIELD_INTEGER"
-          "bonus_movement_speed"      "15"
-        }
-
-       }
-  }
-
-  "item_bootsII"
-  {
-    "cast_range_tooltip"  "15"
-    "BaseClass"                 "item_boots"
-    "AbilityTextureName"      "custom/boots2"
-    "ItemCost"            "2000"
-      "AbilitySpecial"
-      {
-        "01"
-        {
-          "var_type"        "FIELD_INTEGER"
-          "bonus_movement_speed"      "20"
-        }
-
-       }
-  }
-
-  "item_bootsIII"
-  {
-    "BaseClass"                 "item_boots"
-    "AbilityTextureName"      "custom/boots3"
-    "ItemCost"            "3000"
-      "AbilitySpecial"
-      {
-        "01"
-        {
-          "var_type"        "FIELD_INTEGER"
-          "bonus_movement_speed"      "25"
-        }
-
-       }
-  }
-
-  "item_bootsIV"
-  {
-    "BaseClass"                 "item_boots"
-    "AbilityTextureName"      "custom/boots4"
-    "ItemCost"            "5000"
-      "AbilitySpecial"
-      {
-        "01"
-        {
-          "var_type"        "FIELD_INTEGER"
-          "bonus_movement_speed"      "30"
-        }
-
-       }
-  }
-
-"item_recipe_bootsII"
-  {
-      // General
-      //-------------------------------------------------------------------------------------------------------------
-      "Model"             "models/props_gameplay/recipe.mdl"
-      "AbilityTextureName"      "item_recipe"
-      "BaseClass"                     "item_datadriven"
-    
-      // Item Info
-      //-------------------------------------------------------------------------------------------------------------
-      "ItemCost"                "1999" 
-      "ItemShopTags"            "Secret Shop"
-      "ItemQuality"             "Secret Shop"
-        "SecretShop" "1" 
- 
-      // Recipe
-      //-------------------------------------------------------------------------------------------------------------
-      "ItemRecipe"          "1"
-      "ItemResult"          "item_bootsII"
-      "ItemRequirements"
-      {
-        "01"            "item_boots"
-      }
-  
-  }
-
-"item_recipe_bootsIII"
-  {
-      // General
-      //-------------------------------------------------------------------------------------------------------------
-      "Model"             "models/props_gameplay/recipe.mdl"
-      "AbilityTextureName"      "item_recipe"
-      "BaseClass"                     "item_datadriven"
-    
-      // Item Info
-      //-------------------------------------------------------------------------------------------------------------
-      "ItemCost"                "1999" 
-      "ItemShopTags"            "Secret Shop"
-      "ItemQuality"             "Secret Shop"
-        "SecretShop" "1" 
- 
-      // Recipe
-      //-------------------------------------------------------------------------------------------------------------
-      "ItemRecipe"          "1"
-      "ItemResult"          "item_bootsIII"
-      "ItemRequirements"
-      {
-        "01"            "item_bootsII"
-      }
-  
-  }
-
-"item_recipe_bootsIV"
-  {
-      // General
-      //-------------------------------------------------------------------------------------------------------------
-      "Model"             "models/props_gameplay/recipe.mdl"
-      "AbilityTextureName"      "item_recipe"
-      "BaseClass"                     "item_datadriven"
-    
-      // Item Info
-      //-------------------------------------------------------------------------------------------------------------
-      "ItemCost"                "1999" 
-      "ItemShopTags"            "Secret Shop"
-      "ItemQuality"             "Secret Shop"
-        "SecretShop" "1" 
- 
-      // Recipe
-      //-------------------------------------------------------------------------------------------------------------
-      "ItemRecipe"          "1"
-      "ItemResult"          "item_bootsIV"
-      "ItemRequirements"
-      {
-        "01"            "item_bootsIII"
-      }
-  
-  }
-
-
-
 
 
   //==============================================================================================

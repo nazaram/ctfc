@@ -9,21 +9,8 @@
   // - UNCOMMENT ANY ITEM YOU DON'T WANT TO APPEAR IN THE SHOP -
   // -----------------------------------------------------------
   
-  //"item_quelling_blade"     "REMOVE"
 
-
-  "item_gloves"
-  {
-    "ItemCost"            "400"
-  }
-
-
-
-  "item_boots"
-  {
-    "ItemCost"            "1500"
-  }
-
+//ATTACK SPEED ---------------------------------------------------
 "item_recipe_refresher"
 {
   "SecretShop" "1"
@@ -33,194 +20,16 @@
 
 
 
-"item_dust"
-{
-      "ItemCost"            "300"
-}
-
-
-
-
-  "item_hyperstone"
-  {
-    "ItemCost"            "600"
-    "SecretShop" "1" 
-  }
-
-
-
-  "item_quelling_blade"
-  {
-    // General
-    //-------------------------------------------------------------------------------------------------------------
-    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-    "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
-    "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_CUSTOM"
-
-    "AbilityCastRange"        "350"
-    "AbilityCastPoint"        "0.0"
-    "AbilityCooldown"       "1.5"
-
-
-    // Item Info
-    //-------------------------------------------------------------------------------------------------------------
-    "ItemCost"            "50"
-    "ItemShopTags"          "damage;health_regen;mana_regen;hard_to_tag"
-    "ItemQuality"         "epic"
-    "ItemAliases"         "qb;quelling blade"
-    "ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-    
-    // Special  
-    //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
-    {
-      "1"
-      {
-        "var_type"        "FIELD_INTEGER"
-        "cast_range_tooltip"      "100"
-      }
-      "2"
-      {
-        "var_type"        "FIELD_INTEGER"
-        "cast_range_ward"     "450"
-      }
-    }
-  }
-
-  "item_quelling_bladeII"
-  {
-    // General
-    //-------------------------------------------------------------------------------------------------------------
-    "BaseClass"                 "item_quelling_blade"
-    "AbilityTextureName"      "custom/quelling_blade_two"
-    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-    "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
-    "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_CUSTOM"
-
-    "AbilityCastRange"        "650"
-    "AbilityCastPoint"        "0.0"
-    "AbilityCooldown"       "3.5"
-
-
-    // Item Info
-    //-------------------------------------------------------------------------------------------------------------
-    "ItemCost"            "200"
-    "ItemShopTags"          "damage;health_regen;mana_regen;hard_to_tag"
-    "ItemQuality"         "epic"
-    "ItemAliases"         "qb;quelling blade"
-    "ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-    
-    // Special  
-    //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
-    {
-      "1"
-      {
-        "var_type"        "FIELD_INTEGER"
-        "cast_range_tooltip"      "650"
-      }
-      "2"
-      {
-        "var_type"        "FIELD_INTEGER"
-        "cast_range_ward"     "450"
-      }
-    }
-  }
-
-  "item_quelling_bladeIII"
-  {
-    // General
-    //-------------------------------------------------------------------------------------------------------------
-    "BaseClass"                 "item_quelling_blade"
-    "AbilityTextureName"      "custom/quelling_blade_three"
-    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-    "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
-    "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_CUSTOM"
-
-    "AbilityCastRange"        "400"
-    "AbilityCastPoint"        "0.0"
-    "AbilityCooldown"       "5.5"
-
-
-    // Item Info
-    //-------------------------------------------------------------------------------------------------------------
-    "ItemCost"            "600"
-    "ItemShopTags"          "damage;health_regen;mana_regen;hard_to_tag"
-    "ItemQuality"         "epic"
-    "ItemAliases"         "qb;quelling blade"
-    "ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-    
-    // Special  
-    //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
-    {
-      "1"
-      {
-        "var_type"        "FIELD_INTEGER"
-        "cast_range_tooltip"      "800"
-      }
-      "2"
-      {
-        "var_type"        "FIELD_INTEGER"
-        "cast_range_ward"     "450"
-      }
-    }
-  }
-
 
   //"item_staff_of_wizardry"      "REMOVE"
   //"item_ring_of_regen"      "REMOVE"
-  //"item_ghost"      "REMOVE"
-  "item_clarity"     
-  {
-  "ItemCost"            "15"
-  }
+  "item_ghost"      "REMOVE"
 
-  "item_tango"    
-  {
-  "ItemCost"            "250"
-  }
     
-  "item_ghost"
-  {
-  "ItemCost"            "1200"
-  "SecretShop"            "1" 
-  }    
+   
 
 
   
-"item_recipe_force_staff"  
- {
-  "ItemCost"            "600"
- }
-
-
-
-"item_shadow_amulet"     
- {
-  "ItemCost"            "1500"
-  "SecretShop" "1" 
-
- }
-
-
-"item_ward_sentry"      
-{
-  "ItemCost"            "350"
-  "ItemStockMax"                    "2"
-  "ItemStockInitial"                "1"
-  "ItemStockTime"                    "60.0"
-}
-
-"item_ward_observer"      
-{
-  "ItemCost"            "350"
-  "ItemStockMax"                    "1"
-  "ItemStockInitial"                "1"
-  "ItemStockTime"                    "100.0"
-}
-
-
   "item_ring_of_health"    
   {
   "ItemCost"            "200"
@@ -236,20 +45,20 @@
   "ItemCost"            "200"
   }
   //"item_void_stone"     "REMOVE"
-
-
-
-
   //"item_dust"     "REMOVE"
   //"item_ward_observer"      "REMOVE"
-
-  //"item_tango_single"     "REMOVE"
   //"item_recipe_pers"      "REMOVE"
   //"item_pers"     "REMOVE"
-
-  //"item_force_staff"      "REMOVE"
+  "item_force_staff"      "REMOVE"
   //"item_recipe_refresher"     "REMOVE"
-  
+  "item_blink" "REMOVE"
+  "item_tango_single"     "REMOVE"
+  "item_dust" "REMOVE"
+  "item_ward_sentry"   "REMOVE"
+  "item_shadow_amulet" "REMOVE"     
+  "item_ward_observer"  "REMOVE"
+  "item_clarity"     "REMOVE"
+  "item_tango"    "REMOVE"
   "item_flask"      "REMOVE"
   "item_recipe_aeon_disk"     "REMOVE"
   "item_aeon_disk"     "REMOVE"
@@ -297,7 +106,7 @@
   "item_magic_stick"      "REMOVE"
   "item_recipe_magic_wand"      "REMOVE"
   "item_magic_wand"     "REMOVE"
-
+  "item_boots"     "REMOVE"   
   "item_bottle"     "REMOVE"
   "item_courier"      "REMOVE"
   "item_tpscroll"     "REMOVE"
