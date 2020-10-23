@@ -26,7 +26,7 @@
 //====================================================================================
 // Pipeline Testing Heroes
 //====================================================================================
-  "npc_dota_hero_bounty_hunter"                 "1"
+  "npc_dota_hero_bounty_hunter"                 "0"
   
 //====================================================================================
 // WIP Heroes
@@ -34,8 +34,8 @@
   "npc_dota_hero_batrider"                      "0"
   "npc_dota_hero_furion"                        "0"
   "npc_dota_hero_techies"                       "0"
-  "npc_dota_hero_juggernaut"                    "1"
-  "npc_dota_hero_phoenix"                       "1"
+  "npc_dota_hero_juggernaut"                    "0"
+  "npc_dota_hero_phoenix"                       "0"
 
 //====================================================================================
 // Theory Heroes
