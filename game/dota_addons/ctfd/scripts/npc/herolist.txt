@@ -35,6 +35,7 @@
   "npc_dota_hero_furion"                        "0"
   "npc_dota_hero_techies"                       "0"
   "npc_dota_hero_juggernaut"                    "1"
+  "npc_dota_hero_phoenix"                       "1"
 
 //====================================================================================
 // Theory Heroes
@@ -44,7 +45,7 @@
   "npc_dota_hero_earth_spirit"                  "0"
   "npc_dota_hero_night_stalker"                 "0"
   "npc_dota_hero_wisp"                          "0"
-  "npc_dota_hero_phoenix"                       "0"
+  
 
 //====================================================================================
 // In-Active Heroes

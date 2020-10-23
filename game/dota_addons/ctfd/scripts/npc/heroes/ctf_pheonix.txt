@@ -1,0 +1,85 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+ 	// Pheonix Ult: Super Nova 
+ 	//=================================================================================================================
+	"pheonix_super_nova"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						        "ability_datadriven"
+		"AbilityBehavior"				       	"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_DONT_RESUME_ATTACK"
+		"AbilityTextureName"			     	"phoenix_supernova"
+		"AbilityUnitTargetTeam"			   		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			   		"DOTA_UNIT_TARGET_HERO"
+		"SpellImmunityType"				     	"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityType"         					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"MaxLevel"						        "1"
+
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"particle"  				"particles/units/heroes/hero_pudge/pudge_rot.vpcf"
+      		"praticle"          "particles/econ/items/pudge/pudge_tassles_of_black_death/pudge_rot_recipient_d_dc.vpcf"
+		}
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"180"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"300"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				  "FIELD_INTEGER"
+				"radius"				    "200"
+			}
+
+			"02"
+			{
+				"var_type"				  "FIELD_INTEGER"
+				"movespeed_slow"		"40"
+			}
+
+			"03"
+			{
+				"var_type"				  "FIELD_INTEGER"
+				"duration"				  "2"
+			}
+
+			"04"
+			{
+				"var_type"				  "FIELD_FLOAT"
+				"linger_duration"		"0.5"
+			}
+
+			"05"
+			{
+				"var_type"				  "FIELD_INTEGER"
+				"plant_range"			  "150"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"				"heroes/hero_pudge/ctf_pudge_lil_stinky"
+        "Function"          "OnSpellStart"
+			}
+		}		
+	}
+
+	}
+}
