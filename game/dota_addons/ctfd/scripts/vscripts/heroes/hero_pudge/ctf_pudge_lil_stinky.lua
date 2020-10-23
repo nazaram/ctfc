@@ -23,6 +23,8 @@ function OnSpellStart ( keys )
 	local target_location		= caster_location + target
 	
 	local dummy = CreateUnitByName("npc_dota_custom_dummy_unit", target_location, false, caster, caster, caster:GetTeamNumber())
+	dummy:AddNewModifier(dummy, nil, "modifier_no_healthbar", {duration = -1})
+
 	local particle1 = ParticleManager:CreateParticle(particle_name1, PATTACH_ABSORIGIN, dummy)
 
 	ParticleManager:SetParticleControl(particle1, 0, dummy:GetAbsOrigin())
@@ -46,11 +48,7 @@ function OnSpellStart ( keys )
 
 				for _, unit in ipairs(units) do
 					if ((unit:GetAbsOrigin() - dummy:GetAbsOrigin()):Length2D()) < radius then
-						unit:AddNewModifier(caster, ability, "modifier_lil_stinky_slow", {duration = linger_duration})
-
-					else
-						unit:RemoveModifierByName("modifier_lil_stinky_slow")
-					
+						unit:AddNewModifier(caster, ability, "modifier_lil_stinky_slow", {duration = linger_duration})					
 					end
 				end
 

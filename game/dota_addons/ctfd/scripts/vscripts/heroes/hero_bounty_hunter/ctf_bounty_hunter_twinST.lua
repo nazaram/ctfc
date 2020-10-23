@@ -12,9 +12,10 @@ function LaunchStars( keys )
 	local ability 			= keys.ability
 	local ability_level 	= ability:GetLevel() - 1
 
-	local particle_name 	= "particles/econ/items/bounty_hunter/bounty_hunter_shuriken_hidden/bounty_hunter_suriken_toss_hidden_hunter.vpcf"
+	local particle_name 	= "particles/units/heroes/hero_bounty_hunter/bounty_hunter_shuriken_toss_main.vpcf"
 
 	local max_distance		= ability:GetLevelSpecialValueFor("star_range", ability_level - 1)
+	local search_radius		= ability:GetLevelSpecialValueFor("star_width", ability_level - 1)
 	local target_prime 		= keys.target_points[1] --target point prime
 	local direction_prime	= (target_prime - caster_location):Normalized()
 
@@ -26,18 +27,25 @@ function LaunchStars( keys )
 	local dummy_unit_alpha	= CreateUnitByName("npc_dota_custom_dummy_unit", dummy_unit_prime:GetAbsOrigin(), true, caster, caster, caster:GetTeamNumber())
 	local dummy_unit_beta	= CreateUnitByName("npc_dota_custom_dummy_unit", dummy_unit_prime:GetAbsOrigin(), true, caster, caster, caster:GetTeamNumber())
 
+	dummy_unit_prime:AddNewModifier(dummy_unit_prime, nil, "modifier_no_healthbar", {duration = -1})
+	dummy_unit_alpha:AddNewModifier(dummy_unit_alpha, nil, "modifier_no_healthbar", {duration = -1})
+	dummy_unit_beta:AddNewModifier(dummy_unit_beta, nil, "modifier_no_healthbar", {duration = -1})
+
+
 	local theta				= 30 -- degrees in radians
 	local unit_zero_vector	= Vector(caster_location.x + math.cos(0), caster_location.y + math.sin(0), caster_location.z):Normalized() - caster_location:Normalized() -- NORTH
 
 	-- Target Point Alpha: 
 	--Rotate one global point around another global point
-	local target_alpha		= RotatePosition(caster_location, QAngle(0, theta, 0), target_prime)
-	local direction_alpha	= (target_alpha - caster_location):Normalized()
+	-- local target_alpha		= RotatePosition(caster_location, QAngle(0, theta, 0), target_prime)
+	-- local direction_alpha	= (target_alpha - caster_location):Normalized()
+	local direction_alpha 	= RotatePosition(Vector(0, 0, 0), QAngle(0, theta, 0), direction_prime)
+
 	
 	-- Target Point Beta:
-	local target_beta		= RotatePosition(caster_location, QAngle(0, -theta, 0), target_prime)
-	local direction_beta	= (target_beta - caster_location):Normalized()
-	
+	-- local target_beta		= RotatePosition(caster_location, QAngle(0, -theta, 0), target_prime)
+	-- local direction_beta	= (target_beta - caster_location):Normalized()
+	local direction_beta 	= RotatePosition(Vector(0, 0, 0), QAngle(0, -theta, 0), direction_prime)
 
 	local particle_alpha	= ParticleManager:CreateParticle(particle_name, PATTACH_ABSORIGIN, dummy_unit_alpha)
 	local particle_beta		= ParticleManager:CreateParticle(particle_name, PATTACH_ABSORIGIN, dummy_unit_beta)
@@ -77,67 +85,107 @@ function LaunchStars( keys )
 	dummy_unit_beta:Hibernate(false)
 	dummy_unit_beta:SetGroundBehavior(PHYSICS_GROUND_LOCK)
 
-
-
-	Timers:CreateTimer(3, 
-		function()
-			-- print("Hi Aram") Debug
-			dummy_unit_prime:RemoveSelf()
-			dummy_unit_alpha:RemoveSelf()
-			dummy_unit_beta:RemoveSelf()
-
-			ParticleManager:ReleaseParticleIndex(particle_alpha)
-			ParticleManager:ReleaseParticleIndex(particle_beta)
-		end
-		)
-
-	local dummypx = dummy_unit_prime:GetPhysicsVelocity():Normalized().x
-	local dummypy = dummy_unit_prime:GetPhysicsVelocity():Normalized().y
-	local dummypz = dummy_unit_prime:GetPhysicsVelocity():Normalized().z
-
-	local dummyax = dummy_unit_alpha:GetPhysicsVelocity():Normalized().x
-	local dummyay = dummy_unit_alpha:GetPhysicsVelocity():Normalized().y
-	local dummyaz = dummy_unit_alpha:GetPhysicsVelocity():Normalized().z
-
-	local dummybx = dummy_unit_beta:GetPhysicsVelocity():Normalized().x
-	local dummyby = dummy_unit_beta:GetPhysicsVelocity():Normalized().y
-	local dummybz = dummy_unit_beta:GetPhysicsVelocity():Normalized().z
-
+	local dummyp_dis = 0
+	local dummya_dis = 0
+	local dummyb_dis = 0
 
 	dummy_unit_prime:OnPhysicsFrame(
-		function(dummy_unit_prime)
-			dummy_unit_prime:SetForwardVector(Vector(dummypx, dummypy, dummpz) * ability.star_speed )
+		function()
+			dummy_unit_prime:SetForwardVector(dummy_unit_prime:GetPhysicsVelocity())
+
+			dummyp_dis = (dummy_unit_prime:GetAbsOrigin() - caster_location):Length2D()
+
+			if dummyp_dis > max_distance + 250 then
+				dummy_unit_prime:RemoveSelf()
+			end
 		end
 	)
 
 	dummy_unit_alpha:OnPhysicsFrame(
-		function(dummy_unit_alpha)
-			dummy_unit_alpha:SetForwardVector(Vector(dummyax, dummyay, dummyaz) * ability.star_speed )
-			ParticleManager:SetParticleControl(particle_alpha, 1, dummy_unit_alpha:GetAbsOrigin())
-	
+		function()
+			dummy_unit_alpha:SetForwardVector(dummy_unit_alpha:GetPhysicsVelocity())
 
-			local distance_alpha = (caster_location - dummy_unit_alpha:GetAbsOrigin()):Length2D()
-			
-			-- if distance_alpha > max_distance then
-			-- 	dummy_unit_alpha:RemoveSelf()
-			-- 	ParticleManager:ReleaseParticleIndex(particle_alpha)
-			-- 	return nil
-			-- end
+			dummya_dis = (dummy_unit_alpha:GetAbsOrigin() - caster_location):Length2D()
+
+			ParticleManager:SetParticleControl(particle_alpha, 3, Vector(dummy_unit_alpha:GetAbsOrigin().x, dummy_unit_alpha:GetAbsOrigin().y, dummy_unit_alpha:GetAbsOrigin().z + 50))
+
+			dummy_unit_alpha:SetPhysicsVelocity(dummy_unit_alpha:GetPhysicsVelocity() + 0.2 * (dummy_unit_prime:GetAbsOrigin() - dummy_unit_alpha:GetAbsOrigin()))
+
+
+			if dummy_unit_alpha ~= nil then
+				Timers:CreateTimer(
+					function()
+						local units = FindUnitsInRadius(
+						caster:GetTeam(), 
+						dummy_unit_alpha:GetAbsOrigin(), 
+						nil,
+						radius, 
+						DOTA_UNIT_TARGET_TEAM_ENEMY,
+						DOTA_UNIT_TARGET_HERO, 
+						DOTA_UNIT_TARGET_FLAG_NONE,
+						FIND_CLOSEST,
+						false)
+
+						for _, unit in ipairs(units) do
+							if ((unit:GetAbsOrigin() - dummy_unit_alpha:GetAbsOrigin()):Length2D()) < radius then
+								dummy_unit_alpha:RemoveSelf()
+								ParticleManager:ReleaseParticleIndex(particle_alpha)				
+							end
+						end
+
+						return 0.25
+					end
+				)
+			end
+
+			if dummya_dis > max_distance then
+				dummy_unit_alpha:RemoveSelf()
+				ParticleManager:ReleaseParticleIndex(particle_alpha)
+			end
+
 		end
 	)
 
 	dummy_unit_beta:OnPhysicsFrame(
-		function(dummy_unit_beta)
-			dummy_unit_beta:SetForwardVector(Vector(dummybx, dummyby, dummybz) * ability.star_speed )
-			ParticleManager:SetParticleControl(particle_beta, 1, dummy_unit_beta:GetAbsOrigin())
+		function()
+			dummy_unit_beta:SetForwardVector(dummy_unit_beta:GetPhysicsVelocity())
+			
+			dummyb_dis = (dummy_unit_beta:GetAbsOrigin() - caster_location):Length2D()
 
-			local distance_beta = (caster_location - dummy_unit_beta:GetAbsOrigin()):Length2D()
+			ParticleManager:SetParticleControl(particle_beta, 3, Vector(dummy_unit_beta:GetAbsOrigin().x, dummy_unit_beta:GetAbsOrigin().y, dummy_unit_beta:GetAbsOrigin().z + 50))
 
-			-- if distance_beta > max_distance then
-			-- 	dummy_unit_beta:RemoveSelf()
-			-- 	ParticleManager:ReleaseParticleIndex(particle_beta)
-			-- 	return nil
-			-- end
+			dummy_unit_beta:SetPhysicsVelocity(dummy_unit_beta:GetPhysicsVelocity() + 0.2 * (dummy_unit_prime:GetAbsOrigin() - dummy_unit_beta:GetAbsOrigin()))
+			
+			if dummy_unit_beta ~= nil then
+				Timers:CreateTimer(
+					function()
+						local units = FindUnitsInRadius(
+						caster:GetTeam(), 
+						dummy_unit_beta:GetAbsOrigin(), 
+						nil,
+						radius, 
+						DOTA_UNIT_TARGET_TEAM_ENEMY,
+						DOTA_UNIT_TARGET_HERO, 
+						DOTA_UNIT_TARGET_FLAG_NONE,
+						FIND_CLOSEST,
+						false)
+
+						for _, unit in ipairs(units) do
+							if ((unit:GetAbsOrigin() - dummy_unit_beta:GetAbsOrigin()):Length2D()) < radius then
+								dummy_unit_beta:RemoveSelf()
+								ParticleManager:ReleaseParticleIndex(particle_beta)				
+							end
+						end
+
+						return 0.25
+					end
+				)
+			end
+
+			if dummyb_dis > max_distance then
+				dummy_unit_beta:RemoveSelf()
+				ParticleManager:ReleaseParticleIndex(particle_beta)
+			end
 		end
 	)	
 end

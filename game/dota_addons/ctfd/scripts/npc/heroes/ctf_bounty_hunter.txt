@@ -60,6 +60,7 @@
 		"precache"
 		{
 			"particle"  				"particles/econ/items/bounty_hunter/bounty_hunter_shuriken_hidden/bounty_hunter_suriken_toss_hidden_hunter.vpcf"
+			"particle"					"particles/units/heroes/hero_bounty_hunter/bounty_hunter_shuriken_toss_main.vpcf"
 		}
 		
 		// Casting
@@ -85,7 +86,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"star_speed"			"1000"
+				"star_speed"			"1200"
 			}
 
 			"02"
@@ -97,7 +98,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"star_range"			"2000"
+				"star_range"			"1500"
 			}
 
 			"04"
