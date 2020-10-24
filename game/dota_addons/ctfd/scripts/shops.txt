@@ -9,10 +9,6 @@
 		"item"			"item_quelling_bladeII"
 		"item"			"item_quelling_bladeIII"
 		"item"		    "item_custom_ghostI"
-		"item"		    "item_custom_ghostII"
-		"item"		    "item_custom_ghostIII"
-		"item"		    "item_custom_ghostIV"
-
 		"item"      	"item_refresher"
 
 	}

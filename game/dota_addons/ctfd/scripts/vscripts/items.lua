@@ -88,9 +88,9 @@ end
 function bountypickup(event)
     local unit = EntIndexToHScript(event.caster_entindex)
     print(unit)
-    unit:AddExperience(15 + _G.GAME_ROUND * 3 , DOTA_ModifyXP_Unspecified, false, false)
+   unit:AddExperience(25 + _G.GAME_ROUND * 5 , DOTA_ModifyXP_Unspecified, false, false)
     --attacker:AddExperience(hero:GetCurrentXP() + 100, DOTA_ModifyXP_Unspecified, false, false)
-    unit:SetGold(unit:GetGold() + 15 + _G.GAME_ROUND * 7, false)
+    unit:SetGold(unit:GetGold() + 50 + _G.GAME_ROUND * 5, false)
 end
 
 
@@ -100,8 +100,8 @@ function OnPlayerPickupCoinA(keys)
   local bountyrune1 = CreateItem("item_bounty_rune_A", nil, nil) 
 
   if unit:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-    unit:AddExperience(15 + _G.GAME_ROUND * 3 , DOTA_ModifyXP_Unspecified, false, false)
-    unit:SetGold(unit:GetGold() + 15 + _G.GAME_ROUND * 7, false)
+    unit:AddExperience(25 + _G.GAME_ROUND * 5 , DOTA_ModifyXP_Unspecified, false, false)
+    unit:SetGold(unit:GetGold() + 50 + _G.GAME_ROUND * 5, false)
     UTIL_RemoveImmediate(keys.ability)
     EmitSoundOn("General.Coins",caster)
     _G.BountyPickedGood = 1
@@ -122,8 +122,8 @@ function OnPlayerPickupCoinB(keys)
   local bountyrune2 = CreateItem("item_bounty_rune_B", nil, nil)  
 
   if unit:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-    unit:AddExperience(15 + _G.GAME_ROUND * 3 , DOTA_ModifyXP_Unspecified, false, false)
-    unit:SetGold(unit:GetGold() + 15 + _G.GAME_ROUND * 7, false)
+    unit:AddExperience(25 + _G.GAME_ROUND * 5 , DOTA_ModifyXP_Unspecified, false, false)
+    unit:SetGold(unit:GetGold() + 50 + _G.GAME_ROUND * 5, false)
     UTIL_RemoveImmediate(keys.ability)
     EmitSoundOn("General.Coins",caster)
     _G.BountyPickedGood = 1
@@ -142,8 +142,8 @@ function OnPlayerPickupCoinC(keys)
   local bountyrune3 = CreateItem("item_bounty_rune_C", nil, nil)  
 
   if unit:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-    unit:AddExperience(15 + _G.GAME_ROUND * 3 , DOTA_ModifyXP_Unspecified, false, false)
-    unit:SetGold(unit:GetGold() + 15 + _G.GAME_ROUND * 7, false)
+    unit:AddExperience(25 + _G.GAME_ROUND * 5 , DOTA_ModifyXP_Unspecified, false, false)
+    unit:SetGold(unit:GetGold() + 50 + _G.GAME_ROUND * 5, false)
     UTIL_RemoveImmediate(keys.ability)
     EmitSoundOn("General.Coins",caster)
     _G.BountyPickedGood = 1
@@ -163,8 +163,8 @@ function OnPlayerPickupCoinD(keys)
   local bountyrune4 = CreateItem("item_bounty_rune_D", nil, nil)  
 
   if unit:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-  unit:AddExperience(15 + _G.GAME_ROUND * 3 , DOTA_ModifyXP_Unspecified, false, false)
-  unit:SetGold(unit:GetGold() + 15 + _G.GAME_ROUND * 7, false)
+  unit:AddExperience(25 + _G.GAME_ROUND * 5 , DOTA_ModifyXP_Unspecified, false, false)
+  unit:SetGold(unit:GetGold() + 50 + _G.GAME_ROUND * 5, false)
   UTIL_RemoveImmediate(keys.ability)
   EmitSoundOn("General.Coins",caster)
   _G.BountyPickedBad = 1
@@ -184,8 +184,8 @@ function OnPlayerPickupCoinE(keys)
   local bountyrune5 = CreateItem("item_bounty_rune_E", nil, nil)  
 
   if unit:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-  unit:AddExperience(15 + _G.GAME_ROUND * 3 , DOTA_ModifyXP_Unspecified, false, false)
-  unit:SetGold(unit:GetGold() + 15 + _G.GAME_ROUND * 7, false)
+  unit:AddExperience(25 + _G.GAME_ROUND * 5 , DOTA_ModifyXP_Unspecified, false, false)
+    unit:SetGold(unit:GetGold() + 50 + _G.GAME_ROUND * 5, false)
   UTIL_RemoveImmediate(keys.ability)
   EmitSoundOn("General.Coins",caster)
    _G.BountyPickedBad = 1
@@ -204,8 +204,8 @@ function OnPlayerPickupCoinF(keys)
   local bountyrune6 = CreateItem("item_bounty_rune_F", nil, nil)  
 
   if unit:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-  unit:AddExperience(15 + _G.GAME_ROUND * 3 , DOTA_ModifyXP_Unspecified, false, false)
-  unit:SetGold(unit:GetGold() + 15 + _G.GAME_ROUND * 7, false)
+  unit:AddExperience(25 + _G.GAME_ROUND * 5 , DOTA_ModifyXP_Unspecified, false, false)
+  unit:SetGold(unit:GetGold() + 50 + _G.GAME_ROUND * 5, false)
   UTIL_RemoveImmediate(keys.ability)
   EmitSoundOn("General.Coins",caster)
   _G.BountyPickedBad = 1

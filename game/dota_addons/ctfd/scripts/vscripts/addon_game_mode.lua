@@ -44,23 +44,23 @@ end
 
 _G.GAME_ROUND = 1
 
-_G.GAME_ROUND1experiencelose = 75
-_G.GAME_ROUND1experiencewin = 150
+_G.GAME_ROUND1experiencelose = 25
+_G.GAME_ROUND1experiencewin = 100
 
-_G.GAME_ROUND2experiencelose = 85
-_G.GAME_ROUND2experiencewin =  175
+_G.GAME_ROUND2experiencelose = 25
+_G.GAME_ROUND2experiencewin =  100
 
-_G.GAME_ROUND3experiencelose = 95
-_G.GAME_ROUND3experiencewin = 185
+_G.GAME_ROUND3experiencelose = 25
+_G.GAME_ROUND3experiencewin = 100
 
-_G.GAME_ROUND4experiencelose = 100
-_G.GAME_ROUND4experiencewin = 200
+_G.GAME_ROUND4experiencelose = 50
+_G.GAME_ROUND4experiencewin = 150
 
-_G.GAME_ROUND5experiencelose = 125
-_G.GAME_ROUND5experiencewin = 200
+_G.GAME_ROUND5experiencelose = 100
+_G.GAME_ROUND5experiencewin = 250
 
-_G.GAME_ROUND6experiencelose = 200
-_G.GAME_ROUND6experiencewin = 225
+_G.GAME_ROUND6experiencelose = 100
+_G.GAME_ROUND6experiencewin = 250
 
 _G.GAME_ROUND7experiencelose = 225
 _G.GAME_ROUND7experiencewin = 250
@@ -188,7 +188,7 @@ function CAddonTemplateGameMode:InitGameMode()
   GameRules:SetShowcaseTime(0)
   GameRules:SetPreGameTime( 15.0)
   GameRules:SetTreeRegrowTime(100)
-  GameRules:SetStartingGold(400)
+  GameRules:SetStartingGold(250)
   GameRules:SetUseUniversalShopMode(false) 
   GameRules:SetSameHeroSelectionEnabled(true)
   GameRules:SendCustomMessage("Welcome To Capture The Flag Alpha by buymyhat.com", DOTA_TEAM_NOTEAM, 0)
@@ -450,6 +450,7 @@ _G.BadinPrison = 0
         gold = CONSTANTS.goldForPoint + _G.GAME_ROUND * 25
         --GIVE GOLD TO ALL UNITS AT EVERY RESET 
         hero:SetGold(hero:GetGold() + gold, false)
+        hero:AddExperience(50 + _G.GAME_ROUND * 4 , DOTA_ModifyXP_Unspecified, false, false)
         --print(hero)
         if (hero ~=nil) then
       --hero:RemoveModifierByName("modifier_stunned")
@@ -663,7 +664,7 @@ function CAddonTemplateGameMode:OnEntityHurt(tbl)
   if attacker:IsHero() then
     attacker:AddExperience(15 + _G.GAME_ROUND * 3 , DOTA_ModifyXP_Unspecified, false, false)
     --attacker:AddExperience(hero:GetCurrentXP() + 100, DOTA_ModifyXP_Unspecified, false, false)
-    attacker:SetGold(attacker:GetGold() + 15 + _G.GAME_ROUND * 7, false)
+    attacker:SetGold(attacker:GetGold() + 75 + _G.GAME_ROUND * 5, false)
   end
 
 

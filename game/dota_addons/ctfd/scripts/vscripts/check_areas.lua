@@ -360,7 +360,7 @@ function enterGoodAreaBack(trigger)
           unit:IncrementDenies()
           reset()
           rewardGoodWin()
-          unit:SetGold(unit:GetGold() + 100 + _G.GAME_ROUND * 10, false)        
+          unit:SetGold(unit:GetGold() + 500, false)        
         end
       end
     end    
@@ -388,7 +388,7 @@ function enterBadAreaBack(trigger)
           unit:IncrementDenies()
           spawnGoodFlag()
           reset()
-          unit:SetGold(unit:GetGold() + 100 + _G.GAME_ROUND * 10 , false)
+          unit:SetGold(unit:GetGold() + 500 , false)
           rewardBadWin()
         end
       end
@@ -408,65 +408,86 @@ function rewardBadWin()
           if hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then             
             if _G.GAME_ROUND == 1 then
               hero:AddExperience(GAME_ROUND1experiencewin, DOTA_ModifyXP_Unspecified, false, false)
+              hero:SetGold(hero:GetGold() + 250, false)
             end
             if _G.GAME_ROUND == 2 then
               hero:AddExperience(GAME_ROUND2experiencewin, DOTA_ModifyXP_Unspecified, false, false)
+              hero:SetGold(hero:GetGold() + 250, false)
             end
             if _G.GAME_ROUND == 3 then
               hero:AddExperience(GAME_ROUND3experiencewin, DOTA_ModifyXP_Unspecified, false, false)
+              hero:SetGold(hero:GetGold() + 250, false)
             end
             if _G.GAME_ROUND == 4 then
               hero:AddExperience(GAME_ROUND4experiencewin, DOTA_ModifyXP_Unspecified, false, false)
+              hero:SetGold(hero:GetGold() + 250, false)
             end
             if _G.GAME_ROUND == 5 then
               hero:AddExperience(GAME_ROUND5experiencewin, DOTA_ModifyXP_Unspecified, false, false)
+              hero:SetGold(hero:GetGold() + 250, false)
             end
             if _G.GAME_ROUND == 6 then
               hero:AddExperience(GAME_ROUND6experiencewin, DOTA_ModifyXP_Unspecified, false, false)
+              hero:SetGold(hero:GetGold() + 250, false)
             end
             if _G.GAME_ROUND == 7 then
               hero:AddExperience(GAME_ROUND7experiencewin, DOTA_ModifyXP_Unspecified, false, false)
+              hero:SetGold(hero:GetGold() + 250, false)
             end
             if _G.GAME_ROUND == 8 then
               hero:AddExperience(GAME_ROUND8experiencewin, DOTA_ModifyXP_Unspecified, false, false)
+              hero:SetGold(hero:GetGold() + 250, false)
             end
             if _G.GAME_ROUND == 9 then
               hero:AddExperience(GAME_ROUND9experiencewin, DOTA_ModifyXP_Unspecified, false, false)
+              hero:SetGold(hero:GetGold() + 250, false)
             end
             if _G.GAME_ROUND == 10 then
               hero:AddExperience(GAME_ROUND10experiencewin, DOTA_ModifyXP_Unspecified, false, false)
+              hero:SetGold(hero:GetGold() + 250, false)
             end
             if _G.GAME_ROUND == 11 then
               hero:AddExperience(GAME_ROUND11experiencewin, DOTA_ModifyXP_Unspecified, false, false)
+              hero:SetGold(hero:GetGold() + 250, false)
             end
             if _G.GAME_ROUND == 12 then
               hero:AddExperience(GAME_ROUND12experiencewin, DOTA_ModifyXP_Unspecified, false, false)
+              hero:SetGold(hero:GetGold() + 250, false)
             end
             if _G.GAME_ROUND == 13 then
               hero:AddExperience(GAME_ROUND13experiencewin, DOTA_ModifyXP_Unspecified, false, false)
+              hero:SetGold(hero:GetGold() + 250, false)
             end
             if _G.GAME_ROUND == 14 then
               hero:AddExperience(GAME_ROUND14experiencewin, DOTA_ModifyXP_Unspecified, false, false)
+              hero:SetGold(hero:GetGold() + 250, false)
             end
             if _G.GAME_ROUND == 15 then
               hero:AddExperience(GAME_ROUND15experiencewin, DOTA_ModifyXP_Unspecified, false, false)
+              hero:SetGold(hero:GetGold() + 250, false)
             end
             if _G.GAME_ROUND == 16 then
               hero:AddExperience(GAME_ROUND16experiencewin, DOTA_ModifyXP_Unspecified, false, false)
+              hero:SetGold(hero:GetGold() + 250, false)
             end
             if _G.GAME_ROUND == 17 then
               hero:AddExperience(GAME_ROUND17experiencewin, DOTA_ModifyXP_Unspecified, false, false)
+              hero:SetGold(hero:GetGold() + 250, false)
             end
             if _G.GAME_ROUND == 18 then
               hero:AddExperience(GAME_ROUND18experiencewin, DOTA_ModifyXP_Unspecified, false, false)
+              hero:SetGold(hero:GetGold() + 250, false)
             end
             if _G.GAME_ROUND == 19 then
               hero:AddExperience(GAME_ROUND19experiencewin, DOTA_ModifyXP_Unspecified, false, false)
+              hero:SetGold(hero:GetGold() + 250, false)
             end
             if _G.GAME_ROUND == 20 then
               hero:AddExperience(GAME_ROUND20experiencewin, DOTA_ModifyXP_Unspecified, false, false)
+              hero:SetGold(hero:GetGold() + 250, false)
             end
           end
+         
           if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
             if _G.GAME_ROUND == 1 then
               hero:AddExperience(GAME_ROUND1experiencelose, DOTA_ModifyXP_Unspecified, false, false)
@@ -543,65 +564,86 @@ function rewardGoodWin()
           if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then             
             if _G.GAME_ROUND == 1 then
               hero:AddExperience(GAME_ROUND1experiencewin(), DOTA_ModifyXP_Unspecified, false, false)
+              hero:SetGold(hero:GetGold() + 250, false)
             end
             if _G.GAME_ROUND == 2 then
               hero:AddExperience(GAME_ROUND2experiencewin, DOTA_ModifyXP_Unspecified, false, false)
+              hero:SetGold(hero:GetGold() + 250, false)
             end
             if _G.GAME_ROUND == 3 then
               hero:AddExperience(GAME_ROUND3experiencewin, DOTA_ModifyXP_Unspecified, false, false)
+              hero:SetGold(hero:GetGold() + 250, false)
             end
             if _G.GAME_ROUND == 4 then
               hero:AddExperience(GAME_ROUND4experiencewin, DOTA_ModifyXP_Unspecified, false, false)
+              hero:SetGold(hero:GetGold() + 250, false)
             end
             if _G.GAME_ROUND == 5 then
               hero:AddExperience(GAME_ROUND5experiencewin, DOTA_ModifyXP_Unspecified, false, false)
+              hero:SetGold(hero:GetGold() + 250, false)
             end
             if _G.GAME_ROUND == 6 then
               hero:AddExperience(GAME_ROUND6experiencewin, DOTA_ModifyXP_Unspecified, false, false)
+              hero:SetGold(hero:GetGold() + 250, false)
             end
             if _G.GAME_ROUND == 7 then
               hero:AddExperience(GAME_ROUND7experiencewin, DOTA_ModifyXP_Unspecified, false, false)
+              hero:SetGold(hero:GetGold() + 250, false)
             end
             if _G.GAME_ROUND == 8 then
               hero:AddExperience(GAME_ROUND8experiencewin, DOTA_ModifyXP_Unspecified, false, false)
+              hero:SetGold(hero:GetGold() + 250, false)
             end
             if _G.GAME_ROUND == 9 then
               hero:AddExperience(GAME_ROUND9experiencewin, DOTA_ModifyXP_Unspecified, false, false)
+              hero:SetGold(hero:GetGold() + 250, false)
             end
             if _G.GAME_ROUND == 10 then
               hero:AddExperience(GAME_ROUND10experiencewin, DOTA_ModifyXP_Unspecified, false, false)
+              hero:SetGold(hero:GetGold() + 250, false)
             end
             if _G.GAME_ROUND == 11 then
               hero:AddExperience(GAME_ROUND11experiencewin, DOTA_ModifyXP_Unspecified, false, false)
+              hero:SetGold(hero:GetGold() + 250, false)
             end
             if _G.GAME_ROUND == 12 then
               hero:AddExperience(GAME_ROUND12experiencewin, DOTA_ModifyXP_Unspecified, false, false)
+              hero:SetGold(hero:GetGold() + 250, false)
             end
             if _G.GAME_ROUND == 13 then
               hero:AddExperience(GAME_ROUND13experiencewin, DOTA_ModifyXP_Unspecified, false, false)
+              hero:SetGold(hero:GetGold() + 250, false)
             end
             if _G.GAME_ROUND == 14 then
               hero:AddExperience(GAME_ROUND14experiencewin, DOTA_ModifyXP_Unspecified, false, false)
+              hero:SetGold(hero:GetGold() + 250, false)
             end
             if _G.GAME_ROUND == 15 then
               hero:AddExperience(GAME_ROUND15experiencewin, DOTA_ModifyXP_Unspecified, false, false)
+              hero:SetGold(hero:GetGold() + 250, false)
             end
             if _G.GAME_ROUND == 16 then
               hero:AddExperience(GAME_ROUND16experiencewin, DOTA_ModifyXP_Unspecified, false, false)
+              hero:SetGold(hero:GetGold() + 250, false)
             end
             if _G.GAME_ROUND == 17 then
               hero:AddExperience(GAME_ROUND17experiencewin, DOTA_ModifyXP_Unspecified, false, false)
+              hero:SetGold(hero:GetGold() + 250, false)
             end
             if _G.GAME_ROUND == 18 then
               hero:AddExperience(GAME_ROUND18experiencewin, DOTA_ModifyXP_Unspecified, false, false)
+              hero:SetGold(hero:GetGold() + 250, false)
             end
             if _G.GAME_ROUND == 19 then
               hero:AddExperience(GAME_ROUND19experiencewin, DOTA_ModifyXP_Unspecified, false, false)
+              hero:SetGold(hero:GetGold() + 250, false)
             end
             if _G.GAME_ROUND == 20 then
               hero:AddExperience(GAME_ROUND20experiencewin, DOTA_ModifyXP_Unspecified, false, false)
+              hero:SetGold(hero:GetGold() + 250, false)
             end
           end
+         
           if hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
             if _G.GAME_ROUND == 1 then
               hero:AddExperience(GAME_ROUND1experiencelose(), DOTA_ModifyXP_Unspecified, false, false)

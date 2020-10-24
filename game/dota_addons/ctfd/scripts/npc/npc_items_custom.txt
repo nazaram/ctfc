@@ -5,6 +5,98 @@
 //NORMAL ITEMS
 //====================================================================================================================
 
+
+//=================================================================================================================
+// UTILITY
+//=================================================================================================================
+
+
+//=================================================================================================================
+// GHOST SCEPTER
+//=================================================================================================================
+  "item_custom_ghostI"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"                 "item_ghost"
+    "AbilityTextureName"      "item_ghost"
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    "FightRecapLevel"       "1"
+    // Stats
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCooldown"       "15.0"     
+    "AbilitySharedCooldown"     "ethereal"
+    "SpellDispellableType"      "SPELL_DISPELLABLE_YES"
+    // Item Info
+    //-------------------------------------------------------------------------------------------------------------
+    "ItemCost"            "1000"
+    "ItemShopTags"          "ghost"
+    "ItemQuality"         "component"
+    "ItemAliases"         "ghost scepter"
+    "ShouldBeSuggested"       "0"
+    // Special  
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"        "FIELD_INTEGER"
+        "bonus_all_stats"   "0"
+      }
+      "02"
+      {
+        "var_type"        "FIELD_FLOAT"
+        "duration"        "1.0"
+      }
+      "03"
+      {
+        "var_type"        "FIELD_INTEGER"
+        "extra_spell_damage_percent"  "0"
+      }
+    }
+  }
+//=================================================================================================================
+// REFRESHER
+//=================================================================================================================
+
+
+"item_recipe_refresher"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "ID"              "101"                           // unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+    "Model"             "models/props_gameplay/recipe.vmdl"
+    
+    // Item Info
+    //-------------------------------------------------------------------------------------------------------------
+    "ItemCost"            "1997"  
+    "ItemShopTags"          ""
+    
+    // Recipe
+    //-------------------------------------------------------------------------------------------------------------
+    "ItemRecipe"          "1"
+    "ItemResult"          "item_refresher"
+    "ItemRequirements"
+    {
+      "01"            "item_branches"
+    }
+  }
+
+
+"item_refresher"
+{
+  "AbilityCooldown"        "40"
+  "AbilityManaCost"        "100"
+}
+
+//=================================================================================================================
+// REFRESHER
+//=================================================================================================================
+
+
+
+
+
 //====================================================================================================================
 //ATTACK SPEED
 //====================================================================================================================
@@ -110,8 +202,8 @@
     "cast_range_tooltip"                                  "400"
     "AbilityCastPoint"                                    "0.0"
     "AbilityCastPoint"        "0.0"
-    "AbilityCooldown"         "30.0"
-    "ItemCost"                "1000"
+    "AbilityCooldown"         "25.0"
+    "ItemCost"                "1500"
     "ItemShopTags"            "Secret Shop"
     "ItemQuality"             "Secret Shop"
     "SecretShop" "1" 
@@ -120,17 +212,17 @@
       "01"
       {
         "var_type"                                        "FIELD_INTEGER"
-        "blink_range"                                     "400"
+        "blink_range"                                     "375"
       }
       "02"
       {
         "var_type"                                        "FIELD_FLOAT"
-        "blink_damage_cooldown"                           "5"
+        "blink_damage_cooldown"                           "3"
       }
       "03"
       {
         "var_type"                                        "FIELD_INTEGER"
-        "blink_range_clamp"                               "400"
+        "blink_range_clamp"                               "375"
       }
     }
   }
@@ -142,11 +234,11 @@
    
     "BaseClass"               "item_blink"
     "AbilityTextureName"      "custom/blink_two"
-    "AbilityCastRange"        "600"
-    "cast_range_tooltip"      "600"
+    "AbilityCastRange"        "500"
+    "cast_range_tooltip"      "500"
     "AbilityCastPoint"        "0.0"
-    "AbilityCooldown"         "28"
-    "ItemCost"                "2999"
+    "AbilityCooldown"         "23"
+    "ItemCost"                "2000"
     "ItemShopTags"            "Secret Shop"
     "ItemQuality"             "Secret Shop"
     "SecretShop" "1" 
@@ -158,17 +250,17 @@
       "01"
       {
         "var_type"        "FIELD_INTEGER"
-        "blink_range"     "600"
+        "blink_range"     "500"
       }
       "02"
       {
         "var_type"        "FIELD_FLOAT"
-        "blink_damage_cooldown" "5"
+        "blink_damage_cooldown" "3"
       }
       "03"
       {
         "var_type"        "FIELD_INTEGER"
-        "blink_range_clamp" "600"
+        "blink_range_clamp" "500"
       }
     }
   }
@@ -181,13 +273,50 @@
    
     "BaseClass"                 "item_blink"
     "AbilityTextureName"      "custom/blink_three"
+    "AbilityCastRange"        "600"
+    "cast_range_tooltip"      "600"
+    "AbilityCastPoint"        "0.0"
+    "AbilityCooldown"         "23"
+    "SecretShop" "1" 
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+    "ItemCost"                "3000"
+    "ItemShopTags"            "Secret Shop"
+    "ItemQuality"             "Secret Shop"
+    "ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+        "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"        "FIELD_INTEGER"
+        "blink_range"     "600"
+      }
+      "02"
+      {
+        "var_type"        "FIELD_FLOAT"
+        "blink_damage_cooldown" "3"
+      }
+      "03"
+      {
+        "var_type"        "FIELD_INTEGER"
+        "blink_range_clamp" "600"
+      }
+    }
+  }
+
+ "item_blinkIV"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+   
+    "BaseClass"                 "item_blink"
+    "AbilityTextureName"      "custom/blink_four"
     "AbilityCastRange"        "800"
     "cast_range_tooltip"      "800"
     "AbilityCastPoint"        "0.0"
-    "AbilityCooldown"         "25"
-    "SecretShop" "1" 
+    "AbilityCooldown"         "20"
+        "SecretShop" "1" 
     "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
-    "ItemCost"                "3999"
+    "ItemCost"                "5000"
     "ItemShopTags"            "Secret Shop"
     "ItemQuality"             "Secret Shop"
     "ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
@@ -207,43 +336,6 @@
       {
         "var_type"        "FIELD_INTEGER"
         "blink_range_clamp" "800"
-      }
-    }
-  }
-
- "item_blinkIV"
-  {
-    // General
-    //-------------------------------------------------------------------------------------------------------------
-   
-    "BaseClass"                 "item_blink"
-    "AbilityTextureName"      "custom/blink_four"
-    "AbilityCastRange"        "850"
-    "cast_range_tooltip"      "850"
-    "AbilityCastPoint"        "0.0"
-    "AbilityCooldown"         "20"
-        "SecretShop" "1" 
-    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
-    "ItemCost"                "4999"
-    "ItemShopTags"            "Secret Shop"
-    "ItemQuality"             "Secret Shop"
-    "ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-        "AbilitySpecial"
-    {
-      "01"
-      {
-        "var_type"        "FIELD_INTEGER"
-        "blink_range"     "850"
-      }
-      "02"
-      {
-        "var_type"        "FIELD_FLOAT"
-        "blink_damage_cooldown" "5"
-      }
-      "03"
-      {
-        "var_type"        "FIELD_INTEGER"
-        "blink_range_clamp" "850"
       }
     }
   }
@@ -536,7 +628,7 @@
     
     // Item Info
     //-------------------------------------------------------------------------------------------------------------
-    "ItemCost"            "997"  
+    "ItemCost"            "998"  
     "ItemShopTags"          ""
     
     // Recipe
@@ -684,276 +776,7 @@
   }
 
 
-  //=================================================================================================================
-  // Ghost
-  //=================================================================================================================
-  "item_custom_ghostI"
-  {
-    // General
-    //-------------------------------------------------------------------------------------------------------------
-    
-    "BaseClass"                 "item_ghost"
-    "AbilityTextureName"      "item_ghost"
-    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-    "FightRecapLevel"       "1"
-    
-    // Stats
-    //-------------------------------------------------------------------------------------------------------------
-    "AbilityCooldown"       "15.0"     
-    "AbilitySharedCooldown"     "ethereal"
-    "SpellDispellableType"      "SPELL_DISPELLABLE_YES"
-
-    // Item Info
-    //-------------------------------------------------------------------------------------------------------------
-    "ItemCost"            "1000"
-    "ItemShopTags"          "ghost"
-    "ItemQuality"         "component"
-    "ItemAliases"         "ghost scepter"
-    "ShouldBeSuggested"       "0"
-
-    // Special  
-    //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-      "01"
-      {
-        "var_type"        "FIELD_INTEGER"
-        "bonus_all_stats"   "0"
-      }
-      "02"
-      {
-        "var_type"        "FIELD_FLOAT"
-        "duration"        "1.0"
-      }
-      "03"
-      {
-        "var_type"        "FIELD_INTEGER"
-        "extra_spell_damage_percent"  "0"
-      }
-    }
-  }
-
-  "item_custom_ghostII"
-  {
-    // General
-    //-------------------------------------------------------------------------------------------------------------
-    
-    "BaseClass"                 "item_ghost"
-    "AbilityTextureName"      "item_ghost"
-    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"    
-    // Stats
-    //-------------------------------------------------------------------------------------------------------------
-    "AbilityCooldown"       "9.0"     
-    "AbilitySharedCooldown"     "ethereal"
-    "SpellDispellableType"      "SPELL_DISPELLABLE_YES"
-
-    // Item Info
-    //-------------------------------------------------------------------------------------------------------------
-    "ItemCost"            "2000"
-    "ItemShopTags"          "int;agi;str;hard_to_tag"
-    "ItemQuality"         "component"
-    "ItemAliases"         "ghost scepter"
-    "ShouldBeSuggested"       "0"
-
-    // Special  
-    //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-      "01"
-      {
-        "var_type"        "FIELD_INTEGER"
-        "bonus_all_stats"   "0"
-      }
-      "02"
-      {
-        "var_type"        "FIELD_FLOAT"
-        "duration"        "1.0"
-      }
-      "03"
-      {
-        "var_type"        "FIELD_INTEGER"
-        "extra_spell_damage_percent"  "0"
-      }
-    }
-  }
-
-    "item_custom_ghostIII"
-  {
-    // General
-    //-------------------------------------------------------------------------------------------------------------
-    
-    "BaseClass"                 "item_ghost"
-    "AbilityTextureName"      "item_ghost"
-    "MaxLevel"             "7"
-    "ID"              "37"                        // unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-    "FightRecapLevel"       "1"
-    
-    // Stats
-    //-------------------------------------------------------------------------------------------------------------
-    "AbilityCooldown"       "7.0"     
-    "AbilitySharedCooldown"     "ethereal"
-    "SpellDispellableType"      "SPELL_DISPELLABLE_YES"
-
-    // Item Info
-    //-------------------------------------------------------------------------------------------------------------
-    "ItemCost"            "3000"
-    "ItemShopTags"          "int;agi;str;hard_to_tag"
-    "ItemQuality"         "component"
-    "ItemAliases"         "ghost scepter"
-    "ShouldBeSuggested"       "0"
-
-    // Special  
-    //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-      "01"
-      {
-        "var_type"        "FIELD_INTEGER"
-        "bonus_all_stats"   "0"
-      }
-      "02"
-      {
-        "var_type"        "FIELD_FLOAT"
-        "duration"        "1.0"
-      }
-      "03"
-      {
-        "var_type"        "FIELD_INTEGER"
-        "extra_spell_damage_percent"  "0"
-      }
-    }
-  }
-
-    "item_custom_ghostIV"
-  {
-    // General
-    //-------------------------------------------------------------------------------------------------------------
-    
-    "BaseClass"                 "item_ghost"
-    "AbilityTextureName"      "item_ghost"
-    "MaxLevel"             "7"
-    "ID"              "37"                        // unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-    "FightRecapLevel"       "1"
-    
-    // Stats
-    //-------------------------------------------------------------------------------------------------------------
-    "AbilityCooldown"       "4.0"     
-    "AbilitySharedCooldown"     "ethereal"
-    "SpellDispellableType"      "SPELL_DISPELLABLE_YES"
-
-    // Item Info
-    //-------------------------------------------------------------------------------------------------------------
-    "ItemCost"            "4000"
-    "ItemShopTags"          "int;agi;str;hard_to_tag"
-    "ItemQuality"         "component"
-    "ItemAliases"         "ghost scepter"
-    "ShouldBeSuggested"       "0"
-
-    // Special  
-    //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-      "01"
-      {
-        "var_type"        "FIELD_INTEGER"
-        "bonus_all_stats"   "0"
-      }
-      "02"
-      {
-        "var_type"        "FIELD_FLOAT"
-        "duration"        "1.0"
-      }
-      "03"
-      {
-        "var_type"        "FIELD_INTEGER"
-        "extra_spell_damage_percent"  "0"
-      }
-    }
-  }
-
-
-
-
-
-"item_recipe_ghostII"
-  {
-      // General
-      //-------------------------------------------------------------------------------------------------------------
-      "Model"             "models/props_gameplay/recipe.mdl"
-      "AbilityTextureName"      "item_recipe"
-      "BaseClass"               "item_datadriven"
-    
-      // Item Info
-      //-------------------------------------------------------------------------------------------------------------
-      "ItemCost"                "2000" 
-      "ItemShopTags"            "Secret Shop"
-      "ItemQuality"             "Secret Shop"
-      "SecretShop"               "1" 
  
-      // Recipe
-      //-------------------------------------------------------------------------------------------------------------
-      "ItemRecipe"          "1"
-      "ItemResult"          "item_custom_ghostII"
-      "ItemRequirements"
-      {
-        "01"            "item_custom_ghostI"
-      }
-  
-  }
-
-"item_recipe_ghostIII"
-  {
-      // General
-      //-------------------------------------------------------------------------------------------------------------
-      "Model"             "models/props_gameplay/recipe.mdl"
-      "AbilityTextureName"      "item_recipe"
-      "BaseClass"                     "item_datadriven"
-    
-      // Item Info
-      //-------------------------------------------------------------------------------------------------------------
-      "ItemCost"                "1" 
-      "ItemShopTags"            "Secret Shop"
-      "ItemQuality"             "Secret Shop"
-        "SecretShop" "1" 
- 
-      // Recipe
-      //-------------------------------------------------------------------------------------------------------------
-      "ItemRecipe"          "1"
-      "ItemResult"          "item_custom_ghostIII"
-      "ItemRequirements"
-      {
-        "01"            "item_custom_ghostII"
-      }
-  
-  }
-
-"item_recipe_ghostIV"
-  {
-      // General
-      //-------------------------------------------------------------------------------------------------------------
-      "Model"             "models/props_gameplay/recipe.mdl"
-      "AbilityTextureName"      "item_recipe"
-      "BaseClass"                     "item_datadriven"
-    
-      // Item Info
-      //-------------------------------------------------------------------------------------------------------------
-      "ItemCost"                "1" 
-      "ItemShopTags"            "Secret Shop"
-      "ItemQuality"             "Secret Shop"
-        "SecretShop" "1" 
- 
-      // Recipe
-      //-------------------------------------------------------------------------------------------------------------
-      "ItemRecipe"          "1"
-      "ItemResult"          "item_custom_ghostIV"
-      "ItemRequirements"
-      {
-        "01"            "item_custom_ghostIII"
-      }
-  
-  }
 
 
 

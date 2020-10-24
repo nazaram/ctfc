@@ -10,47 +10,18 @@
   // -----------------------------------------------------------
   
 
-//ATTACK SPEED ---------------------------------------------------
-"item_recipe_refresher"
-{
-  "SecretShop" "1"
-  "ItemCost"  "1600"
-}
-
-
-
 
 
   //"item_staff_of_wizardry"      "REMOVE"
   //"item_ring_of_regen"      "REMOVE"
   "item_ghost"      "REMOVE"
-
-    
-   
-
-
-  
-  "item_ring_of_health"    
-  {
-  "ItemCost"            "200"
-  }
-
-  "item_void_stone"    
-  {
-  "ItemCost"            "200"
-  }
-
-   "item_void_stone"    
-  {
-  "ItemCost"            "200"
-  }
-  //"item_void_stone"     "REMOVE"
+  "item_ring_of_health" "REMOVE"  
+  "item_void_stone"  "REMOVE"
   //"item_dust"     "REMOVE"
   //"item_ward_observer"      "REMOVE"
   //"item_recipe_pers"      "REMOVE"
   //"item_pers"     "REMOVE"
   "item_force_staff"      "REMOVE"
-  //"item_recipe_refresher"     "REMOVE"
   "item_blink" "REMOVE"
   "item_tango_single"     "REMOVE"
   "item_dust" "REMOVE"
