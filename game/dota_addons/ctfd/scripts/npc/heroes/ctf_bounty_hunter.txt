@@ -59,8 +59,11 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"precache"
 		{
-			"particle"  				"particles/econ/items/bounty_hunter/bounty_hunter_shuriken_hidden/bounty_hunter_suriken_toss_hidden_hunter.vpcf"
 			"particle"					"particles/units/heroes/hero_bounty_hunter/bounty_hunter_shuriken_toss_main.vpcf"
+			"particle"					"particles/units/heroes/hero_bounty_hunter/bounty_hunter_track_trail.vpcf"
+			"particle" 					"particles/units/heroes/hero_bounty_hunter/bounty_hunter_track_shield.vpcf"
+
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_bounty_hunter.vsndevts"
 		}
 		
 		// Casting
@@ -73,7 +76,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"80"
+		"AbilityCooldown"				"20"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -86,7 +89,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"star_speed"			"1200"
+				"star_speed"			"1500"
 			}
 
 			"02"
@@ -103,8 +106,20 @@
 
 			"04"
 			{
+				"var_type"				"FIELD_FLOAT"
+				"stun_duration"			"0.1"
+			}
+
+			"06"
+			{
 				"var_type"				"FIELD_INTEGER"
-				"star_curve"			"450"
+				"track_duration"		"5"
+			}
+
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"gold_steal"			"150"
 			}
 		}
 
