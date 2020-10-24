@@ -1893,7 +1893,7 @@
       "01"
       {
         "var_type"          "FIELD_INTEGER"
-        "radius"          "300"
+        "radius"          "300 350 400"
         "LinkedSpecialBonus"    "special_bonus_unique_kunkka"
       }
       "02"

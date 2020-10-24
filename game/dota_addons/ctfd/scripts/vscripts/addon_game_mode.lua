@@ -62,44 +62,44 @@ _G.GAME_ROUND5experiencewin = 250
 _G.GAME_ROUND6experiencelose = 100
 _G.GAME_ROUND6experiencewin = 250
 
-_G.GAME_ROUND7experiencelose = 225
+_G.GAME_ROUND7experiencelose = 100
 _G.GAME_ROUND7experiencewin = 250
 
-_G.GAME_ROUND8experiencelose = 250
-_G.GAME_ROUND8experiencewin = 275
+_G.GAME_ROUND8experiencelose = 100
+_G.GAME_ROUND8experiencewin = 300
 
-_G.GAME_ROUND9experiencelose = 275
+_G.GAME_ROUND9experiencelose = 100
 _G.GAME_ROUND9experiencewin = 300
 
-_G.GAME_ROUND10experiencelose = 300
-_G.GAME_ROUND10experiencewin = 325
+_G.GAME_ROUND10experiencelose = 100
+_G.GAME_ROUND10experiencewin = 400
 
-_G.GAME_ROUND11experiencelose = 325
-_G.GAME_ROUND11experiencewin = 400
+_G.GAME_ROUND11experiencelose = 100
+_G.GAME_ROUND11experiencewin = 500
 
-_G.GAME_ROUND12experiencelose = 400
-_G.GAME_ROUND12experiencewin = 425
+_G.GAME_ROUND12experiencelose = 100
+_G.GAME_ROUND12experiencewin = 500
 
-_G.GAME_ROUND13experiencelose = 425
-_G.GAME_ROUND13experiencewin = 450
+_G.GAME_ROUND13experiencelose = 100
+_G.GAME_ROUND13experiencewin = 500
 
-_G.GAME_ROUND14experiencelose = 450
-_G.GAME_ROUND14experiencewin = 475
+_G.GAME_ROUND14experiencelose = 100
+_G.GAME_ROUND14experiencewin = 500
 
-_G.GAME_ROUND15experiencelose = 475
+_G.GAME_ROUND15experiencelose = 100
 _G.GAME_ROUND15experiencewin = 500
 
-_G.GAME_ROUND16experiencelose = 700
-_G.GAME_ROUND16experiencewin = 800
+_G.GAME_ROUND16experiencelose = 100
+_G.GAME_ROUND16experiencewin = 500
 
-_G.GAME_ROUND17experiencelose = 900
-_G.GAME_ROUND17experiencewin = 1000
+_G.GAME_ROUND17experiencelose = 200
+_G.GAME_ROUND17experiencewin = 600
 
-_G.GAME_ROUND18experiencelose = 950
-_G.GAME_ROUND18experiencewin = 1050
+_G.GAME_ROUND18experiencelose = 200
+_G.GAME_ROUND18experiencewin = 600
 
-_G.GAME_ROUND19experiencelose = 9070
-_G.GAME_ROUND19experiencewin = 1070
+_G.GAME_ROUND19experiencelose = 200
+_G.GAME_ROUND19experiencewin = 1000
 
 _G.GAME_ROUND20experiencelose = 1000
 _G.GAME_ROUND20experiencewin = 1200
