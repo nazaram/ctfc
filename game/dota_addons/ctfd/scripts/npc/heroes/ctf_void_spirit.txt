@@ -196,6 +196,7 @@
     "precache"
     {
       "particle"          "particles/units/heroes/hero_void_spirit/astral_step/void_spirit_astral_step.vpcf"
+      "particle"          "particles/units/heroes/hero_void_spirit/astral_step/void_spirit_astral_step_debuff.vpcf"
 
       "soundfile"         "soundevents/game_sounds_heroes/game_sounds_void_spirit.vsndevts"
     }
@@ -210,7 +211,7 @@
 
     // Time
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityCooldown"       "5"
+    "AbilityCooldown"       "8"
 
     // Cost
     //-------------------------------------------------------------------------------------------------------------
@@ -223,7 +224,7 @@
       "01"
       {
         "var_type"                "FIELD_INTEGER"
-        "radius"                  "170"
+        "radius"                  "150"
       }
 
       "02"
@@ -247,7 +248,7 @@
       "06"
       {
         "var_type"                "FIELD_FLOAT"
-        "slow_duration"           "0.3"
+        "slow_duration"           "0.5"
       }
     }
 
