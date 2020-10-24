@@ -1,7 +1,8 @@
 #BASE "heroes/ctf_bounty_hunter.txt"
-#BASE "heroes/ctf_pudge.txt"
 #BASE "heroes/ctf_juggernaut.txt"
 #BASE "heroes/ctf_pheonix.txt"
+#BASE "heroes/ctf_pudge.txt"
+#BASE "heroes/ctf_void_spirit.txt"
 
 #BASE "units/npc_dota_custom_dummy_unit.txt"
 
@@ -1154,47 +1155,7 @@
   }
 }
 
-  //=================================================================================================================
-  // Bounty Hunter: Jinada
-  //=================================================================================================================
-//  "bounty_hunter_jinada"
-//  {
-//    // General
-//    //-------------------------------------------------------------------------------------------------------------
-//    "ID"              "5286"                            // unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-//    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-//    //"SpellDispellableType"      "SPELL_DISPELLABLE_YES"
-//    "SpellImmunityType"       "SPELL_IMMUNITY_ENEMIES_YES"    
-//    "AbilitySound"          "Hero_BountyHunter.Jinada"
-//    "MaxLevel"                                      "1"
-//    
-//    // Time   
-//    //-------------------------------------------------------------------------------------------------------------
-//    "AbilityCooldown"       "10"
-//    // Special
-//    //-------------------------------------------------------------------------------------------------------------
-//    "AbilitySpecial"
-//    {
-//      "01"
-//      {
-//        "var_type"        "FIELD_INTEGER"
-//        "bonus_damage"      "1 1 1 1"
-//      }
-//      "02"
-//      {
-//        "var_type"        "FIELD_INTEGER"
-//        "gold_steal"      "150"
-//        "LinkedSpecialBonus"    "special_bonus_unique_bounty_hunter"
-//      }
-//    }
-//    "AbilityCastAnimation"    "ACT_DOTA_CAST_ABILITY_2"
-//  }
-
-//=================================================================================================================
-// Bounty Hunter: Track
-// make track give speed based on gold 
- //=================================================================================================================
-  "bounty_hunter_track"
+"bounty_hunter_track"
   {
     // General
     //-------------------------------------------------------------------------------------------------------------
@@ -1270,176 +1231,11 @@
 
 
 
-  //dissimilate
-   "void_spirit_dissimilate" 
-  {
-    // General
-    //-------------------------------------------------------------------------------------------------------------
-    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-    "AbilityUnitDamageType"     "DAMAGE_TYPE_NONE"
-    "SpellImmunityType"       "SPELL_IMMUNITY_ENEMIES_NO"
-//    "AbilityType"         "DOTA_ABILITY_TYPE_ULTIMATE"
 
-        "MaxLevel"                      "3"
-
-    // Casting
-    //-------------------------------------------------------------------------------------------------------------
-    "AbilityCastPoint"        "0.4"
-    
-    // Time   
-    //-------------------------------------------------------------------------------------------------------------
-    "AbilityCooldown"       "15 10 8"
-    
-    // Cost
-    //-------------------------------------------------------------------------------------------------------------
-    "AbilityManaCost"       "100"
-    
-    // Special
-    //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-      "01"
-      {
-        "var_type"        "FIELD_FLOAT"
-        "phase_duration"    "1.2"
-      }
-      "02"
-      {
-        "var_type"        "FIELD_INTEGER"
-        "destination_fx_radius" "183" // proportional to distance_offset
-      }
-      "03"
-      {
-        "var_type"        "FIELD_INTEGER"
-        "portals_per_ring"    "6"
-      }
-      "04"
-      {
-        "var_type"        "FIELD_INTEGER"
-        "angle_per_ring_portal" "60"
-      }
-      "05"
-      {
-        "var_type"            "FIELD_INTEGER"
-        "first_ring_distance_offset"  "520"
-      }
-      "06"
-      {
-        "var_type"        "FIELD_INTEGER"
-        "damage_radius"     "325" // proportional to distance_offset
-      }
-      "07"
-      {
-        "var_type"        "FIELD_INTEGER"
-        "impact_damage"     "0"// proportional to distance_offset
-      }
-      //"08"
-      //{
-        //"var_type"            "FIELD_INTEGER"
-        //"second_ring_distance_offset" "1040"
-      //}
-    }
-    "AbilityCastAnimation"    "ACT_DOTA_CAST_ABILITY_3"
-  }
-  
-//=================================================================================================================
+  //=================================================================================================================
   // Void Spirit: Aether Remnant
   //=================================================================================================================
-  "void_spirit_aether_remnant"
-  {
-
-    // Casting
-    //-------------------------------------------------------------------------------------------------------------
-    "AbilityCastPoint"        "0.0"
-    "AbilityCastRange"        "1000"
-    "AbilityType"         "DOTA_ABILITY_TYPE_ULTIMATE"
-    "SpellImmunityType"       "SPELL_IMMUNITY_ENEMIES_YES"
-
-
-    "MaxLevel"                      "1"
-
-
-    // Time
-    //-------------------------------------------------------------------------------------------------------------
-    "AbilityCooldown"       "12.0"
-
-    // Cost
-    //-------------------------------------------------------------------------------------------------------------
-    "AbilityManaCost"       "100"
-
-    // Special
-    //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-      "01"
-      {
-        "var_type"          "FIELD_INTEGER"
-        "start_radius"        "90"
-      }
-      "02"
-      {
-        "var_type"          "FIELD_INTEGER"
-        "end_radius"        "90"
-      }
-      "03"
-      {
-        "var_type"          "FIELD_INTEGER"
-        "radius"          "300"
-      }
-      "04"
-      {
-        "var_type"          "FIELD_INTEGER"
-        "projectile_speed"      "900"
-      }
-      "05"
-      {
-        "var_type"          "FIELD_INTEGER"
-        "remnant_watch_distance"  "450"
-      }
-      "06"
-      {
-        "var_type"          "FIELD_INTEGER"
-        "remnant_watch_radius"    "130"
-      }
-      "07"
-      {
-        "var_type"          "FIELD_INTEGER"
-        "watch_path_vision_radius"  "200"
-      }
-      "08"
-      {
-        "var_type"        "FIELD_FLOAT"
-        "activation_delay"    "0.4"
-      }
-      "09"
-      {
-        "var_type"        "FIELD_INTEGER"
-        "impact_damage"     "0"
-      }
-      "10"
-      {
-        "var_type"        "FIELD_FLOAT"
-        "pull_duration"     "1.9"
-      }
-      "11"
-      {
-        "var_type"        "FIELD_INTEGER"
-        "pull_destination"    "200"
-      }
-      "12"
-      {
-        "var_type"        "FIELD_FLOAT"
-        "duration"        "20.0"
-      }
-      "13"
-      {
-        "var_type"        "FIELD_FLOAT"
-        "think_interval"    "0.1"
-      }
-    }
-    "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_1"
-    "AbilityCastGestureSlot"    "DEFAULT"
-  }
+  
 
 
   //=================================================================================================================

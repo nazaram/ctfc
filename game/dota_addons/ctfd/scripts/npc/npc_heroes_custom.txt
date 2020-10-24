@@ -1,11 +1,12 @@
 #BASE "heroes/ctf_bounty_hunter.txt"
-#BASE "heroes/ctf_pudge.txt"
 #BASE "heroes/ctf_juggernaut.txt"
 #BASE "heroes/ctf_pheonix.txt"
+#BASE "heroes/ctf_pudge.txt"
+#BASE "heroes/ctf_void_spirit"
 
 "DOTAHeroes"
 {
-"clockwerk"
+    "clockwerk"
   {
     "AbilityLayout"     "4"
     "override_hero"     "npc_dota_hero_rattletrap"
@@ -57,8 +58,8 @@
     "VisionDaytimeRange"    "500"    
   }
 
-"BountyHunter"
-  {
+    "BountyHunter"
+    {
     "AbilityLayout"     "4"
     "override_hero"     "npc_dota_hero_bounty_hunter"
     "SoundSet"          "0" 
@@ -106,10 +107,10 @@
     "VisionDaytimeRange"    "800"                  // Range of vision at night time.
     "VisionDaytimeRange"    "500"     
   
-  }
+    }
 
-"Pudge"
-  {
+    "Pudge"
+    {
     "AbilityLayout"     "4"
     "override_hero"     "npc_dota_hero_pudge"
     "SoundSet"          "0" 
@@ -159,15 +160,15 @@
 
     }
 
-"Void_Spirit"
+    "Void_Spirit"
   {
-    "AbilityLayout"     "4"
+    "AbilityLayout"     "6"
     "override_hero"     "npc_dota_hero_void_spirit"
     "SoundSet"          "0" 
     "Ability1"        "Armour_Up"
     "Ability2"        "shredder_chain"
     "Ability3"        "void_spirit_dissimilate" 
-    "Ability4"        "void_spirit_astral_step"
+    "Ability4"        "void_spirit_astral_step_ctf"
     "Ability5"        "torrent_datadriven"
     "Ability6"        "void_spirit_aether_remnant"
 

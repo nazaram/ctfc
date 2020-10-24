@@ -14,12 +14,12 @@ function LaunchStars( keys )
 	local sound_impact		= "Hero_BountyHunter.Shuriken.Impact"
 	local sound_gold_steal 	= "General.Coins"
 
-	local max_distance		= ability:GetLevelSpecialValueFor("star_range", ability_level - 1)
-	local search_radius		= ability:GetLevelSpecialValueFor("star_width", ability_level - 1)
-	local stun_duration		= ability:GetLevelSpecialValueFor("stun_duration", ability_level - 1)
-	local gold_steal		= ability:GetLevelSpecialValueFor("gold_steal", ability_level - 1)
-	local track_duration	= ability:GetLevelSpecialValueFor("track_duration", ability_level - 1)
-	ability.star_speed		= ability:GetLevelSpecialValueFor("star_speed", ability_level - 1)
+	local max_distance		= ability:GetLevelSpecialValueFor("star_range", ability_level)
+	local search_radius		= ability:GetLevelSpecialValueFor("star_width", ability_level)
+	local stun_duration		= ability:GetLevelSpecialValueFor("stun_duration", ability_level)
+	local gold_steal		= ability:GetLevelSpecialValueFor("gold_steal", ability_level)
+	local track_duration	= ability:GetLevelSpecialValueFor("track_duration", ability_level)
+	ability.star_speed		= ability:GetLevelSpecialValueFor("star_speed", ability_level)
 
 	local target_prime 		= keys.target_points[1] --target point prime
 	local direction_prime	= (target_prime - caster_location):Normalized()
@@ -138,7 +138,7 @@ function LaunchStars( keys )
 							unit:SetGold(0, false)
 						end
 
-						print("alpha stole gold")				
+						print("Bounty's alpha shuriken stole gold")				
 					end
 				end
 			end
@@ -190,7 +190,7 @@ function LaunchStars( keys )
 							unit:SetGold(0, false)
 						end
 
-						print("beta stole gold")				
+						print("Bounty's beta shuriken stole gold")				
 					end
 				end
 			end
@@ -238,7 +238,7 @@ function modifier_tracking:DeclareFunctions()
 end
 
 function modifier_tracking:GetModifierProvidesFOWVision()
-	return 1
+	return true
 end
 
 function modifier_tracking:GetPriority()
