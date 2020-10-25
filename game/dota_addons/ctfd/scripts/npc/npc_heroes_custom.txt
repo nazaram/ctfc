@@ -2,7 +2,8 @@
 #BASE "heroes/ctf_juggernaut.txt"
 #BASE "heroes/ctf_pheonix.txt"
 #BASE "heroes/ctf_pudge.txt"
-#BASE "heroes/ctf_void_spirit"
+#BASE "heroes/ctf_techies.txt"
+#BASE "heroes/ctf_void_spirit.txt"
 
 "DOTAHeroes"
 {
@@ -217,10 +218,10 @@
     "SoundSet"          "0" 
     "Ability1"        "Armour_Up"
     "Ability2"        "shredder_chain"
-    "Ability3"        "snapfire_firesnap_cookie" 
-    "Ability4"        "creature_self_haste"
+    "Ability3"        "techies_artillery" 
+    "Ability4"        ""
     "Ability5"        "torrent_datadriven"
-    "Ability6"        "techies_stasis_trap"
+    "Ability6"        ""
 
     "ArmorPhysical"       "0"                 // Physical protection.
     "MagicalResistance"       "0"                 // Magical protection (percentage).

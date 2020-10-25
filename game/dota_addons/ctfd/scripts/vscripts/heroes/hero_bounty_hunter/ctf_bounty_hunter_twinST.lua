@@ -36,8 +36,7 @@ function LaunchStars( keys )
 	dummy_unit_beta:AddNewModifier(dummy_unit_beta, nil, "modifier_no_healthbar", {duration = -1})
 
 	local theta				= 30 -- degrees in radians
-	local unit_zero_vector	= Vector(caster_location.x + math.cos(0), caster_location.y + math.sin(0), caster_location.z):Normalized() - caster_location:Normalized() -- NORTH
-
+	
 	-- Target Point Alpha: 
 	local direction_alpha 	= RotatePosition(Vector(0, 0, 0), QAngle(0, theta, 0), direction_prime)
 
@@ -71,7 +70,7 @@ function LaunchStars( keys )
 	dummy_unit_alpha:SetPhysicsVelocity(ability.star_speed * direction_alpha)
 	dummy_unit_alpha:SetPhysicsFriction(0)
 	dummy_unit_alpha:Hibernate(false)
-	dummy_unit_alpha:SetGroundBehavior(PHYSICS_GROUND_LOCK)
+	dummy_unit_alpha:SetGroundBehavior(PHYSICS_GROUND_ABOVE)
 
 	dummy_unit_beta:PreventDI(true)
 	dummy_unit_beta:SetAutoUnstuck(true)
@@ -81,7 +80,7 @@ function LaunchStars( keys )
 	dummy_unit_beta:SetPhysicsVelocity(ability.star_speed * direction_beta)
 	dummy_unit_beta:SetPhysicsFriction(0)
 	dummy_unit_beta:Hibernate(false)
-	dummy_unit_beta:SetGroundBehavior(PHYSICS_GROUND_LOCK)
+	dummy_unit_beta:SetGroundBehavior(PHYSICS_GROUND_ABOVE)
 
 	local dummyp_dis = 0
 	local dummya_dis = 0
