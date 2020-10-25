@@ -3,6 +3,9 @@ ctf_techies_artillery = class({})
 function OnSpellStart( keys )
 	local particle_name			= "particles/units/heroes/hero_techies/techies_base_attack_model.vpcf"
 	local particle_explosion	= "particles/units/heroes/hero_techies/techies_land_mine_ball_explosion.vpcf"
+	local sound_fire			= "Hero_Techies.LandMine.Plant"
+	local sound_explosion	 	= "Hero_Techies.LandMine.Detonate"
+
 	local caster 				= keys.caster
 	local caster_location 		= caster:GetAbsOrigin()
 	local ability 				= keys.ability
@@ -16,17 +19,16 @@ function OnSpellStart( keys )
 
 	local target_point			= keys.target_points[1]
 	local direction 			= target_point - caster_location
-	local theta					= 60
 
 	if direction:Length2D() < min_distance then
 		direction = min_distance * direction:Normalized()
 	end
 
-	-- direction = RotatePosition(Vector(0, 0, 0), QAngle(theta, 0, 0), direction)
-
-	local dummy				= CreateUnitByName("npc_dota_custom_dummy_unit", caster_location, true, caster, caster, caster:GetTeamNumber())
+	local dummy					= CreateUnitByName("npc_dota_custom_dummy_unit", caster_location, true, caster, caster, caster:GetTeamNumber())
 	dummy:AddNewModifier(dummy, nil, "modifier_no_healthbar", {duration = -1})
-	local particle 			= ParticleManager:CreateParticle(particle_name, PATTACH_ABSORIGIN, dummy)
+	local particle 				= ParticleManager:CreateParticle(particle_name, PATTACH_ABSORIGIN, dummy)
+
+	caster:EmitSound(sound_fire)
 
 	Physics:Unit(dummy)
 
@@ -48,14 +50,13 @@ function OnSpellStart( keys )
 			if (dummy:GetAbsOrigin() - caster_location):Length2D() >= direction:Length2D() then
 				
 				local push_start_point = dummy:GetAbsOrigin()
-				local push_end_point = (- blast_radius * (caster_location - push_start_point):Normalized()) + push_start_point
+				dummy:EmitSound(sound_explosion)
+				
 				dummy:RemoveSelf()
 				ParticleManager:ReleaseParticleIndex(particle)
 
 				local explosion = ParticleManager:CreateParticle(particle_explosion, PATTACH_ABSORIGIN, caster)
 				ParticleManager:SetParticleControl(explosion, 0, push_start_point)
-
-				
 				
 				local units = FindUnitsInRadius(caster:GetTeamNumber(), push_start_point, nil, 2 * blast_radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
 
