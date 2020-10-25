@@ -20,7 +20,7 @@
 		"precache"
 		{
 			"particle"  				"particles/units/heroes/hero_techies/techies_base_attack_model.vpcf"
-      		//"praticle"          		""
+      		"praticle"          		"particles/units/heroes/hero_techies/techies_land_mine_ball_explosion.vpcf"
 		}
 
 		// Casting
@@ -58,14 +58,20 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"blast_radius"			"250"
+				"blast_radius"			"150"
 			}
+			
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"knockback_distance"	"350 400 450"
+				"knockback_distance"	"200 300 400"
 			}
 
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"knockback_duration"	"0.3"
+			}
 		}
 
 		"OnSpellStart"

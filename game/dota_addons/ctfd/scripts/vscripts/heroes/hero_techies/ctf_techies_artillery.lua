@@ -2,6 +2,7 @@ ctf_techies_artillery = class({})
 
 function OnSpellStart( keys )
 	local particle_name			= "particles/units/heroes/hero_techies/techies_base_attack_model.vpcf"
+	local particle_explosion	= "particles/units/heroes/hero_techies/techies_land_mine_ball_explosion.vpcf"
 	local caster 				= keys.caster
 	local caster_location 		= caster:GetAbsOrigin()
 	local ability 				= keys.ability
@@ -11,7 +12,7 @@ function OnSpellStart( keys )
 	local min_distance			= ability:GetLevelSpecialValueFor("min_distance", ability_level)
 	local blast_radius			= ability:GetLevelSpecialValueFor("blast_radius", ability_level)
 	local knockback_distance 	= ability:GetLevelSpecialValueFor("knockback_distance", ability_level)
-
+	local knockback_duration	= ability:GetLevelSpecialValueFor("knockback_duration", ability_level)
 
 	local target_point			= keys.target_points[1]
 	local direction 			= target_point - caster_location
@@ -37,7 +38,7 @@ function OnSpellStart( keys )
 	dummy:SetPhysicsVelocity(shell_speed * direction)
 	dummy:SetPhysicsFriction(0)
 	dummy:Hibernate(false)
-	dummy:SetGroundBehavior(PHYSICS_GROUND_ABOVE)
+	dummy:SetGroundBehavior(PHYSICS_GROUND_LOCK)
 
 	dummy:OnPhysicsFrame(
 		function()
@@ -51,13 +52,48 @@ function OnSpellStart( keys )
 				dummy:RemoveSelf()
 				ParticleManager:ReleaseParticleIndex(particle)
 
-				local units = FindUnitsInLine(caster:GetTeamNumber(), push_start_point, push_end_point, caster, blast_radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE)
+				local explosion = ParticleManager:CreateParticle(particle_explosion, PATTACH_ABSORIGIN, caster)
+				ParticleManager:SetParticleControl(explosion, 0, push_start_point)
+
+				
+				
+				local units = FindUnitsInRadius(caster:GetTeamNumber(), push_start_point, nil, 2 * blast_radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
 
 				for _, unit in ipairs(units) do
-					FindClearSpaceForUnit( unit, (- knockback_distance * (caster_location - push_start_point):Normalized()) + unit:GetAbsOrigin(), false )
-				end
 
+					if (unit:GetAbsOrigin() - push_start_point):Length2D() < blast_radius then
+
+						local knockback_table = 
+						{
+							should_stun = 0,
+							knockback_duration = knockback_duration,
+							duration = knockback_duration,
+							knockback_distance = knockback_distance,
+							knockback_height = 50,
+							center_x = push_start_point.x,
+							center_y = push_start_point.y,
+							center_z = push_start_point.z
+						}
+
+						unit:AddNewModifier(caster, nil, "modifier_knockback", knockback_table)
+					elseif (unit:GetAbsOrigin() - push_start_point):Length2D() > blast_radius and (unit:GetAbsOrigin() - push_start_point):Length2D() < 2 * blast_radius then
+
+						local knockback_table = 
+						{
+							should_stun = 0,
+							knockback_duration = knockback_duration,
+							duration = knockback_duration,
+							knockback_distance = knockback_distance / 2,
+							knockback_height = 50,
+							center_x = push_start_point.x,
+							center_y = push_start_point.y,
+							center_z = push_start_point.z
+						}
+
+						unit:AddNewModifier(caster, nil, "modifier_knockback", knockback_table)
+					end
+				end
 			end
 		end
-		)
+	)
 end
