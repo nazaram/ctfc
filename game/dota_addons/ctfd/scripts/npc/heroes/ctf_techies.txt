@@ -20,6 +20,7 @@
 		"precache"
 		{
 			"particle"  				"particles/units/heroes/hero_techies/techies_base_attack_model.vpcf"
+			"particle"  				"particles/units/heroes/hero_techies/techies_base_attack_trail_c.vpcf"
       		"particle"          		"particles/units/heroes/hero_techies/techies_land_mine_ball_explosion.vpcf"
 
       		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_techies.vsndevts"    
@@ -73,6 +74,12 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"knockback_duration"	"0.3"
+			}
+
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"shell_height"			"500"
 			}
 		}
 

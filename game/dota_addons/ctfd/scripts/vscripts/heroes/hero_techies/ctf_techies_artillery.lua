@@ -2,6 +2,7 @@ ctf_techies_artillery = class({})
 
 function OnSpellStart( keys )
 	local particle_name			= "particles/units/heroes/hero_techies/techies_base_attack_model.vpcf"
+	local particle_trail		= "particles/units/heroes/hero_techies/techies_base_attack_trail_c.vpcf"
 	local particle_explosion	= "particles/units/heroes/hero_techies/techies_land_mine_ball_explosion.vpcf"
 	local sound_fire			= "Hero_Techies.LandMine.Plant"
 	local sound_explosion	 	= "Hero_Techies.LandMine.Detonate"
@@ -16,6 +17,7 @@ function OnSpellStart( keys )
 	local blast_radius			= ability:GetLevelSpecialValueFor("blast_radius", ability_level)
 	local knockback_distance 	= ability:GetLevelSpecialValueFor("knockback_distance", ability_level)
 	local knockback_duration	= ability:GetLevelSpecialValueFor("knockback_duration", ability_level)
+	local shell_height_max		= ability:GetLevelSpecialValueFor("shell_height", ability_level)
 
 	local target_point			= keys.target_points[1]
 	local direction 			= target_point - caster_location
@@ -24,9 +26,12 @@ function OnSpellStart( keys )
 		direction = min_distance * direction:Normalized()
 	end
 
+	local distance 				= direction:Length2D()
+
 	local dummy					= CreateUnitByName("npc_dota_custom_dummy_unit", caster_location, true, caster, caster, caster:GetTeamNumber())
 	dummy:AddNewModifier(dummy, nil, "modifier_no_healthbar", {duration = -1})
 	local particle 				= ParticleManager:CreateParticle(particle_name, PATTACH_ABSORIGIN, dummy)
+	local trail_fx				= ParticleManager:CreateParticle(particle_trail, PATTACH_ABSORIGIN, dummy)
 
 	caster:EmitSound(sound_fire)
 
@@ -40,13 +45,20 @@ function OnSpellStart( keys )
 	dummy:SetPhysicsVelocity(shell_speed * direction)
 	dummy:SetPhysicsFriction(0)
 	dummy:Hibernate(false)
-	dummy:SetGroundBehavior(PHYSICS_GROUND_LOCK)
+	dummy:SetGroundBehavior(PHYSICS_GROUND_NOTHING)
 
-	dummy:OnPhysicsFrame(
-		function()
-			if not GameRules:IsGamePaused() then
+
+	if not GameRules:IsGamePaused() then
+		dummy:OnPhysicsFrame(
+			function()
+
+				local rho = (dummy:GetAbsOrigin() - caster_location):Length2D() / distance -- get ratio of horizantal travel between distance (dummy and caster) / full cast distance
+				local az = -10
+				local voz = 130
+
 				dummy:SetForwardVector(dummy:GetPhysicsVelocity())
-				ParticleManager:SetParticleControl(particle, 3, dummy:GetAbsOrigin())
+				ParticleManager:SetParticleControl(particle, 3, Vector(dummy:GetAbsOrigin().x, dummy:GetAbsOrigin().y, dummy:GetAbsOrigin().z + (0.5 * rho * rho * az + rho * voz)))
+				ParticleManager:SetParticleControl(trail_fx, 3, Vector(dummy:GetAbsOrigin().x, dummy:GetAbsOrigin().y, dummy:GetAbsOrigin().z + (0.5 * rho * rho * az + rho * voz)))
 
 				if (dummy:GetAbsOrigin() - caster_location):Length2D() >= direction:Length2D() then
 					local push_start_point = dummy:GetAbsOrigin()
@@ -55,6 +67,7 @@ function OnSpellStart( keys )
 					
 					dummy:RemoveSelf()
 					ParticleManager:ReleaseParticleIndex(particle)
+					ParticleManager:ReleaseParticleIndex(trail_fx)
 
 					local explosion = ParticleManager:CreateParticle(particle_explosion, PATTACH_ABSORIGIN, caster)
 					ParticleManager:SetParticleControl(explosion, 0, push_start_point)
@@ -96,9 +109,8 @@ function OnSpellStart( keys )
 						end
 					end
 				end
-			else
-				dummy:SetForwardVector(dummy:GetForwardVector())
+			
 			end
-		end
-	)
+		)
+	end	
 end
