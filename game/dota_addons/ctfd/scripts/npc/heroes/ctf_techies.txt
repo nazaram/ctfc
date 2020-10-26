@@ -60,13 +60,13 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"blast_radius"			"150"
+				"blast_radius"			"300"
 			}
 			
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"knockback_distance"	"200 300 400"
+				"knockback_distance"	"100 150 200"
 			}
 
 			"05"
@@ -100,6 +100,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"
 		"AbilityType"         			"DOTA_ABILITY_TYPE_ULTIMATE"
 		"MaxLevel" 						"1"
 
@@ -108,7 +109,7 @@
 		"precache"
 		{
 			"particle"  				""
-      		"particle"          		""
+      		"particle"          		"particles/units/heroes/hero_techies/techies_blast_off_trail.vpcf"
 
       		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_techies.vsndevts"    
 		}
@@ -116,7 +117,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1000"
-		"AbilityCastPoint"				"1.9"
+		"AbilityCastPoint"				"1"
 
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
 		"AnimationPlaybackRate"			"1"
@@ -133,14 +134,36 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
-			
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"400"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"1"
+			}
+
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"leap_duration"			"0.75"
+			}
+
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"leap_max_height"		"281.108"
+			}
 		}
 
 		"OnSpellStart"
 		{
 			"RunScript"
 			{
-				"ScriptFile"	""
+				"ScriptFile"	"heroes/hero_techies/ctf_techies_blast_off.lua"
 				"Function"		"OnSpellStart"
 				"Target"		"POINT"
 			}

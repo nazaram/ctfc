@@ -44,56 +44,60 @@ function OnSpellStart( keys )
 
 	dummy:OnPhysicsFrame(
 		function()
-			dummy:SetForwardVector(dummy:GetPhysicsVelocity())
-			ParticleManager:SetParticleControl(particle, 3, dummy:GetAbsOrigin())
+			if not GameRules:IsGamePaused() then
+				dummy:SetForwardVector(dummy:GetPhysicsVelocity())
+				ParticleManager:SetParticleControl(particle, 3, dummy:GetAbsOrigin())
 
-			if (dummy:GetAbsOrigin() - caster_location):Length2D() >= direction:Length2D() then
-				
-				local push_start_point = dummy:GetAbsOrigin()
-				dummy:EmitSound(sound_explosion)
-				
-				dummy:RemoveSelf()
-				ParticleManager:ReleaseParticleIndex(particle)
+				if (dummy:GetAbsOrigin() - caster_location):Length2D() >= direction:Length2D() then
+					local push_start_point = dummy:GetAbsOrigin()
+					dummy:EmitSound(sound_explosion)
+					-- dummy:DestroyTreesAroundPoint(push_start_point, blast_radius, true)
+					
+					dummy:RemoveSelf()
+					ParticleManager:ReleaseParticleIndex(particle)
 
-				local explosion = ParticleManager:CreateParticle(particle_explosion, PATTACH_ABSORIGIN, caster)
-				ParticleManager:SetParticleControl(explosion, 0, push_start_point)
-				
-				local units = FindUnitsInRadius(caster:GetTeamNumber(), push_start_point, nil, 2 * blast_radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
+					local explosion = ParticleManager:CreateParticle(particle_explosion, PATTACH_ABSORIGIN, caster)
+					ParticleManager:SetParticleControl(explosion, 0, push_start_point)
+					
+					local units = FindUnitsInRadius(caster:GetTeamNumber(), push_start_point, nil, blast_radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
 
-				for _, unit in ipairs(units) do
+					for _, unit in ipairs(units) do
 
-					if (unit:GetAbsOrigin() - push_start_point):Length2D() < blast_radius then
+						if (unit:GetAbsOrigin() - push_start_point):Length2D() < blast_radius / 2 then
 
-						local knockback_table = 
-						{
-							should_stun = 0,
-							knockback_duration = knockback_duration,
-							duration = knockback_duration,
-							knockback_distance = knockback_distance,
-							knockback_height = 50,
-							center_x = push_start_point.x,
-							center_y = push_start_point.y,
-							center_z = push_start_point.z
-						}
+							local knockback_table = 
+							{
+								should_stun = 0,
+								knockback_duration = knockback_duration,
+								duration = knockback_duration,
+								knockback_distance = 2 * knockback_distance,
+								knockback_height = 50,
+								center_x = push_start_point.x,
+								center_y = push_start_point.y,
+								center_z = push_start_point.z
+							}
 
-						unit:AddNewModifier(caster, nil, "modifier_knockback", knockback_table)
-					elseif (unit:GetAbsOrigin() - push_start_point):Length2D() > blast_radius and (unit:GetAbsOrigin() - push_start_point):Length2D() < 2 * blast_radius then
+							unit:AddNewModifier(caster, nil, "modifier_knockback", knockback_table)
+						elseif (unit:GetAbsOrigin() - push_start_point):Length2D() > blast_radius / 2 and (unit:GetAbsOrigin() - push_start_point):Length2D() < blast_radius then
 
-						local knockback_table = 
-						{
-							should_stun = 0,
-							knockback_duration = knockback_duration,
-							duration = knockback_duration,
-							knockback_distance = knockback_distance / 2,
-							knockback_height = 50,
-							center_x = push_start_point.x,
-							center_y = push_start_point.y,
-							center_z = push_start_point.z
-						}
+							local knockback_table = 
+							{
+								should_stun = 0,
+								knockback_duration = knockback_duration,
+								duration = knockback_duration,
+								knockback_distance = 2 * knockback_distance,
+								knockback_height = 50,
+								center_x = push_start_point.x,
+								center_y = push_start_point.y,
+								center_z = push_start_point.z
+							}
 
-						unit:AddNewModifier(caster, nil, "modifier_knockback", knockback_table)
+							unit:AddNewModifier(caster, nil, "modifier_knockback", knockback_table)
+						end
 					end
 				end
+			else
+				dummy:SetForwardVector(dummy:GetForwardVector())
 			end
 		end
 	)
