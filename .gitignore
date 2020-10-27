@@ -30,3 +30,4 @@ game/dota_addons/ctfd/tools_thumbnail_cache.bin
 *.cfg
 *.soc
 *.tmp
+game/dota_addons/ctfd/tools_asset_info.bin

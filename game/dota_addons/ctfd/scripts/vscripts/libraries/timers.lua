@@ -48,8 +48,6 @@ TIMERS_VERSION = "1.01"
   })
 ]]
 
-
-
 TIMERS_THINK = 0.01
 
 if Timers == nil then
