@@ -623,6 +623,10 @@ local innateAbilityName18 = "faceless_void_chronosphere"
     entity:FindAbilityByName(innateAbilityName20):SetLevel(1)
   end
 
+  local innateAbilityName21 = "void_spirit_astral_step_ctf"
+  if entity:IsRealHero() and entity:HasAbility(innateAbilityName21) then
+    entity:FindAbilityByName(innateAbilityName21):SetLevel(1)
+  end
 
 
 end

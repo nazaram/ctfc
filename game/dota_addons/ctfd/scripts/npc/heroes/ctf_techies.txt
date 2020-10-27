@@ -1,0 +1,179 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Techies Ability: Artillery
+	//=================================================================================================================
+	"techies_artillery"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"techies_focused_detonate"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"MaxLevel" 						"3"
+
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"particle"  				"particles/units/heroes/hero_techies/techies_base_attack_model.vpcf"
+			"particle"  				"particles/units/heroes/hero_techies/techies_base_attack_trail_c.vpcf"
+      		"particle"          		"particles/units/heroes/hero_techies/techies_land_mine_ball_explosion.vpcf"
+
+      		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_techies.vsndevts"    
+		}
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"2000 2250 2500"
+		"AbilityCastPoint"				"0.6"
+
+		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
+		"AnimationPlaybackRate"			"1"
+	
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"12 11 10"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"50"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"shell_speed"			"2000"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"min_distance"			"500"
+			}
+
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blast_radius"			"300"
+			}
+			
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"knockback_distance"	"100 150 200"
+			}
+
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"knockback_duration"	"0.3"
+			}
+
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"shell_height"			"500"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_techies/ctf_techies_artillery"
+				"Function"		"OnSpellStart"
+				"Target"		"POINT"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Techies Ultimate: Blast Off!
+	//=================================================================================================================
+	"techies_blast_off_ctf"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"techies_suicide"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"
+		"AbilityType"         			"DOTA_ABILITY_TYPE_ULTIMATE"
+		"MaxLevel" 						"1"
+
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"particle"  				""
+      		"particle"          		"particles/units/heroes/hero_techies/techies_blast_off_trail.vpcf"
+
+      		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_techies.vsndevts"    
+		}
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"1"
+
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+		"AnimationPlaybackRate"			"1"
+	
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"35"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"400"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"1"
+			}
+
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"leap_duration"			"0.75"
+			}
+
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"leap_max_height"		"281.108"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_techies/ctf_techies_blast_off.lua"
+				"Function"		"OnSpellStart"
+				"Target"		"POINT"
+			}
+		}
+	}
+}

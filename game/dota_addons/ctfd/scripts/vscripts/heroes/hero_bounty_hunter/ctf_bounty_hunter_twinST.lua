@@ -14,12 +14,12 @@ function LaunchStars( keys )
 	local sound_impact		= "Hero_BountyHunter.Shuriken.Impact"
 	local sound_gold_steal 	= "General.Coins"
 
-	local max_distance		= ability:GetLevelSpecialValueFor("star_range", ability_level - 1)
-	local search_radius		= ability:GetLevelSpecialValueFor("star_width", ability_level - 1)
-	local stun_duration		= ability:GetLevelSpecialValueFor("stun_duration", ability_level - 1)
-	local gold_steal		= ability:GetLevelSpecialValueFor("gold_steal", ability_level - 1)
-	local track_duration	= ability:GetLevelSpecialValueFor("track_duration", ability_level - 1)
-	ability.star_speed		= ability:GetLevelSpecialValueFor("star_speed", ability_level - 1)
+	local max_distance		= ability:GetLevelSpecialValueFor("star_range", ability_level)
+	local search_radius		= ability:GetLevelSpecialValueFor("star_width", ability_level)
+	local stun_duration		= ability:GetLevelSpecialValueFor("stun_duration", ability_level)
+	local gold_steal		= ability:GetLevelSpecialValueFor("gold_steal", ability_level)
+	local track_duration	= ability:GetLevelSpecialValueFor("track_duration", ability_level)
+	ability.star_speed		= ability:GetLevelSpecialValueFor("star_speed", ability_level)
 
 	local target_prime 		= keys.target_points[1] --target point prime
 	local direction_prime	= (target_prime - caster_location):Normalized()
@@ -36,8 +36,7 @@ function LaunchStars( keys )
 	dummy_unit_beta:AddNewModifier(dummy_unit_beta, nil, "modifier_no_healthbar", {duration = -1})
 
 	local theta				= 30 -- degrees in radians
-	local unit_zero_vector	= Vector(caster_location.x + math.cos(0), caster_location.y + math.sin(0), caster_location.z):Normalized() - caster_location:Normalized() -- NORTH
-
+	
 	-- Target Point Alpha: 
 	local direction_alpha 	= RotatePosition(Vector(0, 0, 0), QAngle(0, theta, 0), direction_prime)
 
@@ -71,7 +70,7 @@ function LaunchStars( keys )
 	dummy_unit_alpha:SetPhysicsVelocity(ability.star_speed * direction_alpha)
 	dummy_unit_alpha:SetPhysicsFriction(0)
 	dummy_unit_alpha:Hibernate(false)
-	dummy_unit_alpha:SetGroundBehavior(PHYSICS_GROUND_LOCK)
+	dummy_unit_alpha:SetGroundBehavior(PHYSICS_GROUND_ABOVE)
 
 	dummy_unit_beta:PreventDI(true)
 	dummy_unit_beta:SetAutoUnstuck(true)
@@ -81,7 +80,7 @@ function LaunchStars( keys )
 	dummy_unit_beta:SetPhysicsVelocity(ability.star_speed * direction_beta)
 	dummy_unit_beta:SetPhysicsFriction(0)
 	dummy_unit_beta:Hibernate(false)
-	dummy_unit_beta:SetGroundBehavior(PHYSICS_GROUND_LOCK)
+	dummy_unit_beta:SetGroundBehavior(PHYSICS_GROUND_ABOVE)
 
 	local dummyp_dis = 0
 	local dummya_dis = 0
@@ -138,7 +137,7 @@ function LaunchStars( keys )
 							unit:SetGold(0, false)
 						end
 
-						print("alpha stole gold")				
+						print("Bounty's alpha shuriken stole gold")				
 					end
 				end
 			end
@@ -190,7 +189,7 @@ function LaunchStars( keys )
 							unit:SetGold(0, false)
 						end
 
-						print("beta stole gold")				
+						print("Bounty's beta shuriken stole gold")				
 					end
 				end
 			end
@@ -238,7 +237,7 @@ function modifier_tracking:DeclareFunctions()
 end
 
 function modifier_tracking:GetModifierProvidesFOWVision()
-	return 1
+	return true
 end
 
 function modifier_tracking:GetPriority()
