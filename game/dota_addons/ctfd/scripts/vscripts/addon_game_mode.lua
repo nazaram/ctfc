@@ -522,6 +522,7 @@ function CAddonTemplateGameMode:OnNPCSpawned(keys)
   end
 
   local entity = EntIndexToHScript(keys.entindex)
+  
   local innateAbilityName1 = "bounty_hunter_jinada"
   if entity:IsRealHero() and entity:HasAbility(innateAbilityName1) then
     entity:FindAbilityByName(innateAbilityName1):SetLevel(1)
@@ -593,22 +594,22 @@ function CAddonTemplateGameMode:OnNPCSpawned(keys)
     entity:FindAbilityByName(innateAbilityName14):SetLevel(1)
   end
 
-local innateAbilityName15 = "vengefulspirit_magic_missile"
+  local innateAbilityName15 = "vengefulspirit_magic_missile"
   if entity:IsRealHero() and entity:HasAbility(innateAbilityName15) then
     entity:FindAbilityByName(innateAbilityName15):SetLevel(1)
   end
 
-local innateAbilityName16 = "tusk_frozen_sigil"
+  local innateAbilityName16 = "tusk_frozen_sigil"
   if entity:IsRealHero() and entity:HasAbility(innateAbilityName16) then
     entity:FindAbilityByName(innateAbilityName16):SetLevel(1)
   end
 
-local innateAbilityName17 = "ctf_waveform"
+  local innateAbilityName17 = "ctf_waveform"
   if entity:IsRealHero() and entity:HasAbility(innateAbilityName17) then
     entity:FindAbilityByName(innateAbilityName17):SetLevel(1)
   end
 
-local innateAbilityName18 = "faceless_void_chronosphere"
+  local innateAbilityName18 = "faceless_void_chronosphere"
   if entity:IsRealHero() and entity:HasAbility(innateAbilityName18) then
     entity:FindAbilityByName(innateAbilityName18):SetLevel(1)
   end

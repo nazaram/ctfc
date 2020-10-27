@@ -230,27 +230,29 @@
       "02"
       {
         "var_type"                "FIELD_INTEGER"
-        "min_travel_distance"     "50"
+        "min_travel_distance"     "100"
       }
 
       "03"
       {
         "var_type"                "FIELD_INTEGER"
-        "max_travel_distance"     "500"
+        "max_travel_distance"     "600"
       }
 
       "04"
       {
-        "var_type"                "pop_delay"
+        "var_type"                "FIELD_INTEGER"
         "move_slow_pct"           "80"
       }
 
-      "06"
+      "05"
       {
         "var_type"                "FIELD_FLOAT"
         "slow_duration"           "0.5"
       }
     }
+
+
 
     "OnSpellStart"
     {

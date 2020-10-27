@@ -21,10 +21,13 @@ function OnSpellStart( keys )
 	local target_point			= keys.target_points[1]
 	local target_direction		= target_point - caster_location
 	local max_target_point 		= max_travel_distance * target_direction:Normalized()
+	local min_target_point		= min_travel_distance * target_direction:Normalized()
 
-	-- use bounding variable to restrict range of travel
+	-- use bounding variable to restrict range of travel while still giving void spirit the ability to cast the ability anywhere and void will travel in that direction
 	if target_direction:Length2D() > max_travel_distance then
 		target_point = max_target_point + caster_location
+	elseif target_direction:Length2D() < min_travel_distance then
+		target_point = min_target_point + caster_location
 	end
 
 	FindClearSpaceForUnit( caster, target_point, true )
