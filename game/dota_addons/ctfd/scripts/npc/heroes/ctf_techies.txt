@@ -107,7 +107,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		"AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitDamageType"         "DAMAGE_TYPE_PHYSICAL"
 		"AbilityType"         			"DOTA_ABILITY_TYPE_ULTIMATE"
 		"MaxLevel" 						"1"
 

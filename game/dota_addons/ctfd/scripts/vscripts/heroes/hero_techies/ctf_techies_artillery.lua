@@ -53,12 +53,11 @@ function OnSpellStart( keys )
 			function()
 
 				local rho = (dummy:GetAbsOrigin() - caster_location):Length2D() / distance -- get ratio of horizantal travel between distance (dummy and caster) / full cast distance
-				local az = -10
-				local voz = 130
+				local voz = 2000
 
 				dummy:SetForwardVector(dummy:GetPhysicsVelocity())
-				ParticleManager:SetParticleControl(particle, 3, Vector(dummy:GetAbsOrigin().x, dummy:GetAbsOrigin().y, dummy:GetAbsOrigin().z + (0.5 * rho * rho * az + rho * voz)))
-				ParticleManager:SetParticleControl(trail_fx, 3, Vector(dummy:GetAbsOrigin().x, dummy:GetAbsOrigin().y, dummy:GetAbsOrigin().z + (0.5 * rho * rho * az + rho * voz)))
+				ParticleManager:SetParticleControl(particle, 3, Vector(dummy:GetAbsOrigin().x, dummy:GetAbsOrigin().y, dummy:GetAbsOrigin().z + (rho - rho * rho) * voz))
+				ParticleManager:SetParticleControl(trail_fx, 3, Vector(dummy:GetAbsOrigin().x, dummy:GetAbsOrigin().y, dummy:GetAbsOrigin().z + (rho - rho * rho) * voz))
 
 				if (dummy:GetAbsOrigin() - caster_location):Length2D() >= direction:Length2D() then
 					local push_start_point = dummy:GetAbsOrigin()
@@ -91,14 +90,14 @@ function OnSpellStart( keys )
 							}
 
 							unit:AddNewModifier(caster, nil, "modifier_knockback", knockback_table)
-						elseif (unit:GetAbsOrigin() - push_start_point):Length2D() > blast_radius / 2 and (unit:GetAbsOrigin() - push_start_point):Length2D() < blast_radius then
+						elseif (unit:GetAbsOrigin() - push_start_point):Length2D() > blast_radius / 2 and (unit:GetAbsOrigin() - push_start_point):Length2D() <= blast_radius then
 
 							local knockback_table = 
 							{
 								should_stun = 0,
 								knockback_duration = knockback_duration,
 								duration = knockback_duration,
-								knockback_distance = 2 * knockback_distance,
+								knockback_distance = knockback_distance,
 								knockback_height = 50,
 								center_x = push_start_point.x,
 								center_y = push_start_point.y,
@@ -109,7 +108,6 @@ function OnSpellStart( keys )
 						end
 					end
 				end
-			
 			end
 		)
 	end	
