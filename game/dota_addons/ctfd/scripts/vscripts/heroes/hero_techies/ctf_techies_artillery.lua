@@ -1,5 +1,9 @@
 ctf_techies_artillery = class({})
 
+function OnKeyPress( keys )
+
+end
+
 function OnSpellStart( keys )
 	local particle_name			= "particles/units/heroes/hero_techies/techies_base_attack_model.vpcf"
 	local particle_trail		= "particles/units/heroes/hero_techies/techies_base_attack_trail_c.vpcf"
@@ -53,11 +57,10 @@ function OnSpellStart( keys )
 			function()
 
 				local rho = (dummy:GetAbsOrigin() - caster_location):Length2D() / distance -- get ratio of horizantal travel between distance (dummy and caster) / full cast distance
-				local voz = 2000
 
 				dummy:SetForwardVector(dummy:GetPhysicsVelocity())
-				ParticleManager:SetParticleControl(particle, 3, Vector(dummy:GetAbsOrigin().x, dummy:GetAbsOrigin().y, dummy:GetAbsOrigin().z + (rho - rho * rho) * voz))
-				ParticleManager:SetParticleControl(trail_fx, 3, Vector(dummy:GetAbsOrigin().x, dummy:GetAbsOrigin().y, dummy:GetAbsOrigin().z + (rho - rho * rho) * voz))
+				ParticleManager:SetParticleControl(particle, 3, Vector(dummy:GetAbsOrigin().x, dummy:GetAbsOrigin().y, dummy:GetAbsOrigin().z + (rho - rho * rho) * shell_height_max))
+				ParticleManager:SetParticleControl(trail_fx, 3, Vector(dummy:GetAbsOrigin().x, dummy:GetAbsOrigin().y, dummy:GetAbsOrigin().z + (rho - rho * rho) * shell_height_max))
 
 				if (dummy:GetAbsOrigin() - caster_location):Length2D() >= direction:Length2D() then
 					local push_start_point = dummy:GetAbsOrigin()

@@ -79,7 +79,17 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"shell_height"			"500"
+				"shell_height"			"2000"
+			}
+		}
+
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_techies/ctf_techies_artillery"
+				"Function"		"OnKeyPress"
+				"Target"		"POINT"
 			}
 		}
 
@@ -170,7 +180,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"	"heroes/hero_techies/ctf_techies_blast_off.lua"
+				"ScriptFile"	"heroes/hero_techies/ctf_techies_blast_off"
 				"Function"		"OnSpellStart"
 				"Target"		"POINT"
 			}
