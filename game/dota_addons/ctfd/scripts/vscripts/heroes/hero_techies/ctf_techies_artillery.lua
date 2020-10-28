@@ -1,7 +1,28 @@
+LinkLuaModifier("modifier_charges", "libraries/modifiers/modifier_charges.lua", LUA_MODIFIER_MOTION_NONE)
+
 ctf_techies_artillery = class({})
 
-function OnKeyPress( keys )
+function OnUpgrade( keys )
+	local caster = keys.caster
+	local ability = keys.ability
 
+	local stacks = caster:FindModifierByName("modifier_charges")
+
+	if caster:HasModifier("modifier_charges") then
+
+		caster:RemoveModifierByName("modifier_charges")
+
+		caster:AddNewModifier(caster, ability, "modifier_charges", {
+		max_count = ability:GetLevelSpecialValueFor("max_charges", ability:GetLevel() - 1),
+		start_count = stacks:GetStackCount(),
+		replenish_time = ability:GetLevelSpecialValueFor("charge_restore_time", ability:GetLevel() - 1)
+		})
+	else
+		caster:AddNewModifier(caster, ability, "modifier_charges", {
+		max_count = ability:GetLevelSpecialValueFor("max_charges", ability:GetLevel() - 1),
+		replenish_time = ability:GetLevelSpecialValueFor("charge_restore_time", ability:GetLevel() - 1)
+		})
+	end 
 end
 
 function OnSpellStart( keys )
@@ -15,6 +36,8 @@ function OnSpellStart( keys )
 	local caster_location 		= caster:GetAbsOrigin()
 	local ability 				= keys.ability
 	local ability_level 		= ability:GetLevel() - 1
+
+	print(ability:GetLevel())
 
 	local shell_speed			= ability:GetLevelSpecialValueFor("shell_speed", ability_level)
 	local min_distance			= ability:GetLevelSpecialValueFor("min_distance", ability_level)
@@ -65,7 +88,6 @@ function OnSpellStart( keys )
 				if (dummy:GetAbsOrigin() - caster_location):Length2D() >= direction:Length2D() then
 					local push_start_point = dummy:GetAbsOrigin()
 					dummy:EmitSound(sound_explosion)
-					-- dummy:DestroyTreesAroundPoint(push_start_point, blast_radius, true)
 					
 					dummy:RemoveSelf()
 					ParticleManager:ReleaseParticleIndex(particle)
@@ -74,6 +96,8 @@ function OnSpellStart( keys )
 					local explosion = ParticleManager:CreateParticle(particle_explosion, PATTACH_ABSORIGIN, caster)
 					ParticleManager:SetParticleControl(explosion, 0, push_start_point)
 					
+					GridNav:DestroyTreesAroundPoint(push_start_point, 0.5 * blast_radius, true)
+
 					local units = FindUnitsInRadius(caster:GetTeamNumber(), push_start_point, nil, blast_radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
 
 					for _, unit in ipairs(units) do

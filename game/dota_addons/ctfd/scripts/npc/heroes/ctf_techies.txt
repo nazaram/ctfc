@@ -28,7 +28,7 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"2000 2250 2500"
+		"AbilityCastRange"				"2500 2750 3000"
 		"AbilityCastPoint"				"0.6"
 
 		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
@@ -36,7 +36,7 @@
 	
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"12 11 10"
+		"AbilityCooldown"				"0.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -61,13 +61,13 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"blast_radius"			"300"
+				"blast_radius"			"500"
 			}
 			
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"knockback_distance"	"100 150 200"
+				"knockback_distance"	"250"
 			}
 
 			"05"
@@ -81,16 +81,28 @@
 				"var_type"				"FIELD_INTEGER"
 				"shell_height"			"2000"
 			}
+
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_charges"			"2 3 4"
+			}
+
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"charge_restore_time"	"15"
+			}
 		}
 
-		"OnAbilityPhaseStart"
+		"OnUpgrade"
 		{
 			"RunScript"
 			{
 				"ScriptFile"	"heroes/hero_techies/ctf_techies_artillery"
-				"Function"		"OnKeyPress"
-				"Target"		"POINT"
+				"Function"		"OnUpgrade"
 			}
+
 		}
 
 		"OnSpellStart"

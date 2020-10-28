@@ -1,8 +1,6 @@
 ctf_techies_blast_off = class({})
 
 function OnSpellStart( keys )
-
-
 	local particle_trail 	= "particles/units/heroes/hero_techies/techies_blast_off_trail.vpcf"
 
 	local caster 			= keys.caster
