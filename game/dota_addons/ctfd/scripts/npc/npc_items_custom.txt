@@ -198,8 +198,8 @@
     "ID"                                                  "3879"                           // unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
     "BaseClass"               "item_blink"
     "AbilityBehavior"                                     "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
-    "AbilityCastRange"                                    "400"
-    "cast_range_tooltip"                                  "400"
+    "AbilityCastRange"                                    "500"
+    "cast_range_tooltip"                                  "500"
     "AbilityCastPoint"                                    "0.0"
     "AbilityCastPoint"        "0.0"
     "AbilityCooldown"         "25.0"
@@ -212,7 +212,7 @@
       "01"
       {
         "var_type"                                        "FIELD_INTEGER"
-        "blink_range"                                     "375"
+        "blink_range"                                     "500"
       }
       "02"
       {
@@ -222,7 +222,7 @@
       "03"
       {
         "var_type"                                        "FIELD_INTEGER"
-        "blink_range_clamp"                               "375"
+        "blink_range_clamp"                               "500"
       }
     }
   }
@@ -234,8 +234,8 @@
    
     "BaseClass"               "item_blink"
     "AbilityTextureName"      "custom/blink_two"
-    "AbilityCastRange"        "500"
-    "cast_range_tooltip"      "500"
+    "AbilityCastRange"        "650"
+    "cast_range_tooltip"      "650"
     "AbilityCastPoint"        "0.0"
     "AbilityCooldown"         "23"
     "ItemCost"                "2000"
@@ -250,7 +250,7 @@
       "01"
       {
         "var_type"        "FIELD_INTEGER"
-        "blink_range"     "500"
+        "blink_range"     "650"
       }
       "02"
       {
@@ -260,7 +260,7 @@
       "03"
       {
         "var_type"        "FIELD_INTEGER"
-        "blink_range_clamp" "500"
+        "blink_range_clamp" "650"
       }
     }
   }
@@ -273,8 +273,8 @@
    
     "BaseClass"                 "item_blink"
     "AbilityTextureName"      "custom/blink_three"
-    "AbilityCastRange"        "600"
-    "cast_range_tooltip"      "600"
+    "AbilityCastRange"        "850"
+    "cast_range_tooltip"      "850"
     "AbilityCastPoint"        "0.0"
     "AbilityCooldown"         "23"
     "SecretShop" "1" 
@@ -288,7 +288,7 @@
       "01"
       {
         "var_type"        "FIELD_INTEGER"
-        "blink_range"     "600"
+        "blink_range"     "850"
       }
       "02"
       {
@@ -298,7 +298,7 @@
       "03"
       {
         "var_type"        "FIELD_INTEGER"
-        "blink_range_clamp" "600"
+        "blink_range_clamp" "850"
       }
     }
   }
@@ -310,8 +310,8 @@
    
     "BaseClass"                 "item_blink"
     "AbilityTextureName"      "custom/blink_four"
-    "AbilityCastRange"        "800"
-    "cast_range_tooltip"      "800"
+    "AbilityCastRange"        "1000"
+    "cast_range_tooltip"      "1000"
     "AbilityCastPoint"        "0.0"
     "AbilityCooldown"         "20"
         "SecretShop" "1" 
@@ -325,7 +325,7 @@
       "01"
       {
         "var_type"        "FIELD_INTEGER"
-        "blink_range"     "800"
+        "blink_range"     "1000"
       }
       "02"
       {
@@ -335,7 +335,7 @@
       "03"
       {
         "var_type"        "FIELD_INTEGER"
-        "blink_range_clamp" "800"
+        "blink_range_clamp" "1000"
       }
     }
   }
@@ -585,7 +585,7 @@
     // Item Info
     //-------------------------------------------------------------------------------------------------------------
     "AbilityManaCost"       "50"
-    "ItemCost"            "1000"
+    "ItemCost"            "1500"
     "ItemShopTags"          "int;damage;attack_speed;hard_to_tag"
     "ItemQuality"         "rare"
     "ItemAliases"         "fs;force staff"
@@ -609,7 +609,7 @@
       "03"
       {
         "var_type"        "FIELD_INTEGER"
-        "push_length"     "300"
+        "push_length"     "500"
       }
       "04"
       {

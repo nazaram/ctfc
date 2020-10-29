@@ -1,9 +1,7 @@
 #BASE "heroes/ctf_bounty_hunter.txt"
+#BASE "heroes/ctf_pudge.txt"
 #BASE "heroes/ctf_juggernaut.txt"
 #BASE "heroes/ctf_pheonix.txt"
-#BASE "heroes/ctf_pudge.txt"
-#BASE "heroes/ctf_techies.txt"
-#BASE "heroes/ctf_void_spirit.txt"
 
 #BASE "units/npc_dota_custom_dummy_unit.txt"
 
@@ -477,8 +475,8 @@
 
 
 //=================================================================================================================
-  // CTF: Toss
-  //===============================================================================================================
+// CTF: Toss
+//===============================================================================================================
   "ctf_toss"
   {
     // General
@@ -1558,7 +1556,7 @@
       "01"
       {
         "var_type"            "FIELD_INTEGER"
-        "movement_speed"        "15"
+        "movement_speed"        "45"
       }
       "02"
       {
@@ -1749,7 +1747,7 @@
       "01"
       {
         "var_type"                                        "FIELD_FLOAT"
-        "reflect_duration"                                "0.5"
+        "reflect_duration"                                "0.75"
       }
       "02"
       {
@@ -2437,7 +2435,7 @@
 
     // Time   
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityCooldown"       "12.0 10.0 8.0"
+    "AbilityCooldown"       "9.0 7.0 5.0"
 
 
     // Cost
@@ -2472,7 +2470,7 @@
       "05"
       {
         "var_type"          "FIELD_FLOAT"
-        "shard_duration"        "4 5 6"
+        "shard_duration"        "6 7 8"
       }
       "06"
       {
@@ -2637,7 +2635,7 @@
 
     // Time   
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityCooldown"       "13 11 9"
+    "AbilityCooldown"       "11 9 7"
   
     // Damage.
     //-------------------------------------------------------------------------------------------------------------
@@ -3058,13 +3056,13 @@
             "02"
             {
                 "var_type"              "FIELD_FLOAT"
-                "stun_duration"         "1.5 2.1 3.1"
+                "stun_duration"         "1.75 2.75 3.75"
                 "LinkedSpecialBonus"    "special_bonus_unique_windranger_6"
             }
             "03"
             {
                 "var_type"              "FIELD_INTEGER"
-                "shackle_distance"      "475"
+                "shackle_distance"      "575"
             }
             "05"
             {
@@ -3103,7 +3101,7 @@
     
     // Time   
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityCooldown"       "16"
+    "AbilityCooldown"       "9"
 
     // Cost
     //-------------------------------------------------------------------------------------------------------------
@@ -3143,7 +3141,7 @@
       "08"
       {
         "var_type"        "FIELD_FLOAT"
-        "vision_duration"   "5.34"
+        "vision_duration"   "6.75"
       }
     }
   }
@@ -3346,7 +3344,7 @@
 
     // Time   
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityCooldown"       "20"
+    "AbilityCooldown"       "17"
 
     // Cost
     //-------------------------------------------------------------------------------------------------------------
@@ -3405,7 +3403,7 @@
     
     // Time   
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityCooldown"       "20"
+    "AbilityCooldown"       "15"
 
     // Cost
     //-------------------------------------------------------------------------------------------------------------
@@ -3690,7 +3688,7 @@
 
     // Time   
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityCooldown"       "3.5 3.25 3"
+    "AbilityCooldown"       "3.5 2.75 2"
 
     // Damage.
     //-------------------------------------------------------------------------------------------------------------
@@ -3698,7 +3696,7 @@
 
     // Cost
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityManaCost"       "30"   
+    "AbilityManaCost"       "25"   
 
     // Special
     //-------------------------------------------------------------------------------------------------------------
@@ -3713,7 +3711,7 @@
       "02"
       {
         "var_type"          "FIELD_FLOAT"
-        "fissure_duration"      "10 14 16"
+        "fissure_duration"      "12 18 24"
       }
       "03"
       {
@@ -4154,6 +4152,10 @@
     "AbilityCastPoint"        "0.0"
     "AbilityCooldown"       "12.0 9.0 7.5"
 
+    "precache"
+    {
+      "soundfile" "sounds/weapons/hero/omniknight/guardian02.vsnd"
+    }
     // Special  
     //-------------------------------------------------------------------------------------------------------------
     "AbilitySpecial"
@@ -4197,7 +4199,15 @@
         "ScriptFile"    "solar_crest_hvh.lua"
         "Function"      "item_solar_crest_hvh_on_spell_start"
       }
+      "FireSound"
+       {
+          "EffectName"  "sounds/weapons/hero/omniknight/guardian02.vsnd"
+          "Target"    "TARGET"
+        }
+
     }
+
+
 
     "Modifiers"
     {
@@ -4245,8 +4255,8 @@
         "IsDebuff"      "0"
         "IsPurgable"    "1"
 
-        "EffectName"      "particles/items2_fx/medallion_of_courage.vpcf"
-        "EffectAttachType"    "follow_overhead"
+        "EffectName"      "particles/units/heroes/hero_omniknight/omniknight_guardian_angel_omni.vpcf"
+        "EffectAttachType"    "PATTACH_ABSORIGIN"
 
         "Properties"
         {

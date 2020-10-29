@@ -663,8 +663,9 @@ function CAddonTemplateGameMode:OnEntityHurt(tbl)
   
   attacker:EmitSound("Hero_Abaddon.AphoticShield.Destroy")
   victim:EmitSound("DOTA_Item.Dagon5.Target")
-
-  victim:AddNewModifier(nil, nil, "modifier_stunned", {duration = 3})
+  
+  victim:InterruptMotionControllers(true)
+  --victim:AddNewModifier(nil, nil, "modifier_stunned", {duration = 3})
 
   if attacker:IsHero() then
     attacker:AddExperience(15 + _G.GAME_ROUND * 3 , DOTA_ModifyXP_Unspecified, false, false)
