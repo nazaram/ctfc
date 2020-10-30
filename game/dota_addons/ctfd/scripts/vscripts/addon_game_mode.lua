@@ -425,7 +425,6 @@ function spawnBountyRune()
     end
     _G.BountyPickedBad = 0 
   end
-
 end
 
 
@@ -433,78 +432,74 @@ end
 function reset()
   print("reset")
   EmitGlobalSound("get_ready")
-
-_G.GoodinPrison = 0
-_G.BadinPrison = 0
-
-
+  _G.GoodinPrison = 0
+  _G.BadinPrison = 0
   _G.GAME_ROUND = _G.GAME_ROUND + 1
   GameRules:SendCustomMessage("<font color='#a000a0'> Get Ready for Round ".. _G.GAME_ROUND .. "!</font>", DOTA_TEAM_NOTEAM, 0)
  -- local heroes = GetAllRealHeroes()
   for i = 0, (DOTA_MAX_TEAM_PLAYERS-1) do
     player = PlayerResource:GetPlayer(i)
     --print(player)
-      if (player ~=nil) then
-        hero = player:GetAssignedHero()
-        hero:AddNewModifier(nil, nil, "modifier_stunned", {duration = 3})
-        gold = CONSTANTS.goldForPoint + _G.GAME_ROUND * 25
-        --GIVE GOLD TO ALL UNITS AT EVERY RESET 
-        hero:SetGold(hero:GetGold() + gold, false)
-        hero:AddExperience(50 + _G.GAME_ROUND * 4 , DOTA_ModifyXP_Unspecified, false, false)
-        --print(hero)
-        if (hero ~=nil) then
+    if (player ~=nil) then
+      hero = player:GetAssignedHero()
+      hero:AddNewModifier(nil, nil, "modifier_stunned", {duration = 3})
+      gold = CONSTANTS.goldForPoint + _G.GAME_ROUND * 25
+      --GIVE GOLD TO ALL UNITS AT EVERY RESET 
+      hero:SetGold(hero:GetGold() + gold, false)
+      hero:AddExperience(50 + _G.GAME_ROUND * 4 , DOTA_ModifyXP_Unspecified, false, false)
+      --print(hero)
+      if (hero ~=nil) then
       --hero:RemoveModifierByName("modifier_stunned")
-          if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-            local point =  Entities:FindByName( nil, "radiantTP" ):GetAbsOrigin()
-            FindClearSpaceForUnit(hero, point, false)
-            hero:Stop()
-            SendToConsole("dota_camera_center")
-            hero:AddNewModifier(hero, nil, "modifier_stun", nil)
-            print("goodreset")
-            --Timers:CreateTimer(3)
-            --hero:RemoveModifierByName("modifier_stun")
-            --print("LAL")
-          end
-          if hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-            local point =  Entities:FindByName( nil, "direTP" ):GetAbsOrigin()
-            FindClearSpaceForUnit(hero, point, false)
-            hero:Stop()
-            SendToConsole("dota_camera_center")
-            hero:AddNewModifier(hero, nil, "modifier_stun", nil)
-            print("badreset")
-            --Timers:CreateTimer(3)
-            --hero:RemoveModifierByName("modifier_stun")
-            --print("LAL")
-          end
-          for i = 0,5 do
-            local item = hero:GetItemInSlot(i)
-            if item then
-              if item:GetAbilityName() == "item_capture_good_flag" then
-                print("good flag forcibly dropped")
-                hero:RemoveItem(item)
-                spawnGoodFlag()
-              end
-              if item:GetAbilityName() == "item_capture_bad_flag" then
-                print("bad flag forcibly dropped")
-                hero:RemoveItem(item)
-                spawnBadFlag()
-              end
+        if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
+          local point =  Entities:FindByName( nil, "radiantTP" ):GetAbsOrigin()
+          FindClearSpaceForUnit(hero, point, false)
+          hero:Stop()
+          SendToConsole("dota_camera_center")
+          hero:AddNewModifier(hero, nil, "modifier_stun", nil)
+          print("goodreset")
+          --Timers:CreateTimer(3)
+          --hero:RemoveModifierByName("modifier_stun")
+          --print("LAL")
+        end
+
+        if hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
+          local point =  Entities:FindByName( nil, "direTP" ):GetAbsOrigin()
+          FindClearSpaceForUnit(hero, point, false)
+          hero:Stop()
+          SendToConsole("dota_camera_center")
+          hero:AddNewModifier(hero, nil, "modifier_stun", nil)
+          print("badreset")
+          --Timers:CreateTimer(3)
+          --hero:RemoveModifierByName("modifier_stun")
+          --print("LAL")
+        end
+
+        for i = 0,5 do
+          local item = hero:GetItemInSlot(i)
+          if item then
+            if item:GetAbilityName() == "item_capture_good_flag" then
+              print("good flag forcibly dropped")
+              hero:RemoveItem(item)
+              spawnGoodFlag()
+            end
+            if item:GetAbilityName() == "item_capture_bad_flag" then
+              print("bad flag forcibly dropped")
+              hero:RemoveItem(item)
+              spawnBadFlag()
             end
           end
         end
       end
     end
+  end
 
-
-
- local WhoHasFlag = 
-    {
+  local WhoHasFlag = 
+  {
     GoodHasFlag = _G.GoodHasFlag, 
     BadHasFlag = _G.BadHasFlag 
-    } 
+  } 
 
-    
-    CustomGameEventManager:Send_ServerToAllClients("has_flag", WhoHasFlag )
+  CustomGameEventManager:Send_ServerToAllClients("has_flag", WhoHasFlag )
 end
 
 
@@ -628,28 +623,26 @@ function CAddonTemplateGameMode:OnNPCSpawned(keys)
   if entity:IsRealHero() and entity:HasAbility(innateAbilityName21) then
     entity:FindAbilityByName(innateAbilityName21):SetLevel(1)
   end
-
-
 end
 
 
 function CAddonTemplateGameMode:OnEntityHurt(tbl)
-        print("!!! BEGIN OnEntityHurt !!!")
-        local victim = EntIndexToHScript(tbl.entindex_killed)
-        local attacker = EntIndexToHScript(tbl.entindex_attacker)
-        print(attacker:GetName() .. " is attacking " .. victim:GetName())
-        -- DeepPrintTable(tbl)
-        print("!!! END OnEntityHurt !!!")
-        --CTF:Teleport(victim, attacker)
-        --CTF:JailRelease(victim, attacker)
+  print("!!! BEGIN OnEntityHurt !!!")
+  local victim = EntIndexToHScript(tbl.entindex_killed)
+  local attacker = EntIndexToHScript(tbl.entindex_attacker)
+  print(attacker:GetName() .. " is attacking " .. victim:GetName())
+  -- DeepPrintTable(tbl)
+  print("!!! END OnEntityHurt !!!")
+  --CTF:Teleport(victim, attacker)
+  --CTF:JailRelease(victim, attacker)
 end
 
 function CAddonTemplateGameMode:OnGameRulesStateChange()
-        local nNewState = GameRules:State_Get()
-        if nNewState == DOTA_GAMERULES_STATE_PRE_GAME then
-                print( "[CTF] Gamemode is running." )
-                ShowGenericPopup( "#CTF_instructions_title", "#CTF_instructions_body", "", "", DOTA_SHOWGENERICPOPUP_TINT_SCREEN )
-        end
+  local nNewState = GameRules:State_Get()
+  if nNewState == DOTA_GAMERULES_STATE_PRE_GAME then
+    print( "[CTF] Gamemode is running." )
+    ShowGenericPopup( "#CTF_instructions_title", "#CTF_instructions_body", "", "", DOTA_SHOWGENERICPOPUP_TINT_SCREEN )
+  end
 end
 
 function CAddonTemplateGameMode:OnEntityHurt(tbl)
@@ -673,7 +666,6 @@ function CAddonTemplateGameMode:OnEntityHurt(tbl)
     attacker:SetGold(attacker:GetGold() + 75 + _G.GAME_ROUND * 5, false)
   end
 
-
   if attacker:GetTeamNumber() == DOTA_TEAM_BADGUYS then
     for i = 0,5 do
       local item = victim:GetItemInSlot(i)
@@ -685,16 +677,17 @@ function CAddonTemplateGameMode:OnEntityHurt(tbl)
         end
       end
     end       
-  local ent = Entities:FindByName( nil, "point_teleport_jail_dire" ):GetAbsOrigin()
-  FindClearSpaceForUnit(victim, ent, false)
-  victim:Stop()
-  --victim:AddNewModifier(victim, nil, "modifier_invulnerable", nil)
-  print("inv")
+    -- local ent = Entities:FindByName( nil, "point_teleport_jail_dire" ):GetAbsOrigin()
+    local ent = Vector(2227, 4091, 263)
+    FindClearSpaceForUnit(victim, ent, false)
+    victim:Stop()
+    --victim:AddNewModifier(victim, nil, "modifier_invulnerable", nil)
+    print("inv")
   end
 
   if attacker:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
     for i = 0,5 do
-    local item = victim:GetItemInSlot(i)
+      local item = victim:GetItemInSlot(i)
       if item then
         if item:GetAbilityName() == "item_capture_bad_flag" or item:GetAbilityName() == "item_capture_good_flag" then
           victim:RemoveItem(item)
@@ -703,22 +696,20 @@ function CAddonTemplateGameMode:OnEntityHurt(tbl)
         end
       end
     end      
-  
-  local ent = Entities:FindByName( nil, "point_teleport_jail_radiant" ):GetAbsOrigin()
-  FindClearSpaceForUnit(victim, ent, false)
-  victim:Stop()
-  --victim:AddNewModifier(victim, nil, "modifier_invulnerable", nil)
-  print("inv")
+    -- local ent = Entities:FindByName( nil, "point_teleport_jail_radiant" ):GetAbsOrigin()
+    local ent = Vector(-1557, 4106, 263)
+    FindClearSpaceForUnit(victim, ent, false)
+    victim:Stop()
+    --victim:AddNewModifier(victim, nil, "modifier_invulnerable", nil)
+    print("inv")
   end
 
-
- local WhoHasFlag = 
-    {
+  local WhoHasFlag = 
+  {
     GoodHasFlag = _G.GoodHasFlag, 
     BadHasFlag = _G.BadHasFlag 
-    } 
-    CustomGameEventManager:Send_ServerToAllClients("has_flag", WhoHasFlag )
-
+  } 
+  CustomGameEventManager:Send_ServerToAllClients("has_flag", WhoHasFlag )
 end
 
 function CAddonTemplateGameMode:OnEntityKilled (event)
