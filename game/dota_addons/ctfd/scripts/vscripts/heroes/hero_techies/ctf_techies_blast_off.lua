@@ -21,49 +21,24 @@ function OnSpellStart( keys )
 	local direction 		= (target_point - caster_location):Normalized()
 	local distance			= (target_point - caster_location):Length2D()
 
-	local velocity_h		= direction * distance / leap_duration
-	local time_step			= 0.01
+	local dummy				= CreateUnitByName("npc_dota_custom_dummy_unit", caster_location, true, caster, caster, caster:GetTeamNumber())
+	local mine_model		= "models/heroes/techies/fx_techiesfx_mine.vmdl"
 
-	Timers:CreateTimer(
+	dummy:SetModel("models/heroes/techies/fx_techiesfx_mine.vmdl")
+	Physics:Unit(dummy)
+
+	dummy:PreventDI(true)
+	dummy:SetAutoUnstuck(true)
+	dummy:SetNavCollisionType(PHYSICS_NAV_NOTHING)
+	dummy:FollowNavMesh(false)
+	dummy:SetPhysicsVelocityMax()
+	dummy:SetPhysicsVelocity()
+	dummy:SetPhysicsFriction(0)
+	dummy:Hibernate(false)
+	dummy:SetGroundBehavior(PHYSICS_GROUND_NOTHING)
+
+	dummy:OnPhysicsFrame(
 		function()
-			local temp_loc = caster:GetAbsOrigin()
-				
-			caster:SetAbsOrigin(Vector(temp_loc.x + velocity_h.x * time_step, temp_loc.y + velocity_h.y * time_step, temp_loc.z))
-
-			if (temp_loc - caster_location):Length2D() < distance then
-				return time_step
-			end
-		end
+			
 	)
-
-
-
-	-- Physics:Unit(caster)
-
-	-- caster:PreventDI(true)
-	-- caster:SetNavCollisionType(PHYSICS_NAV_NOTHING)
-	-- caster:FollowNavMesh(false)
-	-- caster:SetPhysicsVelocityMax(velocity_h:Length2D())
-	-- caster:SetPhysicsVelocity(velocity_h)
-	-- caster:SetPhysicsFriction(0)
-	-- caster:Hibernate(false)
-	-- caster:SetGroundBehavior(PHYSICS_GROUND_NOTHING)
-
-	-- caster:OnPhysicsFrame(
-	-- 	function()
-	-- 		local vel = Vector(caster:GetPhysicsVelocity().x, caster:GetPhysicsVelocity().y, caster:GetPhysicsVelocity().z)
-	-- 		local temp_loc = caster:GetAbsOrigin()
-
-	-- 		local rho = (temp_loc - caster_location):Length2D() / distance
-
-	-- 		if (caster:GetAbsOrigin() - caster_location):Length2D() <= distance then
-	-- 			caster:SetForwardVector(Vector(temp_loc.x + velocity_h.x, temp_loc.y + velocity_h.y, temp_loc.z + (rho - rho * rho) * leap_max_height))
-	-- 		else 		
-	-- 			caster:PreventDI(false)
-	-- 			FindClearSpaceForUnit( caster, target_point, true )
-	-- 			caster:StopPhysicsSimulation()
-	-- 		end
-
-	-- 	end
-	-- )
 end

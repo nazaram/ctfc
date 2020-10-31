@@ -8,19 +8,17 @@ function OnUpgrade( keys )
 
 	local stacks = caster:FindModifierByName("modifier_charges")
 
-	if caster:HasModifier("modifier_charges") then
-
+	if caster:HasModifier("modifier_charges") then -- Check how many stackes techies has and adds one
 		caster:RemoveModifierByName("modifier_charges")
-
 		caster:AddNewModifier(caster, ability, "modifier_charges", {
-		max_count = ability:GetLevelSpecialValueFor("max_charges", ability:GetLevel() - 1),
-		start_count = stacks:GetStackCount(),
-		replenish_time = ability:GetLevelSpecialValueFor("charge_restore_time", ability:GetLevel() - 1)
+			max_count = ability:GetLevelSpecialValueFor("max_charges", ability:GetLevel() - 1),
+			start_count = stacks:GetStackCount() + 1,
+			replenish_time = ability:GetLevelSpecialValueFor("charge_restore_time", ability:GetLevel() - 1)
 		})
-	else
+	else -- First ability level give max charges
 		caster:AddNewModifier(caster, ability, "modifier_charges", {
-		max_count = ability:GetLevelSpecialValueFor("max_charges", ability:GetLevel() - 1),
-		replenish_time = ability:GetLevelSpecialValueFor("charge_restore_time", ability:GetLevel() - 1)
+			max_count = ability:GetLevelSpecialValueFor("max_charges", ability:GetLevel() - 1),
+			replenish_time = ability:GetLevelSpecialValueFor("charge_restore_time", ability:GetLevel() - 1)
 		})
 	end 
 end
