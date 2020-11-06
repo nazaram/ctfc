@@ -15,6 +15,8 @@ function OnUpgrade( keys )
 			start_count = stacks:GetStackCount() + 1,
 			replenish_time = ability:GetLevelSpecialValueFor("charge_restore_time", ability:GetLevel() - 1)
 		})
+
+		ability:EndCooldown()
 	else -- First ability level give max charges
 		caster:AddNewModifier(caster, ability, "modifier_charges", {
 			max_count = ability:GetLevelSpecialValueFor("max_charges", ability:GetLevel() - 1),
@@ -34,8 +36,6 @@ function OnSpellStart( keys )
 	local caster_location 		= caster:GetAbsOrigin()
 	local ability 				= keys.ability
 	local ability_level 		= ability:GetLevel() - 1
-
-	print(ability:GetLevel())
 
 	local shell_speed			= ability:GetLevelSpecialValueFor("shell_speed", ability_level)
 	local min_distance			= ability:GetLevelSpecialValueFor("min_distance", ability_level)

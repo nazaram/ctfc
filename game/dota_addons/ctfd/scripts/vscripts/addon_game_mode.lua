@@ -573,7 +573,6 @@ function CAddonTemplateGameMode:OnNPCSpawned(keys)
     entity:FindAbilityByName(innateAbilityName11):SetLevel(1)
   end
 
-
   local innateAbilityName12 = "windrunner_powershot"
   if entity:IsRealHero() and entity:HasAbility(innateAbilityName12) then
     entity:FindAbilityByName(innateAbilityName12):SetLevel(1)

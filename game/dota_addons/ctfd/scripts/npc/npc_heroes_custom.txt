@@ -215,6 +215,8 @@
         "Ability4"                      "generic_hidden"
         "Ability5"                      "torrent_datadriven"
         "Ability6"                      "techies_blast_off_ctf"
+
+        "Ability7"                      "techies_focused_detonation"
     
         "ArmorPhysical"                 "0"                   // Physical protection.
         "MagicalResistance"             "0"                   // Magical protection (percentage).
