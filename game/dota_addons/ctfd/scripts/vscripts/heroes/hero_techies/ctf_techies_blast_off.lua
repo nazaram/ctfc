@@ -30,14 +30,13 @@ function OnSpellStart( keys )
 
 	local max_range				= ability:GetLevelSpecialValueFor("max_range", ability_level)
 	local projectile_speed		= ability:GetLevelSpecialValueFor("projectile_speed", ability_level)
-	local placement_interval 	= ability:GetLevelSpecialValueFor("placement_interval", ability_level)
+	local radius				= ability:GetLevelSpecialValueFor("radius", ability_level)
 
 	local target_point	 		= keys.target_points[1]
 
 	local direction 			= (target_point - caster_location):Normalized()
 	local distance				= (target_point - caster_location):Length2D()
 	local detonation_timing		= max_range/projectile_speed
-	local mine_timing 			= detonation_timing / placement_interval
 
 	dummy_remote				= CreateUnitByName("npc_dota_custom_dummy_unit", caster_location, true, caster, caster, caster:GetTeamNumber())
 
@@ -62,15 +61,6 @@ function OnSpellStart( keys )
 	dummy_remote:Hibernate(false)
 	dummy_remote:SetGroundBehavior(PHYSICS_GROUND_LOCK)
 
-	-- Timers:CreateTimer(
-	-- 	function()
-	-- 		
-	-- 		return mine_timing
-	-- 	end 
-	-- )
-
-	local remote_start_time = GameRules:GetGameTime()
-
 	dummy_remote:OnPhysicsFrame(
 		function()
 			local progress = (dummy_remote:GetAbsOrigin() - caster_location):Length2D()
@@ -78,14 +68,14 @@ function OnSpellStart( keys )
 
 			dummy_remote:SetForwardVector(dummy_remote:GetPhysicsVelocity())
 
-			if progress < max_range then
-				if dummy_remote:GetAbsOrigin() - point_prev >= max_range / placement_interval then
+			--DebugDrawCircle(dummy_remote:GetAbsOrigin(), Vector(0,255,0), 100, radius, true, 0.1)
 
-				end
-
-			else
+			if progress >= max_range then
+				caster:EmitSound(sound_fizzle)
 				dummy_remote:RemoveSelf()
 				caster:SwapAbilities(main_ability_name, sub_ability_name, true, false)
+				ability:EndCooldown()
+
 			end
 		end
 	)
@@ -98,39 +88,40 @@ function Detonate( keys )
 	local sound_explosion 		= "Hero_Techies.Suicide"
 
 	local caster 				= keys.caster
-	local ability 				= keys.ability
+	local ability 				= caster:FindAbilityByName("techies_blast_off_ctf")
 	local ability_level 		= ability:GetLevel() - 1
-	local dummy_remote_location	= dummy_remote:GetAbsOrigin()
+	-- local dummy_remote_location	= dummy_remote:GetAbsOrigin()
 
-	local radius				= ability:GetLevelSpecialValueFor("radius", ability_level)
-	local silence_duration 		= ability:GetLevelSpecialValueFor("silence_duration", ability_level)
+	local blast_radius			= ability:GetLevelSpecialValueFor("radius", ability_level)
 	local slow_duration			= ability:GetLevelSpecialValueFor("slow_duration", ability_level)
 	-- gslow 						= ability:GetLevelSpecialValueFor("movespeed_slow", ability_level)
 
 	local explosion_fx 			= ParticleManager:CreateParticle(particle_explosion, PATTACH_ABSORIGIN, caster)
 
+	if dummy_remote ~= nil then
+
+		local units = FindUnitsInRadius(
+		caster:GetTeamNumber(), 
+		dummy_remote:GetAbsOrigin(), 
+		nil,
+		blast_radius, 
+		DOTA_UNIT_TARGET_TEAM_ENEMY,
+		DOTA_UNIT_TARGET_HERO, 
+		DOTA_UNIT_TARGET_FLAG_NONE,
+		FIND_ANY_ORDER,
+		false)
+
+		for _, unit in ipairs(units) do
+			unit:AddNewModifier(caster, ability, "modifier_blast_off", {duration = slow_duration})
+		end
+	end
+
+	AddFOWViewer(caster:GetTeamNumber(), dummy_remote:GetAbsOrigin(), blast_radius, slow_duration, false)
 	ParticleManager:SetParticleControl(explosion_fx, 0, dummy_remote:GetAbsOrigin())
 	dummy_remote:EmitSound(sound_explosion)
 	caster:SwapAbilities(main_ability_name, sub_ability_name, true, false)
-
-	local units = FindUnitsInRadius(
-	caster:GetTeamNumber(), 
-	dummy_remote_location, 
-	nil,
-	radius, 
-	DOTA_UNIT_TARGET_TEAM_ENEMY,
-	DOTA_UNIT_TARGET_HERO, 
-	DOTA_UNIT_TARGET_FLAG_NONE,
-	FIND_ANY_ORDER,
-	false)
-
-	for _, unit in ipairs(units) do
-		if (unit:GetAbsOrigin() - dummy_remote_location):Length2D() < radius then
-			print("units: ", units)
-			-- unit:AddNewModifier(caster, ability, "modifier_blast_off", {duration = slow_duration})
-			-- unit:AddNewModifier(caster, ability, "MODIFIER_STATE_SILENCED", {duration = silence_duration})
-		end
-	end
+	caster:RemoveModifierByName("modifier_detonation_time")
+	ability:StartCooldown(ability:GetCooldown(ability_level))
 
 	dummy_remote:RemoveSelf()
 end
@@ -139,7 +130,7 @@ end
 
 modifier_blast_off = class({})
 
-gslow = -75
+gslow = -70
 
 function modifier_blast_off:IsHidden()
 	return false
@@ -175,6 +166,14 @@ end
 
 function modifier_blast_off:GetModifierMoveSpeedBonus_Percentage()
 	return gslow
+end
+
+function modifier_blast_off:CheckState()
+	local state = {
+		[MODIFIER_STATE_SILENCED] = true
+	}
+
+	return state
 end
 
 

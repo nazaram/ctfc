@@ -161,7 +161,7 @@
 
 	}
 	//=================================================================================================================
-	// Techies Ultimate: !
+	// Techies Ultimate: Remote Slider
 	//=================================================================================================================
 	"techies_blast_off_ctf"
 	{
@@ -191,7 +191,7 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"1500"
+		"AbilityCastRange"				"2000"
 		"AbilityCastPoint"				"0.8"
 
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
@@ -212,43 +212,31 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"400"
+				"radius"				"350"
 			}
 
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"silence_duration"		"1"
+				"slow_duration"			"3"
 			}
 
 			"03"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"slow_duration"			"4"
+				"var_type"				"FIELD_FLOAT"
+				"movespeed_slow" 		"70"
 			}
 
 			"04"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"movespeed_slow" 		"75"
+				"var_type"				"FIELD_INTEGER"
+				"max_range"				"2000"
 			}
 
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_range"				"1500"
-			}
-
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"projectile_speed"		"700"
-			}
-
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"placement_interval"	"5"
+				"projectile_speed"		"900"
 			}
 		}
 
@@ -273,7 +261,9 @@
 		}
 
 	}
-
+	//=================================================================================================================
+	// Techies Ultimate Sub Ability: Detonate Remote Explosive
+	//=================================================================================================================
 	"techies_focused_detonation"
 	{
 		// General
@@ -297,5 +287,6 @@
 				"Function"		"Detonate"
 			}
 		}
+
 	}
 }
