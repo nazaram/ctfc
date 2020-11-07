@@ -94,7 +94,7 @@ function OnSpellStart( keys )
 					local explosion = ParticleManager:CreateParticle(particle_explosion, PATTACH_ABSORIGIN, caster)
 					ParticleManager:SetParticleControl(explosion, 0, push_start_point)
 					
-					GridNav:DestroyTreesAroundPoint(push_start_point, 0.5 * blast_radius, true)
+					GridNav:DestroyTreesAroundPoint(push_start_point, 0.25 * blast_radius, true)
 
 					local units = FindUnitsInRadius(caster:GetTeamNumber(), push_start_point, nil, blast_radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
 

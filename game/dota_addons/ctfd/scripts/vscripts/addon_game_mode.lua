@@ -625,16 +625,16 @@ function CAddonTemplateGameMode:OnNPCSpawned(keys)
 end
 
 
-function CAddonTemplateGameMode:OnEntityHurt(tbl)
-  print("!!! BEGIN OnEntityHurt !!!")
-  local victim = EntIndexToHScript(tbl.entindex_killed)
-  local attacker = EntIndexToHScript(tbl.entindex_attacker)
-  print(attacker:GetName() .. " is attacking " .. victim:GetName())
-  -- DeepPrintTable(tbl)
-  print("!!! END OnEntityHurt !!!")
-  --CTF:Teleport(victim, attacker)
-  --CTF:JailRelease(victim, attacker)
-end
+-- function CAddonTemplateGameMode:OnEntityHurt(tbl)
+--   print("!!! BEGIN OnEntityHurt !!!")
+--   local victim = EntIndexToHScript(tbl.entindex_killed)
+--   local attacker = EntIndexToHScript(tbl.entindex_attacker)
+--   print(attacker:GetName() .. " is attacking " .. victim:GetName())
+--   -- DeepPrintTable(tbl)
+--   print("!!! END OnEntityHurt !!!")
+--   --CTF:Teleport(victim, attacker)
+--   --CTF:JailRelease(victim, attacker)
+-- end
 
 function CAddonTemplateGameMode:OnGameRulesStateChange()
   local nNewState = GameRules:State_Get()

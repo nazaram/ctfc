@@ -15,57 +15,76 @@ end
 
 function OnSpellStart( keys )
 	-- Initialize Variables and Key Values
-	local particle_trail 	= "particles/units/heroes/hero_techies/techies_blast_off_trail.vpcf"
-	local main_ability_name = "techies_blast_off_ctf"
-	local sub_ability_name 	= "techies_focused_detonation"
-	local mine_model		= "models/heroes/techies/fx_techies_remotebomb.vmdl"
-	local sound_launched	= "Hero_Techies.RemoteMine.Plant"
-	local sound_fizzle		= "Hero_Techies.Debris"
+	local particle_trail 		= "particles/units/heroes/hero_techies/techies_blast_off_trail.vpcf"
+	local main_ability_name 	= "techies_blast_off_ctf"
+	local sub_ability_name 		= "techies_focused_detonation"
+	local remote_model			= "models/heroes/techies/fx_techies_remotebomb.vmdl"
+	local mine_model			= "models/heroes/techies/fx_techiesfx_landmine.vmdl"
+	local sound_launched		= "Hero_Techies.RemoteMine.Plant"
+	local sound_fizzle			= "Hero_Techies.Debris"
 
-	local caster 			= keys.caster
-	local caster_location 	= caster:GetAbsOrigin()
-	local ability 			= keys.ability
-	local ability_level 	= ability:GetLevel() - 1
+	local caster 				= keys.caster
+	local caster_location 		= caster:GetAbsOrigin()
+	local ability 				= keys.ability
+	local ability_level 		= ability:GetLevel() - 1
 
-	local max_range			= ability:GetLevelSpecialValueFor("max_range", ability_level)
-	local projectile_speed	= ability:GetLevelSpecialValueFor("projectile_speed", ability_level)
+	local max_range				= ability:GetLevelSpecialValueFor("max_range", ability_level)
+	local projectile_speed		= ability:GetLevelSpecialValueFor("projectile_speed", ability_level)
+	local placement_interval 	= ability:GetLevelSpecialValueFor("placement_interval", ability_level)
 
-	local target_point	 	= keys.target_points[1]
+	local target_point	 		= keys.target_points[1]
 
-	local direction 		= (target_point - caster_location):Normalized()
-	local distance			= (target_point - caster_location):Length2D()
+	local direction 			= (target_point - caster_location):Normalized()
+	local distance				= (target_point - caster_location):Length2D()
+	local detonation_timing		= max_range/projectile_speed
+	local mine_timing 			= detonation_timing / placement_interval
 
-	dummy					= CreateUnitByName("npc_dota_custom_dummy_unit", caster_location, true, caster, caster, caster:GetTeamNumber())
+	dummy_remote				= CreateUnitByName("npc_dota_custom_dummy_unit", caster_location, true, caster, caster, caster:GetTeamNumber())
 
 	-- Ability Logic Proper
 	caster:EmitSound(sound_launched)
-	caster:AddNewModifier(caster, ability, "modifier_detonation_time", {duration = max_range/projectile_speed})
+	caster:AddNewModifier(caster, ability, "modifier_detonation_time", {duration = detonation_timing})
 	caster:SwapAbilities(main_ability_name, sub_ability_name, false, true)
 
-	dummy:SetOriginalModel(mine_model)
-	dummy:SetModel(mine_model)
-	dummy:AddNewModifier(dummy, nil, "modifier_no_healthbar", {duration = -1})
+	dummy_remote:SetOriginalModel(remote_model)
+	dummy_remote:SetModel(remote_model)
+	dummy_remote:AddNewModifier(dummy_remote, nil, "modifier_no_healthbar", {duration = -1})
 
-	Physics:Unit(dummy)
+	Physics:Unit(dummy_remote)
 
-	dummy:PreventDI(true)
-	dummy:SetAutoUnstuck(true)
-	dummy:SetNavCollisionType(PHYSICS_NAV_NOTHING)
-	dummy:FollowNavMesh(false)
-	dummy:SetPhysicsVelocityMax(projectile_speed)
-	dummy:SetPhysicsVelocity(projectile_speed * direction)
-	dummy:SetPhysicsFriction(0)
-	dummy:Hibernate(false)
-	dummy:SetGroundBehavior(PHYSICS_GROUND_LOCK)
+	dummy_remote:PreventDI(true)
+	dummy_remote:SetAutoUnstuck(true)
+	dummy_remote:SetNavCollisionType(PHYSICS_NAV_NOTHING)
+	dummy_remote:FollowNavMesh(false)
+	dummy_remote:SetPhysicsVelocityMax(projectile_speed)
+	dummy_remote:SetPhysicsVelocity(projectile_speed * direction)
+	dummy_remote:SetPhysicsFriction(0)
+	dummy_remote:Hibernate(false)
+	dummy_remote:SetGroundBehavior(PHYSICS_GROUND_LOCK)
 
-	dummy:OnPhysicsFrame(
+	-- Timers:CreateTimer(
+	-- 	function()
+	-- 		
+	-- 		return mine_timing
+	-- 	end 
+	-- )
+
+	local remote_start_time = GameRules:GetGameTime()
+
+	dummy_remote:OnPhysicsFrame(
 		function()
-			local progress = (dummy:GetAbsOrigin() - caster_location):Length2D()
+			local progress = (dummy_remote:GetAbsOrigin() - caster_location):Length2D()
+			local point_prev = dummy_remote:GetAbsOrigin()
 
-			dummy:SetForwardVector(dummy:GetPhysicsVelocity())
+			dummy_remote:SetForwardVector(dummy_remote:GetPhysicsVelocity())
 
-			if progress >= max_range then
-				dummy:RemoveSelf()
+			if progress < max_range then
+				if dummy_remote:GetAbsOrigin() - point_prev >= max_range / placement_interval then
+
+				end
+
+			else
+				dummy_remote:RemoveSelf()
 				caster:SwapAbilities(main_ability_name, sub_ability_name, true, false)
 			end
 		end
@@ -81,7 +100,7 @@ function Detonate( keys )
 	local caster 				= keys.caster
 	local ability 				= keys.ability
 	local ability_level 		= ability:GetLevel() - 1
-	local dummy_location		= dummy:GetAbsOrigin()
+	local dummy_remote_location	= dummy_remote:GetAbsOrigin()
 
 	local radius				= ability:GetLevelSpecialValueFor("radius", ability_level)
 	local silence_duration 		= ability:GetLevelSpecialValueFor("silence_duration", ability_level)
@@ -90,13 +109,13 @@ function Detonate( keys )
 
 	local explosion_fx 			= ParticleManager:CreateParticle(particle_explosion, PATTACH_ABSORIGIN, caster)
 
-	ParticleManager:SetParticleControl(explosion_fx, 0, dummy:GetAbsOrigin())
-	dummy:EmitSound(sound_explosion)
+	ParticleManager:SetParticleControl(explosion_fx, 0, dummy_remote:GetAbsOrigin())
+	dummy_remote:EmitSound(sound_explosion)
 	caster:SwapAbilities(main_ability_name, sub_ability_name, true, false)
 
 	local units = FindUnitsInRadius(
 	caster:GetTeamNumber(), 
-	dummy_location, 
+	dummy_remote_location, 
 	nil,
 	radius, 
 	DOTA_UNIT_TARGET_TEAM_ENEMY,
@@ -106,14 +125,14 @@ function Detonate( keys )
 	false)
 
 	for _, unit in ipairs(units) do
-		if (unit:GetAbsOrigin() - dummy_location):Length2D() < radius then
-			print(units)
+		if (unit:GetAbsOrigin() - dummy_remote_location):Length2D() < radius then
+			print("units: ", units)
 			-- unit:AddNewModifier(caster, ability, "modifier_blast_off", {duration = slow_duration})
 			-- unit:AddNewModifier(caster, ability, "MODIFIER_STATE_SILENCED", {duration = silence_duration})
 		end
 	end
 
-	dummy:RemoveSelf()
+	dummy_remote:RemoveSelf()
 end
 
 

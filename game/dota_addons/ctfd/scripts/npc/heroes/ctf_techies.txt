@@ -244,6 +244,12 @@
 				"var_type"				"FIELD_INTEGER"
 				"projectile_speed"		"700"
 			}
+
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"placement_interval"	"5"
+			}
 		}
 
 		"OnUpgrade"
