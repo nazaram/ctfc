@@ -622,6 +622,11 @@ function CAddonTemplateGameMode:OnNPCSpawned(keys)
   if entity:IsRealHero() and entity:HasAbility(innateAbilityName21) then
     entity:FindAbilityByName(innateAbilityName21):SetLevel(1)
   end
+
+  local innateAbilityName22 = "techies_stasis_wire"
+  if entity:IsRealHero() and entity:HasAbility(innateAbilityName22) then
+    entity:FindAbilityByName(innateAbilityName22):SetLevel(1)
+  end
 end
 
 

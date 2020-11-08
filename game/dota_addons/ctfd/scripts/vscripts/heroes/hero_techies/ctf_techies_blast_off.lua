@@ -15,11 +15,9 @@ end
 
 function OnSpellStart( keys )
 	-- Initialize Variables and Key Values
-	local particle_trail 		= "particles/units/heroes/hero_techies/techies_blast_off_trail.vpcf"
 	local main_ability_name 	= "techies_blast_off_ctf"
 	local sub_ability_name 		= "techies_focused_detonation"
 	local remote_model			= "models/heroes/techies/fx_techies_remotebomb.vmdl"
-	local mine_model			= "models/heroes/techies/fx_techiesfx_landmine.vmdl"
 	local sound_launched		= "Hero_Techies.RemoteMine.Plant"
 	local sound_fizzle			= "Hero_Techies.Debris"
 

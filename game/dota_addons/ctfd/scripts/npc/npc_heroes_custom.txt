@@ -212,7 +212,7 @@
         "Ability1"                      "Armour_Up"
         "Ability2"                      "shredder_chain"
         "Ability3"                      "techies_artillery" 
-        "Ability4"                      "generic_hidden"
+        "Ability4"                      "techies_stasis_wire"
         "Ability5"                      "torrent_datadriven"
         "Ability6"                      "techies_blast_off_ctf"
 

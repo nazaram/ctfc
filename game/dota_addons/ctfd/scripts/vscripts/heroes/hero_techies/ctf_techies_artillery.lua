@@ -54,9 +54,10 @@ function OnSpellStart( keys )
 	local distance 				= direction:Length2D()
 
 	local dummy					= CreateUnitByName("npc_dota_custom_dummy_unit", caster_location, true, caster, caster, caster:GetTeamNumber())
-	dummy:AddNewModifier(dummy, nil, "modifier_no_healthbar", {duration = -1})
 	local particle 				= ParticleManager:CreateParticle(particle_name, PATTACH_ABSORIGIN, dummy)
 	local trail_fx				= ParticleManager:CreateParticle(particle_trail, PATTACH_ABSORIGIN, dummy)
+
+	dummy:AddNewModifier(dummy, nil, "modifier_no_healthbar", {duration = -1})
 
 	caster:EmitSound(sound_fire)
 
