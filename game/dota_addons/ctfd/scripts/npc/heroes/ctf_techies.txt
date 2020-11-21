@@ -215,6 +215,7 @@
 		{
 			"particle"  				"particles/units/heroes/hero_techies/techies_suicide.vpcf"
       		"particle"          		"particles/units/heroes/hero_techies/techies_blast_off_trail.vpcf"
+      		"particle"					"particles/units/heroes/hero_techies/techies_remote_mine.vpcf"
       		"particle"					"particles/econ/items/techies/techies_arcana/techies_ambient_arcana_mouthfire.vpcf"
 
       		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_techies.vsndevts"    
@@ -267,7 +268,19 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"projectile_speed"		"900"
+				"projectile_speed"		"500"
+			}
+
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bounce_height"			"200"
+			}
+
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"num_bounces"			"5"
 			}
 		}
 

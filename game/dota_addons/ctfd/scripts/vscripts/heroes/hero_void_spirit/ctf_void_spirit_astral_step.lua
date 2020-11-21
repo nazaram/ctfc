@@ -1,6 +1,6 @@
 LinkLuaModifier( "modifier_void_mark", "heroes/hero_void_spirit/ctf_void_spirit_astral_step.lua", LUA_MODIFIER_MOTION_NONE )
 
-gslow = -80
+
 
 ctf_void_spirit_astral_step = class({})
 
@@ -45,6 +45,8 @@ function OnSpellStart( keys )
 end
 
 modifier_void_mark = class({})
+
+gslow = -80
 
 function modifier_void_mark:IsHidden()
 	return false
