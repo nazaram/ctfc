@@ -198,8 +198,8 @@
     "ID"                                                  "3879"                           // unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
     "BaseClass"               "item_blink"
     "AbilityBehavior"                                     "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
-    "AbilityCastRange"                                    "500"
-    "cast_range_tooltip"                                  "500"
+    "AbilityCastRange"                                    "550"
+    "cast_range_tooltip"                                  "550"
     "AbilityCastPoint"                                    "0.0"
     "AbilityCastPoint"        "0.0"
     "AbilityCooldown"         "25.0"
@@ -212,7 +212,7 @@
       "01"
       {
         "var_type"                                        "FIELD_INTEGER"
-        "blink_range"                                     "500"
+        "blink_range"                                     "550"
       }
       "02"
       {
@@ -222,7 +222,7 @@
       "03"
       {
         "var_type"                                        "FIELD_INTEGER"
-        "blink_range_clamp"                               "500"
+        "blink_range_clamp"                               "550"
       }
     }
   }
