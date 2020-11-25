@@ -37,12 +37,13 @@
   "npc_dota_hero_juggernaut"                    "0"
   "npc_dota_hero_phoenix"                       "0"
   "npc_dota_hero_techies"                       "1"
+  "npc_dota_hero_phantom_assassin"              "0"
+  "npc_dota_hero_ember_spirit"                  "1"
 
 //====================================================================================
 // Theory Heroes
 //====================================================================================
   "npc_dota_hero_drow_ranger"                   "0"
-  "npc_dota_hero_ember_spirit"                  "0"
   "npc_dota_hero_earth_spirit"                  "0"
   "npc_dota_hero_night_stalker"                 "0"
   "npc_dota_hero_wisp"                          "0"
@@ -101,7 +102,6 @@
   "npc_dota_hero_ogre_magi"                     "0"
   "npc_dota_hero_omniknight"                    "0"
   "npc_dota_hero_oracle"                        "0"
-  "npc_dota_hero_phantom_assassin"              "0"
   "npc_dota_hero_phantom_lancer"                "0"
   "npc_dota_hero_pugna"                         "0"
   "npc_dota_hero_queenofpain"                   "0"
