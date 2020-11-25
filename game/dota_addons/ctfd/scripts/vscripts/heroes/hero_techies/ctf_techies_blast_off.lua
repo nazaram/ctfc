@@ -40,24 +40,24 @@ function OnSpellStart( keys )
 	local detonation_timing		= max_range/projectile_speed
 
 	dummy_remote				= CreateUnitByName("npc_dota_custom_dummy_unit", caster_location, true, caster, caster, caster:GetTeamNumber())
-	local dummy_bouncer			= CreateUnitByName("npc_dota_custom_dummy_unit", caster_location, true, caster, caster, caster:GetTeamNumber())
+	-- local dummy_bouncer			= CreateUnitByName("npc_dota_custom_dummy_unit", caster_location, true, caster, caster, caster:GetTeamNumber())
 	
 	-- Ability Logic Proper
 	-- caster:EmitSound(sound_launched)
 	caster:AddNewModifier(caster, ability, "modifier_detonation_time", {duration = detonation_timing})
 	caster:SwapAbilities(main_ability_name, sub_ability_name, false, true)
 
-	-- dummy_remote:AddNewModifier(dummy_remote, nil, "modifier_no_healthbar", {duration = -1})
+	dummy_remote:AddNewModifier(dummy_remote, nil, "modifier_no_healthbar", {duration = -1})
 
-	dummy_bouncer:SetOriginalModel(remote_model)
-	dummy_bouncer:SetModel(remote_model)
-	dummy_bouncer:SetModelScale(2)
+	dummy_remote:SetOriginalModel(remote_model)
+	dummy_remote:SetModel(remote_model)
+	dummy_remote:SetModelScale(2)
 
 	local bounce_interval = ((max_range / projectile_speed) / num_bounces)
 	local bounce_positions = {}
 
 	Physics:Unit(dummy_remote)
-	Physics:Unit(dummy_bouncer)
+	-- Physics:Unit(dummy_bouncer)
 
 	dummy_remote:PreventDI(true)
 	dummy_remote:SetAutoUnstuck(true)
@@ -69,15 +69,15 @@ function OnSpellStart( keys )
 	dummy_remote:Hibernate(false)
 	dummy_remote:SetGroundBehavior(PHYSICS_GROUND_LOCK)
 
-	dummy_bouncer:PreventDI(true)
-	dummy_bouncer:SetAutoUnstuck(true)
-	dummy_bouncer:SetNavCollisionType(PHYSICS_NAV_NOTHING)
-	dummy_bouncer:FollowNavMesh(false)
-	dummy_bouncer:SetPhysicsVelocityMax(projectile_speed)
-	dummy_bouncer:SetPhysicsVelocity(projectile_speed * direction)
-	dummy_bouncer:SetPhysicsFriction(0)
-	dummy_bouncer:Hibernate(false)
-	dummy_bouncer:SetGroundBehavior(PHYSICS_GROUND_LOCK)
+	-- dummy_bouncer:PreventDI(true)
+	-- dummy_bouncer:SetAutoUnstuck(true)
+	-- dummy_bouncer:SetNavCollisionType(PHYSICS_NAV_NOTHING)
+	-- dummy_bouncer:FollowNavMesh(false)
+	-- dummy_bouncer:SetPhysicsVelocityMax(projectile_speed)
+	-- dummy_bouncer:SetPhysicsVelocity(projectile_speed * direction)
+	-- dummy_bouncer:SetPhysicsFriction(0)
+	-- dummy_bouncer:Hibernate(false)
+	-- dummy_bouncer:SetGroundBehavior(PHYSICS_GROUND_LOCK)
 
 	dummy_remote:OnPhysicsFrame(
 		function()
@@ -90,49 +90,49 @@ function OnSpellStart( keys )
 			if progress >= max_range then
 				caster:EmitSound(sound_fizzle)
 				dummy_remote:RemoveSelf()
-				dummy_bouncer:RemoveSelf()
+				-- dummy_bouncer:RemoveSelf()
 				caster:SwapAbilities(main_ability_name, sub_ability_name, true, false)
 				ability:EndCooldown()
 			end
 		end
 	)
 
-	local bounce_start = caster_location
-	local bounce_distance = max_range / num_bounces
-	local tau = bounce_distance / projectile_speed
+	-- local bounce_start = caster_location
+	-- local bounce_distance = max_range / num_bounces
+	-- local tau = bounce_distance / projectile_speed
 
-	for i = 1, num_bounces do
-		Timers:CreateTimer(i * bounce_interval,
-			function()
-				bounce_positions[i] = caster_location + direction * i * (bounce_distance)
+	-- for i = 1, num_bounces do
+	-- 	Timers:CreateTimer(i * bounce_interval,
+	-- 		function()
+	-- 			bounce_positions[i] = caster_location + direction * i * (bounce_distance)
 				
-				dummy_bouncer:OnPhysicsFrame(
-					function()
-						local rho = (dummy_bouncer:GetAbsOrigin() - bounce_start):Length2D() / bounce_distance
+	-- 			dummy_bouncer:OnPhysicsFrame(
+	-- 				function()
+	-- 					local rho = (dummy_bouncer:GetAbsOrigin() - bounce_start):Length2D() / bounce_distance
 
-						local dumbx = dummy_bouncer:GetAbsOrigin().x
-						local dumby = dummy_bouncer:GetAbsOrigin().y
-						local dumbz = dummy_bouncer:GetAbsOrigin().z
+	-- 					local dumbx = dummy_bouncer:GetAbsOrigin().x
+	-- 					local dumby = dummy_bouncer:GetAbsOrigin().y
+	-- 					local dumbz = dummy_bouncer:GetAbsOrigin().z
 
-						local hvel = (bounce_positions[i] - bounce_start):Normalized() * projectile_speed
-						local vvel = 
+	-- 					local hvel = (bounce_positions[i] - bounce_start):Normalized() * projectile_speed
+	-- 					local vvel = 1
 
-						dumbx = dumbx + hvel.x
-						dumby = dumby + hvel.y
-						dumbz = dumbz + vvel
+	-- 					dumbx = dumbx + hvel.x
+	-- 					dumby = dumby + hvel.y
+	-- 					dumbz = dumbz + vvel
 
-						dummy_bouncer:SetAbsOrigin(Vector(dumbx, dumby, dumbz))
+	-- 					dummy_bouncer:SetAbsOrigin(Vector(dumbx, dumby, dumbz))
 
-						if dumbz < 0 then
-							bounce_start = bounce_positions[i]
-						end 
+	-- 					if dumbz < 0 then
+	-- 						bounce_start = bounce_positions[i]
+	-- 					end 
 
-						-- dummy_bouncer:SetForwardVector((bounce_positions[i] - dummy_bouncer:GetAbsOrigin()):Normalized() * projectile_speed)
-					end
-				)
-			end
-		)
-	end	
+	-- 					-- dummy_bouncer:SetForwardVector((bounce_positions[i] - dummy_bouncer:GetAbsOrigin()):Normalized() * projectile_speed)
+	-- 				end
+	-- 			)
+	-- 		end
+	-- 	)
+	-- end	
 end
 
 function Detonate( keys )
@@ -180,7 +180,9 @@ function Detonate( keys )
 	dummy_remote:RemoveSelf()
 end
 
-
+-- =====================================================================================================================
+-- Enemy Effect Modifier: Slow and Silence
+-- =====================================================================================================================
 
 modifier_blast_off = class({})
 
@@ -230,7 +232,9 @@ function modifier_blast_off:CheckState()
 	return state
 end
 
-
+-- =====================================================================================================================
+-- Detonation Timer Self Modifier
+-- =====================================================================================================================
 
 modifier_detonation_time = class({})
 

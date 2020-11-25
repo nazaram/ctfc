@@ -243,8 +243,3 @@ end
 function modifier_tracking:GetPriority()
 	return MODIFIER_PRIORITY_ULTRA
 end
-
--- To do:
-	--linear projectile as dummy unit
-	--two linear projectiles at varying angles toward target points alpha and beta
-	--update function to curve vector toward target point prime

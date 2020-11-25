@@ -123,11 +123,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
 		"AbilityTextureName"			"techies_stasis_trap"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVOIR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"MaxLevel"						"1"
+
 		// Precache
 		//-------------------------------------------------------------------------------------------------------------
 		"precache"
@@ -135,10 +136,15 @@
 			"particle"					"particles/units/heroes/hero_techies/techies_stasis_trap_plant.vpcf"
 			"particle"					"particles/units/heroes/hero_techies/techies_stasis_trap_apear.vpcf"
 			"particle"					"particles/units/heroes/hero_techies/techies_stasis_trap_beams.vpcf"
+			"particle"					"particles/units/heroes/hero_techies/techies_stasis_plant_elec_rad.vpcf"
+			"particle"					"particles/units/heroes/hero_techies/techies_stasis_trap_beams_flash.vpcf"
+
+			"soundfile"					"sounds/weapons/hero/techies/stasis_trap_plant.vsnd"
+			"soundfile"					"sounds/weapons/hero/techies/stasis_trap.vsnd"
 		}
+
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"600"
 		"AbilityCastPoint"				"1"
 
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
@@ -146,7 +152,7 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"35"
+		"AbilityCooldown"				"15"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -159,35 +165,40 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"setup_delay"			"2"
+				"placement_distance"	"600"
 			}
 
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"placement_distance"	"50"
+				"root_duration"			"2"
 			}
 
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"trigger_radius"		"50"
+				"root_radius"			"300"
 			}
 
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"root_duration"			"2"
+				"num_traps"				"6"
+			}
+
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"trap_duration"			"0.5"
 			}
 		}
 
 		"OnSpellStart"
 		{
-			"Runscript"
+			"RunScript"
 			{
 				"ScriptFile"			"heroes/hero_techies/ctf_techies_stasis_wire"
 				"Function"				"OnSpellStart"
-				"Target"				"POINT"
 			}
 		}
 	}
@@ -268,7 +279,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"projectile_speed"		"500"
+				"projectile_speed"		"750"
 			}
 
 			"06"

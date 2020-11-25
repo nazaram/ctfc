@@ -1,7 +1,6 @@
 LinkLuaModifier( "modifier_lil_stinky_slow", "heroes/hero_pudge/ctf_pudge_lil_stinky.lua", LUA_MODIFIER_MOTION_NONE )
 
---can't figure out how retrieve and refernce the move slow value so it just has to be a global variable here
-gslow = -40
+
 
 ctf_pudge_lil_stinky = class({})
 
@@ -67,6 +66,9 @@ function OnSpellStart ( keys )
 end
 
 modifier_lil_stinky_slow = class({})
+
+--can't figure out how retrieve and refernce the move slow value so it just has to be a global variable here
+gslow = -40
 
 function modifier_lil_stinky_slow:IsHidden()
 	return false
