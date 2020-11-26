@@ -627,6 +627,11 @@ function CAddonTemplateGameMode:OnNPCSpawned(keys)
   if entity:IsRealHero() and entity:HasAbility(innateAbilityName22) then
     entity:FindAbilityByName(innateAbilityName22):SetLevel(1)
   end
+
+  local innateAbilityName23 = "phantom_assassin_blur_ctf"
+  if entity:IsRealHero() and entity:HasAbility(innateAbilityName23) then
+    entity:FindAbilityByName(innateAbilityName23):SetLevel(1)
+  end
 end
 
 

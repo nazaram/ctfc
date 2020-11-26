@@ -1,9 +1,11 @@
 #BASE "heroes/ctf_bounty_hunter.txt"
 #BASE "heroes/ctf_juggernaut.txt"
+#BASE "heroes/ctf_phantom_assassin.txt"
 #BASE "heroes/ctf_pheonix.txt"
 #BASE "heroes/ctf_pudge.txt"
 #BASE "heroes/ctf_techies.txt"
 #BASE "heroes/ctf_void_spirit.txt"
+
 
 "DOTAHeroes"
 {
@@ -53,8 +55,8 @@
         "StatusMana"        "700"                   // Base mana.
         "StatusManaRegen"     "10.0"                 // Mana regeneration rate.
     
-        "VisionDaytimeRange"    "800"                  // Range of vision at night time.
-        "VisionDaytimeRange"    "500"    
+        "VisionDaytimeRange"        "800"             
+        "VisionNighttimeRange"      "500"    
     }
 
     "BountyHunter"
@@ -102,8 +104,8 @@
         "StatusMana"        "700"                   // Base mana.
         "StatusManaRegen"     "10.0"                 // Mana regeneration rate.
     
-        "VisionDaytimeRange"    "800"                  // Range of vision at night time.
-        "VisionDaytimeRange"    "500"
+        "VisionDaytimeRange"        "800"             
+        "VisionNighttimeRange"      "500"    
     }
 
     "Pudge"
@@ -151,8 +153,8 @@
         "StatusMana"        "700"                   // Base mana.
         "StatusManaRegen"     "10.0"                 // Mana regeneration rate.
     
-        "VisionDaytimeRange"    "800"                  // Range of vision at night time.
-        "VisionDaytimeRange"    "500"         
+        "VisionDaytimeRange"        "800"             
+        "VisionNighttimeRange"      "500"             
     }
 
     "Void_Spirit"
@@ -200,8 +202,8 @@
         "StatusMana"                    "700"                   // Base mana.
         "StatusManaRegen"               "10.0"                 // Mana regeneration rate.
     
-        "VisionDaytimeRange"            "800"                  // Range of vision at night time.
-        "VisionDaytimeRange"            "500"      
+        "VisionDaytimeRange"        "800"             
+        "VisionNighttimeRange"      "500"          
     }
 
     "Techies"
@@ -251,8 +253,8 @@
         "StatusMana"                    "700"                 // Base mana.
         "StatusManaRegen"               "10.0"                // Mana regeneration rate.
     
-        "VisionDaytimeRange"            "800"                 // Range of vision at night time.
-        "VisionDaytimeRange"            "500"      
+        "VisionDaytimeRange"        "800"             
+        "VisionNighttimeRange"      "500"         
     }
 
     "spirit_Breaker"
@@ -301,8 +303,8 @@
         "StatusMana"        "700"                   // Base mana.
         "StatusManaRegen"     "10.0"                 // Mana regeneration rate.
     
-        "VisionDaytimeRange"    "800"                  // Range of vision at night time.
-        "VisionDaytimeRange"    "500"       
+        "VisionDaytimeRange"        "800"             
+        "VisionNighttimeRange"      "500"      
     }
 
     "kunkka"
@@ -351,8 +353,8 @@
         "StatusMana"        "700"                   // Base mana.
         "StatusManaRegen"     "10.0"                 // Mana regeneration rate.
     
-        "VisionDaytimeRange"    "800"                  // Range of vision at night time.
-        "VisionDaytimeRange"    "500"       
+        "VisionDaytimeRange"        "800"             
+        "VisionNighttimeRange"      "500"         
     }
   
     "tusk"
@@ -403,8 +405,8 @@
         "StatusMana"        "700"                   // Base mana.
         "StatusManaRegen"     "10.0"                 // Mana regeneration rate.
     
-        "VisionDaytimeRange"    "800"                  // Range of vision at night time.
-        "VisionDaytimeRange"    "500"    
+        "VisionDaytimeRange"        "800"             
+        "VisionNighttimeRange"      "500"        
     }
 
     "puck"
@@ -452,8 +454,8 @@
         "StatusMana"        "700"                   // Base mana.
         "StatusManaRegen"     "10.0"                 // Mana regeneration rate.
     
-        "VisionDaytimeRange"    "800"                  // Range of vision at night time.
-        "VisionDaytimeRange"    "500"    
+        "VisionDaytimeRange"        "800"             
+        "VisionNighttimeRange"      "500"       
     }
     
     "vengefulspirit"
@@ -501,8 +503,8 @@
         "StatusMana"        "700"                   // Base mana.
         "StatusManaRegen"     "10.0"                 // Mana regeneration rate.
     
-        "VisionDaytimeRange"    "800"                  // Range of vision at night time.
-        "VisionDaytimeRange"    "500"    
+        "VisionDaytimeRange"        "800"             
+        "VisionNighttimeRange"      "500"        
     }
 
     "tiny"
@@ -550,8 +552,8 @@
         "StatusMana"        "700"                   // Base mana.
         "StatusManaRegen"     "10.0"                 // Mana regeneration rate.
     
-        "VisionDaytimeRange"    "800"                  // Range of vision at night time.
-        "VisionDaytimeRange"    "500"    
+        "VisionDaytimeRange"        "800"             
+        "VisionNighttimeRange"      "500"       
     }
 
     "batrider"
@@ -599,8 +601,8 @@
         "StatusMana"        "700"                   // Base mana.
         "StatusManaRegen"     "10.0"                 // Mana regeneration rate.
     
-        "VisionDaytimeRange"    "800"                  // Range of vision at night time.
-        "VisionDaytimeRange"    "500"    
+        "VisionDaytimeRange"        "800"             
+        "VisionNighttimeRange"      "500"     
     }
 
     "windrunner"
@@ -648,8 +650,8 @@
         "StatusMana"        "700"                   // Base mana.
         "StatusManaRegen"     "10.0"                 // Mana regeneration rate.
     
-        "VisionDaytimeRange"    "800"                  // Range of vision at night time.
-        "VisionDaytimeRange"    "500"    
+        "VisionDaytimeRange"        "800"             
+        "VisionNighttimeRange"      "500"       
     }
 
     "mirana"
@@ -697,8 +699,8 @@
         "StatusMana"        "700"                   // Base mana.
         "StatusManaRegen"     "10.0"                 // Mana regeneration rate.
     
-        "VisionDaytimeRange"    "800"                  // Range of vision at night time.
-        "VisionDaytimeRange"    "500"    
+        "VisionDaytimeRange"        "800"             
+        "VisionNighttimeRange"      "500"      
     }
   
     "earthshaker"
@@ -746,8 +748,8 @@
         "StatusMana"        "700"                   // Base mana.
         "StatusManaRegen"     "10.0"                 // Mana regeneration rate.
     
-        "VisionDaytimeRange"    "800"                  // Range of vision at night time.
-        "VisionDaytimeRange"    "500"    
+        "VisionDaytimeRange"        "800"             
+        "VisionNighttimeRange"      "500"       
     }
 
     "disruptor"
@@ -795,8 +797,8 @@
         "StatusMana"        "700"                   // Base mana.
         "StatusManaRegen"     "10.0"                 // Mana regeneration rate.
     
-        "VisionDaytimeRange"    "800"                  // Range of vision at night time.
-        "VisionDaytimeRange"    "500"    
+        "VisionDaytimeRange"        "800"             
+        "VisionNighttimeRange"      "500"     
     }
 
     "magnataur"
@@ -844,8 +846,8 @@
         "StatusMana"        "700"                   // Base mana.
         "StatusManaRegen"     "10.0"                 // Mana regeneration rate.
     
-        "VisionDaytimeRange"    "800"                  // Range of vision at night time.
-        "VisionDaytimeRange"    "500"    
+        "VisionDaytimeRange"        "800"             
+        "VisionNighttimeRange"      "500"        
     }
 
     "wisp"
@@ -893,8 +895,8 @@
         "StatusMana"        "700"                   // Base mana.
         "StatusManaRegen"     "10.0"                 // Mana regeneration rate.
     
-        "VisionDaytimeRange"    "800"                  // Range of vision at night time.
-        "VisionDaytimeRange"    "500"    
+        "VisionDaytimeRange"        "800"             
+        "VisionNighttimeRange"      "500"        
     }
 
     "void"
@@ -942,8 +944,8 @@
         "StatusMana"        "700"                   // Base mana.
         "StatusManaRegen"     "10.0"                 // Mana regeneration rate.
     
-        "VisionDaytimeRange"    "800"                  // Range of vision at night time.
-        "VisionDaytimeRange"    "500"    
+        "VisionDaytimeRange"        "800"             
+        "VisionNighttimeRange"      "500"        
     }
 
     "slark"
@@ -991,8 +993,8 @@
         "StatusMana"        "700"                   // Base mana.
         "StatusManaRegen"     "10.0"                 // Mana regeneration rate.
     
-        "VisionDaytimeRange"    "800"                  // Range of vision at night time.
-        "VisionDaytimeRange"    "500"    
+        "VisionDaytimeRange"        "800"             
+        "VisionNighttimeRange"      "500"       
     }
 
     "natures_prophet"
@@ -1040,8 +1042,8 @@
         "StatusMana"        "700"                   // Base mana.
         "StatusManaRegen"     "10.0"                 // Mana regeneration rate.
     
-        "VisionDaytimeRange"    "800"                  // Range of vision at night time.
-        "VisionDaytimeRange"    "500"    
+        "VisionDaytimeRange"        "800"             
+        "VisionNighttimeRange"      "500"        
     }
 
    "juggernaut"
@@ -1089,8 +1091,8 @@
         "StatusMana"        "700"                   // Base mana.
         "StatusManaRegen"     "10.0"                 // Mana regeneration rate.
     
-        "VisionDaytimeRange"    "800"                  // Range of vision at night time.
-        "VisionDaytimeRange"    "500"    
+        "VisionDaytimeRange"        "800"             
+        "VisionNighttimeRange"      "500"        
     }
 
     "pheonix"
@@ -1138,8 +1140,8 @@
         "StatusMana"                "700"                   // Base mana.
         "StatusManaRegen"           "10.0"                 // Mana regeneration rate.
     
-        "VisionDaytimeRange"        "800"                  // Range of vision at night time.
-        "VisionDaytimeRange"        "500"
+        "VisionDaytimeRange"        "800"             
+        "VisionNighttimeRange"      "500"    
     }
       "ember_spirit"
     {
@@ -1186,20 +1188,21 @@
         "StatusMana"                "700"                   // Base mana.
         "StatusManaRegen"           "10.0"                 // Mana regeneration rate.
     
-        "VisionDaytimeRange"        "800"                  // Range of vision at night time.
-        "VisionDaytimeRange"        "500"
+        "VisionDaytimeRange"        "800"             
+        "VisionNighttimeRange"      "500"    
     }
-          "phantom_assassin"
+
+    "phantom_assassin"
     {
         "AbilityLayout"             "6"
         "override_hero"             "npc_dota_hero_phantom_assassin"
         "SoundSet"                  "0"
         "Ability1"                  "Armour_Up"
         "Ability2"                  "shredder_chain"
-        "Ability3"                  "phantom_assassin_blur_datadriven" 
-        "Ability4"                  "phantom_assassin_phantom_strike_datadriven"
+        "Ability3"                  "phantom_assassin_phantom_strike_datadriven"
+        "Ability4"                  "phantom_assassin_blur_ctf"
         "Ability5"                  "torrent_datadriven"
-        "Ability6"                  "phantom_assassin_stifling_dagger_datadriven"
+        "Ability6"                  "phantom_assassin_stifling_dagger_ctf"
         
         "ArmorPhysical"             "0"                 // Physical protection.
         "MagicalResistance"         "0"                 // Magical protection (percentage).
@@ -1235,6 +1238,6 @@
         "StatusManaRegen"           "10.0"                 // Mana regeneration rate.
     
         "VisionDaytimeRange"        "800"                  // Range of vision at night time.
-        "VisionDaytimeRange"        "500"
+        "VisionNighttimeRange"      "500"
     }
 }

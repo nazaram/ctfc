@@ -139,8 +139,7 @@
 			"particle"					"particles/units/heroes/hero_techies/techies_stasis_plant_elec_rad.vpcf"
 			"particle"					"particles/units/heroes/hero_techies/techies_stasis_trap_beams_flash.vpcf"
 
-			"soundfile"					"sounds/weapons/hero/techies/stasis_trap_plant.vsnd"
-			"soundfile"					"sounds/weapons/hero/techies/stasis_trap.vsnd"
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_techies.vsndevts"
 		}
 
 		// Casting
@@ -216,7 +215,6 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		"AbilityUnitDamageType"         "DAMAGE_TYPE_PHYSICAL"
 		"AbilityType"         			"DOTA_ABILITY_TYPE_ULTIMATE"
 		"MaxLevel" 						"1"
 

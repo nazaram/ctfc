@@ -43,7 +43,7 @@ function OnSpellStart( keys )
 	-- local dummy_bouncer			= CreateUnitByName("npc_dota_custom_dummy_unit", caster_location, true, caster, caster, caster:GetTeamNumber())
 	
 	-- Ability Logic Proper
-	-- caster:EmitSound(sound_launched)
+	caster:EmitSound(sound_launched)
 	caster:AddNewModifier(caster, ability, "modifier_detonation_time", {duration = detonation_timing})
 	caster:SwapAbilities(main_ability_name, sub_ability_name, false, true)
 
