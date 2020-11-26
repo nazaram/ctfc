@@ -84,6 +84,7 @@ function OnSpellStart( keys )
 						ParticleManager:SetParticleControl(explosion_fx, 3, unit:GetAbsOrigin())
 						unit:AddNewModifier(caster, ability, "modifier_stifle", {duration = slow_duration})
 						unit:EmitSound(sound_hit)
+						caster:EmitSound(sound_hit)
 
 						dummy_dagger:RemoveSelf()
 					end
