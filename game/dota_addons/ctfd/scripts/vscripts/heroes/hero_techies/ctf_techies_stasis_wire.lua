@@ -46,9 +46,11 @@ function OnSpellStart( keys )
 		local apear_fx			= ParticleManager:CreateParticle(particle_apear, PATTACH_ABSORIGIN, dummies[i])
 		local ring_fx			= ParticleManager:CreateParticle(particle_ring, PATTACH_ABSORIGIN, dummies[i])
 
-		ParticleManager:SetParticleControl(plant_fx, 1, placement_pos[i])
-		ParticleManager:SetParticleControl(apear_fx, 3, placement_pos[i])
-		ParticleManager:SetParticleControl(ring_fx, 1, placement_pos[i])
+		local ground_pos 		= GetGroundHeight(placement_pos[i], dummies[i])
+
+		ParticleManager:SetParticleControl(plant_fx, 1, Vector(placement_pos[i].x, placement_pos[i].y, ground_pos))
+		ParticleManager:SetParticleControl(apear_fx, 3, Vector(placement_pos[i].x, placement_pos[i].y, ground_pos))
+		ParticleManager:SetParticleControl(ring_fx, 1, Vector(placement_pos[i].x, placement_pos[i].y, ground_pos))
 
 		if dummies[i] ~= nil then
 
