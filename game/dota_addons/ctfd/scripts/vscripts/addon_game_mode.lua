@@ -657,6 +657,13 @@ end
 function CAddonTemplateGameMode:OnEntityHurt(tbl)
   --DebugPrint("[BAREBONES] Entity Hurt")
   --DebugPrintTable(keys)
+ 
+ Timers:CreateTimer({
+    useGameTime = false,
+    endTime = 1, -- when this timer should first execute, you can omit this if you want it to run first on the next frame
+      print ("Hello. I'm running 10 seconds after I was started even if someone paused the game.")
+  })
+
   print( "SOMEONE GOT HURT" )
 
   local victim = EntIndexToHScript(tbl.entindex_killed)
@@ -667,7 +674,7 @@ function CAddonTemplateGameMode:OnEntityHurt(tbl)
   victim:EmitSound("DOTA_Item.Dagon5.Target")
   
   victim:InterruptMotionControllers(true)
-  --victim:AddNewModifier(nil, nil, "modifier_stunned", {duration = 3})
+  victim:AddNewModifier(nil, nil, "modifier_stunned", {duration = 0.5})
 
   if attacker:IsHero() then
     attacker:AddExperience(15 + _G.GAME_ROUND * 3 , DOTA_ModifyXP_Unspecified, false, false)
