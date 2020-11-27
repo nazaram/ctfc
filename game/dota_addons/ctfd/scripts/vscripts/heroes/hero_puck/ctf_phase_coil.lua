@@ -16,6 +16,8 @@ function OnSpellStart( keys )
 
 	caster:AddNewModifier(caster, nil, "FindModifierByName", {duration = channel_duration})
 	caster:AddNoDraw()
+
+	
 end
 
 function OnChannelFinish( keys )
