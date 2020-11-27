@@ -1,4 +1,5 @@
 #BASE "heroes/ctf_bounty_hunter.txt"
+#BASE "heroes/ctf_disruptor.txt"
 #BASE "heroes/ctf_juggernaut.txt"
 #BASE "heroes/ctf_phantom_assassin.txt"
 #BASE "heroes/ctf_pheonix.txt"
@@ -771,54 +772,7 @@
   }
 }
 
-  //=================================================================================================================
-  // Disruptor: Static Storm
-  //=================================================================================================================
-  "disruptor_static_storm"
-  {
-    // General
-    //-------------------------------------------------------------------------------------------------------------
-    "ID"              "5461"                            // unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-    "AbilityUnitDamageType"     "DAMAGE_TYPE_MAGICAL" 
-    "SpellImmunityType"       "SPELL_IMMUNITY_ENEMIES_NO"
-    "SpellDispellableType"      "SPELL_DISPELLABLE_NO"
-    "MaxLevel"              "1"
-    "AbilitySound"          "Hero_Disruptor.StaticStorm.Cast"
-
-
-    // Casting
-    //-------------------------------------------------------------------------------------------------------------
-    "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_4"
-
-    // Time   
-    //-------------------------------------------------------------------------------------------------------------
-    "AbilityCooldown"       "15"
-
-    // Cost
-    //-------------------------------------------------------------------------------------------------------------
-    "AbilityManaCost"       "25"
-    
-    // Cast Range
-    //-------------------------------------------------------------------------------------------------------------
-    "AbilityCastRange"        "900"
-
-    // Special
-    //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-      "01"
-      {
-        "var_type"          "FIELD_INTEGER"
-        "radius"          "150"
-      }
-      "03"
-      {
-        "var_type"          "FIELD_INTEGER"
-        "damage_max"        "0"
-      }
-    }
-  }
+  
 
     //=================================================================================================================
   // Kunkka Wars: Ghost Ship

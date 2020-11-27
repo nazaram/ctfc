@@ -568,7 +568,7 @@ function CAddonTemplateGameMode:OnNPCSpawned(keys)
     entity:FindAbilityByName(innateAbilityName10):SetLevel(1)
   end
 
-  local innateAbilityName11 = "disruptor_static_storm"
+  local innateAbilityName11 = "disruptor_static_storm_ctf"
   if entity:IsRealHero() and entity:HasAbility(innateAbilityName11) then
     entity:FindAbilityByName(innateAbilityName11):SetLevel(1)
   end

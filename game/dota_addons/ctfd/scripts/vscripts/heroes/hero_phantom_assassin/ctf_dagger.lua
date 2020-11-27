@@ -105,7 +105,7 @@ end
 modifier_stifle = class({})
 
 gslow = -50
-gvis = -40
+gvis = -50
 
 function modifier_stifle:IsHidden()
 	return false

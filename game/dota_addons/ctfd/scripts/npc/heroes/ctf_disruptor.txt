@@ -1,0 +1,164 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Disruptor Innate: Static Storm
+	//=================================================================================================================
+	"disruptor_static_storm_ctf"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"disruptor_static_storm"
+		"AbilityBehavior"         		"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"SpellImmunityType"       		"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"      	"SPELL_DISPELLABLE_NO"
+		"MaxLevel"              		"1"
+		//"AbilitySound"          		
+
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"particle"					"particles/units/heroes/hero_disruptor/disruptor_static_storm.vpcf"
+			
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_disruptor.vsndevts"
+		}
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"900"
+		"AbilityCastPoint"				"0.05"
+
+		"AbilityCastAnimation"      	"ACT_DOTA_CAST_ABILITY_4"
+
+		// Time   
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"       		"15"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"       		"25"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"storm_radius"          "150"
+			}
+
+			"02"
+			{
+				"var_type"          	"FIELD_INTEGER"
+				"duration"	        	"5"
+			}
+
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"vision_radius"			"300"
+			}
+
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"linger_duration"		"0.25"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/hero_disruptor/ctf_static_storm"
+				"Function"				"OnSpellStart"
+				"Target"				"POINT"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Disruptor Ultimate: Glimpsing Gale
+	//=================================================================================================================
+	"disruptor_glimpse_ctf"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"disruptor_thunder_strike"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityType"         			"DOTA_ABILITY_TYPE_ULTIMATE"
+		"MaxLevel" 						"1"
+
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"particle"					"particles/units/heroes/hero_disruptor/disruptor_thunder_strike_bolt.vpcf"
+			"particle"					"particles/units/heroes/hero_disruptor/disruptor_thunder_strike_buff.vpcf"
+			"particle"					"particles/units/heroes/hero_disruptor/disruptor_glimpse_targetend.vpcf"
+
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_disruptor.vsndevts"
+		}
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"2000"
+		"AbilityCastPoint"				"0.05"
+
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		"AnimationPlaybackRate"			"1"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"15"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"150"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"num_strikes"			"4"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"strike_radius"			"250"
+			}
+
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"travel_time"			"2"
+			}
+
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"backtrack_time"		"4"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/hero_disruptor/ctf_glimpse"
+				"Function"				"OnSpellStart"
+				"Target"				"POINT"
+			}	
+		}
+	}
+}
