@@ -35,7 +35,7 @@ function OnSpellStart( keys )
 	Timers:CreateTimer(
 		function()
 			dummy_strikes[strike_count] = CreateUnitByName("npc_dota_custom_dummy_unit", strike_pos[strike_count], true, caster, caster, caster:GetTeamNumber())
-
+			FindClearSpaceForUnit(dummy_strikes[strike_count], strike_pos[strike_count], true)
 			dummy_strikes[strike_count]:AddNewModifier(dummy_strikes[strike_count], nil, "modifier_no_healthbar", {duration = -1})
 
 			local strike_fx = ParticleManager:CreateParticle(particle_strike, PATTACH_ABSORIGIN, dummy_strikes[strike_count])
@@ -50,7 +50,7 @@ function OnSpellStart( keys )
 			ParticleManager:SetParticleControl(strike_fx, 0, dummy_strikes[strike_count]:GetAbsOrigin())
 			ParticleManager:SetParticleControl(strike_fx, 2, dummy_strikes[strike_count]:GetAbsOrigin())
 
-			if dummy_strikes ~= nil then
+			if dummy_strikes[strike_count] ~= nil then
 
 				local units = FindUnitsInRadius(
 					caster:GetTeamNumber(),
@@ -74,11 +74,6 @@ function OnSpellStart( keys )
 						ParticleManager:SetParticleControl(glimpse_end_fx, 1, strike_pos[temp_count])
 						ParticleManager:SetParticleControl(glimpse_end_fx, 2, Vector(backtrack_time, 0, 0))
 						
-						-- Timers:CreateTimer(backtrack_time - backtrack_time * 0.25,
-						-- 	function()
-
-						-- 	end
-						-- )
 						Timers:CreateTimer(backtrack_time,
 							function()
 								FindClearSpaceForUnit(unit, strike_pos[temp_count], true)
@@ -90,8 +85,16 @@ function OnSpellStart( keys )
 
 			strike_count = strike_count + 1
 
-			if strike_count <= num_strikes then	
+			if strike_count <= num_strikes then
 				return travel_time / num_strikes
+			end
+		end
+	)
+
+	Timers:CreateTimer(travel_time + backtrack_time + 2,
+		function()
+			for i = 1, num_strikes do
+				dummy_strikes[i]:RemoveSelf()
 			end
 		end
 	)
