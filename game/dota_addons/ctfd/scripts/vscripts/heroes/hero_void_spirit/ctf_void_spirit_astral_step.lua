@@ -1,8 +1,17 @@
-LinkLuaModifier( "modifier_void_mark", "heroes/hero_void_spirit/ctf_void_spirit_astral_step.lua", LUA_MODIFIER_MOTION_NONE )
-
-
+LinkLuaModifier("modifier_void_mark", "heroes/hero_void_spirit/ctf_void_spirit_astral_step.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_charges", "libraries/modifiers/modifier_charges.lua", LUA_MODIFIER_MOTION_NONE)
 
 ctf_void_spirit_astral_step = class({})
+
+function OnUpgrade( keys )
+	local caster = keys.caster 
+	local ability = keys.ability 
+
+	caster:AddNewModifier(caster, ability, "modifier_charges", {
+		max_count = ability:GetLevelSpecialValueFor("max_charges", ability:GetLevel() - 1),
+		replenish_time = ability:GetLevelSpecialValueFor("charge_restore_time", ability:GetLevel() - 1)
+	})
+end
 
 function OnSpellStart( keys )
 	local caster 			= keys.caster

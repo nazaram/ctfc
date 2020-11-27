@@ -211,7 +211,7 @@
 
     // Time
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityCooldown"       "8"
+    "AbilityCooldown"       "0"
 
     // Cost
     //-------------------------------------------------------------------------------------------------------------
@@ -250,9 +250,28 @@
         "var_type"                "FIELD_FLOAT"
         "slow_duration"           "0.5"
       }
+
+      "06"
+      {
+        "var_type"                "FIELD_INTEGER"
+        "max_charges"             "2"
+      }
+
+      "07"
+      {
+        "var_type"                "FIELD_INTEGER"
+        "charge_restore_time"     "15"
+      }
     }
 
-
+    "OnUpgrade"
+    {
+      "RunScript"
+      {
+        "ScriptFile"  "heroes/hero_void_spirit/ctf_void_spirit_astral_step.lua"
+        "Function"    "OnUpgrade"
+      }
+    }
 
     "OnSpellStart"
     {
@@ -262,7 +281,6 @@
         "Function"        "OnSpellStart"
         "Target"          "POINT"
       }
-
     }
   }
 }
