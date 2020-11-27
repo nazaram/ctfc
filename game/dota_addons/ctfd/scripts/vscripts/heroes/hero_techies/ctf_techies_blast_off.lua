@@ -85,8 +85,6 @@ function OnSpellStart( keys )
 
 			dummy_remote:SetForwardVector(dummy_remote:GetPhysicsVelocity())
 
-			--DebugDrawCircle(dummy_remote:GetAbsOrigin(), Vector(0,255,0), 100, radius, true, 0.1)
-
 			if progress >= max_range then
 				caster:EmitSound(sound_fizzle)
 				dummy_remote:RemoveSelf()

@@ -1,0 +1,103 @@
+"DOTAAbilities"
+{
+//=================================================================================================================
+// Puck Ability: Illusory Orb
+//=================================================================================================================
+	"puck_illusory_orb_ctf"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"puck_illusory_orb"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"MaxLevel" 						"3"
+
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"particle"  				"particle_name"
+		}
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCasterRange"			"3000"
+		"AbilityCasterPoint"			"0.1"
+
+		"AbilityCasterAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate"			"1"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"12 11 10"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"10"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"orb_speed"				"650 975 1300"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_range"				"2000 2500 3000"
+			}
+		}
+
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"Scriptfile"			"heroes/hero_puck/ctf_orb"
+				"Function"				"OnUpgrade"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Scriptfile"			"heroes/hero_puck/ctf_orb"
+				"Function"				"OnSpellStart"
+				"Target"				"POINT"
+				"sub_ability_name"		"puck_jaunt_ctf"
+			}
+		}
+	}	
+//=================================================================================================================
+// Puck Sub Ability: Ethereal Jaunt
+//=================================================================================================================
+	"puck_jaunt_ctf"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityTextureName"			"puck_ethereal_jaunt"
+		"MaxLevel"						"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_puck/ctf_orb"
+				"Function"		"Jump"
+			}
+		}
+	}
+}

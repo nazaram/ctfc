@@ -3,6 +3,7 @@
 #BASE "heroes/ctf_juggernaut.txt"
 #BASE "heroes/ctf_phantom_assassin.txt"
 #BASE "heroes/ctf_pheonix.txt"
+#BASE "heroes/ctf_puck.txt"
 #BASE "heroes/ctf_pudge.txt"
 #BASE "heroes/ctf_techies.txt"
 #BASE "heroes/ctf_void_spirit.txt"
