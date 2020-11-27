@@ -1,7 +1,7 @@
 "DOTAAbilities"
 {
 //=================================================================================================================
-// PA Innate: Blur
+// PA Ultimate: Blur
 //=================================================================================================================
 
 	"phantom_assassin_blur_ctf"
@@ -13,6 +13,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVOIR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityType"         			"DOTA_ABILITY_TYPE_ULTIMATE"
 		"MaxLevel"						"1"
 	
 		// Precache
@@ -86,7 +87,7 @@
 		}
 	}
 //=================================================================================================================
-// PA Ultimate: Stifling Dagger
+// PA Abilitiy: Stifling Dagger
 //=================================================================================================================
 	"phantom_assassin_stifling_dagger_ctf"
 	{
@@ -98,8 +99,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		"AbilityType"         			"DOTA_ABILITY_TYPE_ULTIMATE"
-		"MaxLevel" 						"1"
+		"MaxLevel" 						"3"
 
 		// Precache
 		//-------------------------------------------------------------------------------------------------------------
@@ -124,11 +124,11 @@
 	
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"5"
+		"AbilityCooldown"				"6 5 4"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"25"
+		"AbilityManaCost"				"10"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -137,7 +137,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"dagger_speed"				"1500"
+				"dagger_speed"				"1500 1600 1700"
 			}
 
 			"02"
@@ -155,7 +155,7 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"slow_duration"				"4"
+				"slow_duration"				"2 2.5 3"
 			}
 
 			"05"
@@ -181,4 +181,103 @@
 			}
 		}
 	}
+//=================================================================================================================
+// PA Innate: Phantom Strike
+//=================================================================================================================
+"phantom_assassin_phantom_strike_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityTextureName"			"phantom_assassin_phantom_strike"
+  	"MaxLevel"                		"1"
+	"CastFilterRejectCaster" 		"1"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_phantom_assassin.vsndevts"
+		"particle"			"particles/units/heroes/hero_phantom_assassin/phantom_assassin_phantom_strike_end.vpcf"
+	}
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"1500"
+	"AbilityCastPoint"				"0.3"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"6"
+
+	// Duration
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityDuration"				"3"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"50"
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_attack_speed"	"0"
+		}
+		
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_max_attack_count"	"0"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"tooltip_range"			"1500"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"Blink"
+		{
+			"Target"	"TARGET"
+		}
+
+		"FireSound"
+		{
+			"EffectName"		"Hero_PhantomAssassin.Strike.Start"
+			"Target"			"CASTER"
+		}
+
+		"AttachEffect"
+		{
+			"EffectName"		"particles/units/heroes/hero_phantom_assassin/phantom_assassin_phantom_strike_end.vpcf"
+			"EffectAttachType"	"follow_origin"
+			"Target"			"CASTER"
+		}
+
+		"FireSound"
+		{
+			"EffectName"		"Hero_PhantomAssassin.Strike.End"
+			"Target"			"CASTER"
+		}
+
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/hero_phantom_assassin/phantom_strike.lua"
+			"Function"		"PhantomStrike"
+		}
+	}
+}
+
+
+
 }
