@@ -65,6 +65,7 @@ function OnSpellStart( keys )
 
 				for _, unit in ipairs(units) do
 					if (unit:GetAbsOrigin() - dummy_strikes[strike_count]:GetAbsOrigin()):Length2D() < strike_radius then
+						unit:AddNewModifier(caster, nil, "modifier_stunned", {duration = 0.01})
 						unit:AddNewModifier(caster, nil, "modifier_glimpse_backtrack", {duration = backtrack_time})
 
 						local glimpse_end_fx = ParticleManager:CreateParticle(particle_glimpse_end, PATTACH_ABSORIGIN, dummy_strikes[strike_count])

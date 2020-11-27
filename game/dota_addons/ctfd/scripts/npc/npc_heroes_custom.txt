@@ -419,7 +419,7 @@
         "Ability1"        "Armour_Up"
         "Ability2"        "shredder_chain"
         "Ability3"        "puck_illusory_orb_ctf" 
-        "Ability4"        "generic_hidden"
+        "Ability4"        "puck_phase_coil_ctf"
         "Ability5"        "torrent_datadriven"
         "Ability6"        "puck_waning_rift"
 
@@ -763,7 +763,7 @@
         "SoundSet"          "0" 
         "Ability1"        "Armour_Up"
         "Ability2"        "shredder_chain"
-        "Ability3"        "disruptor_kinetic_field" 
+        "Ability3"        "disruptor_kinetic_field_ctf" 
         "Ability4"        "disruptor_static_storm_ctf"
         "Ability5"        "torrent_datadriven"
         "Ability6"        "disruptor_glimpse_ctf"

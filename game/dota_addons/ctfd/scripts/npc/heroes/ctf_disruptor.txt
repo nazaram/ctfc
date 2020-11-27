@@ -30,6 +30,7 @@
 		"AbilityCastPoint"				"0.05"
 
 		"AbilityCastAnimation"      	"ACT_DOTA_CAST_ABILITY_4"
+		"AOERadius" 					"150"
 
 		// Time   
 		//-------------------------------------------------------------------------------------------------------------
@@ -147,7 +148,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"backtrack_time"		"4"
+				"backtrack_time"		"2"
 			}
 		}
 
@@ -159,6 +160,82 @@
 				"Function"				"OnSpellStart"
 				"Target"				"POINT"
 			}	
+		}
+	}
+
+	//=================================================================================================================
+	// Disruptor Abiltiy: Kinetic Field
+	//=================================================================================================================
+	"disruptor_kinetic_field_ctf"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"disruptor_kinetic_field"
+		"AbilityBehavior"       		"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"SpellImmunityType"     		"SPELL_IMMUNITY_ENEMIES_NO"
+		// "AbilitySound"          		"Hero_Disruptor.KineticField"
+		"MaxLevel"              		"3"
+
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"particle"					"particles/units/heroes/hero_disruptor/disruptor_kineticfield.vpcf"
+			"particle"					"particles/units/heroes/hero_disruptor/disruptor_kineticfield_formation.vpcf"
+
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_disruptor.vsndevts"
+		}
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastAnimation"      	"ACT_DOTA_CAST_ABILITY_3"
+		"AbilityCastPoint"        		"0.05"
+
+		"AbilityCastRange"        		"700 800 900"
+		"AOERadius" 					"150"
+
+		// Time   
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"       		"15 12 9"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"       		"50"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"          	"FIELD_INTEGER"
+				"field_radius"          "150"
+			}
+
+			"02"
+			{
+				"var_type"          	"FIELD_FLOAT"
+				"formation_time"      	"1 0.7 0.4"
+			}
+			
+			"03"
+			{
+				"var_type"          	"FIELD_FLOAT"
+				"field_duration"       	"4"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"heroes/hero_disruptor/ctf_kinetic_field"
+				"Function"				"OnSpellStart"
+				"Target"				"POINT"
+			}
 		}
 	}
 }

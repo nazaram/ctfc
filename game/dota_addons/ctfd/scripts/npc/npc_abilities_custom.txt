@@ -3737,62 +3737,6 @@
     "AbilityCastAnimation"    "ACT_DOTA_CAST_ABILITY_2"
   } 
 
-  //=================================================================================================================
-  // Disruptor: Kinetic Field
-  //=================================================================================================================
-  "disruptor_kinetic_field"
-  {
-    // General
-    //-------------------------------------------------------------------------------------------------------------
-    "ID"              "5460"                            // unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-    "SpellImmunityType"       "SPELL_IMMUNITY_ENEMIES_YES"
-
-    "FightRecapLevel"       "1"
-    "AbilitySound"          "Hero_Disruptor.KineticField"
-    "MaxLevel"                                      "3"
-
-    // Casting
-    //-------------------------------------------------------------------------------------------------------------
-    "AbilityCastAnimation"      "ACT_DOTA_KINETIC_FIELD"
-    "AbilityCastGestureSlot"    "DEFAULT"
-    "AbilityCastPoint"        "0.05"
-
-    // Time   
-    //-------------------------------------------------------------------------------------------------------------
-    "AbilityCooldown"       "15 12 9"
-
-    // Cost
-    //-------------------------------------------------------------------------------------------------------------
-    "AbilityManaCost"       "100"
-    
-    // Cast Range
-    //-------------------------------------------------------------------------------------------------------------
-    "AbilityCastRange"        "750"
-
-    // Special
-    //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-      "01"
-      {
-        "var_type"          "FIELD_INTEGER"
-        "radius"          "150"
-      }
-      "02"
-      {
-        "var_type"          "FIELD_FLOAT"
-        "formation_time"      "1 0.7 0.4"
-      }
-      "03"
-      {
-        "var_type"          "FIELD_FLOAT"
-        "duration"          "4 5 6"
-        "LinkedSpecialBonus"    "special_bonus_unique_disruptor_5"
-      }
-    }
-  } 
-
 "puck_waning_rift"
 {
   "MaxLevel"                                      "1"

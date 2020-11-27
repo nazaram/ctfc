@@ -553,7 +553,7 @@ function CAddonTemplateGameMode:OnNPCSpawned(keys)
     entity:FindAbilityByName(innateAbilityName7):SetLevel(1)
   end
 
-  local innateAbilityName8 = "demonhunter_evasion"
+  local innateAbilityName8 = "puck_phase_coil_ctf"
   if entity:IsRealHero() and entity:HasAbility(innateAbilityName8) then
     entity:FindAbilityByName(innateAbilityName8):SetLevel(1)
   end
