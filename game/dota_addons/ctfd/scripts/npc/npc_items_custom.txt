@@ -1146,7 +1146,7 @@
     //-------------------------------------------------------------------------------------------------------------
     "ID"                 "1101"
     "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-    "Model"              "models\props_teams\banner_radiant.mdl"
+    "Model"              "models/props_teams/bannerb_dire.vmdl"
 
     // Item Info
     //-------------------------------------------------------------------------------------------------------------
@@ -1224,7 +1224,7 @@
     // General
     "ID"                "1102"
     "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-    "Model"             "models\props_teams\banner_dire_small.mdl"
+    "Model"             "models/props_teams/banner_dire_small.vmdl"
 
     // Item Info
    "ItemPurchasable"    "0"

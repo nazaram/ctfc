@@ -203,7 +203,7 @@ function CAddonTemplateGameMode:InitGameMode()
   ListenToGameEvent("dota_player_pick_hero", OnHeroPicked, nil)
   ListenToGameEvent("dota_player_killed_hero",OnHeroKilled, nil)
   ListenToGameEvent( "dota_item_picked_up", Dynamic_Wrap(CAddonTemplateGameMode, "OnItemPickUp"), self )
-	ListenToGameEvent('dota_ability_channel_finished', Dynamic_Wrap(GameMode, 'OnAbilityChannelFinished'), self)
+	--ListenToGameEvent('dota_ability_channel_finished', Dynamic_Wrap(GameMode, 'OnAbilityChannelFinished'), self)
   --ListenToGameEvent('OnGameInProgress', Dynamic_Wrap(GameMode, 'OnGameInProgress'), self)
 
   --GameRules:GetGameModeEntity():SetItemAddedToInventoryFilter( Dynamic_Wrap(CAddonAdvExGameMode, "ItemAddedFilter"), self )
@@ -356,6 +356,8 @@ function spawnGoodFlag()
   local flag = CreateItem("item_capture_good_flag", nil, nil)
   CreateItemOnPositionSync(Vector(-3309.73, 528.231, 142.448), flag)
   _G.BadHasFlag = 0
+
+  
 
 end
 
@@ -510,11 +512,25 @@ function CAddonTemplateGameMode:OnNPCSpawned(keys)
   print(hero:GetBaseAttackTime())
   if hero:IsHero() then
     print("OnNPCSpawnedX")
+    print(hero)
     hero:SetAbilityPoints(1)
     torrent_jail = hero:FindAbilityByName("torrent_datadriven")
     torrent_jail:SetLevel(1) 
     torrent_jail:SetActivated(false)
   end
+
+if hero:GetName() == "npc_dota_hero_viper" then
+	print("poop")
+	local model = hero:FirstMoveChild()
+    while model ~= nil do
+        if model:GetClassname() == "dota_item_wearable" then
+            model:AddEffects(EF_NODRAW)
+        end
+        model = model:NextMovePeer()
+    end
+	hero:SetModel("models/creeps/neutral_creeps/n_creep_eimermole/n_creep_eimermole.vmdl")
+	hero:SetOriginalModel("models/creeps/neutral_creeps/n_creep_eimermole/n_creep_eimermole.vmdl")
+end
 
   local entity = EntIndexToHScript(keys.entindex)
   
