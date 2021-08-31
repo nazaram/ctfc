@@ -1699,9 +1699,77 @@
         }
   }
 
+"item_timberchain"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"           "item_datadriven"
+    "AbilityTextureName"      "custom/chain"
 
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+    "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_BOTH"
+    "ItemKillable"          "0"
+    "AbilityCastPoint"        "0.0"
+    
+    // Item Info
+    //-------------------------------------------------------------------------------------------------------------
+    "ItemCost"            "100"
+    "ItemPurchasable"       "1"
+    "ItemShopTags"          "consumable"
+    "ItemQuality"           "consumable"
+    "ItemStackable"         "1"
+    "ItemPermanent"         "0"
+    "ItemInitialCharges"    "1"
+    "ItemKillable"          "0"
+    "ItemCastOnPickup"      "0"
 
+        "OnEquip"
+        {
+          "SpendCharge" 
+            {}
+          "RunScript"
+          {
+            "ScriptFile"  "items.lua"
+            "Function"    "OnAssignAbilityTimberChain"
+          }
+        }
+  }
 
+"item_divine_shield"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"           "item_datadriven"
+    "AbilityTextureName"      "custom/divineshield"
+
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+    "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_BOTH"
+    "ItemKillable"          "0"
+    "AbilityCastPoint"        "0.0"
+    
+    // Item Info
+    //-------------------------------------------------------------------------------------------------------------
+    "ItemCost"            "100"
+    "ItemPurchasable"       "1"
+    "ItemShopTags"          "consumable"
+    "ItemQuality"           "consumable"
+    "ItemStackable"         "1"
+    "ItemPermanent"         "0"
+    "ItemInitialCharges"    "1"
+    "ItemKillable"          "0"
+    "ItemCastOnPickup"      "0"
+
+        "OnEquip"
+        {
+          "SpendCharge" 
+            {}
+          "RunScript"
+          {
+            "ScriptFile"  "items.lua"
+            "Function"    "OnAssignArmourUp"
+          }
+        }
+  }
 
 
 }

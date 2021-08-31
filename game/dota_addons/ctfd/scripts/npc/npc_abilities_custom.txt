@@ -990,7 +990,7 @@
     "AbilityUnitDamageType"     "DAMAGE_TYPE_MAGICAL" 
     "SpellImmunityType"       "SPELL_IMMUNITY_ENEMIES_YES"
     "FightRecapLevel"       "1"
-        "MaxLevel"                      "1"
+        "MaxLevel"                      "3"
     "AbilitySound"          "Hero_Rattletrap.Rocket_Flare.Fire"
 
     // Casting
@@ -1000,7 +1000,7 @@
     
     // Time   
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityCooldown"       "6.0"
+    "AbilityCooldown"       "6.0 5.0 4.0"
     
     // Cost
     //-------------------------------------------------------------------------------------------------------------
@@ -1457,7 +1457,7 @@
       "05"
       {
         "var_type"        "FIELD_INTEGER"
-        "max_travel_distance" "300"
+        "max_travel_distance" "220"
       }
       "06"
       {
@@ -2717,8 +2717,8 @@
 
     // Time   
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityCooldown"       "9 8 7"
-    "AbilityDuration"       "3"
+    "AbilityCooldown"       "7 5 3"
+    "AbilityDuration"       "1"
 
     // Damage.
     //-------------------------------------------------------------------------------------------------------------
@@ -2726,7 +2726,7 @@
 
     // Cost
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityManaCost"       "100"
+    "AbilityManaCost"       "10"
 
     // Special
     //-------------------------------------------------------------------------------------------------------------
@@ -2975,7 +2975,7 @@
         "ID"                    "5130"                                                      // unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
         "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
-        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_BASIC"
         "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_YES"
         "SpellDispellableType"          "SPELL_DISPELLABLE_YES_STRONG"
         "FightRecapLevel"               "1"
@@ -3249,16 +3249,16 @@
     // Casting
     //-------------------------------------------------------------------------------------------------------------
     "AbilityCastRange"        "0"
-    "AbilityCastPoint"        "1.5"
+    "AbilityCastPoint"        ".5"
     "AbilityCastAnimation"    "ACT_DOTA_CAST_ABILITY_4"
 
     // Time   
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityCooldown"       "23"
+    "AbilityCooldown"       "25"
 
     // Cost
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityManaCost"       "300"
+    "AbilityManaCost"       "100"
 
     // Special
     //-------------------------------------------------------------------------------------------------------------
@@ -3267,12 +3267,12 @@
       "01"
       {
         "var_type"        "FIELD_FLOAT"
-        "fade_delay"      ".5"
+        "fade_delay"      ".15"
       }
       "02"
       {
         "var_type"        "FIELD_FLOAT"
-        "duration"        "2.5"
+        "duration"        "2.0"
       }
       "03"
       {
@@ -3376,7 +3376,7 @@
       "02"
       {
         "var_type"        "FIELD_FLOAT"
-        "magic_missile_stun"  "0.75"
+        "magic_missile_stun"  "1.0"
       }
       "03"
       {
@@ -3556,7 +3556,7 @@
     
     // Time   
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityCooldown"       "16"
+    "AbilityCooldown"       "14"
 
     // Cost
     //-------------------------------------------------------------------------------------------------------------
@@ -3570,12 +3570,12 @@
       "01"
       {
         "var_type"        "FIELD_INTEGER"
-        "leap_distance"     "700"
+        "leap_distance"     "450"
       }
       "02"
       {
         "var_type"        "FIELD_FLOAT"
-        "leap_speed"      "450.0"
+        "leap_speed"      "650.0"
       }
       "03"
       {
@@ -4707,7 +4707,7 @@
     // Casting
     //-------------------------------------------------------------------------------------------------------------
     "AbilityCastRange"        "0"
-    "AbilityCastPoint"        "0.3"
+    "AbilityCastPoint"        "0.2"
 
     // Time   
     //-------------------------------------------------------------------------------------------------------------
@@ -5589,4 +5589,72 @@
       }
     }
   }
+
+ "barebones_empty1"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    //"ID"              "5343"                            // unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+    "MaxLevel"            "0"
+    "BaseClass"           "ability_datadriven"
+    "AbilityTextureName"            "rubick_empty1"
+  }
+  
+  "barebones_empty2"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    //"ID"              "5343"                            // unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+    "MaxLevel"            "0"
+    "BaseClass"           "ability_datadriven"
+    "AbilityTextureName"            "rubick_empty1"
+  }
+  
+  "barebones_empty3"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    //"ID"              "5343"                            // unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+    "MaxLevel"            "0"
+    "BaseClass"           "ability_datadriven"
+    "AbilityTextureName"            "rubick_empty1"
+  }
+  
+  "barebones_empty4"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    //"ID"              "5343"                            // unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+    "MaxLevel"            "0"
+    "BaseClass"           "ability_datadriven"
+    "AbilityTextureName"            "rubick_empty1"
+  }
+  
+  "barebones_empty5"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    //"ID"              "5343"                            // unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+    "MaxLevel"            "0"
+    "BaseClass"           "ability_datadriven"
+    "AbilityTextureName"            "rubick_empty1"
+  }
+  
+  "barebones_empty6"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    //"ID"              "5343"                            // unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+    "MaxLevel"            "0"
+    "BaseClass"           "ability_datadriven"
+    "AbilityTextureName"            "rubick_empty1"
+  }
+
+  
 }

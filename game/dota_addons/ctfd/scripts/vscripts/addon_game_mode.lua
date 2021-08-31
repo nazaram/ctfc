@@ -541,7 +541,7 @@ end
 
   local innateAbilityName2 = "rattletrap_rocket_flare"
   if entity:IsRealHero() and entity:HasAbility(innateAbilityName2) then
-    entity:FindAbilityByName(innateAbilityName2):SetLevel(1)
+    entity:FindAbilityByName(innateAbilityName2):SetLevel(0)
   end
   
   local innateAbilityName3 = "creature_self_haste"

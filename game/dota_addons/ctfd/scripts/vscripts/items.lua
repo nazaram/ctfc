@@ -218,4 +218,65 @@ function OnPlayerPickupCoinF(keys)
 end
 
 
+function OnAssignAbilityTimberChain(keys)
+  local caster = keys.caster
+  print(caster)
+  local hero = EntIndexToHScript(keys.caster_entindex)
+  print("in function OnAssignAbilityTimberChain")
+  print(hero)
+  if hero:IsRealHero() and hero:HasAbility("barebones_empty1") then
+    print("true")
+    hero:RemoveAbility("barebones_empty1")
+    hero:AddAbility("shredder_chain"):SetLevel(1)
+    --hero:SwapAbilities("barebones_empty1", "shredder_chain", true, false)
+  elseif hero:IsRealHero() and hero:HasAbility("barebones_empty2") then
+    print("true")
+    hero:RemoveAbility("barebones_empty2")
+    hero:AddAbility("shredder_chain"):SetLevel(1)
+    --hero:SwapAbilities("barebones_empty1", "shredder_chain", true, false)
+  end
+  end
 
+function OnAssignArmourUp(keys)
+  local caster = keys.caster
+  print(caster)
+  local hero = EntIndexToHScript(keys.caster_entindex)
+  print("in function OnAssignAbilityArmorUp")
+  print(hero)
+  if hero:IsRealHero() and hero:HasAbility("barebones_empty1") then
+    print("true")
+    hero:RemoveAbility("barebones_empty1")
+    hero:AddAbility("Armour_Up"):SetLevel(1)
+    --hero:SwapAbilities("barebones_empty1", "shredder_chain", true, false)
+  elseif hero:IsRealHero() and hero:HasAbility("barebones_empty2") then
+    print("true")
+    hero:RemoveAbility("barebones_empty2")
+    hero:AddAbility("Armour_Up"):SetLevel(1)
+    --hero:SwapAbilities("barebones_empty1", "shredder_chain", true, false)
+  end
+  end
+
+
+--[[
+  if hero:IsHero() then
+    print("inhero")
+    local old_ability_0 = hero:GetAbilityByIndex(0)
+    local old_ability_1 = hero:GetAbilityByIndex(1)
+    if old_ability_0 == "barebones_empty1" then 
+      print("potato")
+      hero:GetAbilityByIndex(0) = "shredder_chain"
+      hero:SetAbilityPoints(1)
+      hero = hero:FindAbilityByName("shredder_chain")
+      chain:SetLevel(1) 
+      chain:SetActivated(true)
+    end
+  end
+end
+
+
+  local innateAbilityName16 = "tusk_frozen_sigil"
+  if entity:IsRealHero() and entity:HasAbility(innateAbilityName16) then
+    entity:FindAbilityByName(innateAbilityName16):SetLevel(1)
+   end
+
+--]]

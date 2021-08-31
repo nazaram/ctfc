@@ -10,6 +10,8 @@
 		"item"			"item_quelling_bladeIII"
 		"item"		    "item_custom_ghostI"
 		"item"      	"item_refresher"
+		"item"      	"item_timberchain"
+		"item"      	"item_divine_shield"
 
 	}
 

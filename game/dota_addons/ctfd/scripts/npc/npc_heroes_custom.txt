@@ -16,12 +16,19 @@
         "AbilityLayout"     "6"
         "override_hero"     "npc_dota_hero_rattletrap"
         "SoundSet"          "0" 
-        "Ability1"        "Armour_Up"
-        "Ability2"        "shredder_chain"
-        "Ability3"        "rattletrap_power_cogs" 
-        "Ability4"        "rattletrap_rocket_flare"
-        "Ability5"        "torrent_datadriven"
-        "Ability6"        "rattletrap_hookshot_datadriven"
+        //"Ability1"        "Armour_Up"
+        //"Ability2"        "shredder_chain"
+        //"Ability3"        "rattletrap_power_cogs" 
+        //"Ability4"        "rattletrap_rocket_flare"
+        //"Ability5"        "torrent_datadriven"
+        //"Ability6"        "rattletrap_hookshot_datadriven"
+        
+        "Ability4"        "barebones_empty1"
+        "Ability5"        "barebones_empty2"
+        "Ability1"        "rattletrap_power_cogs" 
+        "Ability2"        "rattletrap_rocket_flare"
+        "Ability3"        "torrent_datadriven"
+        "Ability6"        "rattletrap_hookshot_datadriven"       
         
         "ArmorPhysical"       "0"                 // Physical protection.
         "MagicalResistance"       "0"                 // Magical protection (percentage).
@@ -30,7 +37,7 @@
         "AttackDamageMin"     "20"                   // Damage range min.
         "AttackDamageMax"     "30"                   // Damage range max.
         "AttackRange"                   "100"
-
+        "AbilityTalentStart" "17"
         //"AttributePrimary"      "DOTA_ATTRIBUTE_STRENGTH"
     
         "AttributeBaseStrength"   "0"                   // Base strength
@@ -66,13 +73,22 @@
         "AbilityLayout"     "6"
         "override_hero"     "npc_dota_hero_bounty_hunter"
         "SoundSet"          "0" 
-        "Ability1"          "Armour_Up"
-        "Ability2"          "shredder_chain"
-        "Ability3"          "ctf_shadowwalk" 
-        "Ability4"          "bounty_hunter_jinada"
-        "Ability5"          "torrent_datadriven"
-        "Ability6"          "bounty_hunter_twin_shuriken_toss"
-    
+       
+
+//        "Ability1"          "Armour_Up"
+//        "Ability2"          "shredder_chain"
+//        "Ability3"          "ctf_shadowwalk" 
+//        "Ability4"          "bounty_hunter_jinada"
+//        "Ability5"          "torrent_datadriven"
+//        "Ability6"          "bounty_hunter_twin_shuriken_toss"
+  
+        "Ability4"        "barebones_empty1"
+        "Ability5"        "barebones_empty2"
+        "Ability1"        "ctf_shadowwalk" 
+        "Ability2"        "bounty_hunter_jinada"
+        "Ability3"        "torrent_datadriven"
+        "Ability6"        "bounty_hunter_twin_shuriken_toss" 
+
         "ArmorPhysical"       "0"                 // Physical protection.
         "MagicalResistance"       "0"                 // Magical protection (percentage).
     
