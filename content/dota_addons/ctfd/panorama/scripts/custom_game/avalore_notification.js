@@ -75,6 +75,5 @@ function ClearAlert()
 (function () {
 	GameEvents.Subscribe( "test", OnTest );
 	GameEvents.Subscribe( "broadcast_message", OnBroadcastLocalizedMessage );
-	GameUI.SetDefaultUIEnabled( DotaDefaultUIElement_t.value, false)
-
+	
 })();

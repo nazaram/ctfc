@@ -536,7 +536,7 @@ end
   
   local innateAbilityName1 = "bounty_hunter_jinada"
   if entity:IsRealHero() and entity:HasAbility(innateAbilityName1) then
-    entity:FindAbilityByName(innateAbilityName1):SetLevel(1)
+    entity:FindAbilityByName(innateAbilityName1):SetLevel(0)
   end
 
   local innateAbilityName2 = "rattletrap_rocket_flare"
@@ -546,107 +546,107 @@ end
   
   local innateAbilityName3 = "creature_self_haste"
   if entity:IsRealHero() and entity:HasAbility(innateAbilityName3) then
-    entity:FindAbilityByName(innateAbilityName3):SetLevel(1)
+    entity:FindAbilityByName(innateAbilityName3):SetLevel(0)
   end
   
   local innateAbilityName4 = "void_spirit_astral_step"
   if entity:IsRealHero() and entity:HasAbility(innateAbilityName4) then
-    entity:FindAbilityByName(innateAbilityName4):SetLevel(1)
+    entity:FindAbilityByName(innateAbilityName4):SetLevel(0)
   end
 
   local innateAbilityName5 = "spirit_breaker_bulldoze"
   if entity:IsRealHero() and entity:HasAbility(innateAbilityName5) then
-    entity:FindAbilityByName(innateAbilityName5):SetLevel(1)
+    entity:FindAbilityByName(innateAbilityName5):SetLevel(0)
   end
 
   local innateAbilityName6 = "tiny_grow"
   if entity:IsRealHero() and entity:HasAbility(innateAbilityName6) then
-    entity:FindAbilityByName(innateAbilityName6):SetLevel(1)
+    entity:FindAbilityByName(innateAbilityName6):SetLevel(0)
   end
 
   local innateAbilityName7 = "inferno_dragon_wave"
   if entity:IsRealHero() and entity:HasAbility(innateAbilityName7) then
-    entity:FindAbilityByName(innateAbilityName7):SetLevel(1)
+    entity:FindAbilityByName(innateAbilityName7):SetLevel(0)
   end
 
   local innateAbilityName8 = "puck_phase_coil_ctf"
   if entity:IsRealHero() and entity:HasAbility(innateAbilityName8) then
-    entity:FindAbilityByName(innateAbilityName8):SetLevel(1)
+    entity:FindAbilityByName(innateAbilityName8):SetLevel(0)
   end
 
   local innateAbilityName9 = "old_antimage_blink"
   if entity:IsRealHero() and entity:HasAbility(innateAbilityName9) then
-    entity:FindAbilityByName(innateAbilityName9):SetLevel(1)
+    entity:FindAbilityByName(innateAbilityName9):SetLevel(0)
   end
 
   local innateAbilityName10 = "kunkka_tidebringer"
   if entity:IsRealHero() and entity:HasAbility(innateAbilityName10) then
-    entity:FindAbilityByName(innateAbilityName10):SetLevel(1)
+    entity:FindAbilityByName(innateAbilityName10):SetLevel(0)
   end
 
   local innateAbilityName11 = "disruptor_static_storm_ctf"
   if entity:IsRealHero() and entity:HasAbility(innateAbilityName11) then
-    entity:FindAbilityByName(innateAbilityName11):SetLevel(1)
+    entity:FindAbilityByName(innateAbilityName11):SetLevel(0)
   end
 
   local innateAbilityName12 = "windrunner_powershot"
   if entity:IsRealHero() and entity:HasAbility(innateAbilityName12) then
-    entity:FindAbilityByName(innateAbilityName12):SetLevel(1)
+    entity:FindAbilityByName(innateAbilityName12):SetLevel(0)
   end
 
   local innateAbilityName13 = "earthshaker_aftershock"
   if entity:IsRealHero() and entity:HasAbility(innateAbilityName13) then
-    entity:FindAbilityByName(innateAbilityName13):SetLevel(1)
+    entity:FindAbilityByName(innateAbilityName13):SetLevel(0)
   end
 
   local innateAbilityName14 = "mirana_invis"
   if entity:IsRealHero() and entity:HasAbility(innateAbilityName14) then
-    entity:FindAbilityByName(innateAbilityName14):SetLevel(1)
+    entity:FindAbilityByName(innateAbilityName14):SetLevel(0)
   end
 
   local innateAbilityName15 = "vengefulspirit_magic_missile"
   if entity:IsRealHero() and entity:HasAbility(innateAbilityName15) then
-    entity:FindAbilityByName(innateAbilityName15):SetLevel(1)
+    entity:FindAbilityByName(innateAbilityName15):SetLevel(0)
   end
 
   local innateAbilityName16 = "tusk_frozen_sigil"
   if entity:IsRealHero() and entity:HasAbility(innateAbilityName16) then
-    entity:FindAbilityByName(innateAbilityName16):SetLevel(1)
+    entity:FindAbilityByName(innateAbilityName16):SetLevel(0)
   end
 
   local innateAbilityName17 = "ctf_waveform"
   if entity:IsRealHero() and entity:HasAbility(innateAbilityName17) then
-    entity:FindAbilityByName(innateAbilityName17):SetLevel(1)
+    entity:FindAbilityByName(innateAbilityName17):SetLevel(0)
   end
 
   local innateAbilityName18 = "faceless_void_chronosphere"
   if entity:IsRealHero() and entity:HasAbility(innateAbilityName18) then
-    entity:FindAbilityByName(innateAbilityName18):SetLevel(1)
+    entity:FindAbilityByName(innateAbilityName18):SetLevel(0)
   end
 
   local innateAbilityName19 = "slark_shadow_dance"
   if entity:IsRealHero() and entity:HasAbility(innateAbilityName19) then
-    entity:FindAbilityByName(innateAbilityName19):SetLevel(1)
+    entity:FindAbilityByName(innateAbilityName19):SetLevel(0)
   end
 
   local innateAbilityName20 = "pudge_lil_stinky"
   if entity:IsRealHero() and entity:HasAbility(innateAbilityName20) then
-    entity:FindAbilityByName(innateAbilityName20):SetLevel(1)
+    entity:FindAbilityByName(innateAbilityName20):SetLevel(0)
   end
 
   local innateAbilityName21 = "void_spirit_astral_step_ctf"
   if entity:IsRealHero() and entity:HasAbility(innateAbilityName21) then
-    entity:FindAbilityByName(innateAbilityName21):SetLevel(1)
+    entity:FindAbilityByName(innateAbilityName21):SetLevel(0)
   end
 
   local innateAbilityName22 = "techies_stasis_wire"
   if entity:IsRealHero() and entity:HasAbility(innateAbilityName22) then
-    entity:FindAbilityByName(innateAbilityName22):SetLevel(1)
+    entity:FindAbilityByName(innateAbilityName22):SetLevel(0)
   end
 
   local innateAbilityName23 = "phantom_assassin_phantom_strike_datadriven"
   if entity:IsRealHero() and entity:HasAbility(innateAbilityName23) then
-    entity:FindAbilityByName(innateAbilityName23):SetLevel(1)
+    entity:FindAbilityByName(innateAbilityName23):SetLevel(0)
   end
 end
 

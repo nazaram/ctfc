@@ -1713,7 +1713,7 @@
     
     // Item Info
     //-------------------------------------------------------------------------------------------------------------
-    "ItemCost"            "100"
+    "ItemCost"            "500"
     "ItemPurchasable"       "1"
     "ItemShopTags"          "consumable"
     "ItemQuality"           "consumable"
@@ -1749,7 +1749,7 @@
     
     // Item Info
     //-------------------------------------------------------------------------------------------------------------
-    "ItemCost"            "100"
+    "ItemCost"            "300"
     "ItemPurchasable"       "1"
     "ItemShopTags"          "consumable"
     "ItemQuality"           "consumable"
@@ -1770,6 +1770,385 @@
           }
         }
   }
+
+"item_custom_blink"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"           "item_datadriven"
+    "AbilityTextureName"      "custom/blinkAM"
+
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+    "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_BOTH"
+    "ItemKillable"          "0"
+    "AbilityCastPoint"        "0.0"
+    
+    // Item Info
+    //-------------------------------------------------------------------------------------------------------------
+    "ItemCost"            "500"
+    "ItemPurchasable"       "1"
+    "ItemShopTags"          "consumable"
+    "ItemQuality"           "consumable"
+    "ItemStackable"         "1"
+    "ItemPermanent"         "0"
+    "ItemInitialCharges"    "1"
+    "ItemKillable"          "1"
+    "ItemCastOnPickup"      "0"
+
+        "OnEquip"
+        {
+           
+          "SpendCharge" 
+            {}
+          "RunScript"
+          {
+            "ScriptFile"  "items.lua"
+            "Function"    "OnAssignBlink"
+          }
+        }
+  }
+
+"item_custom_skewer"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"           "item_datadriven"
+    "AbilityTextureName"      "custom/customSkewer"
+
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+    "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_BOTH"
+    "ItemKillable"          "0"
+    "AbilityCastPoint"        "0.0"
+    
+    // Item Info
+    //-------------------------------------------------------------------------------------------------------------
+    "ItemCost"            "500"
+    "ItemPurchasable"       "1"
+    "ItemShopTags"          "consumable"
+    "ItemQuality"           "consumable"
+    "ItemStackable"         "1"
+    "ItemPermanent"         "0"
+    "ItemInitialCharges"    "1"
+    "ItemKillable"          "1"
+    "ItemCastOnPickup"      "0"
+
+        "OnEquip"
+        {
+           
+          "SpendCharge" 
+            {}
+          "RunScript"
+          {
+            "ScriptFile"  "items.lua"
+            "Function"    "OnAssignSkewer"
+          }
+        }
+  }
+
+"item_custom_carapace"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"           "item_datadriven"
+    "AbilityTextureName"      "custom/CustomCarapace"
+
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+    "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_BOTH"
+    "ItemKillable"          "0"
+    "AbilityCastPoint"        "0.0"
+    
+    // Item Info
+    //-------------------------------------------------------------------------------------------------------------
+    "ItemCost"            "300"
+    "ItemPurchasable"       "1"
+    "ItemShopTags"          "consumable"
+    "ItemQuality"           "consumable"
+    "ItemStackable"         "1"
+    "ItemPermanent"         "0"
+    "ItemInitialCharges"    "1"
+    "ItemKillable"          "1"
+    "ItemCastOnPickup"      "0"
+
+        "OnEquip"
+        {
+           
+          "SpendCharge" 
+            {}
+          "RunScript"
+          {
+            "ScriptFile"  "items.lua"
+            "Function"    "OnAssignSpikedCarapace"
+          }
+        }
+  }
+
+"item_custom_timelapse"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"           "item_datadriven"
+    "AbilityTextureName"      "custom/timelapse"
+
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+    "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_BOTH"
+    "ItemKillable"          "0"
+    "AbilityCastPoint"        "0.0"
+    
+    // Item Info
+    //-------------------------------------------------------------------------------------------------------------
+    "ItemCost"            "500"
+    "ItemPurchasable"       "1"
+    "ItemShopTags"          "consumable"
+    "ItemQuality"           "consumable"
+    "ItemStackable"         "1"
+    "ItemPermanent"         "0"
+    "ItemInitialCharges"    "1"
+    "ItemKillable"          "1"
+    "ItemCastOnPickup"      "0"
+
+        "OnEquip"
+        {
+           
+          "SpendCharge" 
+            {}
+          "RunScript"
+          {
+            "ScriptFile"  "items.lua"
+            "Function"    "OnAssignTimeLapse"
+          }
+        }
+  }
+
+"item_custom_gust"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"           "item_datadriven"
+    "AbilityTextureName"      "custom/gustdrow"
+
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+    "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_BOTH"
+    "ItemKillable"          "0"
+    "AbilityCastPoint"        "0.0"
+    
+    // Item Info
+    //-------------------------------------------------------------------------------------------------------------
+    "ItemCost"            "300"
+    "ItemPurchasable"       "1"
+    "ItemShopTags"          "consumable"
+    "ItemQuality"           "consumable"
+    "ItemStackable"         "1"
+    "ItemPermanent"         "0"
+    "ItemInitialCharges"    "1"
+    "ItemKillable"          "1"
+    "ItemCastOnPickup"      "0"
+
+        "OnEquip"
+        {
+           
+          "SpendCharge" 
+            {}
+          "RunScript"
+          {
+            "ScriptFile"  "items.lua"
+            "Function"    "OnAssignGust"
+          }
+        }
+  }
+
+"item_custom_silence"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"           "item_datadriven"
+    "AbilityTextureName"      "custom/globalsilence"
+
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+    "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_BOTH"
+    "ItemKillable"          "0"
+    "AbilityCastPoint"        "0.0"
+    
+    // Item Info
+    //-------------------------------------------------------------------------------------------------------------
+    "ItemCost"            "300"
+    "ItemPurchasable"       "1"
+    "ItemShopTags"          "consumable"
+    "ItemQuality"           "consumable"
+    "ItemStackable"         "1"
+    "ItemPermanent"         "0"
+    "ItemInitialCharges"    "1"
+    "ItemKillable"          "1"
+    "ItemCastOnPickup"      "0"
+
+        "OnEquip"
+        {
+           
+          "SpendCharge" 
+            {}
+          "RunScript"
+          {
+            "ScriptFile"  "items.lua"
+            "Function"    "OnAssignSilence"
+          }
+        }
+  }
+
+  "item_custom_counterspell"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"           "item_datadriven"
+    "AbilityTextureName"      "custom/counterspellAM"
+
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+    "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_BOTH"
+    "ItemKillable"          "0"
+    "AbilityCastPoint"        "0.0"
+    
+    // Item Info
+    //-------------------------------------------------------------------------------------------------------------
+    "ItemCost"            "300"
+    "ItemPurchasable"       "1"
+    "ItemShopTags"          "consumable"
+    "ItemQuality"           "consumable"
+    "ItemStackable"         "1"
+    "ItemPermanent"         "0"
+    "ItemInitialCharges"    "1"
+    "ItemKillable"          "1"
+    "ItemCastOnPickup"      "0"
+
+        "OnEquip"
+        {
+           
+          "SpendCharge" 
+            {}
+          "RunScript"
+          {
+            "ScriptFile"  "items.lua"
+            "Function"    "OnAssignCounterspell"
+          }
+        }
+  }
+
+  "item_custom_lightstrikearray"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"           "item_datadriven"
+    "AbilityTextureName"      "custom/lightstrikearray"
+
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+    "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_BOTH"
+    "ItemKillable"          "0"
+    "AbilityCastPoint"        "0.0"
+    
+    // Item Info
+    //-------------------------------------------------------------------------------------------------------------
+    "ItemCost"            "500"
+    "ItemPurchasable"       "1"
+    "ItemShopTags"          "consumable"
+    "ItemQuality"           "consumable"
+    "ItemStackable"         "1"
+    "ItemPermanent"         "0"
+    "ItemInitialCharges"    "1"
+    "ItemKillable"          "1"
+    "ItemCastOnPickup"      "0"
+
+        "OnEquip"
+        {
+           
+          "SpendCharge" 
+            {}
+          "RunScript"
+          {
+            "ScriptFile"  "items.lua"
+            "Function"    "OnAssignlightstrikearray"
+          }
+        }
+  }
+
+
+  "item_custom_fissure"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"           "item_datadriven"
+    "AbilityTextureName"      "custom/fissure"
+
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+    "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_BOTH"
+    "ItemKillable"          "0"
+    "AbilityCastPoint"        "0.0"
+    
+    // Item Info
+    //-------------------------------------------------------------------------------------------------------------
+    "ItemCost"            "500"
+    "ItemPurchasable"       "1"
+    "ItemShopTags"          "consumable"
+    "ItemQuality"           "consumable"
+    "ItemStackable"         "1"
+    "ItemPermanent"         "0"
+    "ItemInitialCharges"    "1"
+    "ItemKillable"          "1"
+    "ItemCastOnPickup"      "0"
+
+        "OnEquip"
+        {
+           
+          "SpendCharge" 
+            {}
+          "RunScript"
+          {
+            "ScriptFile"  "items.lua"
+            "Function"    "OnAssignfissure"
+          }
+        }
+  }
+
+
+  "item_tome_of_knowledge"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "ID"                                                  "257"
+    "AbilityBehavior"                                     "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+
+    // Item Info
+    //-------------------------------------------------------------------------------------------------------------
+    "ItemCost"                                            "750"
+    "ItemShopTags"                                        "consumable"
+    "ItemQuality"                                         "consumable"
+    "ItemAliases"                                         "tome of knowledge"
+    "ItemShareability"                                    "ITEM_FULLY_SHAREABLE"
+    "ItemInitialCharges"                                  "1"
+    "ItemDisplayCharges"                                  "1"
+    "ItemStockMax"                                        "100"
+    "ItemStockInitial"                                    "100"
+    "ItemStockTime"                                       "100" //OAA (8 minutes)
+    "ItemInitialStockTime"                                "100" //OAA (5 minutes)
+    "BonusDelayedStockCount"                              "0"
+    "ItemDeclarations"                                    "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+    "ItemSupport"                                         "1"
+    "IsTempestDoubleClonable"                             "0"
+
+    // Special
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"        "FIELD_INTEGER"
+        "xp_bonus"        "250" //OAA
+      }
+      "02" // Bonus experience gained per previous tome starts with the third used tome, not with the second
+      {
+        "var_type"        "FIELD_INTEGER"
+        "xp_per_use"      "100"
+      }
+    }
+  }
+
+
 
 
 }

@@ -4,20 +4,31 @@
 	// LUMBERJACKING -------------------------------------------
 	"consumables" 
 	{			
-		"item"          "item_branches"
-		"item"			"item_quelling_blade"
-		"item"			"item_quelling_bladeII"
-		"item"			"item_quelling_bladeIII"
-		"item"		    "item_custom_ghostI"
-		"item"      	"item_refresher"
 		"item"      	"item_timberchain"
 		"item"      	"item_divine_shield"
+		"item"      	"item_custom_blink"
+		"item"      	"item_custom_skewer"
+		"item"			"item_custom_timelapse"
+		"item"			"item_custom_gust"
+		"item"			"item_custom_silence"
+		"item"			"item_custom_counterspell"
+		"item"			"item_custom_lightstrikearray"
+		"item"			"item_custom_carapace"
+		"item"			"item_custom_fissure"
 
 	}
 
 	// ATTACK SPEED -------------------------------------------
 	"weapons_armor"
 	{
+		"item" 		    "item_tome_of_knowledge"
+		"item"          "item_branches"
+		"item"			"item_quelling_blade"
+		"item"			"item_quelling_bladeII"
+		"item"			"item_quelling_bladeIII"
+		"item"		    "item_custom_ghostI"
+		"item"      	"item_refresher"
+
 		"item"      "item_custom_gloves"
 		"item" 		"item_custom_hyperstone"
 		"item"		"item_yash"

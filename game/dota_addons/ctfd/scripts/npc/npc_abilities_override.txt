@@ -300,7 +300,7 @@
   "item_blight_stone"      "REMOVE"
   "item_recipe_echo_sabre"      "REMOVE"
   "item_echo_sabre"      "REMOVE"
-  "item_tome_of_knowledge"      "REMOVE"
+ // "item_tome_of_knowledge"      "REMOVE"
   "item_recipe_hurricane_pike"      "REMOVE"
   "item_hurricane_pike"      "REMOVE"
   "item_banana"      "REMOVE"
